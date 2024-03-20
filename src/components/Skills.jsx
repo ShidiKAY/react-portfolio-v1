@@ -1,22 +1,21 @@
-import { DiDjango } from "react-icons/di"; // Dev Icons
+import { DiDotnet } from "react-icons/di";
+
 import {
   FaAws,
-  FaBootstrap,
   FaCss3Alt,
   FaGithub,
+  FaGitlab,
   FaHtml5,
+  FaLaravel,
+  FaLinux,
   FaNode,
+  FaPhp,
   FaPython,
   FaReact,
+  FaVuejs,
+  FaWindows,
 } from "react-icons/fa"; // Font Awesome icons
-import {
-  SiMysql,
-  SiNumpy,
-  SiPandas,
-  SiSqlite,
-  SiTailwindcss,
-  SiTensorflow,
-} from "react-icons/si"; // Simple Icons
+import { SiMysql, SiPostgresql } from "react-icons/si"; // Simple Icons
 
 import { motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
@@ -45,29 +44,25 @@ const Skills = () => {
               Backend
             </span>
 
-            <li className=" text-xl font-bold flex justify-center items-center flex-col">
-              <DiDjango size="40px" />
-              Django
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
+              <FaPhp size="40px" /> {/* Use FaPhp for PHP icon */}
+              PHP (Expert)
             </li>
-            <li className=" text-xl font-bold flex justify-center items-center flex-col">
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
               <FaPython size="40px" />
               Python
             </li>
-            <li className=" text-xl font-bold flex justify-center items-center flex-col">
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
               <FaNode size="40px" />
-              Node Js
+              Node.js
             </li>
-            <li className=" text-xl font-bold flex justify-center items-center flex-col">
-              <SiSqlite size="40px" />
-              DB sqlite
-            </li>
-            <li className=" text-xl font-bold flex justify-center items-center flex-col">
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
               <SiMysql size="40px" />
-              Mysql
+              MySQL
             </li>
-            <li className=" text-xl font-bold flex justify-center items-center flex-col">
-              <FaBootstrap size="40px" />
-              Bootstrap
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
+              <SiPostgresql size="40px" />
+              PostgreSQL
             </li>
           </ul>
 
@@ -75,68 +70,83 @@ const Skills = () => {
             <span className="text-blue-500 text-2xl w-full text-center md:w-fit">
               Frontend
             </span>
-            <li className=" text-xl font-bold flex justify-center items-center flex-col">
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
               <FaReact size="40px" />
               React
             </li>
-            <li className=" text-xl font-bold flex justify-center items-center flex-col">
-              Bluma CSS
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
+              <FaVuejs size="40px" /> {/* Use FaVuejs for Vue.js icon */}
+              Vue.js
             </li>
-            <li className=" text-xl font-bold flex justify-center items-center flex-col">
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
               <FaHtml5 size="40px" />
               HTML
             </li>
-            <li className=" text-xl font-bold flex justify-center items-center flex-col">
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
               <FaCss3Alt size="40px" />
               CSS
-            </li>
-            <li className=" text-xl font-bold flex justify-center items-center flex-col">
-              <SiTailwindcss size="40px" />
-              Tailwind CSS
             </li>
           </ul>
 
           <ul className="flex justify-start items-center flex-row gap-8 flex-wrap mb-2 bg-blue-50 p-8 rounded-2xl">
             <span className="text-blue-500 text-2xl w-full text-center md:w-fit">
-              Data Science
+              Full-Stack
             </span>
             <li className="text-xl font-bold flex justify-center items-center flex-col">
-              <SiTensorflow size="40px" />
-              Tensorflow
+              <DiDotnet size="40px" /> {/* Use DiDotnet for .NET icon */}
+              .NET
             </li>
             <li className="text-xl font-bold flex justify-center items-center flex-col">
-              <SiNumpy size="40px" />
-              Numpy
+              <FaLaravel size="40px" /> {/* Use FaLaravel for Laravel icon */}
+              Laravel
             </li>
             <li className="text-xl font-bold flex justify-center items-center flex-col">
-              <SiPandas size="40px" />
-              Pandas
+              <FaLinux size="40px" />
+              Linux
             </li>
             <li className="text-xl font-bold flex justify-center items-center flex-col">
-              Matplotlib
-            </li>
-          </ul>
-
-          <ul className="flex items-center flex-row gap-8 flex-wrap mb-2 bg-blue-50 p-8 rounded-2xl">
-            <span className="text-blue-500 text-2xl w-full text-center lg:w-fit">
-              Other
-            </span>
-            <li className="text-xl font-bold flex justify-center items-center flex-col">
-              C
-            </li>
-            <li className="text-xl font-bold flex justify-center items-center flex-col">
-              C++
-            </li>
-            <li className="text-xl font-bold flex justify-center items-center flex-col">
-              <FaGithub size="40px" />
-              git/GitHub
-            </li>
-            <li className="text-xl font-bold flex justify-center items-center flex-col">
-              Analytics
+              <FaWindows size="40px" />
+              Windows
             </li>
             <li className="text-xl font-bold flex justify-center items-center flex-col">
               <FaAws size="40px" />
               AWS
+            </li>
+          </ul>
+
+          <ul className="flex justify-start items-center flex-row gap-8 flex-wrap mb-2 bg-blue-50 p-8 rounded-2xl">
+            <span className="text-blue-500 text-2xl w-full text-center md:w-fit">
+              DevOps
+            </span>
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
+              <FaGitlab />{" "}
+              {/* You might need to install an icon library for Gitlab */}
+              GitLab
+            </li>
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
+              <FaGithub size="40px" />
+              GitHub
+            </li>
+          </ul>
+
+          <ul className="flex justify-start items-center flex-row gap-8 flex-wrap mb-2 bg-blue-50 p-8 rounded-2xl">
+            <span className="text-blue-500 text-2xl w-full text-center md:w-fit">
+              Others
+            </span>
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
+              <i className="text-red-500 fab fa-cssdbalternate"></i>{" "}
+              {/* You might need to install an icon library for CSS Database */}
+              CSS Frameworks
+            </li>
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
+              <i className="text-green-500 fab fa-wpforms"></i>{" "}
+              {/* You might need to install an icon library for WordPress */}
+              WordPress
+            </li>
+            <li className="text-xl font-bold flex justify-center items-center flex-col">
+              <i className="text-violet-500 fab fa-jsfiddle"></i>{" "}
+              {/* You might need to install an icon library for JSFiddle */}
+              JavaScript Testing
             </li>
           </ul>
         </div>

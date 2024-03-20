@@ -44,7 +44,7 @@ const About = () => {
                 }}
               >
                 <h1 className="text-3xl font-bold sm:text-4xl mb-8">
-                  Hello, I&#39;m <span className="text-blue-500">Prasad</span>
+                  Hello, I&#39;m <span className="text-blue-500">Kamal</span>
                 </h1>
               </motion.div>
               <motion.div
