@@ -21,16 +21,17 @@ const Home = () => {
         },
       }}
     >
-      <div className="container mx-auto flex flex-col justify-center items-center h-screen">
+      <div className="container mx-auto flex flex-col justify-center items-center h-[500px]">
         <div className="text-center">
-          <h1 className="text-4xl text-black font-extrabold md:text-6xl">
-            Kamal AIT YOUS
+          <h1 className="text-4xl text-black font-extrabold md:text-4xl">
+            Make Your Web Application
           </h1>
-          <h1 className="text-4xl text-blue-500 font-extrabold md:text-6xl">
-            FullStack Developer
+          <h1 className="text-4xl text-blue-500 font-extrabold md:text-4xl">
+            Come True
           </h1>
-          <p className="text-sm mt-4 sm:leading-relaxed md:text-xl text-black">
-            Web Developer, Cloud enthusiast, and Anime lover
+          <p className="text-xl mt-4 sm:leading-relaxed md:text-xl text-black">
+            À la recherche d'un développeur freelance polyvalent pour
+            concrétiser vos projets web ? Vous êtes au bon endroit !
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8 grid-cols-2">
             <Link

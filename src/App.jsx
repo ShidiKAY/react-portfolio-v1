@@ -24,8 +24,10 @@ function App() {
           {/* Your Home page content goes here */}
           {/* <h1>Kamal AIT YOUS</h1>
           <p>Welcome to my portfolio!</p> */}
-          <Navbar></Navbar>
-          <Home></Home>
+          <div className=" bg-wendyBlue">
+            <Navbar></Navbar>
+            <Home></Home>
+          </div>
           <About></About>
           {/* Add more content, images, links, etc. */}
         </div>

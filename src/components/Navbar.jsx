@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
@@ -6,6 +6,17 @@ import { Link, useLocation } from "react-router-dom";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation(); // Destructure pathname from useLocation
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0); // Update state on scroll
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll); // Cleanup
+  }, []);
 
   const handleMobileNav = () => {
     setIsOpen(!isOpen);
@@ -19,7 +30,11 @@ const Navbar = () => {
 
   return (
     <div>
-      <nav className="fixed z-20 bg-white w-full">
+      <nav
+        className={`fixed z-20 bg-white w-full transition duration-300 ease-in-out ${
+          isScrolled ? "bg-opacity-75" : "bg-opacity-0"
+        }`}
+      >
         <div className="w-full">
           <div className="flex items-center h-20 w-full ">
             <div className="flex items-center sm:mx-10 md:mx-10 justify-between w-full">

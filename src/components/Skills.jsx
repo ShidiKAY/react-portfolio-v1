@@ -46,7 +46,7 @@ const Skills = () => {
 
             <li className="text-xl font-bold flex justify-center items-center flex-col">
               <FaPhp size="40px" /> {/* Use FaPhp for PHP icon */}
-              PHP (Expert)
+              PHP
             </li>
             <li className="text-xl font-bold flex justify-center items-center flex-col">
               <FaPython size="40px" />

@@ -1,11 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+  // Specify paths to components and pages where Tailwind scans for class names
   content: [
-    "./src/**/*.{js,jsx}", // Path to your JSX files
+    "./pages/**/*.{js,ts,jsx,tsx,vue}",
+    "./components/**/*.{js,ts,jsx,tsx,vue}",
+    "./src/**/*.{js,ts,jsx,tsx,vue}",
   ],
   theme: {
     extend: {
-      // Extend default Tailwind theme as needed
+      // Extend default Tailwind theme with custom colors
       colors: {
         mnBlue: "#3E517A",
         carolinaBlue: "#39A0ED",
@@ -16,12 +19,15 @@ export default {
         midnightBlue: "#41729F",
         darkBlue: "#274472",
         babyBlue: "#C3E0E5",
+        wendyBlue: "#EEF7FC",
         gainsboro: "#E2DED0",
       },
     },
   },
   plugins: [
+    // Enable aspect-ratio plugin for managing aspect ratios
     require("@tailwindcss/aspect-ratio"),
+    // Enable typography plugin for styling typography elements
     require("@tailwindcss/typography"),
   ],
 };
