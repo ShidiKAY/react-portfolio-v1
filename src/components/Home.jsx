@@ -1,12 +1,29 @@
 import { motion } from "framer-motion";
-import React from "react";
 import { Link } from "react-router-dom";
 
+import React, { useEffect, useRef, useState } from "react";
 const Home = () => {
+  // You can use useState and useEffect here to manage animation state and logic (optional)
+  const [isVisible, setIsVisible] = useState(false);
+  const refHome = useRef(null);
+
+  // Show/Hide text section of About when it's displayed
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    });
+    observer.observe(refHome.current);
+  }, []); // Empty dependency array ensures useEffect runs only once
   return (
     <motion.div
+      ref={refHome}
       initial="hidden"
-      animate="visible"
+      animate={isVisible ? "visible" : "hidden"}
       variants={{
         hidden: {
           scale: 0.8,
@@ -16,7 +33,7 @@ const Home = () => {
           scale: 1,
           opacity: 1,
           transition: {
-            delay: 0.6,
+            delay: 0.4,
           },
         },
       }}
@@ -31,7 +48,7 @@ const Home = () => {
           </h1>
           <p className="text-xl mt-4 sm:leading-relaxed md:text-xl text-black">
             À la recherche d'un développeur freelance polyvalent pour
-            concrétiser vos projets web ? Vous êtes au bon endroit !
+            concrétiser vos projets web ?<br></br>Vous êtes au bon endroit !
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8 grid-cols-2">
             <Link
