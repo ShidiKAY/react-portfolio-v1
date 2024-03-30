@@ -37,7 +37,7 @@ const About = () => {
                     scale: 1,
                     opacity: 1,
                     transition: {
-                      delay: 0.5,
+                      delay: 0.8,
                     },
                   },
                 }}
@@ -70,7 +70,7 @@ const About = () => {
                   scale: 1,
                   opacity: 1,
                   transition: {
-                    delay: 1,
+                    delay: 1.2,
                   },
                 },
               }}
@@ -81,14 +81,14 @@ const About = () => {
                 animate={isVisible ? "visible" : "hidden"}
                 variants={{
                   hidden: {
-                    scale: 0.8,
+                    scale: 1.0,
                     opacity: 0,
                   },
                   visible: {
                     scale: 1,
                     opacity: 1,
                     transition: {
-                      delay: 0.4,
+                      delay: 1.2,
                     },
                   },
                 }}
@@ -111,7 +111,7 @@ const About = () => {
                     scale: 1,
                     opacity: 1,
                     transition: {
-                      delay: 1.4,
+                      delay: 1.6,
                     },
                   },
                 }}
