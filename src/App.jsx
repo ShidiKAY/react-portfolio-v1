@@ -4,7 +4,9 @@ import "./styles/globals.css"; // Import your main CSS file (optional)
 
 import { BrowserRouter } from "react-router-dom";
 import About from "./components/About";
-import Navbar from "./components/Navbar";
+import Bubble from "./components/Bubble";
+import Bubbles from "./components/Bubbles";
+// import Navbar from "./components/Navbar";
 function App() {
   return (
     <BrowserRouter>
@@ -25,7 +27,14 @@ function App() {
           {/* <h1>Kamal AIT YOUS</h1>
           <p>Welcome to my portfolio!</p> */}
           <div className=" bg-wendyBlue">
-            <Navbar></Navbar>
+            <div className="bg-blue-100 h-full relative">
+              <Bubbles>
+                <Bubble language="JS" color="#f0db4f" />
+                <Bubble language="PHP" color="#778899" />
+                <Bubble language="Python" color="#3572A5" />
+              </Bubbles>
+            </div>
+            {/* <Navbar></Navbar> */}
             <Home></Home>
           </div>
           <About></About>

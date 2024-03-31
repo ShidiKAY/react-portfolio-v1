@@ -2,6 +2,20 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import React, { useEffect, useRef, useState } from "react";
+import Bubble from "./Bubble";
+import Bubbles from "./Bubbles";
+
+const languages = ["JS", "PHP", "Python", "Java", "C++", "CSS", "HTML"];
+const colors = [
+  "#f0db4f",
+  "#778899",
+  "#3572A5",
+  "#29ABCA",
+  "#FF9F43",
+  "#E94F37",
+  "#0073B7",
+];
+
 const Home = () => {
   // You can use useState and useEffect here to manage animation state and logic (optional)
   const [isVisible, setIsVisible] = useState(false);
@@ -67,6 +81,16 @@ const Home = () => {
             </Link>
           </div>
         </div>
+        {/* Affichage de bulles dynamiques basées sur les tableaux languages et colors */}
+        <Bubbles>
+          {languages.map((language, i) => (
+            <Bubble
+              key={language}
+              language={language}
+              color={colors[i % colors.length]}
+            />
+          ))}
+        </Bubbles>
       </div>
     </motion.div>
   );
