@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
+import Projects from "./Projects";
 import Skills from "./Skills";
 const About = () => {
   // You can use useState and useEffect here to manage animation state and logic (optional)
@@ -23,8 +24,8 @@ const About = () => {
     <div className="h-screen lg:pl-20 lg:pr-32">
       <div className="flex justify-between md:mx-30 md:pt-32 pt-28">
         <div className="flex flex-col md:ml-20 px-10 mt-10">
-          <div className="flex flex-col md:flex-row">
-            <div className=" md:px-8" ref={refAbout}>
+          <div className="flex flex-col md:flex-row" ref={refAbout}>
+            <div className=" md:px-8">
               <motion.div
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
@@ -111,7 +112,7 @@ const About = () => {
                     scale: 1,
                     opacity: 1,
                     transition: {
-                      delay: 1.6,
+                      delay: 1,
                     },
                   },
                 }}
@@ -144,6 +145,9 @@ const About = () => {
                 </p>
               </motion.div>
             </motion.div>
+          </div>
+          <div className="md:mx-16 text-bold text-3xl mt-10">
+            <Projects />
           </div>
           <div className="md:mx-16 text-bold text-3xl mt-10">
             <Skills />
