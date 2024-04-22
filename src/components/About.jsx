@@ -21,11 +21,14 @@ const About = () => {
   }, []); // Empty dependency array ensures useEffect runs only once
 
   return (
-    <div className="h-screen lg:pl-20 lg:pr-32">
-      <div className="flex justify-between md:mx-30 md:pt-32 pt-28">
-        <div className="flex flex-col md:ml-20 px-10 mt-10">
-          <div className="flex flex-col md:flex-row" ref={refAbout}>
-            <div className=" md:px-8">
+    <div className="h-screen lg:pl-px lg:pr-px">
+      <div className="flex justify-between md:mx-30 md:pt-32 pt-28 ">
+        <div className="flex flex-col md:ml-px mt-10 ">
+          <div
+            className="md:mx-px flex flex-col md:flex-row lg:px-52  md:px-1 "
+            ref={refAbout}
+          >
+            <div className="">
               <motion.div
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
@@ -77,7 +80,7 @@ const About = () => {
               }}
             >
               <motion.div
-                className="md:w-96"
+                className="md:w-54"
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
                 variants={{
@@ -146,10 +149,10 @@ const About = () => {
               </motion.div>
             </motion.div>
           </div>
-          <div className="md:mx-4 items-center text-bold text-3xl mt-10">
+          <div className="md:mx-px items-center text-bold text-3xl mt-10  lg:px-52  md:px-1">
             <Projects />
           </div>
-          <div className="md:mx-16 text-bold text-3xl mt-10">
+          <div className="md:mx-px text-bold text-3xl mt-10 lg:px-52 md:px-1">
             <Skills />
           </div>
         </div>
