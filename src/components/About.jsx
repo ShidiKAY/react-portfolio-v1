@@ -146,7 +146,7 @@ const About = () => {
               </motion.div>
             </motion.div>
           </div>
-          <div className="md:mx-16 text-bold text-3xl mt-10">
+          <div className="md:mx-4 items-center text-bold text-3xl mt-10">
             <Projects />
           </div>
           <div className="md:mx-16 text-bold text-3xl mt-10">

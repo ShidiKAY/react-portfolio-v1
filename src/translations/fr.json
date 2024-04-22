@@ -1,0 +1,16 @@
+{
+  "common": {
+    "language": "Langue",
+    "selectLanguage": "Sélectionner la langue",
+    "home": "Accueil",
+    "about": "À propos",
+    "contact": "Contact",
+    "projects": "Projets",
+    "seeMore": "Voir plus"
+  },
+  "portfolio": {
+    "title": "Mon Portfolio",
+    "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
+    "noProjects": "Aucun projet à afficher pour le moment."
+  }
+}

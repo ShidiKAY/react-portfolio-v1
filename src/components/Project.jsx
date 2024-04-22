@@ -13,10 +13,10 @@ const Project = ({ title, description, image, technologies, link }) => {
       <h3>{title}</h3>
       <p>{description}</p>
       <a href={link} target="_blank" rel="noopener noreferrer">
-        Lien vers le projet
+        Link to project
       </a>
       <button className="open-modal-btn" onClick={handleOpenModal}>
-        Voir plus
+        See more
       </button>
 
       <ReactModal
@@ -41,10 +41,10 @@ const Project = ({ title, description, image, technologies, link }) => {
             ))}
           </ul>
           <a href={link} target="_blank" rel="noopener noreferrer">
-            Lien vers le projet
+            Link to project
           </a>
           <button className="close-modal-btn" onClick={handleCloseModal}>
-            Fermer
+            Close
           </button>
         </div>
       </ReactModal>
@@ -52,6 +52,15 @@ const Project = ({ title, description, image, technologies, link }) => {
       <style>
         {`
           /* Project card styles */
+          .project-grid {
+            display: grid;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0px;
+            grid-template-columns: repeat(3, 1fr); /* Affiche 4 colonnes de largeur égale */
+          }
+          
+          
           .project-card {
             background-color: #fff;
             border-radius: 10px;

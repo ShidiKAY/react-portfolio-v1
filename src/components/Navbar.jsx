@@ -3,6 +3,8 @@ import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
 
+import { useTranslation } from "react-i18next";
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation(); // Destructure pathname from useLocation
@@ -28,6 +30,9 @@ const Navbar = () => {
       : "cursor-pointer hover:text-blue-500";
   };
 
+  const { t } = useTranslation();
+  console.log(t("common.home")); // Check if the translated value is correct
+
   return (
     <div>
       <nav
@@ -51,18 +56,18 @@ const Navbar = () => {
                 <div className="flex items-baseline space-x-10">
                   <h1
                     className={
-                      pathname == "/"
+                      pathname === "/"
                         ? "text-blue-500"
                         : "cursor-pointer hover:text-blue-500"
                     }
                   >
                     <Link id="about" href="/">
-                      <a>Home</a>
+                      <a>{t("common.home")}</a>
                     </Link>
                   </h1>
                   <h1
                     className={
-                      pathname == "/about"
+                      pathname === "/about"
                         ? "text-blue-500"
                         : "cursor-pointer hover:text-blue-500"
                     }
@@ -73,7 +78,7 @@ const Navbar = () => {
                   </h1>
                   <h1
                     className={
-                      pathname == "/projects"
+                      pathname === "/projects"
                         ? "text-blue-500"
                         : "cursor-pointer hover:text-blue-500"
                     }
@@ -84,7 +89,7 @@ const Navbar = () => {
                   </h1>
                   <h1
                     className={
-                      pathname == "/blog"
+                      pathname === "/blog"
                         ? "text-blue-500"
                         : "cursor-pointer hover:text-blue-500"
                     }
