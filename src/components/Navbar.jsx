@@ -30,8 +30,11 @@ const Navbar = () => {
       : "cursor-pointer hover:text-blue-500";
   };
 
-  const { t } = useTranslation();
-  console.log(t("common.home")); // Check if the translated value is correct
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
 
   return (
     <div>
@@ -103,6 +106,31 @@ const Navbar = () => {
 
               <div className="flex justify-center items-center flex-shrink-0 md:block">
                 <div className="flex space-x-4">
+                  <div className="language-switcher mt-1.5">
+                    <ul className="flex space-x-2">
+                      <li
+                        className="inline-flex items-center"
+                        onClick={() => changeLanguage("en")}
+                      >
+                        <span
+                          className="i-flagpack-gb-ukm w-8 mt-px"
+                          title="English"
+                        ></span>{" "}
+                        English
+                      </li>
+                      <li
+                        className="inline-flex items-center"
+                        onClick={() => changeLanguage("fr")}
+                      >
+                        <span
+                          className="i-flagpack-fr w-8 mb-1 mt-1"
+                          title="French"
+                        ></span>
+                        French
+                      </li>
+                    </ul>
+                  </div>
+
                   <div>
                     <a
                       href="https://github.com/prasad-chavan1"

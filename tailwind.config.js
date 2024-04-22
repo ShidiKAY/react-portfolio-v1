@@ -1,4 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+const {
+  iconsPlugin,
+  getIconCollections,
+} = require("@egoist/tailwindcss-icons");
+
 export default {
   // Specify paths to components and pages where Tailwind scans for class names
   content: [
@@ -29,5 +34,8 @@ export default {
     require("@tailwindcss/aspect-ratio"),
     // Enable typography plugin for styling typography elements
     require("@tailwindcss/typography"),
+    iconsPlugin({
+      collections: getIconCollections(["mdi", "lucide", "flag", "flagpack"]),
+    }),
   ],
 };
