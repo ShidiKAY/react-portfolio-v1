@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import Projects from "./Projects";
 import Skills from "./Skills";
 const About = () => {
   // You can use useState and useEffect here to manage animation state and logic (optional)
@@ -21,11 +20,11 @@ const About = () => {
   }, []); // Empty dependency array ensures useEffect runs only once
 
   return (
-    <div className="h-screen lg:pl-px lg:pr-px">
-      <div className="flex justify-between md:mx-30 md:pt-32 pt-28 ">
-        <div className="flex flex-col md:ml-px mt-10 ">
+    <div className="h-screen lg:pl-0 lg:pr-0">
+      <div className="flex justify-between md:mx-0 md:pt-32 pt-28 ">
+        <div className="flex flex-col md:ml-px mt-10">
           <div
-            className="md:mx-px flex flex-col md:flex-row lg:px-52  md:px-1 "
+            className="md:mx-0 flex flex-col md:flex-wrsap md:flex-row lg:px-12"
             ref={refAbout}
           >
             <div className="">
@@ -53,9 +52,9 @@ const About = () => {
                   <span className="text-blue-500"> Cloud Computing</span>.
                 </h2> */}
 
-                <div className="">
+                <div className="lg:px-24">
                   <img
-                    className="radius rounded-full vw-100 vh-50"
+                    className="radius rounded-full lg:vw-100 vh-50 vw-75"
                     src="https://kamalaityous.fr/img/profile.png"
                     alt=""
                   ></img>
@@ -63,6 +62,7 @@ const About = () => {
               </motion.div>
             </div>
             <motion.div
+              className="ml-0"
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
               variants={{
@@ -149,10 +149,10 @@ const About = () => {
               </motion.div>
             </motion.div>
           </div>
-          <div className="md:mx-px items-center text-bold text-3xl mt-10  lg:px-52  md:px-1">
-            <Projects />
+          <div className="md:mx-px items-center text-bold text-3xl mt-10  lg:px-52  md:px-1 md:w-5/6">
+            {/* <Projects /> */}
           </div>
-          <div className="md:mx-px text-bold text-3xl mt-10 lg:px-52 md:px-1">
+          <div className="md:mx-px text-bold text-3xl mt-10 lg:px-72 md:px-1">
             <Skills />
           </div>
         </div>

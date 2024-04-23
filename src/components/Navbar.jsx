@@ -109,31 +109,31 @@ const Navbar = () => {
                   <div className="language-switcher mt-1.5">
                     <ul className="flex space-x-2">
                       <li
-                        className="inline-flex items-center"
+                        className="inline-flex items-center cursor-pointer"
                         onClick={() => changeLanguage("en")}
                       >
                         <span
                           className="i-flagpack-gb-ukm w-8 mt-px"
                           title="English"
                         ></span>{" "}
-                        English
+                        <span className="hidden lg:block">English</span>
                       </li>
                       <li
-                        className="inline-flex items-center"
+                        className="inline-flex items-center cursor-pointer"
                         onClick={() => changeLanguage("fr")}
                       >
                         <span
                           className="i-flagpack-fr w-8 mb-1 mt-1"
                           title="French"
                         ></span>
-                        French
+                        <span className="hidden lg:block">French</span>
                       </li>
                     </ul>
                   </div>
 
                   <div>
                     <a
-                      href="https://github.com/prasad-chavan1"
+                      href="https://github.com/ShidiKAY"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -190,7 +190,7 @@ const Navbar = () => {
                         : "cursor-pointer hover:text-blue-500"
                     }
                   >
-                    <Link id="about" href="/">
+                    <Link id="home" href="/">
                       <a onClick={handleMobileNav}>Home</a>
                     </Link>
                   </h1>
@@ -227,6 +227,29 @@ const Navbar = () => {
                       <a onClick={handleMobileNav}>Blog</a>
                     </Link>
                   </h1>
+
+                  <ul className="flex space-x-2">
+                    <li
+                      className="inline-flex items-center cursor-pointer"
+                      onClick={() => changeLanguage("en")}
+                    >
+                      <span
+                        className="i-flagpack-gb-ukm w-6 mt-px mr-1"
+                        title="English"
+                      ></span>{" "}
+                      English
+                    </li>
+                    <li
+                      className="inline-flex items-center cursor-pointer"
+                      onClick={() => changeLanguage("fr")}
+                    >
+                      <span
+                        className="i-flagpack-fr w-6 mb-1 mt-1 mr-1"
+                        title="French"
+                      ></span>
+                      French
+                    </li>
+                  </ul>
                 </div>
                 <div className="space-x-4 pt-20">
                   <div className="flex space-x-4">
