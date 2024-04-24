@@ -27,7 +27,7 @@ const About = () => {
             className="md:mx-0 flex flex-col md:flex-wrsap md:flex-row lg:px-12"
             ref={refAbout}
           >
-            <div className="">
+            <div className="md:w-2/5 lg:w-1/4 lg:min-w-72 sm:min-w-96 md:min-w-80 xl:min-w-60">
               <motion.div
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
@@ -52,17 +52,15 @@ const About = () => {
                   <span className="text-blue-500"> Cloud Computing</span>.
                 </h2> */}
 
-                <div className="lg:px-24">
-                  <img
-                    className="radius rounded-full lg:vw-100 vh-50 vw-75"
-                    src="https://kamalaityous.fr/img/profile.png"
-                    alt=""
-                  ></img>
-                </div>
+                <img
+                  className="radius rounded-full lg:vw-100 vh-50 "
+                  src="https://kamalaityous.fr/img/profile.png"
+                  alt=""
+                ></img>
               </motion.div>
             </div>
             <motion.div
-              className="ml-0"
+              className="md:w-3/4"
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
               variants={{
