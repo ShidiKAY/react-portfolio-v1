@@ -41,7 +41,9 @@ const Projects = () => {
   return (
     <div className="w-full pb-32">
       <div className="mx-auto flex flex-col justify-center">
-        <p className="font-bold text-blue-900 pb-4 text-center">Projects</p>
+        <p className="font-bold text-blue-900 text-3xl pb-4 text-center">
+          Projects
+        </p>
         <div className="project-grid flex justify-start items-center flex-row flex-wrap">
           {projects.map((project) => (
             <Project key={project.title} {...project} />

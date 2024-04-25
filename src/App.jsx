@@ -40,7 +40,6 @@ function App() {
           </div>
 
           <About />
-
           {/* Ajoutez du contenu, des images, des liens, etc. */}
         </div>
       </div>
