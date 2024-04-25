@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
-import Projects from "./Projects";
 import Skills from "./Skills";
 const About = () => {
   // You can use useState and useEffect here to manage animation state and logic (optional)
@@ -149,7 +148,7 @@ const About = () => {
             </motion.div>
           </div>
           <div className="flex flex-col md:ml-px mt-10">
-            <Projects />
+            {/* <Projects /> */}
           </div>
           <div className="md:mx-px text-bold text-3xl mt-10 lg:px-72 md:px-1">
             <Skills />

@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@radix-ui/colors": "^3.0.0",
+    "@radix-ui/react-dialog": "^1.0.5",
     "@react-icons/all-files": "^4.1.0",
     "detect-collisions": "^9.5.3",
     "framer-motion": "^11.0.14",

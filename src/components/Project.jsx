@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import ReactModal from "react-modal";
 
+import * as Dialog from "@radix-ui/react-dialog";
+import "/src/styles/radixui.css";
+
 const Project = ({ title, description, image, technologies, link }) => {
   const [showModal, setShowModal] = useState(false);
 
@@ -15,6 +18,68 @@ const Project = ({ title, description, image, technologies, link }) => {
       <a href={link} target="_blank" rel="noopener noreferrer">
         Link to project
       </a>
+
+      <Dialog.Root>
+        <Dialog.Trigger asChild>
+          <button className="Button violet">Edit profile</button>
+        </Dialog.Trigger>
+        <Dialog.Portal>
+          <Dialog.Overlay className="DialogOverlay" />
+          <Dialog.Content className="DialogContent">
+            <Dialog.Title className="DialogTitle">Read more</Dialog.Title>
+            <Dialog.Description className="DialogDescription">
+              <div className="DialogScrollableContent">
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+                <p>...</p>
+              </div>
+            </Dialog.Description>
+            <div className="action-buttons">
+              {" "}
+              {/* New container for buttons */}
+              <fieldset className="Fieldset">
+                {" "}
+                {/* Optional for styling */}
+                <Dialog.Close asChild>
+                  <button className="Button green">Save changes</button>
+                </Dialog.Close>
+              </fieldset>
+              <Dialog.Close asChild>
+                <button className="IconButton" aria-label="Close">
+                  X
+                </button>
+              </Dialog.Close>
+            </div>
+          </Dialog.Content>
+        </Dialog.Portal>
+      </Dialog.Root>
       <button className="open-modal-btn" onClick={handleOpenModal}>
         See more
       </button>

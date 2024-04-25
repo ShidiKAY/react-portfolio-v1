@@ -26,21 +26,21 @@ const projects = [
     technologies: ["Django", "Python", "JavaScript", "HTML", "CSS"],
     link: "https://github.com/prasad-chavan1/Animesthetic-Social-Media",
   },
-  {
-    title: "Animesthetic 4 Social Media",
-    description:
-      "Web application for connecting with friends and social networking.",
-    image: "/src/public/images/project-images/bubo/logo.png",
-    technologies: ["Django", "Python", "JavaScript", "HTML", "CSS"],
-    link: "https://github.com/prasad-chavan1/Animesthetic-Social-Media",
-  },
+  // {
+  //   title: "Animesthetic 4 Social Media",
+  //   description:
+  //     "Web application for connecting with friends and social networking.",
+  //   image: "/src/public/images/project-images/bubo/logo.png",
+  //   technologies: ["Django", "Python", "JavaScript", "HTML", "CSS"],
+  //   link: "https://github.com/prasad-chavan1/Animesthetic-Social-Media",
+  // },
   // ... Add more project objects here
 ];
 
 const Projects = () => {
   return (
     <div className="w-full pb-32">
-      <div className="mx-auto flex flex-col justify-center">
+      <div className="mx-auto flex flex-col justify-center lg:px-52">
         <p className="font-bold text-blue-900 text-3xl pb-4 text-center">
           Projects
         </p>
