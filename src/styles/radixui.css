@@ -23,14 +23,20 @@ input {
   box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
     hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
   position: fixed;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 90vw;
-  max-width: 450px;
-  max-height: 85vh;
+  /* width: 90vw; */
+  width: 70%;
+  /* height: 70%; */
+  /* max-width: 750px;
+  max-height: 95vh; */
   padding: 25px;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
+  text-align: center;
+
+  font-size: 14px;
+  line-height: 1.42857143;
 }
 .DialogContent:focus {
   outline: none;
@@ -40,7 +46,46 @@ input {
   margin: 0;
   font-weight: 500;
   color: var(--mauve-12);
-  font-size: 17px;
+  font-size: 3em;
+  text-align: center;
+
+  font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+hr.star-light,
+hr.star-primary {
+  padding: 0;
+  border: none;
+  border-top: solid 5px;
+  text-align: center;
+  max-width: 250px;
+  margin: 25px auto 30px;
+}
+hr.star-light:after,
+hr.star-primary:after {
+  content: "\f005";
+  font-family: FontAwesome;
+  display: inline-block;
+  position: relative;
+  top: -0.8em;
+  font-size: 2em;
+  padding: 0 0.25em;
+}
+hr.star-light {
+  border-color: white;
+}
+hr.star-light:after {
+  background-color: #4479a7;
+  color: white;
+}
+hr.star-primary {
+  border-color: #2c3e50;
+}
+hr.star-primary:after {
+  background-color: white;
+  color: #2c3e50;
 }
 
 .DialogDescription {
@@ -52,6 +97,24 @@ input {
 .DialogScrollableContent {
   max-height: 55vh;
   overflow-y: auto; /* Enable scrolling */
+}
+
+.DialogScrollableContent p {
+  margin: 0 0 10px;
+  font-size: 20px;
+
+  line-height: 1.2;
+}
+.DialogDescription hr {
+  display: block;
+  margin-block-start: 0.5em;
+  margin-block-end: 0.5em;
+  margin-inline-start: auto;
+  margin-inline-end: auto;
+  unicode-bidi: isolate;
+  overflow: hidden;
+  border-style: inset;
+  border-width: 1px;
 }
 
 .Button {
@@ -89,22 +152,26 @@ input {
 
 .IconButton {
   font-family: inherit;
+  font-size: 75px;
+  font-weight: 200;
   border-radius: 100%;
-  height: 25px;
-  width: 25px;
+  height: 75px;
+  width: 75px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  color: var(--violet-11);
+  color: var(--violet-4);
   position: absolute;
   top: 10px;
   right: 10px;
 }
 .IconButton:hover {
-  background-color: var(--violet-4);
+  /* background-color: var(--violet-4); */
+  color: var(--violet-11);
 }
 .IconButton:focus {
-  box-shadow: 0 0 0 2px var(--violet-7);
+  /* box-shadow: 0 0 0 2px var(--violet-7); */
+  color: var(--violet-7);
 }
 
 .Fieldset {

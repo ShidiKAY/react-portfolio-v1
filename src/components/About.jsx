@@ -102,7 +102,7 @@ const About = () => {
               </motion.div>
 
               <motion.div
-                className=""
+                className="lg:px-2"
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
                 variants={{
@@ -151,7 +151,7 @@ const About = () => {
           <div className="flex flex-col md:ml-px mt-10">
             <Projects />
           </div>
-          <div className="md:mx-px text-bold text-3xl mt-10 lg:px-72 md:px-1">
+          <div className="md:mx-px text-bold text-3xl mt-10 lg:px-52 md:px-1">
             <Skills />
           </div>
         </div>

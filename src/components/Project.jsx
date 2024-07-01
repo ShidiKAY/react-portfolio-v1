@@ -1,118 +1,15 @@
-import React, { useState } from "react";
-import ReactModal from "react-modal";
+import React from "react";
+import Bubo from "./modals/Bubo";
 
-import * as Dialog from "@radix-ui/react-dialog";
 import "/src/styles/radixui.css";
 
 const Project = ({ title, description, image, technologies, link }) => {
-  const [showModal, setShowModal] = useState(false);
-
-  const handleOpenModal = () => setShowModal(true);
-  const handleCloseModal = () => setShowModal(false);
-
   return (
     <div className="project-card">
       <img src={image} alt="Image du projet" />
       <h3>{title}</h3>
       <p>{description}</p>
-      <a href={link} target="_blank" rel="noopener noreferrer">
-        Link to project
-      </a>
-
-      <Dialog.Root>
-        <Dialog.Trigger asChild>
-          <button className="Button violet">Edit profile</button>
-        </Dialog.Trigger>
-        <Dialog.Portal>
-          <Dialog.Overlay className="DialogOverlay" />
-          <Dialog.Content className="DialogContent">
-            <Dialog.Title className="DialogTitle">Read more</Dialog.Title>
-            <Dialog.Description className="DialogDescription">
-              <div className="DialogScrollableContent">
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-                <p>...</p>
-              </div>
-            </Dialog.Description>
-            <div className="action-buttons">
-              {" "}
-              {/* New container for buttons */}
-              <fieldset className="Fieldset">
-                {" "}
-                {/* Optional for styling */}
-                <Dialog.Close asChild>
-                  <button className="Button green">Save changes</button>
-                </Dialog.Close>
-              </fieldset>
-              <Dialog.Close asChild>
-                <button className="IconButton" aria-label="Close">
-                  X
-                </button>
-              </Dialog.Close>
-            </div>
-          </Dialog.Content>
-        </Dialog.Portal>
-      </Dialog.Root>
-      <button className="open-modal-btn" onClick={handleOpenModal}>
-        See more
-      </button>
-
-      <ReactModal
-        isOpen={showModal}
-        contentLabel={`${title} Modal`}
-        onClose={handleCloseModal}
-        shouldCloseOnOverlayClick={true}
-        onEscapeKeyDown={() => {
-          console.log("Escape key pressed");
-          setShowModal(false);
-        }}
-        className="modal"
-        overlayClassName="modal-overlay"
-      >
-        <div className="modal-content">
-          <h2>{title}</h2>
-          <img src={image} alt="Image du projet" />
-          <p>{description}</p>
-          <ul>
-            {technologies.map((tech) => (
-              <li key={tech}>{tech}</li>
-            ))}
-          </ul>
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            Link to project
-          </a>
-          <button className="close-modal-btn" onClick={handleCloseModal}>
-            Close
-          </button>
-        </div>
-      </ReactModal>
+      <Bubo></Bubo>
 
       <style>
         {`
@@ -122,7 +19,9 @@ const Project = ({ title, description, image, technologies, link }) => {
             justify-content: center;
             flex-wrap: wrap;
             gap: 0px;
-            grid-template-columns: repeat(3, 1fr); /* Affiche 4 colonnes de largeur égale */
+            justify-content: center; /* Center items horizontally */
+            align-items: center; /* Center items vertically (optional for vertical centering) */          
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
           }
           
           
@@ -136,6 +35,14 @@ const Project = ({ title, description, image, technologies, link }) => {
             transition: all 0.2s ease-in-out;
             width: 300px; /* Adjust width as needed */
             display: inline-block; /* Allow multiple cards per row */
+          }
+
+
+          /* Media query for smaller screens (adjust breakpoint as needed) */
+          @media (max-width: 768px) {
+            .project-card {
+              max-width: 100%; /* Full width on smaller screens */
+            }
           }
 
           .project-card img {
