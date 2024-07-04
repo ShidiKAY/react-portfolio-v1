@@ -75,50 +75,28 @@ const Bubo = () => {
                   through APIs and shell scripts - Technical Expertise : Symfony
                   4/5, UIkit, GIT, SQL, DQL, Yarn, and ApexCharts
                 </span>
-                <hr></hr>
-                <h4>L'enreprise Objectif Cloud</h4>
-                <span>
-                  Objectif Cloud est une entreprise de Cyber Sécurité réalisant
-                  des prestations ayant pour vocation d’offrir une meilleure
-                  protection de la donnée et de l’information, et de prévenir
-                  les incidents de sécurité. En qualité de développeur, je
-                  réalise avec l'équipe, l'outil de supervision "BUBO Sentry"
-                  permettant aux entreprises d’avoir une vision globale de
-                  l’état de leur système d’information.
-                </span>
-                <hr></hr>
-                <h4>L'enreprise Objectif Cloud</h4>
-                <span>
-                  Objectif Cloud est une entreprise de Cyber Sécurité réalisant
-                  des prestations ayant pour vocation d’offrir une meilleure
-                  protection de la donnée et de l’information, et de prévenir
-                  les incidents de sécurité. En qualité de développeur, je
-                  réalise avec l'équipe, l'outil de supervision "BUBO Sentry"
-                  permettant aux entreprises d’avoir une vision globale de
-                  l’état de leur système d’information.
-                </span>
-                <hr></hr>
-                <h4>L'enreprise Objectif Cloud</h4>
-                <span>
-                  Objectif Cloud est une entreprise de Cyber Sécurité réalisant
-                  des prestations ayant pour vocation d’offrir une meilleure
-                  protection de la donnée et de l’information, et de prévenir
-                  les incidents de sécurité. En qualité de développeur, je
-                  réalise avec l'équipe, l'outil de supervision "BUBO Sentry"
-                  permettant aux entreprises d’avoir une vision globale de
-                  l’état de leur système d’information.
-                </span>
-                <hr></hr>
-                <h4>L'enreprise Objectif Cloud</h4>
-                <span>
-                  Objectif Cloud est une entreprise de Cyber Sécurité réalisant
-                  des prestations ayant pour vocation d’offrir une meilleure
-                  protection de la donnée et de l’information, et de prévenir
-                  les incidents de sécurité. En qualité de développeur, je
-                  réalise avec l'équipe, l'outil de supervision "BUBO Sentry"
-                  permettant aux entreprises d’avoir une vision globale de
-                  l’état de leur système d’information.
-                </span>
+
+                <div class="my-card">
+                  <h2>REFONTE GRAPHIQUE</h2>
+                  <hr></hr>
+
+                  <div class="my-card-body">
+                    Il s'agit de moderniser le site en le refactorisant d'une
+                    structure PHP native vers le framework Symfony 4.
+                  </div>
+
+                  <div class="my-card-inside">
+                    Le choix du plugin graphique - Analyse de l'existant :
+                    plugin Bootstrap. - Aventages : Implémentation simple,
+                    standards du wab, rapidement fonctionnel, responsive. -
+                    Inconvénients : thème difficile à personnaliser. Possède
+                    déjà un design avancé. Besoin d'une identité propre à
+                    l'application. - Comparaison avec UIkit, Sementic UI,
+                    Bootstrap. - Choix d'UIkit car se concentre sur la structure
+                    plutot que le design. Thème Material. Simple à faire évoluer
+                    avec le temps.
+                  </div>
+                </div>
               </div>
             </Dialog.Description>
 

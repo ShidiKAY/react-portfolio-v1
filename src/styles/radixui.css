@@ -30,6 +30,7 @@ input {
   width: 70%;
   /* height: 70%; */
   /* max-width: 750px;
+
   max-height: 95vh; */
   padding: 25px;
   animation: contentShow 150ms cubic-bezier(0.16, 1, 0.3, 1);
@@ -224,4 +225,40 @@ hr.star-primary:after {
     opacity: 1;
     transform: translate(-50%, -50%) scale(1);
   }
+}
+
+/* Content content card modal  */
+.card {
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.card-body {
+  padding: 15px;
+}
+
+/* Après (CSS personnalisé) */
+.my-card {
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+.my-card-body {
+  padding: 5px;
+  margin-bottom: 5px;
+}
+.my-card h2 {
+  padding-top: 20px;
+  padding-bottom: 15px;
+  font-size: 20px;
+  font-weight: 700;
+}
+.my-card-inside {
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 10px;
 }
