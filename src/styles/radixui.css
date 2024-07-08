@@ -248,11 +248,19 @@ hr.star-primary:after {
   padding: 5px;
   margin-bottom: 5px;
 }
-.my-card h2 {
+.DialogScrollableContent h2 {
   padding-top: 20px;
   padding-bottom: 15px;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
+  color: black;
+}
+.DialogScrollableContent h3 {
+  padding-top: 16px;
+  padding-bottom: 14px;
+  font-size: 17px;
+  font-weight: 700;
+  color: black;
 }
 .my-card-inside {
   border: 1px solid #e6e6e6;

@@ -3,7 +3,7 @@
     "language": "Langue",
     "selectLanguage": "Sélectionner la langue",
     "home": "Accueil",
-    "about": "À propos",
+    "about": "About",
     "contact": "Contact",
     "projects": "Projets",
     "seeMore": "Voir plus"
@@ -12,5 +12,48 @@
     "title": "Mon Portfolio",
     "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
     "noProjects": "Aucun projet à afficher pour le moment."
+  },
+  "projects": {
+    "bubo": {
+      "id": 1,
+      "introduction": {
+        "name": "Bubo Cybersec",
+        "title": "L'ENREPRISE OBJECTIF CLOUD",
+        "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience."
+      },
+      "description": "Aucun projet à afficher pour le moment.",
+      "tasks": {
+        "1": {
+          "title": "Aucun projet à afficher pour le moment.",
+          "text": [
+            "Aucun projet à afficher pour le moment.",
+            "Aucun projet à afficher pour le moment.",
+            "Aucun projet à afficher pour le moment."
+          ]
+        }
+      }
+    },
+    "hml": {
+      "id": 2,
+      "introduction": {
+        "title": "Hmal",
+        "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience."
+      },
+      "description": "Aucun projet à afficher pour le moment.",
+      "tasks": {
+        "1": {
+          "title": "Aucun projet à afficher pour le moment.",
+          "points": {
+            "1": {
+              "text": [
+                "Aucun projet à afficher pour le moment.",
+                "Aucun projet à afficher pour le moment.",
+                "Aucun projet à afficher pour le moment."
+              ]
+            }
+          }
+        }
+      }
+    }
   }
 }

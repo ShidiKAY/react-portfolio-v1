@@ -7,12 +7,14 @@ const Project = ({ title, description, image, technologies, link }) => {
   return (
     <div className="project-card">
       <img src={image} alt="Image du projet" />
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <Bubo></Bubo>
+      <div>
+        <h3>{title}</h3>
+        <p>{description}</p>
+        <Bubo></Bubo>
+      </div>
 
       <style>
-        {`
+        {`\
           /* Project card styles */
           .project-grid {
             display: grid;
@@ -33,7 +35,7 @@ const Project = ({ title, description, image, technologies, link }) => {
             padding: 20px;
             text-align: center;
             transition: all 0.2s ease-in-out;
-            width: 300px; /* Adjust width as needed */
+            width: 300px; /* Adjust width as needed */\
             display: inline-block; /* Allow multiple cards per row */
           }
 
