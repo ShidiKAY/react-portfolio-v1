@@ -24,7 +24,7 @@ const Bubo = () => {
               {t(`projects.bubo.introduction.name`)}
             </Dialog.Title>
             <hr className="star-primary"></hr>
-            <Dialog.Description className="DialogDescription">
+            <Dialog.Description className="DialogDescription px-18">
               <div className="DialogScrollableContent">
                 <p>{t(`projects.bubo.introduction.introduction`)}</p>
                 <hr></hr>
@@ -33,7 +33,7 @@ const Bubo = () => {
 
                 <h2>TÂCHES RÉALISÉES</h2>
 
-                <div className="my-card">
+                <div className="my-card px-10">
                   <h3>REFONTE GRAPHIQUE</h3>
                   <hr></hr>
 
@@ -41,14 +41,37 @@ const Bubo = () => {
                     Il s'agit de moderniser le site en le refactorisant d'une
                     structure PHP native vers le framework Symfony 4.
                   </div>
-                  <div className="my-card-inside">
-                    {t(`projects.bubo.tasks.1.text`, {
+                  {/* <div className="my-card-inside">
+                    {t(`projects.bubo.tasks.1.description`, {
                       returnObjects: true,
                     }).map((social) => (
                       <div>{social}</div>
                     ))}
+                  </div> */}
+                  <div>
+                    {t(`projects.bubo`, { returnObjects: true })?.tasks?.map(
+                      (task) =>
+                        Object.keys(task).map((id_task) => (
+                          // <div>{task[id_task].title}</div>
+                          <div key={id_task} className="my-card-inside">
+                            <div>{task[id_task].title}</div>
+                            {task[id_task].description?.map(
+                              (description, index) => (
+                                <div key={index}>{description}</div>
+                              )
+                            )}
+                            {task[id_task].img && (
+                              <div>
+                                <hr></hr>
+                                <img src={task[id_task].img} alt="Task Image" />
+                              </div>
+                            )}
+                          </div>
+                        ))
+                    )}
                   </div>
-                  <div class="my-card-inside">
+
+                  {/* <div class="my-card-inside">
                     Le choix du plugin graphique - Analyse de l'existant :
                     plugin Bootstrap. - Aventages : Implémentation simple,
                     standards du wab, rapidement fonctionnel, responsive. -
@@ -58,7 +81,7 @@ const Bubo = () => {
                     Bootstrap. - Choix d'UIkit car se concentre sur la structure
                     plutot que le design. Thème Material. Simple à faire évoluer
                     avec le temps.
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </Dialog.Description>
