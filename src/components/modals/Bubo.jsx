@@ -2,15 +2,12 @@ import * as Dialog from "@radix-ui/react-dialog";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const Bubo = (projectId) => {
+const Bubo = ({ projectId }) => {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
-  projectId = "bubo"; // Use quotes to match JSON key
-
-  // console.log(t(`projects`));
   return (
     <div>
       <Dialog.Root className="">
@@ -26,23 +23,27 @@ const Bubo = (projectId) => {
             <hr className="star-primary"></hr>
             <Dialog.Description className="DialogDescription px-44">
               <div className="DialogScrollableContent">
-                <p>{t(`projects.bubo.introduction.introduction`)}</p>
+                <p>{t(`projects.${projectId}.introduction.introduction`)}</p>
                 <hr></hr>
-                <h2>{t(`projects.bubo.introduction.title`)}</h2>
-                <span>{t(`projects.bubo.introduction.description`)}</span>
+                <h2>{t(`projects.${projectId}.introduction.title`)}</h2>
+                <span>
+                  {t(`projects.${projectId}.introduction.description`)}
+                </span>
 
                 <h2>TÂCHES RÉALISÉES</h2>
 
                 <div className="my-card px-10">
                   {/* <div className="my-card-inside">
-                    {t(`projects.bubo.tasks.1.description`, {
+                    {t(`projects.${projectId}.tasks.1.description`, {
                       returnObjects: true,
                     }).map((social) => (
                       <div>{social}</div>
                     ))}
                   </div> */}
                   <div>
-                    {t(`projects.bubo`, { returnObjects: true })?.tasks?.map(
+                    {t(`projects.${projectId}`, {
+                      returnObjects: true,
+                    })?.tasks?.map(
                       (task, dedex) => (
                         <div>
                           <h3>{task["group"].titre}</h3>
@@ -55,26 +56,26 @@ const Bubo = (projectId) => {
                             <div className="my-card-inside">
                               <div>
                                 {
-                                  t(`projects.bubo`, {
+                                  t(`projects.${projectId}`, {
                                     returnObjects: true,
                                   }).tasks[dedex]["data"][id_task].title
                                 }
                               </div>
-                              {t(`projects.bubo`, {
+                              {t(`projects.${projectId}`, {
                                 returnObjects: true,
                               }).tasks[dedex]["data"][id_task].description?.map(
                                 (description, index) => (
                                   <div key={index}>{description}</div>
                                 )
                               )}
-                              {t(`projects.bubo`, {
+                              {t(`projects.${projectId}`, {
                                 returnObjects: true,
                               }).tasks[dedex]["data"][id_task].img && (
                                 <div>
                                   <hr></hr>
                                   <img
                                     src={
-                                      t(`projects.bubo`, {
+                                      t(`projects.${projectId}`, {
                                         returnObjects: true,
                                       }).tasks[dedex]["data"][id_task].img
                                     }

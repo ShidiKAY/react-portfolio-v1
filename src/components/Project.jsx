@@ -3,14 +3,14 @@ import Bubo from "./modals/Bubo";
 
 import "/src/styles/radixui.css";
 
-const Project = ({ title, description, image, technologies, link }) => {
+const Project = ({ title, description, image, code, technologies, link }) => {
   return (
     <div className="project-card">
       <img src={image} alt="Image du projet" />
       <div>
         <h3>{title}</h3>
         <p>{description}</p>
-        <Bubo></Bubo>
+        <Bubo projectId={code}></Bubo>
       </div>
 
       <style>
