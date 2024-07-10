@@ -25,33 +25,60 @@
       "description": "Aucun projet à afficher pour le moment.",
       "tasks": [
         {
-          "1": {
-            "title": "Analyser de l'existant",
-            "description": [
-              "Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
-            ]
+          "group": {
+            "titre": "titre titre",
+            "intro": "intro intro"
           },
-          "2": {
-            "title": "Le choix de la technologie",
-            "description": [
-              "Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
-            ],
-            "img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png"
+          "data": {
+            "1": {
+              "title": "Analyser de l'existant",
+              "description": [
+                "Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+              ]
+            },
+            "2": {
+              "title": "Le choix de la technologie",
+              "description": [
+                "Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+              ],
+              "img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png"
+            },
+            "3": {
+              "title": "De Bubo à Bubo Symfony",
+              "description": [
+                "Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
+              ]
+            },
+            "4": {
+              "title": "4 pas beauRéalisation de la refactorisation",
+              "description": [
+                "- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
+                "- Génération des entitées doctrines depuis une base de donnée existante.",
+                "- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
+                "- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
+              ]
+            }
+          }
+        },
+        {
+          "group": {
+            "titre": "titre titre",
+            "intro": "intro intro"
           },
-          "3": {
-            "title": "De Bubo à Bubo Symfony",
-            "description": [
-              "Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
-            ]
-          },
-          "4": {
-            "title": "Réalisation de la refactorisation",
-            "description": [
-              "- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
-              "- Génération des entitées doctrines depuis une base de donnée existante.",
-              "- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
-              "- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
-            ]
+          "data": {
+            "1": {
+              "title": "2Quel boloss Analyser de l'existant",
+              "description": [
+                "2 Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+              ]
+            },
+            "2": {
+              "title": "Le choix de la technologie",
+              "description": [
+                "2 Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+              ],
+              "img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png"
+            }
           }
         }
       ]

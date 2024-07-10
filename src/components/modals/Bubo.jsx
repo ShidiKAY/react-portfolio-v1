@@ -2,13 +2,13 @@ import * as Dialog from "@radix-ui/react-dialog";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const Bubo = () => {
+const Bubo = (projectId) => {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
   };
-  const projectId = "bubo"; // Use quotes to match JSON key
+  projectId = "bubo"; // Use quotes to match JSON key
 
   // console.log(t(`projects`));
   return (
@@ -21,10 +21,10 @@ const Bubo = () => {
           <Dialog.Overlay className="DialogOverlay" />
           <Dialog.Content className="DialogContent">
             <Dialog.Title className="DialogTitle">
-              {t(`projects.bubo.introduction.name`)}
+              {t(`projects.${projectId}.introduction.name`)}
             </Dialog.Title>
             <hr className="star-primary"></hr>
-            <Dialog.Description className="DialogDescription px-18">
+            <Dialog.Description className="DialogDescription px-44">
               <div className="DialogScrollableContent">
                 <p>{t(`projects.bubo.introduction.introduction`)}</p>
                 <hr></hr>
@@ -34,13 +34,6 @@ const Bubo = () => {
                 <h2>TÂCHES RÉALISÉES</h2>
 
                 <div className="my-card px-10">
-                  <h3>REFONTE GRAPHIQUE</h3>
-                  <hr></hr>
-
-                  <div className="my-card-body">
-                    Il s'agit de moderniser le site en le refactorisant d'une
-                    structure PHP native vers le framework Symfony 4.
-                  </div>
                   {/* <div className="my-card-inside">
                     {t(`projects.bubo.tasks.1.description`, {
                       returnObjects: true,
@@ -50,24 +43,64 @@ const Bubo = () => {
                   </div> */}
                   <div>
                     {t(`projects.bubo`, { returnObjects: true })?.tasks?.map(
-                      (task) =>
-                        Object.keys(task).map((id_task) => (
-                          // <div>{task[id_task].title}</div>
-                          <div key={id_task} className="my-card-inside">
-                            <div>{task[id_task].title}</div>
-                            {task[id_task].description?.map(
-                              (description, index) => (
-                                <div key={index}>{description}</div>
-                              )
-                            )}
-                            {task[id_task].img && (
-                              <div>
-                                <hr></hr>
-                                <img src={task[id_task].img} alt="Task Image" />
-                              </div>
-                            )}
+                      (task, dedex) => (
+                        <div>
+                          <h3>{task["group"].titre}</h3>
+                          <hr></hr>
+                          <div className="my-card-body">
+                            {task["group"].intro}
                           </div>
-                        ))
+
+                          {Object.keys(task["data"]).map((id_task, index) => (
+                            <div className="my-card-inside">
+                              <div>
+                                {
+                                  t(`projects.bubo`, {
+                                    returnObjects: true,
+                                  }).tasks[dedex]["data"][id_task].title
+                                }
+                              </div>
+                              {t(`projects.bubo`, {
+                                returnObjects: true,
+                              }).tasks[dedex]["data"][id_task].description?.map(
+                                (description, index) => (
+                                  <div key={index}>{description}</div>
+                                )
+                              )}
+                              {t(`projects.bubo`, {
+                                returnObjects: true,
+                              }).tasks[dedex]["data"][id_task].img && (
+                                <div>
+                                  <hr></hr>
+                                  <img
+                                    src={
+                                      t(`projects.bubo`, {
+                                        returnObjects: true,
+                                      }).tasks[dedex]["data"][id_task].img
+                                    }
+                                    alt="Task Image"
+                                  />
+                                </div>
+                              )}
+                            </div>
+                          ))}
+                        </div>
+                      )
+
+                      // <div key={id_task} className="my-card-inside">
+                      //   <div>{task[id_task].title}</div>
+                      //   {task[id_task].description?.map(
+                      //     (description, index) => (
+                      //       <div key={index}>{description}</div>
+                      //     )
+                      //   )}
+                      //   {task[id_task].img && (
+                      //     <div>
+                      //       <hr></hr>
+                      //       <img src={task[id_task].img} alt="Task Image" />
+                      //     </div>
+                      //   )}
+                      // </div>
                     )}
                   </div>
 

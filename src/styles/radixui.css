@@ -23,12 +23,12 @@ input {
   box-shadow: hsl(206 22% 7% / 35%) 0px 10px 38px -10px,
     hsl(206 22% 7% / 20%) 0px 10px 20px -15px;
   position: fixed;
-  top: 55%;
+  top: 52%;
   left: 50%;
   transform: translate(-50%, -50%);
   /* width: 90vw; */
-  width: 80%;
-  /* height: 70%; */
+  width: 90%;
+  height: 95%;
   /* max-width: 750px;
 
   max-height: 95vh; */
@@ -97,7 +97,7 @@ hr.star-primary:after {
   line-height: 1.5;
 }
 .DialogScrollableContent {
-  max-height: 55vh;
+  max-height: 75vh;
   overflow-y: auto; /* Enable scrolling */
 }
 
