@@ -3,68 +3,23 @@ import Project from "./Project";
 
 const projects = [
   {
-    title: "Harmonia Mundi Livre",
-    code: "hml",
-    description:
-      "Les livres. Web application for connecting with friends and social networking.",
-    image: "/src/public/images/project-images/hml/logo.png",
-    technologies: ["Django", "Python", "JavaScript", "HTML", "CSS"],
-    link: "https://github.com/prasad-chavan1/Animesthetic-Social-Media",
+    projectId: "hml",
   },
   {
-    title: "BUBO CYBERSEC",
-    code: "bubo",
-    description:
-      "Développer un outil pour surveiller le système d'information (SI) des entreprises et améliorer sa qualité et la protection des données.",
-    image: "/src/public/images/project-images/bubo/logo.png",
-    technologies: ["Django", "Python", "JavaScript", "HTML", "CSS"],
-    link: "https://github.com/prasad-chavan1/Animesthetic-Social-Media",
+    projectId: "scf",
   },
   {
-    title: "BUBO CYBERSEC Freelance",
-    code: "bubo",
-    description:
-      "Développer un outil pour surveiller le système d'information (SI) des entreprises et améliorer sa qualité et la protection des données.",
-    image: "/src/public/images/project-images/bubo/logo.png",
-    technologies: ["Django", "Python", "JavaScript", "HTML", "CSS"],
-    link: "https://github.com/prasad-chavan1/Animesthetic-Social-Media",
+    projectId: "bubo",
   },
   {
-    title: "Hopps Group",
-    code: "bubo",
-    description:
-      "Web application for connecting with friends and social networking.",
-    image: "/src/public/images/project-images/bubo/logo.png",
-    technologies: ["Django", "Python", "JavaScript", "HTML", "CSS"],
-    link: "https://github.com/prasad-chavan1/Animesthetic-Social-Media",
+    projectId: "hopps",
   },
   {
-    title: "Projet personnel",
-    code: "bubo",
-    description:
-      "Web application for connecting with friends and social networking.",
-    image: "/src/public/images/project-images/bubo/logo.png",
-    technologies: ["Django", "Python", "JavaScript", "HTML", "CSS"],
-    link: "https://github.com/prasad-chavan1/Animesthetic-Social-Media",
+    projectId: "apigem",
   },
   {
-    title: "Apigem",
-    code: "bubo",
-    description:
-      "Web application for connecting with friends and social networking.",
-    image: "/src/public/images/project-images/bubo/logo.png",
-    technologies: ["Django", "Python", "JavaScript", "HTML", "CSS"],
-    link: "https://github.com/prasad-chavan1/Animesthetic-Social-Media",
+    projectId: "bubo",
   },
-  // {
-  //   title: "Animesthetic 4 Social Media",
-  //   description:
-  //     "Web application for connecting with friends and social networking.",
-  //   image: "/src/public/images/project-images/bubo/logo.png",
-  //   technologies: ["Django", "Python", "JavaScript", "HTML", "CSS"],
-  //   link: "https://github.com/prasad-chavan1/Animesthetic-Social-Media",
-  // },
-  // ... Add more project objects here
 ];
 
 const Projects = () => {

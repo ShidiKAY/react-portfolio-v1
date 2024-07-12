@@ -1,106 +1,492 @@
 {
-  "common": {
-    "language": "Langue",
-    "selectLanguage": "Sélectionner la langue",
-    "home": "Home",
-    "about": "About",
-    "contact": "Contact",
-    "projects": "Projets",
-    "seeMore": "Voir plus"
-  },
-  "portfolio": {
-    "title": "Mon Portfolio",
-    "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
-    "noProjects": "Aucun projet à afficher pour le moment."
-  },
-  "projects": {
-    "bubo": {
-      "id": 1,
-      "introduction": {
-        "name": "Bubo Cybersec",
-        "introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
-        "title": "The company OBJECTIF CLOUD",
-        "description": "Objectif Cloud is a cybersecurity company that provides services aimed at enhancing data and information protection, as well as preventing security incidents. As a developer on the team, I collaborate with my colleagues to create the \"BUBO Sentry\" monitoring tool, which empowers businesses to gain a comprehensive overview of their information system health. Key Contributions: - Design and develop dashboards featuring Key Performance Indicators (KPIs) - Implement dynamically loaded filters and tables - Facilitate interaction with other tools through APIs and shell scripts - Technical Expertise : Symfony 4/5, UIkit, GIT, SQL, DQL, Yarn, and ApexCharts."
-      },
-      "description": "Aucun projet à afficher pour le moment.",
-      "tasks": [
-        {
-          "group": {
-            "titre": "titre titre",
-            "intro": "intro intro"
-          },
-          "data": {
-            "1": {
-              "title": "Analyser de l'existant",
-              "description": [
-                "Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
-              ]
-            },
-            "2": {
-              "title": "Le choix de la technologie",
-              "description": [
-                "Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
-              ],
-              "img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png"
-            },
-            "3": {
-              "title": "De Bubo à Bubo Symfony",
-              "description": [
-                "Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
-              ]
-            },
-            "4": {
-              "title": "4 pas beauRéalisation de la refactorisation",
-              "description": [
-                "- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
-                "- Génération des entitées doctrines depuis une base de donnée existante.",
-                "- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
-                "- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
-              ]
-            }
-          }
-        },
-        {
-          "group": {
-            "titre": "titre titre",
-            "intro": "intro intro"
-          },
-          "data": {
-            "1": {
-              "title": "2Quel boloss Analyser de l'existant",
-              "description": [
-                "2 Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
-              ]
-            },
-            "2": {
-              "title": "Le choix de la technologie",
-              "description": [
-                "2 Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
-              ],
-              "img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png"
-            }
-          }
-        }
-      ]
-    },
-    "hml": {
-      "id": 2,
-      "introduction": {
-        "title": "Hml",
-        "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience."
-      },
-      "description": "Aucun projet à afficher pour le moment.",
-      "tasks": [
-        {
-          "1": {
-            "description": [
-              "Aucun projet à afficher pour le moment.",
-              "Aucun projet à afficher pour le moment.",
-              "Aucun projet à afficher pour le moment."
-            ]
-          }
-        }
-      ]
-    }
-  }
+	"common": {
+		"about": "About",
+		"contact": "Contact",
+		"home": "Home",
+		"language": "Langue",
+		"projects": "Projets",
+		"seeMore": "Voir plus",
+		"selectLanguage": "Sélectionner la langue"
+	},
+	"portfolio": {
+		"description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
+		"noProjects": "Aucun projet à afficher pour le moment.",
+		"title": "Mon Portfolio"
+	},
+	"projects": {
+		"apigem": {
+			"description": "Les livres. Web application for connecting with friends and social networking.",
+			"img": "/src/public/images/project-images/apigem/logo.png",
+			"introduction": {
+				"description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
+				"introduction": "",
+				"name": "Apigem web",
+				"title": "Apigem"
+			},
+			"tasks": [
+				{
+					"1": {
+						"description": [
+							"Aucun projet à afficher pour le moment.",
+							"Aucun projet à afficher pour le moment.",
+							"Aucun projet à afficher pour le moment."
+						]
+					},
+					"data": {
+						"1": {
+							"description": [
+								""
+							],
+							"title": ""
+						},
+						"2": {
+							"description": [
+								""
+							],
+							"img": "",
+							"title": ""
+						},
+						"3": {
+							"description": [
+								""
+							],
+							"title": ""
+						},
+						"4": {
+							"description": [
+								"",
+								"",
+								"",
+								""
+							],
+							"title": ""
+						}
+					},
+					"group": {
+						"intro": "",
+						"titre": ""
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								""
+							],
+							"title": ""
+						},
+						"2": {
+							"description": [
+								""
+							],
+							"img": "",
+							"title": ""
+						}
+					},
+					"group": {
+						"intro": "",
+						"titre": ""
+					}
+				}
+			]
+		},
+		"bubo": {
+			"description": "Développer un outil pour surveiller le système d'information (SI) des entreprises et améliorer sa qualité et la protection des données.",
+			"img": "/src/public/images/project-images/bubo/logo.png",
+			"introduction": {
+				"description": "Objectif Cloud is a cybersecurity company that provides services aimed at enhancing data and information protection, as well as preventing security incidents. As a developer on the team, I collaborate with my colleagues to create the \"BUBO Sentry\" monitoring tool, which empowers businesses to gain a comprehensive overview of their information system health. Key Contributions: - Design and develop dashboards featuring Key Performance Indicators (KPIs) - Implement dynamically loaded filters and tables - Facilitate interaction with other tools through APIs and shell scripts - Technical Expertise : Symfony 4/5, UIkit, GIT, SQL, DQL, Yarn, and ApexCharts.",
+				"introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
+				"name": "Bubo Cybersec",
+				"title": "OBJECTIF CLOUD"
+			},
+			"tasks": [
+				{
+					"data": {
+						"1": {
+							"description": [
+								"Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+							],
+							"title": "Analyser de l'existant"
+						},
+						"2": {
+							"description": [
+								"Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+							],
+							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+							"title": "Le choix de la technologie"
+						},
+						"3": {
+							"description": [
+								"Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
+							],
+							"title": "De Bubo à Bubo Symfony"
+						},
+						"4": {
+							"description": [
+								"- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
+								"- Génération des entitées doctrines depuis une base de donnée existante.",
+								"- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
+								"- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
+							],
+							"title": "Réalisation de la refactorisation"
+						}
+					},
+					"group": {
+						"intro": "Il s'agit de moderniser le site en le refactorisant d'une structure PHP native vers Symfony 4.",
+						"titre": "Refactorisation"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"- Analyse de l'existant : plugin Bootstrap.",
+								"- Aventages : Implémentation simple, standards du wab, rapidement fonctionnel, responsive.",
+								"- Inconvénients : thème difficile à personnaliser. Possède déjà un design avancé. Besoin d'une identité propre à l'application.",
+								"- Comparaison avec UIkit, Sementic UI, Bootstrap.",
+								"- Choix d'UIkit car se concentre sur la structure plutot que le design. Thème Material. Simple à faire évoluer avec le temps."
+							],
+							"title": "Le choix du plugin graphique"
+						},
+						"2": {
+							"description": [
+								"- Utilisation du gestionnaire de packages Yarn pour installer le librairie.",
+								"- Installation simple des plugins en ligne de commande.",
+								"- Inconvénients : thème difficile à personnaliser. Possède déjà un design avancé. Besoin d'une identité propre à l'application."
+							],
+							"title": "Installation d’UIkit"
+						},
+						"3": {
+							"description": [
+								"- Solution magique de Symfony pour gérer les assets du site.",
+								"- A son fichier de configuration pour renseigner la liste des assets que l'on veut charger comme UIkit et sa librairie d'icones.",
+								"- Permet de complier le CSS et le Javascript en les allégeant dans un repértoire public.",
+								"- En suite il suffit de pécifier l'entrée webpack dans le template twig..\n"
+							],
+							"img": "https://i.ibb.co/gVrbRTG/negestuser.png",
+							"title": "Le plugin Webpack Encore"
+						},
+						"4": {
+							"description": [
+								"- Réalisation du squelette du site. Bar horizontale pour les menus, couleurs et choix des icons. Police d'écriture et pied de page..",
+								"- Mise à jour des compteurs dans les dahsboard. Visuel parlant et épuré avec un rendu matérial.\t",
+								"- Le compteur possède un titre, une valeur numérique sur fond blanc avec un effet d'ombre. Le nombre de compteurs est défini par la taille de chaques colonnes.",
+								"- Mise à jour des tableaux bootstrap vers UIkit. Création d'un kit personnalisé pour tous les autres composants."
+							],
+							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+							"title": "Mise en place d’UIkit"
+						},
+						"5": {
+							"description": [
+								"- Analyse de l'existant : des courbes dans l'application montrant l'évolution des données.",
+								"- Inconvéniants : ne correspondent pas au nouveau design et aux futures fonctionnalités.",
+								"- Profiter de la refonte du design pour faire évoluer les courbes. Installation avec Yarn d'Apex Charts (plugin graphique basé sur graphJS).",
+								"- Avantages : Courbes modernes, colorés, affichées dynamyqment et supportant JQuery. Possibilité de zoomer sur une période et d'exporter.",
+								"- Validation de la cohérence des données"
+							],
+							"img": "https://kamalaityous.fr/img/portfolio/bubo/chartsfilt1.png",
+							"title": "Changement de plugin charts"
+						}
+					},
+					"group": {
+						"intro": "Il s'agit de moderniser le site en le refactorisant d'une structure PHP native vers le framework Symfony 4.",
+						"titre": "Refonte graphique"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"- Ajout d'un nouvel indicateur.",
+								"- Exploiter grace à l'application les données brutes envoyé par l'outil externe OpenVas qui est un scanneur de vulnérabilité.",
+								"- Signaler l'existance d'une vulnérabilité et signalier s'il est nécaéssaire de réaliser une action pour la gérer."
+							],
+							"img": "https://i.ibb.co/d4H97jB/Mockup-Dasboard-Principal.jpg",
+							"title": "Objectifs"
+						},
+						"2": {
+							"description": [
+								"- Analyse de l'existant : le script, la structure de la table, les spéficiations fonctionnelles et les maquettes graphiques.",
+								"- Création de l'entité Symfony avec Doctrine ainsi que les propriétés et les relations (détail de la vulnérabilité, systèmes vulnérables).",
+								"- J'utilise la date de la vulnérabilité pour savoir si elle est apparu plusieurs fois et avoir un historique de celle ci.",
+								"- Génération des modifications dans la base de données. Les données sont implémentés par le script. Le répository généré permet d'y accéder."
+							],
+							"img": "https://i.ibb.co/Ctd4CPH/gsv1.png",
+							"title": "Base de données"
+						},
+						"3": {
+							"description": [
+								"- Mise à jour du code de tous les tableaux de l'application pour l'optimisser et améliorer l'expérience utilisateur.",
+								"- Initialement, chaque tableau charge l'entièreté des données et se contente de les réorganiser avec un simple système de tris et de pagination.",
+								"- Après une étude des solution disponnibles avec Symfony pour chager dynamiquement les éléments à afficher.",
+								"- Implémentation de Knp Paginator, plugin pouvant charger un nombre de données spécifiées avec des paramètres contenus dans l'url en rendant triable, et paginé.",
+								"- S'il nécéssite de recharger la page pour apepler l'url, je l'ai étoffé avec Ajax. L'url est appelé dynamiquement avec javascript rendant le chargement invisible.",
+								"- Le tri et la paagination rechargent uniquement le tabelau et non la page, avec le nombre d'élément choisis. C'est plus rapide, plus simple à utiliser.",
+								"- La suite a été de diffuser ces modifications sur l'ensemble du site et les fonctions suivantes."
+							],
+							"img": "https://i.ibb.co/W036tzf/thumbnail-Vuln-rabilit-s-Dashboard.png",
+							"title": "Les tableaux dynamiques et paginés"
+						},
+						"4": {
+							"description": [
+								"- Création du contrôleur des vulnérabilités ainsi que des routes et fonctions nécéssaires.",
+								"- Réalisation des vues. Liste des systèmes, leur détail. Détail des vulnérabilités d'un système.",
+								"- Ajout de la possibilité d'exclure une vulnérabilité pour ne pas la prendre en compte lors du listage des systèmes vulnérables.",
+								"- Ajout de nombreuses métriques pertinentes avec une valeur numérique, une flèche de tendance en temps réel. Au clique, peuvent filtrer les autres informations.",
+								"- Ajout de graphiques comme le TOP des vulnérabilités, moyenne de vulnérabilités par machines."
+							],
+							"title": "Les vues graphiques"
+						}
+					},
+					"group": {
+						"intro": "Répertorier les vulnérabilités, scanner des machines, et identifier les machines vulnérabes. Formater les données sur le tableau de bord.",
+						"titre": "Ajout d'un nouvel indicateur de gestion"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"- Après chaque Sprint de développement, réalisation d'un recettage complet. Mettre en évidence disfonctionnements, fautes.",
+								"- Planifier les corrections pour le Sprint suivant.",
+								"- En cas de modification majeure, il s'agit d'évolution nécéssitant une phase de conception."
+							],
+							"title": "Correction de bug"
+						},
+						"2": {
+							"description": [
+								"- Phase de développement non négligeable.",
+								"- Réflexion généralement à plusieurs quant au socle technique d'une nouvelle évlution.",
+								"- Mise en accord sur la vision de l'évolution avant sa planification."
+							],
+							"title": "Conception"
+						},
+						"3": {
+							"description": [
+								"- Une modification majeure ou bien l'ajout d'une fonctionnalité.",
+								"- Une amélioration pour l'application.",
+								"- Nécéssite généralement une phase de conception et terminé.",
+								"- Le recettage permet d'assurer son fonctionnement et sa conformité avec ce qui a été prévu."
+							],
+							"title": "Evolution"
+						},
+						"4": {
+							"description": [
+								"- Déployer la solution chez des entreprises pilotes.",
+								"- Obtenir des retours précieux donnant un avis sur le terrain du besoin réel.",
+								"- Forte valeur ajoutée pour les deux parties."
+							],
+							"title": "Mise en production chez des entreprises pilotes"
+						}
+					},
+					"group": {
+						"intro": "Tâches réalisées quotidiennement en tant que développeur.",
+						"titre": "Travail en continue"
+					}
+				}
+			]
+		},
+		"hml": {
+			"description": "Les livres. Web application for connecting with friends and social networking.",
+			"img": "/src/public/images/project-images/hml/logo.png",
+			"introduction": {
+				"description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
+				"introduction": "",
+				"name": "Medbiabase",
+				"title": "Harmonia Mundi Livre"
+			},
+			"tasks": [
+				{
+					"1": {
+						"description": [
+							"Aucun projet à afficher pour le moment.",
+							"Aucun projet à afficher pour le moment.",
+							"Aucun projet à afficher pour le moment."
+						]
+					},
+					"data": {
+						"1": {
+							"description": [
+								""
+							],
+							"title": ""
+						},
+						"2": {
+							"description": [
+								""
+							],
+							"img": "",
+							"title": ""
+						},
+						"3": {
+							"description": [
+								""
+							],
+							"title": ""
+						},
+						"4": {
+							"description": [
+								"",
+								"",
+								"",
+								""
+							],
+							"title": ""
+						}
+					},
+					"group": {
+						"intro": "",
+						"titre": ""
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								""
+							],
+							"title": ""
+						},
+						"2": {
+							"description": [
+								""
+							],
+							"img": "",
+							"title": ""
+						}
+					},
+					"group": {
+						"intro": "",
+						"titre": ""
+					}
+				}
+			]
+		},
+		"hopps": {
+			"description": "Les livres. Web application for connecting with friends and social networking.",
+			"img": "/src/public/images/project-images/hopps/logo.png",
+			"introduction": {
+				"description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
+				"introduction": "",
+				"name": "Hopps Group",
+				"title": "AlertCenter"
+			},
+			"tasks": [
+				{
+					"1": {
+						"description": [
+							"Aucun projet à afficher pour le moment.",
+							"Aucun projet à afficher pour le moment.",
+							"Aucun projet à afficher pour le moment."
+						]
+					},
+					"data": {
+						"1": {
+							"description": [
+								""
+							],
+							"title": ""
+						},
+						"2": {
+							"description": [
+								""
+							],
+							"img": "",
+							"title": ""
+						},
+						"3": {
+							"description": [
+								""
+							],
+							"title": ""
+						},
+						"4": {
+							"description": [
+								"",
+								"",
+								"",
+								""
+							],
+							"title": ""
+						}
+					},
+					"group": {
+						"intro": "",
+						"titre": ""
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								""
+							],
+							"title": ""
+						},
+						"2": {
+							"description": [
+								""
+							],
+							"img": "",
+							"title": ""
+						}
+					},
+					"group": {
+						"intro": "",
+						"titre": ""
+					}
+				}
+			]
+		},
+		"scf": {
+			"description": "Les livres. Web application for connecting with friends and social networking.",
+			"img": "/src/public/images/project-images/scf/logo.png",
+			"introduction": {
+				"description": "description",
+				"introduction": "Projet personnel visant à devenir un support supplémentaire pour une communauté de 6000 utilisateurs sur une application de tchat (Discord)\nLe jeu en rapport avec le site est en déveollopement, et tous les contenus sont en anglais actuellement. Nous proposons une alternative pour la communauté francophone !",
+				"name": "Star Citizen Francophone Web",
+				"title": "Star Citizen Francophone"
+			},
+			"tasks": [
+				{
+					"data": {
+						"1": {
+							"description": [
+								"- Créer un espace de référencement des utilisateurs francophones et des organisations francophones venant du Discord.",
+								"- Rendre l'ajout des données simple et automatiques à l'aide d'un scrappeur de données.",
+								"- Créer des outils utiles et modulaires tels que la gestion de flottes, création d'évenements et consultation d'un wiki.",
+								"- Garder une application compatible avec d'autres technologies grace à l'ingration d'une api dans la V2."
+							],
+							"title": "Missions"
+						}
+					},
+					"group": {
+						"intro": "Créer une application complte et utile pour une communauté déjà existante avec des besoins connus.",
+						"titre": "FONCTIONNALITÉ CLÉS"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								""
+							],
+							"title": ""
+						},
+						"2": {
+							"description": [
+								""
+							],
+							"img": "",
+							"title": ""
+						}
+					},
+					"group": {
+						"intro": "Data Interceptor est un service de l’application. Il est issue de l’api http://sc-api.com/ open source qui a été adaptée ici afin qu’elle soit utilisé comme service. Ainsi, nous n’appelons plus de route, il n’y a plus d’api. Nous utilisons directement les fonctions du service.",
+						"titre": "DATA INTERCEPTOR"
+					}
+				}
+			]
+		}
+	}
 }

@@ -1,16 +1,29 @@
 import React from "react";
 import Bubo from "./modals/Bubo";
+import { useTranslation } from "react-i18next";
 
 import "/src/styles/radixui.css";
 
-const Project = ({ title, description, image, code, technologies, link }) => {
+const Project = ({
+  title,
+  description,
+  image,
+  projectId,
+  technologies,
+  link,
+}) => {
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
   return (
     <div className="project-card">
-      <img src={image} alt="Image du projet" />
+      <img src={t(`projects.${projectId}.img`)} alt="Image du projet" />
       <div>
-        <h3>{title}</h3>
-        <p>{description}</p>
-        <Bubo projectId={code}></Bubo>
+        <h3> {t(`projects.${projectId}.introduction.name`)}</h3>
+        <p>{t(`projects.${projectId}.description`)}</p>
+        <Bubo projectId={projectId}></Bubo>
       </div>
 
       <style>

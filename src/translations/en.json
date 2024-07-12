@@ -1,156 +1,492 @@
 {
-  "common": {
-    "language": "Langue",
-    "selectLanguage": "Sélectionner la langue",
-    "home": "Home",
-    "about": "About",
-    "contact": "Contact",
-    "projects": "Projets",
-    "seeMore": "Voir plus"
-  },
-  "portfolio": {
-    "title": "Mon Portfolio",
-    "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
-    "noProjects": "Aucun projet à afficher pour le moment."
-  },
-  "projects": {
-    "bubo": {
-      "id": 1,
-      "introduction": {
-        "name": "Bubo Cybersec",
-        "introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
-        "title": "The company OBJECTIF CLOUD",
-        "description": "Objectif Cloud is a cybersecurity company that provides services aimed at enhancing data and information protection, as well as preventing security incidents. As a developer on the team, I collaborate with my colleagues to create the \"BUBO Sentry\" monitoring tool, which empowers businesses to gain a comprehensive overview of their information system health. Key Contributions: - Design and develop dashboards featuring Key Performance Indicators (KPIs) - Implement dynamically loaded filters and tables - Facilitate interaction with other tools through APIs and shell scripts - Technical Expertise : Symfony 4/5, UIkit, GIT, SQL, DQL, Yarn, and ApexCharts."
-      },
-      "description": "Aucun projet à afficher pour le moment.",
-      "tasks": [
-        {
-          "group": {
-            "titre": "titre titre",
-            "intro": "intro intro"
-          },
-          "data": {
-            "1": {
-              "title": "Analyser de l'existant",
-              "description": [
-                "Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
-              ]
-            },
-            "2": {
-              "title": "Le choix de la technologie",
-              "description": [
-                "Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
-              ],
-              "img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png"
-            },
-            "3": {
-              "title": "De Bubo à Bubo Symfony",
-              "description": [
-                "Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
-              ]
-            },
-            "4": {
-              "title": "4 pas beauRéalisation de la refactorisation",
-              "description": [
-                "- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
-                "- Génération des entitées doctrines depuis une base de donnée existante.",
-                "- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
-                "- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
-              ]
-            }
-          }
-        },
-        {
-          "group": {
-            "titre": "titre titre",
-            "intro": "intro intro"
-          },
-          "data": {
-            "1": {
-              "title": "2Quel boloss Analyser de l'existant",
-              "description": [
-                "2 Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
-              ]
-            },
-            "2": {
-              "title": "Le choix de la technologie",
-              "description": [
-                "2 Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
-              ],
-              "img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png"
-            }
-          }
-        }
-      ]
-    },
-    "hml": {
-      "id": 1,
-      "introduction": {
-        "name": "Bubo Cybersec",
-        "introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
-        "title": "The company OBJECTIF CLOUD",
-        "description": "Objectif Cloud is a cybersecurity company that provides services aimed at enhancing data and information protection, as well as preventing security incidents. As a developer on the team, I collaborate with my colleagues to create the \"BUBO Sentry\" monitoring tool, which empowers businesses to gain a comprehensive overview of their information system health. Key Contributions: - Design and develop dashboards featuring Key Performance Indicators (KPIs) - Implement dynamically loaded filters and tables - Facilitate interaction with other tools through APIs and shell scripts - Technical Expertise : Symfony 4/5, UIkit, GIT, SQL, DQL, Yarn, and ApexCharts."
-      },
-      "description": "Aucun projet à afficher pour le moment.",
-      "tasks": [
-        {
-          "group": {
-            "titre": "titre titre",
-            "intro": "intro intro"
-          },
-          "data": {
-            "1": {
-              "title": "Analyser de l'existant",
-              "description": [
-                "Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
-              ]
-            },
-            "2": {
-              "title": "Le choix de la technologie",
-              "description": [
-                "Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
-              ],
-              "img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png"
-            },
-            "3": {
-              "title": "De Bubo à Bubo Symfony",
-              "description": [
-                "Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
-              ]
-            },
-            "4": {
-              "title": "4 pas beauRéalisation de la refactorisation",
-              "description": [
-                "- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
-                "- Génération des entitées doctrines depuis une base de donnée existante.",
-                "- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
-                "- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
-              ]
-            }
-          }
-        },
-        {
-          "group": {
-            "titre": "titre titre",
-            "intro": "intro intro"
-          },
-          "data": {
-            "1": {
-              "title": "2Quel boloss Analyser de l'existant",
-              "description": [
-                "2 Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
-              ]
-            },
-            "2": {
-              "title": "Le choix de la technologie",
-              "description": [
-                "2 Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
-              ],
-              "img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png"
-            }
-          }
-        }
-      ]
-    }
-  }
+	"common": {
+		"about": "About",
+		"contact": "Contact",
+		"home": "Home",
+		"language": "Langue",
+		"projects": "Projets",
+		"seeMore": "Voir plus",
+		"selectLanguage": "Sélectionner la langue"
+	},
+	"portfolio": {
+		"description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
+		"noProjects": "Aucun projet à afficher pour le moment.",
+		"title": "Mon Portfolio"
+	},
+	"projects": {
+		"apigem": {
+			"description": "Books. Web application for connecting with friends and social networking.",
+			"img": "/src/public/images/project-images/apigem/logo.png",
+			"introduction": {
+				"description": "Objectif Cloud is a cybersecurity company that provides services aimed at enhancing data and information protection, as well as preventing security incidents. As a developer on the team, I collaborate with my colleagues to create the \"BUBO Sentry\" monitoring tool, which empowers businesses to gain a comprehensive overview of their information system health. Key Contributions: - Design and develop dashboards featuring Key Performance Indicators (KPIs) - Implement dynamically loaded filters and tables - Facilitate interaction with other tools through APIs and shell scripts - Technical Expertise : Symfony 4/5, UIkit, GIT, SQL, DQL, Yarn, and ApexCharts.",
+				"introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
+				"name": "Apigem web",
+				"title": "Apigem"
+			},
+			"tasks": [
+				{
+					"1": {
+						"description": [
+							"",
+							"",
+							""
+						]
+					},
+					"data": {
+						"1": {
+							"description": [
+								"Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+							],
+							"title": "Analyser de l'existant"
+						},
+						"2": {
+							"description": [
+								"Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+							],
+							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+							"title": "Le choix de la technologie"
+						},
+						"3": {
+							"description": [
+								"Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
+							],
+							"title": "De Bubo à Bubo Symfony"
+						},
+						"4": {
+							"description": [
+								"- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
+								"- Génération des entitées doctrines depuis une base de donnée existante.",
+								"- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
+								"- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
+							],
+							"title": "4 pas beauRéalisation de la refactorisation"
+						}
+					},
+					"group": {
+						"intro": "intro intro",
+						"titre": "titre titre"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"2 Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+							],
+							"title": "2Quel boloss Analyser de l'existant"
+						},
+						"2": {
+							"description": [
+								"2 Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+							],
+							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+							"title": "Le choix de la technologie"
+						}
+					},
+					"group": {
+						"intro": "intro intro",
+						"titre": "titre titre"
+					}
+				}
+			]
+		},
+		"bubo": {
+			"description": "Develop a tool to monitor the information system (IS) of companies and improve its quality and data protection.",
+			"img": "/src/public/images/project-images/bubo/logo.png",
+			"introduction": {
+				"description": "Objectif Cloud is a cybersecurity company that provides services aimed at enhancing data and information protection, as well as preventing security incidents. As a developer on the team, I collaborate with my colleagues to create the \"BUBO Sentry\" monitoring tool, which empowers businesses to gain a comprehensive overview of their information system health. Key Contributions: - Design and develop dashboards featuring Key Performance Indicators (KPIs) - Implement dynamically loaded filters and tables - Facilitate interaction with other tools through APIs and shell scripts - Technical Expertise : Symfony 4/5, UIkit, GIT, SQL, DQL, Yarn, and ApexCharts.",
+				"introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
+				"name": "Bubo Cybersec",
+				"title": "OBJECTIF CLOUD"
+			},
+			"tasks": [
+				{
+					"data": {
+						"1": {
+							"description": [
+								"A website in native Php 7. An HTML CSS template. Dashboards and indicators. MySql database"
+							],
+							"title": "Analyze the existing"
+						},
+						"2": {
+							"description": [
+								"Objectives: Modernize, avoid redundancy. Object-oriented programming, MVC structure."
+							],
+							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+							"title": "The choice of technology"
+						},
+						"3": {
+							"description": [
+								"Reuse of the existing (Php). Time saving. Templatize. Structure files. Webpack for assets."
+							],
+							"title": "From Bubo to Bubo Symfony"
+						},
+						"4": {
+							"description": [
+								"- Creation of the database for Symfony so that it can work with Doctrine.",
+								"- Génération des entitées doctrines depuis une base de donnée existante.",
+								"- Import assets to use them with WebPack and compile them for readability and performance reasons.",
+								"- Repartition of php and javascript functions so as not to have to recreate the entire site and keep the existing one.."
+							],
+							"title": "Performing the refactoring"
+						}
+					},
+					"group": {
+						"intro": "This involves modernizing the site by refactoring it from a native PHP structure to Symfony 4.",
+						"titre": "Refactoring"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"- Analysis of the existing: Bootstrap plugin.",
+								"- Advantages: Simple implementation, wab standards, quickly functional, responsive.",
+								"- Disadvantages: theme difficult to customize. Already has an advanced design. Need an application-specific identity.",
+								"- Comparison with UIkit, Sementic UI, Bootstrap.",
+								"- Choice of UIkit because it focuses on structure rather than design. Material theme. Simple to evolve over time."
+							],
+							"title": "The choice of graphics plugin"
+						},
+						"2": {
+							"description": [
+								"- Use of the Yarn package manager to install the library.",
+								"- Simple command line installation of plugins.",
+								"- Disadvantages: theme difficult to customize. Already has an advanced design. Need an application-specific identity."
+							],
+							"title": "Installing UIkit"
+						},
+						"3": {
+							"description": [
+								"- Magical solution from Symfony to manage site assets.",
+								"- Its configuration file to fill in the list of assets that you want to load like UIkit and its icon library.",
+								"- Allows you to combine CSS and Javascript by reducing them into a public directory.",
+								"- Then simply specify the webpack entry in the branch template.\n"
+							],
+							"img": "https://i.ibb.co/gVrbRTG/negestuser.png",
+							"title": "The Webpack Encore plugin"
+						},
+						"4": {
+							"description": [
+								"- Creation of the skeleton of the site. Horizontal bar for menus, colors and choice of icons. Font and footer..",
+								"- Updated counters in dahsboards. Speaking and refined visual with a material rendering.\t",
+								"- The counter has a title, a numerical value on a white background with a shadow effect. The number of counters is defined by the size of each column.",
+								"- Updated bootstrap tables to UIkit. Creation of a custom kit for all other components."
+							],
+							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+							"title": "Setting up UIkit"
+						},
+						"5": {
+							"description": [
+								"- Analysis of the existing situation: curves in the application showing the evolution of the data.",
+								"- Disadvantages: do not match the new design and future features.",
+								"- Take advantage of the redesign of the design to evolve the curves. Installation with Yarn of Apex Charts (graph plugin based on graphJS).",
+								"- Advantages: Modern curves, colorful, dynamically displayed and supporting JQuery. Ability to zoom in on a period and export.",
+								"- Validation of data consistency"
+							],
+							"img": "https://kamalaityous.fr/img/portfolio/bubo/chartsfilt1.png",
+							"title": "Change of charts plugin"
+						}
+					},
+					"group": {
+						"intro": "This involves modernizing the site by refactoring it from a native PHP structure to the Symfony 4 framework.",
+						"titre": "Graphic redesign"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"- Added a new indicator.",
+								"- Use the application to exploit the raw data sent by the external tool OpenVas which is a vulnerability scanner.",
+								"- Report the existence of a vulnerability and indicate whether it is necessary to take action to manage it."
+							],
+							"img": "https://i.ibb.co/d4H97jB/Mockup-Dasboard-Principal.jpg",
+							"title": "Goals"
+						},
+						"2": {
+							"description": [
+								"- Analysis of the existing: the script, the structure of the table, the functional specifications and the graphic models.",
+								"- Creation of the Symfony entity with Doctrine as well as the properties and relationships (vulnerability details, vulnerable systems).",
+								"- I use the date of the vulnerability to know if it has appeared several times and to have a history of it.",
+								"- Generation of modifications in the database. The data is implemented by the script. The generated repository allows access to it."
+							],
+							"img": "https://i.ibb.co/Ctd4CPH/gsv1.png",
+							"title": "Database"
+						},
+						"3": {
+							"description": [
+								"- Updated the code of all tables in the application to optimize it and improve the user experience.",
+								"- Initially, each table loads the entire data and simply reorganizes it with a simple sorting and pagination system.",
+								"- After a study of the solutions available with Symfony to dynamically change the elements to display.",
+								"- Implementation of Knp Paginator, a plugin that can load a number of data specified with parameters contained in the url, making it sortable and paginated.",
+								"- If it requires reloading the page to call the url, I enhanced it with Ajax. The url is called dynamically with javascript making the loading invisible.",
+								"- Sorting and pagination only reloads the table and not the page, with the number of elements chosen. It's faster, easier to use.",
+								"- The next step was to disseminate these modifications throughout the site and the following functions."
+							],
+							"img": "https://i.ibb.co/W036tzf/thumbnail-Vuln-rabilit-s-Dashboard.png",
+							"title": "Dynamic and paginated tables"
+						},
+						"4": {
+							"description": [
+								"- Creation of the vulnerability controller as well as the necessary routes and functions.",
+								"- Creation of views. List of systems, their details. Details of system vulnerabilities.",
+								"- Added the possibility of excluding a vulnerability so as not to take it into account when listing vulnerable systems.",
+								"- Added many relevant metrics with numerical value, real-time trend arrow. At the click, you can filter the other information.",
+								"- Added graphs such as TOP vulnerabilities, average vulnerabilities per machine."
+							],
+							"title": "Graphical views"
+						}
+					},
+					"group": {
+						"intro": "List vulnerabilities, scan machines, and identify vulnerable machines. Format data on dashboard.",
+						"titre": "Added a new management indicator"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"- After each development Sprint, carrying out a complete retesting. Highlight malfunctions and faults.",
+								"- Plan corrections for the next Sprint.",
+								"- In the event of a major modification, this is an evolution requiring a design phase."
+							],
+							"title": "Bug fix"
+						},
+						"2": {
+							"description": [
+								"- Significant development phase.",
+								"- Generally thinking among several people about the technical base of a new development.",
+								"- Agreeing on the vision of the evolution before planning it."
+							],
+							"title": "Design"
+						},
+						"3": {
+							"description": [
+								"- A major modification or the addition of a functionality.",
+								"- An improvement for the application.",
+								"- Usually requires a design phase and completed.",
+								"- Retesting ensures its operation and conformity with what was planned."
+							],
+							"title": "Evolution"
+						},
+						"4": {
+							"description": [
+								"- Deploy the solution to pilot companies.",
+								"- Obtain valuable feedback giving an opinion on the field of real need.",
+								"- High added value for both parties."
+							],
+							"title": "Start of production at pilot companies"
+						}
+					},
+					"group": {
+						"intro": "Tasks performed daily as a developer.",
+						"titre": "Continuous work"
+					}
+				}
+			]
+		},
+		"hml": {
+			"description": "Books. Web application for connecting with friends and social networking.",
+			"img": "/src/public/images/project-images/hml/logo.png",
+			"introduction": {
+				"description": "Objectif Cloud is a cybersecurity company that provides services aimed at enhancing data and information protection, as well as preventing security incidents. As a developer on the team, I collaborate with my colleagues to create the \"BUBO Sentry\" monitoring tool, which empowers businesses to gain a comprehensive overview of their information system health. Key Contributions: - Design and develop dashboards featuring Key Performance Indicators (KPIs) - Implement dynamically loaded filters and tables - Facilitate interaction with other tools through APIs and shell scripts - Technical Expertise : Symfony 4/5, UIkit, GIT, SQL, DQL, Yarn, and ApexCharts.",
+				"introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
+				"name": "Mediabase",
+				"title": "Harmonia Mundi Livre"
+			},
+			"tasks": [
+				{
+					"1": {
+						"description": [
+							"",
+							"",
+							""
+						]
+					},
+					"data": {
+						"1": {
+							"description": [
+								"Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+							],
+							"title": "Analyser de l'existant"
+						},
+						"2": {
+							"description": [
+								"Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+							],
+							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+							"title": "Le choix de la technologie"
+						},
+						"3": {
+							"description": [
+								"Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
+							],
+							"title": "De Bubo à Bubo Symfony"
+						},
+						"4": {
+							"description": [
+								"- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
+								"- Génération des entitées doctrines depuis une base de donnée existante.",
+								"- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
+								"- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
+							],
+							"title": "4 pas beauRéalisation de la refactorisation"
+						}
+					},
+					"group": {
+						"intro": "intro intro",
+						"titre": "titre titre"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"2 Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+							],
+							"title": "2Quel boloss Analyser de l'existant"
+						},
+						"2": {
+							"description": [
+								"2 Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+							],
+							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+							"title": "Le choix de la technologie"
+						}
+					},
+					"group": {
+						"intro": "intro intro",
+						"titre": "titre titre"
+					}
+				}
+			]
+		},
+		"hopps": {
+			"description": "Books. Web application for connecting with friends and social networking.",
+			"img": "/src/public/images/project-images/hopps/logo.png",
+			"introduction": {
+				"description": "Objectif Cloud is a cybersecurity company that provides services aimed at enhancing data and information protection, as well as preventing security incidents. As a developer on the team, I collaborate with my colleagues to create the \"BUBO Sentry\" monitoring tool, which empowers businesses to gain a comprehensive overview of their information system health. Key Contributions: - Design and develop dashboards featuring Key Performance Indicators (KPIs) - Implement dynamically loaded filters and tables - Facilitate interaction with other tools through APIs and shell scripts - Technical Expertise : Symfony 4/5, UIkit, GIT, SQL, DQL, Yarn, and ApexCharts.",
+				"introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
+				"name": "Hopps Group",
+				"title": "AlertCenter"
+			},
+			"tasks": [
+				{
+					"1": {
+						"description": [
+							"",
+							"",
+							""
+						]
+					},
+					"data": {
+						"1": {
+							"description": [
+								"Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+							],
+							"title": "Analyser de l'existant"
+						},
+						"2": {
+							"description": [
+								"Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+							],
+							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+							"title": "Le choix de la technologie"
+						},
+						"3": {
+							"description": [
+								"Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
+							],
+							"title": "De Bubo à Bubo Symfony"
+						},
+						"4": {
+							"description": [
+								"- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
+								"- Génération des entitées doctrines depuis une base de donnée existante.",
+								"- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
+								"- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
+							],
+							"title": "4 pas beauRéalisation de la refactorisation"
+						}
+					},
+					"group": {
+						"intro": "intro intro",
+						"titre": "titre titre"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"2 Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+							],
+							"title": "2Quel boloss Analyser de l'existant"
+						},
+						"2": {
+							"description": [
+								"2 Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+							],
+							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+							"title": "Le choix de la technologie"
+						}
+					},
+					"group": {
+						"intro": "intro intro",
+						"titre": "titre titre"
+					}
+				}
+			]
+		},
+		"scf": {
+			"description": "Books. Web application for connecting with friends and social networking.",
+			"img": "/src/public/images/project-images/scf/logo.png",
+			"introduction": {
+				"description": "description",
+				"introduction": "Projet personnel visant à devenir un support supplémentaire pour une communauté de 6000 utilisateurs sur une application de tchat (Discord)\nLe jeu en rapport avec le site est en déveollopement, et tous les contenus sont en anglais actuellement. Nous proposons une alternative pour la communauté francophone !",
+				"name": "Star Citizen Francophone Web",
+				"title": "Star Citizen Francophone"
+			},
+			"tasks": [
+				{
+					"data": {
+						"1": {
+							"description": [
+								"- Create a referencing space for French-speaking users and French-speaking organizations coming from Discord.",
+								"- Make adding data simple and automatic using a data scrapper.",
+								"- Create useful and modular tools such as fleet management, event creation and consultation of a wiki.",
+								"- Keep an application compatible with other technologies thanks to the ingestion of an API in V2."
+							],
+							"title": "Missions"
+						}
+					},
+					"group": {
+						"intro": "Create a complete and useful application for an already existing community with known needs.",
+						"titre": "Key Features"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"2 Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+							],
+							"title": "2Quel boloss Analyser de l'existant"
+						},
+						"2": {
+							"description": [
+								"2 Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+							],
+							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+							"title": "Le choix de la technologie"
+						}
+					},
+					"group": {
+						"intro": "Data Interceptor est un service de l’application. Il est issue de l’api http://sc-api.com/ open source qui a été adaptée ici afin qu’elle soit utilisé comme service. Ainsi, nous n’appelons plus de route, il n’y a plus d’api. Nous utilisons directement les fonctions du service.",
+						"titre": "DATA INTERCEPTOR"
+					}
+				}
+			]
+		}
+	}
 }

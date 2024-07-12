@@ -45,7 +45,7 @@ const Bubo = ({ projectId }) => {
                       returnObjects: true,
                     })?.tasks?.map(
                       (task, dedex) => (
-                        <div>
+                        <div key={dedex}>
                           <h3>{task["group"].titre}</h3>
                           <hr></hr>
                           <div className="my-card-body">
@@ -53,7 +53,7 @@ const Bubo = ({ projectId }) => {
                           </div>
 
                           {Object.keys(task["data"]).map((id_task, index) => (
-                            <div className="my-card-inside">
+                            <div key={index} className="my-card-inside">
                               <div>
                                 {
                                   t(`projects.${projectId}`, {
