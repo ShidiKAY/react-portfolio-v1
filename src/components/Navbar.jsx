@@ -142,7 +142,7 @@ const Navbar = () => {
                   </div>
                   <div>
                     <a
-                      href="https://www.linkedin.com/in/prasad-chavan2003/"
+                      href="https://www.linkedin.com/in/kamal-ait-yous-90a6a3178/"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
