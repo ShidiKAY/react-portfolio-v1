@@ -1,17 +1,10 @@
 import React from "react";
-import Bubo from "./modals/Bubo";
+import ProjectModal from "./modals/ProjectModal";
 import { useTranslation } from "react-i18next";
 
 import "/src/styles/radixui.css";
 
-const Project = ({
-  title,
-  description,
-  image,
-  projectId,
-  technologies,
-  link,
-}) => {
+const Project = ({ projectId }) => {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -23,7 +16,7 @@ const Project = ({
       <div>
         <h3> {t(`projects.${projectId}.introduction.name`)}</h3>
         <p>{t(`projects.${projectId}.description`)}</p>
-        <Bubo projectId={projectId}></Bubo>
+        <ProjectModal projectId={projectId}></ProjectModal>
       </div>
 
       <style>

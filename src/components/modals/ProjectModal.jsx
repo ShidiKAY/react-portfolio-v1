@@ -2,7 +2,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-const Bubo = ({ projectId }) => {
+const ProjectModal = ({ projectId }) => {
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (lng) => {
@@ -21,7 +21,7 @@ const Bubo = ({ projectId }) => {
               {t(`projects.${projectId}.introduction.name`)}
             </Dialog.Title>
             <hr className="star-primary"></hr>
-            <Dialog.Description className="DialogDescription px-44">
+            <Dialog.Description className="DialogDescription px-24">
               <div className="DialogScrollableContent">
                 <p>{t(`projects.${projectId}.introduction.introduction`)}</p>
                 <hr></hr>
