@@ -136,4 +136,4 @@ const ProjectModal = ({ projectId }) => {
   );
 };
 
-export default Bubo;
+export default ProjectModal;
