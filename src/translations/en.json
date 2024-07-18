@@ -290,74 +290,140 @@
 			"description": "Books. Web application for connecting with friends and social networking.",
 			"img": "/src/public/images/project-images/hml/logo.png",
 			"introduction": {
-				"description": "Objectif Cloud is a cybersecurity company that provides services aimed at enhancing data and information protection, as well as preventing security incidents. As a developer on the team, I collaborate with my colleagues to create the \"BUBO Sentry\" monitoring tool, which empowers businesses to gain a comprehensive overview of their information system health. Key Contributions: - Design and develop dashboards featuring Key Performance Indicators (KPIs) - Implement dynamically loaded filters and tables - Facilitate interaction with other tools through APIs and shell scripts - Technical Expertise : Symfony 4/5, UIkit, GIT, SQL, DQL, Yarn, and ApexCharts.",
-				"introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
+				"description": "Harmonia Mundi Livre is located in the culture sector, providing diffusion and distribution solutions to its partners.",
+				"introduction": "Mediabase is the central tool used by salespeople and publishers for product referencing and the generation of commercial material.",
 				"name": "Mediabase",
 				"title": "Harmonia Mundi Livre"
 			},
 			"tasks": [
 				{
-					"1": {
-						"description": [
-							"",
-							"",
-							""
-						]
-					},
-					"data": {
-						"1": {
+					"data": [
+						{
 							"description": [
-								"Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+								"- Highlight the existing fields attached to each book and who can consult them in a spreadsheet",
+								"- Display with a search field of all the list of all available and authorized fields ",
+								"- Fields are grouped by category. If there are no rights for a field in the category, the fields and category are hidden."
 							],
-							"title": "Analyser de l'existant"
+							"title": "Adding exportable custom fields"
 						},
-						"2": {
+						{
 							"description": [
-								"Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+								"- Possible addition of properties to each field, such as type (number, text, string...) and format (list, decimal, text...)",
+								"- Creation of a generic modal with data display options {eg: trimming decimals, capitalizing, separation character for a list, etc.)",
+								"- Open the modal to add, edit or delete a field in the list of selected fields."
 							],
-							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
-							"title": "Le choix de la technologie"
+							"title": "Creation of generic parameter modal for a field to export"
 						},
-						"3": {
+						{
 							"description": [
-								"Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
+								"- Added the ability to add, edit or delete a field in the list of selected fields",
+								"- Added drag and drop to reorder fields, edit buttons and field deletion",
+								"- Added options for saving and sharing lists, selecting export formats and launching export."
 							],
-							"title": "De Bubo à Bubo Symfony"
-						},
-						"4": {
-							"description": [
-								"- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
-								"- Génération des entitées doctrines depuis une base de donnée existante.",
-								"- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
-								"- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
-							],
-							"title": "4 pas beauRéalisation de la refactorisation"
+							"title": "Managing selected fields"
 						}
-					},
+					],
 					"group": {
-						"intro": "intro intro",
-						"titre": "titre titre"
+						"intro": "Create an export model creation tool allowing you to export one or more fields on demand with the choice of data display format, in CSV, Excel, or even PDF format, via an intuitive interface.",
+						"titre": "Redesign of custom data export"
 					}
 				},
 				{
 					"data": {
 						"1": {
 							"description": [
-								"2 Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+								"- Try out several PDF export libraries based on an html exportable template.",
+								"- Templating document pages by identifying those that will be repeated several times and adding variables to templates",
+								"- First file generated, but relatively slow when adding covers and colored shapes containing the note",
+								"- Real-condition testing with generation time history and change of generation method."
 							],
-							"title": "2Quel boloss Analyser de l'existant"
+							"title": "Le choix de la technologie"
 						},
 						"2": {
 							"description": [
-								"2 Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+								"- Generation with FPDF pixel-by-pixel rather than from html",
+								"- Real-time generation by executing a php command with almost a day's generation time"
 							],
-							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
 							"title": "Le choix de la technologie"
 						}
 					},
 					"group": {
-						"intro": "intro intro",
-						"titre": "titre titre"
+						"intro": "Generate a large number of PDF files containing text and numerous images, automatically followed by notification",
+						"titre": "Generation of a restocking guide with FPDF"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"- Generation with FPDF pixel-by-pixel rather than from html",
+								"- Real-time generation by executing a php command with almost a day's generation time"
+							],
+							"title": "Observing the slowness of execution"
+						},
+						"2": {
+							"description": [
+								"",
+								"- Creation of a pre-filled file with covers and shapes called Template F and Template G that do not change during generation ",
+								"- Since image generation takes the longest, all that's left to do is copy an F or G Template, edit it with FPDF and fill in the text. About twenty minutes are all that's needed.",
+								"- After each group of files has been generated, we notify the librarian with the path to our share containing the PDF files for that group."
+							],
+							"title": "Templatization of the longest treatment"
+						}
+					},
+					"group": {
+						"intro": "Generation of a large number of pdf files allowing booksellers to view the top 50 HML restocking sales from the bookseller distribution channel.",
+						"titre": "Optimization of the generation of a large number of pdf files "
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								""
+							],
+							"title": ""
+						},
+						"2": {
+							"description": [
+								""
+							],
+							"title": ""
+						}
+					},
+					"group": {
+						"intro": "",
+						"titre": "Updated search with Sphinx and data indexing "
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"- We had one ubuntu virtual machine for dev, and one for production. The latter was an old version",
+								"- We use Zend as the programming language, docker to manage the search library and samba for file sharing"
+							],
+							"title": "Analysis of existing systems"
+						},
+						"2": {
+							"description": [
+								"- Create a new VM with a newer Ubuntu version",
+								"- Installing Apache and the database server"
+							],
+							"title": "Server and services installation"
+						},
+						"3": {
+							"description": [
+								"- After importing the site files, set the database parameters ",
+								"- Configuration of vhost files to secure application access and ensure availability",
+								"- Installation of file sharing with Samba and unit testing to ensure seamless updates"
+							],
+							"title": "Installation of existing systems"
+						}
+					},
+					"group": {
+						"intro": "Creation of a new Mediabase production web server to replace the old one, to reinforce security and improve maintainability",
+						"titre": "Creation and maintenance of the web infrastructure"
 					}
 				}
 			]
@@ -366,74 +432,81 @@
 			"description": "Books. Web application for connecting with friends and social networking.",
 			"img": "/src/public/images/project-images/hopps/logo.png",
 			"introduction": {
-				"description": "Objectif Cloud is a cybersecurity company that provides services aimed at enhancing data and information protection, as well as preventing security incidents. As a developer on the team, I collaborate with my colleagues to create the \"BUBO Sentry\" monitoring tool, which empowers businesses to gain a comprehensive overview of their information system health. Key Contributions: - Design and develop dashboards featuring Key Performance Indicators (KPIs) - Implement dynamically loaded filters and tables - Facilitate interaction with other tools through APIs and shell scripts - Technical Expertise : Symfony 4/5, UIkit, GIT, SQL, DQL, Yarn, and ApexCharts.",
-				"introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
+				"description": "Hopps Groupe has many needs in terms of software and applications. Their tools are mostly developed in-house and need to be maintained because they are so important.",
+				"introduction": "Maintenance and evolution of cloud tools. The company's internal tools, particularly those used by engineers in the infrastructure department, were developed in-house.\nThey are connected to business applications, and they need to evolve over time as required.",
 				"name": "Hopps Group",
 				"title": "AlertCenter"
 			},
 			"tasks": [
 				{
-					"1": {
-						"description": [
-							"",
-							"",
-							""
-						]
-					},
 					"data": {
 						"1": {
-							"description": [
-								"Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
-							],
-							"title": "Analyser de l'existant"
+							"description": {
+								"0": "- The IT department has many infra monitoring tools, and AlertCenter gathers the information they send in the form of a dashboard.",
+								"0 (2)": "- Display of current incidents for each team and level in the form of indicators",
+								"0 (3)": "- Select an incident to view its history and logs."
+							},
+							"title": "Control of internal processes for alerting and escalating incidents reported by business applications."
 						},
 						"2": {
 							"description": [
-								"Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+								"Objectives: Modernize, avoid redundancy. Object-oriented programming, MVC structure.",
+								"- I ensured the operation of the webservices and code updates,",
+								"- Develops the escalation of incidents and on-call calls generated by the application.",
+								"- Improved on-call system generated by the application, which can send an SMS or a call depending on criticality"
 							],
-							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
-							"title": "Le choix de la technologie"
-						},
-						"3": {
-							"description": [
-								"Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
-							],
-							"title": "De Bubo à Bubo Symfony"
-						},
-						"4": {
-							"description": [
-								"- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
-								"- Génération des entitées doctrines depuis une base de donnée existante.",
-								"- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
-								"- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
-							],
-							"title": "4 pas beauRéalisation de la refactorisation"
+							"title": "The choice of technology"
 						}
 					},
 					"group": {
-						"intro": "intro intro",
-						"titre": "titre titre"
+						"intro": "AlertCenter is a dashboard developed in ASP.NET that uses webservices to interconnect various incident escalation applications. Its incident interface webservice enables incidents to be escalated to the right person in the right department.",
+						"titre": "Maintaining and enhancing cloud tools"
 					}
 				},
 				{
-					"data": {
-						"1": {
+					"data": [
+						{
 							"description": [
-								"2 Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+								"- Create a new server or install a second version of AlertCenter",
+								"- Filtering of requests on both servers to keep tools connected according to the connected account",
+								"- I realized that the project would be difficult to carry out in this way and proposed a quicker and safer solution."
 							],
-							"title": "2Quel boloss Analyser de l'existant"
+							"title": "Creation of a second ALC version"
 						},
-						"2": {
+						{
 							"description": [
-								"2 Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+								"- Creation of an account group. Add conditional filters throughout the application",
+								"- Filter requests on both servers to keep tools connected",
+								"- Extensive unit testing before going live with customer"
 							],
-							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
-							"title": "Le choix de la technologie"
+							"title": "Link the form to Jira"
 						}
-					},
+					],
 					"group": {
-						"intro": "intro intro",
-						"titre": "titre titre"
+						"intro": "One of the company's subsidiaries decided to separate from the group and continue to benefit from the AlertCenter application and incident reports. I explore solutions and implement the project ",
+						"titre": "Split AlertCenter into two applications for an external client"
+					}
+				},
+				{
+					"data": [
+						{
+							"description": [
+								"- Creation of a form enabling CDS to create Jira tickets from the web",
+								"- The fields are pre-filled in the ticket with information from the personnel number using LDAP.- The fields are pre-filled in the ticket with information from the personnel number using LDAP."
+							],
+							"title": "The CDS form"
+						},
+						{
+							"description": [
+								"- This form is a bridge between two active directories and the Jira ticketing tool.",
+								"- On-the-fly creation of a Jira account if the ticket requester does not exist in Jira via the Jira API"
+							],
+							"title": "Link the form to Jira"
+						}
+					],
+					"group": {
+						"intro": "The service center needs to create tickets on the Jira application quickly for users in two different Active Directories. We need to be able to find them via the user number and create a Jira account automatically if they don't have one, and create the ticket.",
+						"titre": "Service Center ticketing interface"
 					}
 				}
 			]

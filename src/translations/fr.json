@@ -290,53 +290,90 @@
 			"description": "Les livres. Web application for connecting with friends and social networking.",
 			"img": "/src/public/images/project-images/hml/logo.png",
 			"introduction": {
-				"description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
-				"introduction": "",
+				"description": "Harmonia Mundi Livre se situe dans le secteur de la culture, apportant des solutions de diffusion et de distribution à ses partenaires.",
+				"introduction": "La Mediabase est l'outils centrale utilisé par les commerciaux et les éditeurs pour le référencement des produits et la generation de materiel commercial.",
 				"name": "Medbiabase",
 				"title": "Harmonia Mundi Livre"
 			},
 			"tasks": [
 				{
-					"1": {
-						"description": [
-							"Aucun projet à afficher pour le moment.",
-							"Aucun projet à afficher pour le moment.",
-							"Aucun projet à afficher pour le moment."
-						]
-					},
+					"data": [
+						{
+							"description": [
+								"- Mise en évidence des champs existant rattachés a chaque livre et qui peux les consulter dans un tableur",
+								"- Affichage avec un champ recherche de tous la liste de tous les champs disponibles et autorisés ",
+								"- Les champs sont regroupes par catégories. Si aucun droit pour un champ dans la catégorie, on masque les champs et la catégorie"
+							],
+							"title": "Ajout des champs personnalises exportables"
+						},
+						{
+							"description": [
+								"- Ajout de propriété possible a chaque champ, comme le type (nombre, texte, chaîne de caractère...) et de format (liste, décimal, texte...)",
+								"- Création d'une modale générique avec des options d'affichage de la donnée {ex : rogner des décimales, mettre en majuscule, caractère de séparation pour une liste ...)",
+								"- Ouverture du modal a l'ajout, édition ou suppression d'un champ dans la liste des champs sélectionnés"
+							],
+							"title": "Création de modal générique de paramètre d'un champ a exporter"
+						},
+						{
+							"description": [
+								"- Ajout de la possibilité d'ajouter, éditer ou supprimer un champ dans la liste des champs sélectionnés",
+								"- Ajout de drag and drop pour réorganiser les champs, de boutons d'édition et suppression de champ",
+								"- Ajout d'option de sauvegarde et partage de la liste, de sélection de format d'export et la possibilité de lancer l'export"
+							],
+							"title": "Gestion des champs sélectionnés"
+						}
+					],
+					"group": {
+						"intro": "Créer un outil de création de model d'export permettant d'exporter a la demande un ou plusieurs champs avec le choix du format d'affichage de la donnée, au format CSV, Excel, ou encore PDF, via une interface intuitive.",
+						"titre": "Refonte de l'export de données personnaliser"
+					}
+				},
+				{
 					"data": {
 						"1": {
 							"description": [
-								""
+								"- Essaie de plusieurs libraire d'export PDF d'après une maquette exportable au format html",
+								"- Templétisation des pages du document en identifiant celles qui seront répétés plusieurs fois et ajout des variables au templates",
+								"- Génération du premier fichier mais relativement lente lors de l'ajout des couvertures et des formes colores contenant la note",
+								"- Test en condition réel en historisant le temps de génération et changement de méthode de génération."
 							],
 							"title": ""
 						},
 						"2": {
 							"description": [
-								""
-							],
-							"img": "",
-							"title": ""
-						},
-						"3": {
-							"description": [
-								""
-							],
-							"title": ""
-						},
-						"4": {
-							"description": [
-								"",
-								"",
-								"",
-								""
+								"- Génération avec FPDF au pixel près de chaque éléments plutôt que depuis le html",
+								"- Génération en condition réel via l'exécution d'une commande php avec presque une journée de génération"
 							],
 							"title": ""
 						}
 					},
 					"group": {
-						"intro": "",
-						"titre": ""
+						"intro": "Générer un grand nombre de fichier PDF comportant du texte et de nombreuses images, générés de façon automatique suivie d'une notification",
+						"titre": "Géneration d'un guide du réassort avec FPDF"
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"- Génération avec FPDF au pixel près de chaque éléments plutôt que depuis le html",
+								"- Génération en condition réel via l'exécution d'une commande php avec presque une journée de génération"
+							],
+							"title": "Constatation de la lenteur d'exécution"
+						},
+						"2": {
+							"description": [
+								"",
+								"- Création d'un fichier pré-remplis avec les couvertures et les formes appelés Template F et Template G qui ne changent pas pendant la génération ",
+								"- La génération des images étant le plus long, il ne reste qu'a copier un Template F ou G et de l'editer a l'aide de FPDF et de remplir le texte. Une vingtaine de minute suffisent.",
+								"- Après la génération de chaque groupe de fichier, on notifie le libraire avec le chemin sur notre partage contenant les fichiers PDF le concernant"
+							],
+							"title": "Templatisation du traitement le plus long"
+						}
+					},
+					"group": {
+						"intro": "Generation d'un grand nombre de fichiers pdf permetant aux libraires de visualiser le top 50 des ventes réassort HML du canal de distribution libraire.",
+						"titre": "Optimisation de la génération d'un grand nombre de fichiers pdf "
 					}
 				},
 				{
@@ -351,13 +388,42 @@
 							"description": [
 								""
 							],
-							"img": "",
 							"title": ""
 						}
 					},
 					"group": {
 						"intro": "",
-						"titre": ""
+						"titre": "Mise à jour de la recherche avec Sphinx et l'indexation des données "
+					}
+				},
+				{
+					"data": {
+						"1": {
+							"description": [
+								"- Nous avions une machine virtuelle ubuntu pour la dev, et une pour la production. Ce dernier étant dans une vieille version",
+								"- Nous utilisons Zend comme langage de programmation, docker pour gérer la librairie de recherche et samba pour le partage de fichier"
+							],
+							"title": "Analyse de l'existant"
+						},
+						"2": {
+							"description": [
+								"- Création d'une nouvelle VM avec une version d'Ubuntu plus récentes",
+								"- Installation d'Apache et du serveur de base de données"
+							],
+							"title": "Installation du serveur et des services"
+						},
+						"3": {
+							"description": [
+								"- Après avoir importe les fichiers du site, paramétrage de la base de données ",
+								"- Configuration des fichiers vhost pour sécuriser l'accès a l'application et assurer sa disponibilité",
+								"- Installation du partage de fichier avec Samba et test unitaires afin d'assurer la mise a jour sans effets de bords"
+							],
+							"title": "Installation de l'existant"
+						}
+					},
+					"group": {
+						"intro": "Création d'un nouveau serveur web de production de la Mediabase pour remplacer l'ancien afin de renforcer la sécurité et améliorer la maintenabilité",
+						"titre": "Création et maintenance de l'infrastructure web"
 					}
 				}
 			]
@@ -366,74 +432,81 @@
 			"description": "Les livres. Web application for connecting with friends and social networking.",
 			"img": "/src/public/images/project-images/hopps/logo.png",
 			"introduction": {
-				"description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
-				"introduction": "",
+				"description": "Hopps groupe a de nombreux besoins en termes de logiciels et applicatifs. Leur outils sont la plus part développés en internes et ont besoin d'être maintenus car ils sont importants.",
+				"introduction": "Maintiens et évolution des outils du cloud. Les outils internes de la société, notamment du pôle infrastructure utilisés par les ingénieurs ont été réalisés en interne.\nIls sont connectés à des applications métiers et elles ont besoin d'évoluer dans le temps selon le besoin.",
 				"name": "Hopps Group",
 				"title": "AlertCenter"
 			},
 			"tasks": [
 				{
-					"1": {
-						"description": [
-							"Aucun projet à afficher pour le moment.",
-							"Aucun projet à afficher pour le moment.",
-							"Aucun projet à afficher pour le moment."
-						]
-					},
 					"data": {
 						"1": {
-							"description": [
-								""
-							],
-							"title": ""
+							"description": {
+								"0": "- Le service informatique a de nombreux outils de supervision de l'infra et AlertCenter réunis les informations qu'ils envoie sous forme de tableau de bord",
+								"0 (2)": "- Affichage des incidents en cours pour chaque équipe et niveau sous forme d'indicateurs",
+								"0 (3)": "- Possibilité de sélectionner un incident pour avoir l'historique et les logs de celui ci."
+							},
+							"title": "AlertCenter, le tableau de bord de supervision central"
 						},
 						"2": {
 							"description": [
-								""
+								"Objectifs : Moderniser, éviter la redondance. Programmation orientée objet, structure MVC.",
+								"- J'ai assurer le fonctionnement des webservices et les mises a jour du code,",
+								"- Effectue une évolution au niveau de l'escalade des incidents Ainsi que des appels astreintes générés par l'application",
+								"- Amélioration du systèmes appels astreintes générés par l'application pouvant envoyer un sms ou un appel selon la criticité"
 							],
-							"img": "",
-							"title": ""
-						},
-						"3": {
-							"description": [
-								""
-							],
-							"title": ""
-						},
-						"4": {
-							"description": [
-								"",
-								"",
-								"",
-								""
-							],
-							"title": ""
+							"title": "Le webservice Interface Incident"
 						}
 					},
 					"group": {
-						"intro": "",
-						"titre": ""
+						"intro": "AlertCenter est un tableau de bord développe en ASP.NET et qui utilise des webservices pour inter-connecter diverses applications de remontée d'incident. Son webservice interface incident permet l'escalade des incident a la bonne personne au bon service",
+						"titre": "Maintiens et évolution des outils du cloud"
 					}
 				},
 				{
-					"data": {
-						"1": {
+					"data": [
+						{
 							"description": [
-								""
+								"- Création d'un nouveau serveur ou j'installe une deuxième version d'AlertCenter",
+								"- Filtrage des requêtes sur les deux serveurs afin de garder les outils connectes selon le compte connecte",
+								"- Je réalise que le projet est difficilement réalisable ainsi et propose une solution plus rapide et plus sure"
 							],
-							"title": ""
+							"title": "Creation d'une seconde version ALC"
 						},
-						"2": {
+						{
 							"description": [
-								""
+								"- Création d'un groupe de compte. On ajoute des filtres conditionnels un peu partout dans l'application",
+								"- Filtrage des requêtes sur les deux serveurs afin de garder les outils connectes",
+								"- Nombreux tests unitaires avant la mise en production avec le client"
 							],
-							"img": "",
-							"title": ""
+							"title": "Modification des droits de visualisation via la gestion de droits"
 						}
-					},
+					],
 					"group": {
-						"intro": "",
-						"titre": ""
+						"intro": "Une filiale de l'entreprise se sépare du groupe décide continuer de bénéficier de l'application AlertCenter et des remontées d'incident. J'explore les solutions et réalise le projet ",
+						"titre": "Séparer AlertCenter en deux appli pour un client externe"
+					}
+				},
+				{
+					"data": [
+						{
+							"description": [
+								"- Création d'un formulaire permettant au CDS de créer des tickets Jira depuis le web",
+								"- Les champs sont pré-remplis dans le ticket par les informations via le matricule avec LDAP"
+							],
+							"title": "Le formulaire pour le CDS"
+						},
+						{
+							"description": [
+								"- Ce formulaire est un pont entre deux active directory et l'outil de ticketing Jira",
+								"- Création d'un compte Jira a la volée si le demandeur du ticket n'existe pas dans Jira via l'API Jira"
+							],
+							"title": "Relier le formulaire a Jira"
+						}
+					],
+					"group": {
+						"intro": "Le centre de service a besoin de créer des tickets sur l'application Jira rapidement pour des utilisateurs présents sur deux Active Directory différents. On doit pouvoir les retrouver via le matricule et créer un comte Jira automatiquement s'il n'en a pas, et créer le ticket.",
+						"titre": "Interface de ticketing Centre De Service"
 					}
 				}
 			]
