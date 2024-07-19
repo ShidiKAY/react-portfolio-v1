@@ -15,77 +15,61 @@
 	},
 	"projects": {
 		"apigem": {
-			"description": "Les livres. Web application for connecting with friends and social networking.",
+			"description": "Refonte de l'application web Apigem pour une meilleure ergonomie et accessibilité",
 			"img": "/src/public/images/project-images/apigem/logo.png",
 			"introduction": {
-				"description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
-				"introduction": "",
+				"description": "Apigem est une entreprise française située à Saint Cannat, spécialisée dans le développement de progiciels pour la gestion des cliniques médicales. Le système d’information Apigem permet une meilleure gestion des patients et du personnel à travers différents modules accessibles selon le profil des utilisateurs.",
+				"introduction": "Apigem Web est une application web qui permet la consultation des plannings du personnel, des opérations des patients et de leurs dossiers. Apigem permet également de gérer et consulter des rendez-vous.",
 				"name": "Apigem web",
 				"title": "Apigem"
 			},
 			"tasks": [
 				{
-					"1": {
-						"description": [
-							"Aucun projet à afficher pour le moment.",
-							"Aucun projet à afficher pour le moment.",
-							"Aucun projet à afficher pour le moment."
-						]
-					},
 					"data": {
 						"1": {
 							"description": [
-								""
+								"- Étude de l'application de bureau Apigem Set et de l'application web Apigem Web, toutes deux fonctionnant sur la même base de données, permettant une interopérabilité entre les deux systèmes.",
+								"- L'application en PHP natif nécessite une montée de version, et possède beaucoup de redondance"
 							],
-							"title": ""
-						},
-						"2": {
-							"description": [
-								""
-							],
-							"img": "",
-							"title": ""
-						},
-						"3": {
-							"description": [
-								""
-							],
-							"title": ""
-						},
-						"4": {
-							"description": [
-								"",
-								"",
-								"",
-								""
-							],
-							"title": ""
+							"title": "L'application Apigem"
 						}
 					},
 					"group": {
 						"intro": "",
-						"titre": ""
+						"titre": "Analyse de l'écosystème"
 					}
 				},
 				{
 					"data": {
 						"1": {
 							"description": [
-								""
+								"- Installation d'un moteur de template pour séparer la vue d'un contrôleur pour faciliter l'évolution de l'application",
+								"- Installation du plugin Bootstrap pour rendre le site web responsive"
 							],
-							"title": ""
+							"title": "Préparation a la mise a jour du code"
 						},
 						"2": {
 							"description": [
-								""
+								"- Migration de la page login vers un nouveau design, intégration des nouvelles fonctionnalités.",
+								"- Transformation du menu vertical en un menu horizontal et responsive, regroupant les modules par familles.",
+								"- Mise en place d’un système de routage avec réécriture des URL pour des adresses de navigation plus propres et sécurisées.",
+								"- Migration de la page d’affichage des plannings, intégration d’un affichage adaptatif pour les smartphones via JavaScript (jQuery), avec condition dans le moteur de templates pour afficher les données en fonction de la résolution de l'écran."
 							],
-							"img": "",
-							"title": ""
+							"title": "Migration des premières pages"
+						},
+						"3": {
+							"description": [
+								"- Migration de la page de planification, avec un affichage adaptatif pour smartphones via JavaScript (jQuery).",
+								"- Condition dans le moteur de templates pour afficher les données en fonction de la résolution de l'écran.",
+								"- Refonte du calendrier en jQuery, ajout de boutons de visualisation ergonomiques pour petits écrans.",
+								"- Ajout d'une fonctionnalité de favoris pour les pages, enregistrant la page par défaut dans la base de données."
+							],
+							"title": "Affichage des plannings et tableaux"
 						}
 					},
 					"group": {
 						"intro": "",
-						"titre": ""
+						"titre": "Migration des premières pages"
 					}
 				}
 			]
@@ -287,7 +271,7 @@
 			]
 		},
 		"hml": {
-			"description": "Les livres. Web application for connecting with friends and social networking.",
+			"description": "Harmonia Mundi Livre est specialise dans la distribution de livre. Elle travail avec les libraires et les editeurs.",
 			"img": "/src/public/images/project-images/hml/logo.png",
 			"introduction": {
 				"description": "Harmonia Mundi Livre se situe dans le secteur de la culture, apportant des solutions de diffusion et de distribution à ses partenaires.",
@@ -429,7 +413,7 @@
 			]
 		},
 		"hopps": {
-			"description": "Les livres. Web application for connecting with friends and social networking.",
+			"description": "Hopps Groupe dans le domaine de la distribution a besoins d'outils pour superviser son infra infrastructure informatique comme AlertCenter",
 			"img": "/src/public/images/project-images/hopps/logo.png",
 			"introduction": {
 				"description": "Hopps groupe a de nombreux besoins en termes de logiciels et applicatifs. Leur outils sont la plus part développés en internes et ont besoin d'être maintenus car ils sont importants.",
@@ -441,11 +425,11 @@
 				{
 					"data": {
 						"1": {
-							"description": {
-								"0": "- Le service informatique a de nombreux outils de supervision de l'infra et AlertCenter réunis les informations qu'ils envoie sous forme de tableau de bord",
-								"0 (2)": "- Affichage des incidents en cours pour chaque équipe et niveau sous forme d'indicateurs",
-								"0 (3)": "- Possibilité de sélectionner un incident pour avoir l'historique et les logs de celui ci."
-							},
+							"description": [
+								"- Le service informatique a de nombreux outils de supervision de l'infra et AlertCenter réunis les informations qu'ils envoie sous forme de tableau de bord",
+								"- Affichage des incidents en cours pour chaque équipe et niveau sous forme d'indicateurs",
+								"- Possibilité de sélectionner un incident pour avoir l'historique et les logs de celui ci."
+							],
 							"title": "AlertCenter, le tableau de bord de supervision central"
 						},
 						"2": {

@@ -15,77 +15,61 @@
 	},
 	"projects": {
 		"apigem": {
-			"description": "Books. Web application for connecting with friends and social networking.",
+			"description": "Redesign of the Apigem web application for improved ergonomics and accessibility",
 			"img": "/src/public/images/project-images/apigem/logo.png",
 			"introduction": {
-				"description": "Objectif Cloud is a cybersecurity company that provides services aimed at enhancing data and information protection, as well as preventing security incidents. As a developer on the team, I collaborate with my colleagues to create the \"BUBO Sentry\" monitoring tool, which empowers businesses to gain a comprehensive overview of their information system health. Key Contributions: - Design and develop dashboards featuring Key Performance Indicators (KPIs) - Implement dynamically loaded filters and tables - Facilitate interaction with other tools through APIs and shell scripts - Technical Expertise : Symfony 4/5, UIkit, GIT, SQL, DQL, Yarn, and ApexCharts.",
-				"introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
+				"description": "Apigem is a French company based in Saint Cannat, specializing in the development of software packages for the management of medical clinics. The Apigem information system enables better management of patients and staff through various modules accessible according to user profile.",
+				"introduction": "Apigem Web is a web-based application for consulting staff schedules, patient operations and patient files. Apigem can also be used to manage and consult appointments.",
 				"name": "Apigem web",
 				"title": "Apigem"
 			},
 			"tasks": [
 				{
-					"1": {
-						"description": [
-							"",
-							"",
-							""
-						]
-					},
 					"data": {
 						"1": {
 							"description": [
-								"Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+								"- Study of the Apigem Set desktop application and the Apigem Web web application, both running on the same database, enabling interoperability between the two systems.",
+								"- Native PHP application requires upgrading, and has a lot of redundancy"
 							],
-							"title": "Analyser de l'existant"
-						},
-						"2": {
-							"description": [
-								"Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
-							],
-							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
-							"title": "Le choix de la technologie"
-						},
-						"3": {
-							"description": [
-								"Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
-							],
-							"title": "De Bubo à Bubo Symfony"
-						},
-						"4": {
-							"description": [
-								"- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
-								"- Génération des entitées doctrines depuis une base de donnée existante.",
-								"- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
-								"- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
-							],
-							"title": "4 pas beauRéalisation de la refactorisation"
+							"title": "The Apigem application"
 						}
 					},
 					"group": {
 						"intro": "intro intro",
-						"titre": "titre titre"
+						"titre": "Ecosystem analysis"
 					}
 				},
 				{
 					"data": {
 						"1": {
 							"description": [
-								"2 Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
+								"- Installation of a template engine to separate the view from a controller to facilitate application evolution",
+								"- Installation of the Bootstrap plugin to make the website responsive"
 							],
-							"title": "2Quel boloss Analyser de l'existant"
+							"title": "Preparing for code updates"
 						},
 						"2": {
 							"description": [
-								"2 Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
+								"- Migration of the login page to a new design, integrating new functionalities.",
+								"- Transformation of the vertical menu into a horizontal, responsive menu, grouping modules by family.",
+								"- Implementation of a routing system with URL rewriting for cleaner, more secure navigation addresses.",
+								"- Implementation of a routing system with URL rewriting for cleaner, more secure navigation addresses.\nFront pages and tables: Migration of the schedule display page, integration of an adaptive display for smartphones via JavaScript (jQuery), with a condition in the template engine to display data according to screen resolution."
 							],
-							"img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
-							"title": "Le choix de la technologie"
+							"title": "Migration of first pages"
+						},
+						"3": {
+							"description": [
+								"- Migration of the planning page, with adaptive display for smartphones via JavaScript (jQuery).",
+								"- Condition in template engine to display data according to screen resolution.",
+								"- Redesigned calendar in jQuery, adding ergonomic viewing buttons for small screens.",
+								"- Addition of a favorites feature for pages, saving the default page in the database."
+							],
+							"title": "Display of schedules and tables"
 						}
 					},
 					"group": {
 						"intro": "intro intro",
-						"titre": "titre titre"
+						"titre": "Migrating first pages"
 					}
 				}
 			]
@@ -287,7 +271,7 @@
 			]
 		},
 		"hml": {
-			"description": "Books. Web application for connecting with friends and social networking.",
+			"description": "Harmonia Mundi Livre est specialise dans la distribution de livre. Elle travail avec les libraires et les editeurs.",
 			"img": "/src/public/images/project-images/hml/logo.png",
 			"introduction": {
 				"description": "Harmonia Mundi Livre is located in the culture sector, providing diffusion and distribution solutions to its partners.",
@@ -429,7 +413,7 @@
 			]
 		},
 		"hopps": {
-			"description": "Books. Web application for connecting with friends and social networking.",
+			"description": "Hopps Groupe in the distribution sector needs tools to supervise its IT infrastructure like AlertCenter",
 			"img": "/src/public/images/project-images/hopps/logo.png",
 			"introduction": {
 				"description": "Hopps Groupe has many needs in terms of software and applications. Their tools are mostly developed in-house and need to be maintained because they are so important.",
@@ -441,11 +425,11 @@
 				{
 					"data": {
 						"1": {
-							"description": {
-								"0": "- The IT department has many infra monitoring tools, and AlertCenter gathers the information they send in the form of a dashboard.",
-								"0 (2)": "- Display of current incidents for each team and level in the form of indicators",
-								"0 (3)": "- Select an incident to view its history and logs."
-							},
+							"description": [
+								"- The IT department has many infra monitoring tools, and AlertCenter gathers the information they send in the form of a dashboard.",
+								"- Display of current incidents for each team and level in the form of indicators",
+								"- Select an incident to view its history and logs."
+							],
 							"title": "Control of internal processes for alerting and escalating incidents reported by business applications."
 						},
 						"2": {

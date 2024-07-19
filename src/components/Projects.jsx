@@ -17,9 +17,6 @@ const projects = [
   {
     projectId: "apigem",
   },
-  {
-    projectId: "bubo",
-  },
 ];
 
 const Projects = () => {
