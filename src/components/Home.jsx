@@ -61,7 +61,10 @@ const Home = () => {
         },
       }}
     >
-      <div className="container mx-auto flex flex-col justify-center items-center h-[600px]">
+      <div
+        id="tohome"
+        className="container mx-auto flex flex-col justify-center items-center h-[600px]"
+      >
         <div className="text-center h-[200px]">
           <h1 className="text-4xl text-black font-extrabold md:text-4xl">
             Make Your Web Application

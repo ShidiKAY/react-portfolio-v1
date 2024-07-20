@@ -4,9 +4,10 @@
 		"contact": "Contact",
 		"home": "Home",
 		"language": "Langue",
-		"projects": "Projets",
-		"seeMore": "Voir plus",
-		"selectLanguage": "Sélectionner la langue"
+		"projects": "Projects",
+		"seeMore": "See more",
+		"selectLanguage": "Sélectionner la langue",
+		"skills": "Skills"
 	},
 	"portfolio": {
 		"description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",

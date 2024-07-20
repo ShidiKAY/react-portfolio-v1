@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
-
+import { Link as ScrollLink, animateScroll as scroll } from "react-scroll"; // Import ScrollLink and animateScroll
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
@@ -48,11 +48,14 @@ const Navbar = () => {
             <div className="flex items-center sm:mx-10 md:mx-10 justify-between w-full">
               <div className="flex justify-center items-center flex-shrink-0 ">
                 <h1 className=" font-bold text-xl cursor-pointer">
-                  <Link href="/">
-                    <a className="text-2xl pl-8 sm:pl-0">
-                      Kamal<span className="text-blue-500">Ait Yous</span>
-                    </a>
-                  </Link>
+                  <ScrollLink
+                    to="tohome"
+                    smooth={true}
+                    duration={500}
+                    className="cursor-pointer text-2xl pl-8 sm:pl-0"
+                  >
+                    Kamal<span className="text-blue-500">Ait Yous</span>
+                  </ScrollLink>
                 </h1>
               </div>
               <div className="hidden md:block">
@@ -64,9 +67,14 @@ const Navbar = () => {
                         : "cursor-pointer hover:text-blue-500"
                     }
                   >
-                    <Link id="about" href="/">
-                      <a>{t("common.home")}</a>
-                    </Link>
+                    <ScrollLink
+                      to="tohome"
+                      smooth={true}
+                      duration={500}
+                      className="cursor-pointer"
+                    >
+                      {t("common.home")}
+                    </ScrollLink>
                   </h1>
                   <h1
                     className={
@@ -75,9 +83,14 @@ const Navbar = () => {
                         : "cursor-pointer hover:text-blue-500"
                     }
                   >
-                    <Link id="about" href="/about">
-                      <a>About</a>
-                    </Link>
+                    <ScrollLink
+                      to="toabout"
+                      smooth={true}
+                      duration={500}
+                      className="cursor-pointer"
+                    >
+                      {t("common.about")}
+                    </ScrollLink>
                   </h1>
                   <h1
                     className={
@@ -86,9 +99,14 @@ const Navbar = () => {
                         : "cursor-pointer hover:text-blue-500"
                     }
                   >
-                    <Link id="projects" href="/projects">
-                      <a>Projects</a>
-                    </Link>
+                    <ScrollLink
+                      to="toprojects"
+                      smooth={true}
+                      duration={500}
+                      className="cursor-pointer"
+                    >
+                      {t("common.projects")}
+                    </ScrollLink>
                   </h1>
                   <h1
                     className={
@@ -97,9 +115,14 @@ const Navbar = () => {
                         : "cursor-pointer hover:text-blue-500"
                     }
                   >
-                    <Link id="blog" href="/blog">
-                      <a>Blog</a>
-                    </Link>
+                    <ScrollLink
+                      to="toskills"
+                      smooth={true}
+                      duration={500}
+                      className="cursor-pointer"
+                    >
+                      {t("common.skills")}
+                    </ScrollLink>
                   </h1>
                 </div>
               </div>

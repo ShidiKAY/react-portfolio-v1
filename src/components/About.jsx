@@ -21,7 +21,7 @@ const About = () => {
   }, []); // Empty dependency array ensures useEffect runs only once
 
   return (
-    <div className="h-screen lg:pl-0 lg:pr-0">
+    <div id="toabout" className="h-screen lg:pl-0 lg:pr-0">
       <div className="flex justify-between md:mx-0 md:pt-32 pt-28 ">
         <div className="flex flex-col md:ml-px mt-10">
           <div
@@ -148,10 +148,13 @@ const About = () => {
               </motion.div>
             </motion.div>
           </div>
-          <div className="flex flex-col md:ml-px mt-10">
+          <div id="toprojects" className="flex flex-col md:ml-px mt-10">
             <Projects />
           </div>
-          <div className="md:mx-px text-bold text-3xl mt-10 lg:px-52 md:px-1">
+          <div
+            id="toskills"
+            className="md:mx-px text-bold text-3xl mt-10 lg:px-52 md:px-1"
+          >
             <Skills />
           </div>
         </div>
