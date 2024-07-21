@@ -2,30 +2,64 @@ import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { Link, useLocation } from "react-router-dom";
-import { Link as ScrollLink, animateScroll as scroll } from "react-scroll"; // Import ScrollLink and animateScroll
+import {
+  Link as ScrollLink,
+  Events,
+  animateScroll as scroll,
+} from "react-scroll"; // Import ScrollLink and animateScroll
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { pathname } = useLocation(); // Destructure pathname from useLocation
   const [isScrolled, setIsScrolled] = useState(false);
+  const [activeLink, setActiveLink] = useState("home"); // State to track active link
+  const sections = ["tohome", "toabout", "toprojects", "toskills"];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0); // Update state on scroll
+      setIsScrolled(window.scrollY > 0);
+      updateActiveLink();
+    };
+    const updateActiveLink = () => {
+      const scrollPosition = window.scrollY + window.innerHeight / 2; // Adjust as needed
+      sections.forEach((section) => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (
+            scrollPosition >= rect.top + window.scrollY &&
+            scrollPosition < rect.bottom + window.scrollY
+          ) {
+            setActiveLink(section);
+          }
+        }
+      });
     };
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => window.removeEventListener("scroll", handleScroll); // Cleanup
+    Events.scrollEvent.register("begin", (to) => {
+      setActiveLink(to);
+    });
+
+    Events.scrollEvent.register("end", (to) => {
+      setActiveLink(to);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+    };
   }, []);
 
   const handleMobileNav = () => {
     setIsOpen(!isOpen);
   };
 
-  const handleActiveLink = (path) => {
-    return pathname === path
+  const handleActiveLink = (link) => {
+    return activeLink === link
       ? "text-blue-500"
       : "cursor-pointer hover:text-blue-500";
   };
@@ -53,6 +87,7 @@ const Navbar = () => {
                     smooth={true}
                     duration={500}
                     className="cursor-pointer text-2xl pl-8 sm:pl-0"
+                    onSetActive={() => setActiveLink("tohome")}
                   >
                     Kamal<span className="text-blue-500">Ait Yous</span>
                   </ScrollLink>
@@ -60,66 +95,46 @@ const Navbar = () => {
               </div>
               <div className="hidden md:block">
                 <div className="flex items-baseline space-x-10">
-                  <h1
-                    className={
-                      pathname === "/"
-                        ? "text-blue-500"
-                        : "cursor-pointer hover:text-blue-500"
-                    }
-                  >
+                  <h1 className={handleActiveLink("tohome")}>
                     <ScrollLink
                       to="tohome"
                       smooth={true}
                       duration={500}
                       className="cursor-pointer"
+                      onSetActive={() => setActiveLink("tohome")}
                     >
                       {t("common.home")}
                     </ScrollLink>
                   </h1>
-                  <h1
-                    className={
-                      pathname === "/about"
-                        ? "text-blue-500"
-                        : "cursor-pointer hover:text-blue-500"
-                    }
-                  >
+                  <h1 className={handleActiveLink("toabout")}>
                     <ScrollLink
                       to="toabout"
                       smooth={true}
                       duration={500}
                       className="cursor-pointer"
+                      onSetActive={() => setActiveLink("toabout")}
                     >
                       {t("common.about")}
                     </ScrollLink>
                   </h1>
-                  <h1
-                    className={
-                      pathname === "/projects"
-                        ? "text-blue-500"
-                        : "cursor-pointer hover:text-blue-500"
-                    }
-                  >
+                  <h1 className={handleActiveLink("toprojects")}>
                     <ScrollLink
                       to="toprojects"
                       smooth={true}
                       duration={500}
                       className="cursor-pointer"
+                      onSetActive={() => setActiveLink("toprojects")}
                     >
                       {t("common.projects")}
                     </ScrollLink>
                   </h1>
-                  <h1
-                    className={
-                      pathname === "/blog"
-                        ? "text-blue-500"
-                        : "cursor-pointer hover:text-blue-500"
-                    }
-                  >
+                  <h1 className={handleActiveLink("toskills")}>
                     <ScrollLink
                       to="toskills"
                       smooth={true}
                       duration={500}
                       className="cursor-pointer"
+                      onSetActive={() => setActiveLink("toskills")}
                     >
                       {t("common.skills")}
                     </ScrollLink>
