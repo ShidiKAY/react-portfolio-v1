@@ -2,6 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
 import React, { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
+
 // import Bubbles from "./Bubbles";
 
 // const languages = ["JS", "PHP", "Python", "Java", "C++", "CSS", "HTML"];
@@ -28,6 +30,7 @@ const Home = () => {
   // Vous pouvez utiliser useState et useEffect ici pour gérer l'état et la logique de l'animation (optionnel)
   const [isVisible, setIsVisible] = useState(false);
   const refHome = useRef(null);
+  const { t, i18n } = useTranslation();
 
   // Show/Hide text section of About when it's displayed
   useEffect(() => {
@@ -67,21 +70,22 @@ const Home = () => {
       >
         <div className="text-center h-[200px]">
           <h1 className="text-4xl text-black font-extrabold md:text-4xl">
-            Make Your Web Application
+            {t("common.main1")}
           </h1>
           <h1 className="text-4xl text-blue-500 font-extrabold md:text-4xl">
-            Come True
+            {t("common.main2")}
           </h1>
           <p className="text-xl mt-4 sm:leading-relaxed md:text-xl text-black">
-            À la recherche d'un développeur freelance polyvalent pour
-            concrétiser vos projets web ?<br></br>Vous êtes au bon endroit !
+            {t("common.sub1")}
+            <br></br>
+            {t("common.sub2")}
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8 grid-cols-2">
             <Link
               to="/contact"
               className="px-12 py-3 text-sm font-medium text-culturedWhite bg-mnBlue rounded shadow active:bg-blue-500 hover:bg-carolinaBlue focus:outline-none focus:ring"
             >
-              Contact Me
+              {t("common.contactme")}
             </Link>
             <Link
               to="/resume.pdf"
@@ -89,7 +93,7 @@ const Home = () => {
               rel="noopener noreferrer"
               className="px-12 py-3 text-sm font-medium text-culturedWhite bg-mnBlue rounded shadow active:bg-blue-500 hover:bg-carolinaBlue focus:outline-none focus:ring"
             >
-              Resume
+              {t("common.getresume")}
             </Link>
           </div>
         </div>

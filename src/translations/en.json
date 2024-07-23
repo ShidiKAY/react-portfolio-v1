@@ -2,12 +2,18 @@
 	"common": {
 		"about": "About",
 		"contact": "Contact",
+		"contactme": "Contact me",
+		"getresume": "Resume",
 		"home": "Home",
-		"language": "Langue",
+		"language": "Language",
+		"main1": "Make Your Web Application",
+		"main2": "Come True",
 		"projects": "Projects",
 		"seeMore": "See more",
-		"selectLanguage": "Sélectionner la langue",
-		"skills": "Skills"
+		"selectLanguage": "Select a language",
+		"skills": "Skills",
+		"sub1": "Looking for a versatile freelance developer to help you\n            your web projects?",
+		"sub2": "You've come to the right place!"
 	},
 	"portfolio": {
 		"description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",

@@ -7,9 +7,6 @@ import "/src/styles/radixui.css";
 const Project = ({ projectId }) => {
   const { t, i18n } = useTranslation();
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
   return (
     <div className="project-card">
       <div className="div-img">
