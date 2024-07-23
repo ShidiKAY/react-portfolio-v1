@@ -497,18 +497,18 @@
 			]
 		},
 		"scf": {
-			"description": "Les livres. Web application for connecting with friends and social networking.",
+			"description": "Un support supplémentaire de référencement pour la communauté francophone comme alternative au site officiel en anglais",
 			"img": "/src/public/images/project-images/scf/logo.png",
 			"introduction": {
-				"description": "description",
-				"introduction": "Projet personnel visant à devenir un support supplémentaire pour une communauté de 6000 utilisateurs sur une application de tchat (Discord)\nLe jeu en rapport avec le site est en déveollopement, et tous les contenus sont en anglais actuellement. Nous proposons une alternative pour la communauté francophone !",
+				"description": "Le jeu en rapport avec le site est en développement, et tous les contenus sont en anglais actuellement. Nous proposons une alternative pour la communauté francophone ",
+				"introduction": "Projet personnel visant à devenir un support supplémentaire pour une communauté de 6000 utilisateurs sur une application de tchat (Discord)!",
 				"name": "Star Citizen Francophone Web",
 				"title": "Star Citizen Francophone"
 			},
 			"tasks": [
 				{
-					"data": {
-						"1": {
+					"data": [
+						{
 							"description": [
 								"- Créer un espace de référencement des utilisateurs francophones et des organisations francophones venant du Discord.",
 								"- Rendre l'ajout des données simple et automatiques à l'aide d'un scrappeur de données.",
@@ -517,31 +517,69 @@
 							],
 							"title": "Missions"
 						}
-					},
+					],
 					"group": {
 						"intro": "Créer une application complte et utile pour une communauté déjà existante avec des besoins connus.",
 						"titre": "FONCTIONNALITÉ CLÉS"
 					}
 				},
 				{
-					"data": {
-						"1": {
+					"data": [
+						{
 							"description": [
-								""
+								"- Le service Scrapper récupère à l'aide d'une url et du service la page d'un site. Le service parse à l'aide d'expression régulière.",
+								"- L'item ou la liste d'items exploitables retournées par le service sont enregistrés par le service \"Cacher\" qui exploite les données et les enregistres en base.",
+								"- Refonte du design pour répondre aux critères actuels du web (responsibe, apparence moderne...).",
+								"- Templatisation des pages web du site via un moteur de template. Enlever toute la redondence."
 							],
-							"title": ""
+							"title": "Data Interceptor"
 						},
-						"2": {
+						{
 							"description": [
-								""
+								"- A l'inscription, l'utilisateur saisie son pseudo sur le site officiel",
+								"- A l'aide de la page \"synchroniser depuis son profil, il peut utiliser le service interceptor",
+								"- Refonte du design pour répondre aux critères actuels du web (responsibe, apparence moderne...).",
+								"- Une étape de vérification permet d'assurer que c'est bien son profil qui sera enregistré.",
+								"- La base de données et mises à jour avec ces données et elles sont désormais visibles sur notre site."
 							],
-							"img": "",
-							"title": ""
+							"title": "Utilisateurs"
+						},
+						{
+							"description": [
+								"- Gestion des organisations récupère les données de l'organisation de l'utilisateur et sait si il en est le leader ou non.",
+								"- Fleet récupère des données sur des vaisseaux sur un wiki public, et une fonctionnalité permet de gérer ses vaisseaux sur notre site."
+							],
+							"title": "Autres modules"
 						}
-					},
+					],
 					"group": {
 						"intro": "Data Interceptor est un service de l’application. Il est issue de l’api http://sc-api.com/ open source qui a été adaptée ici afin qu’elle soit utilisé comme service. Ainsi, nous n’appelons plus de route, il n’y a plus d’api. Nous utilisons directement les fonctions du service.",
-						"titre": "DATA INTERCEPTOR"
+						"titre": "Le scrappeur de données"
+					}
+				},
+				{
+					"data": [
+						{
+							"description": [
+								"- Évolution des contrôleurs du site, retournent un réponse json au lieu d'une vue.",
+								"- Sécurisation de l'api avec une authentification JWT (token) sur les routes.",
+								"- Configuration d'objets dto (data transfert objet) afin de pouvoir personnaliser les objets retournées en objets complexes.",
+								"- Intégration de pagination pour les objets et tableaux d'objets retournés par l'api."
+							],
+							"title": "Réalisation de l'api sécurisé"
+						},
+						{
+							"description": [
+								"- Le site est en full api pour pouvoir l'étendre sur n'importe quelle plateforme web, mobile ou bureau.",
+								"- Création d'un front Vue 3 pour externaliser la partie visuelle du site. Celle ci reprend les fonctions du site de base.",
+								"- Création d'un design moderne, responsive et appel de l'api avec Axios."
+							],
+							"title": "Réalisation d'un front en Vue 3"
+						}
+					],
+					"group": {
+						"intro": "Data Interceptor est un service de l’application. Il est issue de l’api http://sc-api.com/ open source qui a été adaptée ici afin qu’elle soit utilisé comme service. Ainsi, nous n’appelons plus de route, il n’y a plus d’api. Nous utilisons directement les fonctions du service.",
+						"titre": "Le scrappeur de données"
 					}
 				}
 			]

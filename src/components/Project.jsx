@@ -12,7 +12,9 @@ const Project = ({ projectId }) => {
   };
   return (
     <div className="project-card">
-      <img src={t(`projects.${projectId}.img`)} alt="Image du projet" />
+      <div className="div-img">
+        <img src={t(`projects.${projectId}.img`)} alt="Image du projet" />
+      </div>
       <div>
         <h3> {t(`projects.${projectId}.introduction.name`)}</h3>
         <p>{t(`projects.${projectId}.description`)}</p>
@@ -53,11 +55,19 @@ const Project = ({ projectId }) => {
             }
           }
 
+          .project-card .div-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 140px;
+          }
+
           .project-card img {
             border-radius: 10px;
             display: block;
             margin: 0 auto;
             max-width: 100%;
+            
           }
 
           .project-card h3 {

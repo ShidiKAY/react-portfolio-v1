@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { SiMalt } from "react-icons/si";
 import { Link, useLocation } from "react-router-dom";
 import {
   Link as ScrollLink,
@@ -185,6 +186,15 @@ const Navbar = () => {
                       rel="noopener noreferrer"
                     >
                       <BsLinkedin className="hidden md:block" size="2rem" />
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href="https://www.malt.fr/profile/kamalaityous"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <SiMalt className="hidden md:block" size="2rem" />
                     </a>
                   </div>
                 </div>
