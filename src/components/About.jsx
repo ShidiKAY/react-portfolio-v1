@@ -2,10 +2,13 @@ import { motion } from "framer-motion";
 import React, { useEffect, useRef, useState } from "react";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import { useTranslation } from "react-i18next";
+
 const About = () => {
   // You can use useState and useEffect here to manage animation state and logic (optional)
   const [isVisible, setIsVisible] = useState(false);
   const refAbout = useRef(null);
+  const { t, i18n } = useTranslation();
 
   // Show/Hide text section of About when it's displayed
   useEffect(() => {
@@ -97,7 +100,8 @@ const About = () => {
                 }}
               >
                 <h1 className="text-3xl font-bold sm:text-4xl mb-8">
-                  Hello, I&#39;m <span className="text-blue-500">Kamal</span>
+                  {t("common.abouthelloim")}{" "}
+                  <span className="text-blue-500">Kamal</span>
                 </h1>
               </motion.div>
 
@@ -120,9 +124,7 @@ const About = () => {
                 }}
               >
                 <p className="text-left font-normal mb-4 flex-wrap">
-                  👨‍💻 Avec plusieurs années d'expérience dans le développement
-                  web, je suis spécialisé dans le Back-End, les applications de
-                  gestion et le développement de logiciels sur mesure.
+                  {t("common.aboutp1")}
                   {/* <a
                   href="https://github.com/ShidiKAY"
                   className="underline text-blue-500"
@@ -132,18 +134,11 @@ const About = () => {
                 </p>
                 {/* <p className="text-left font-normal mb-5 flex-wrap"></p> */}
                 <p className="text-left font-normal mb-4 flex-wrap">
-                  ✅ Que vous ayez besoin de développer une application web
-                  complexe, de mettre en place un système de gestion efficace ou
-                  d'améliorer les performances de votre site existant, je suis
-                  là pour vous accompagner à chaque étape du processus, de la
-                  conception à la livraison, en passant par le déploiement et la
-                  maintenance.
+                  {t("common.aboutp2")}
                 </p>
                 {/* <p className="text-left font-normal mb-5 flex-wrap"></p> */}
                 <p className="text-left font-normal mb-4 flex-wrap">
-                  💬 Contactez-moi dès maintenant pour discuter de votre projet
-                  et commençons à travailler ensemble pour réaliser vos
-                  objectifs !
+                  {t("common.aboutp3")}
                 </p>
               </motion.div>
             </motion.div>

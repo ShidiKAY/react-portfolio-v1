@@ -1,6 +1,10 @@
 {
 	"common": {
 		"about": "About",
+		"abouthelloim": "Hello, i'm",
+		"aboutp1": "👨‍💻 With many years' experience in web development, I specialize in Back-End, business applications and custom software development.",
+		"aboutp2": "✅ Whether you need to develop a complex web application, set up an efficient management system or improve the performance of your existing site, I'm here to support you every step of the way, from design to delivery, deployment and maintenance.",
+		"aboutp3": "💬 Contact me now to discuss your project and let's start working together to achieve your goals!",
 		"contact": "Contact",
 		"contactme": "Contact me",
 		"getresume": "Resume",
@@ -420,7 +424,7 @@
 			]
 		},
 		"hopps": {
-			"description": "Hopps Groupe in the distribution sector needs tools to supervise its IT infrastructure like AlertCenter",
+			"description": "Hopps Groupe in the distribution sector needs tools to supervise its IT infrastructure like AlertCenter with dashboards",
 			"img": "/src/public/images/project-images/hopps/logo.png",
 			"introduction": {
 				"description": "Hopps Groupe has many needs in terms of software and applications. Their tools are mostly developed in-house and need to be maintained because they are so important.",

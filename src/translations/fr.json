@@ -1,6 +1,10 @@
 {
 	"common": {
 		"about": "A propos",
+		"abouthelloim": "Bonjour, je suis",
+		"aboutp1": "👨‍💻 Avec plusieurs années d'expérience dans le développement web, je suis spécialisé dans le Back-End, les applications de gestion et le développement de logiciels sur mesure.",
+		"aboutp2": "✅ Que vous ayez besoin de développer une application web complexe, de mettre en place un système de gestion efficace ou d'améliorer les performances de votre site existant, je suis là pour vous accompagner à chaque étape du processus, de la conception à la livraison, en passant par le déploiement et la maintenance.",
+		"aboutp3": "💬 Contactez-moi dès maintenant pour discuter de votre projet et commençons à travailler ensemble pour réaliser vos objectifs !",
 		"contact": "Contacter",
 		"contactme": "Me contacter",
 		"getresume": "Résumé",
@@ -420,7 +424,7 @@
 			]
 		},
 		"hopps": {
-			"description": "Hopps Groupe dans le domaine de la distribution a besoins d'outils pour superviser son infra infrastructure informatique comme AlertCenter",
+			"description": "Hopps Groupe dans la distribution a besoins d'outils pour superviser son infra infrastructure informatique comme AlertCenter",
 			"img": "/src/public/images/project-images/hopps/logo.png",
 			"introduction": {
 				"description": "Hopps groupe a de nombreux besoins en termes de logiciels et applicatifs. Leur outils sont la plus part développés en internes et ont besoin d'être maintenus car ils sont importants.",
