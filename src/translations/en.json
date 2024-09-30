@@ -27,7 +27,7 @@
   "projects": {
     "apigem": {
       "description": "Redesign of the Apigem web application for improved ergonomics and accessibility",
-      "img": "/public/images/project-images/apigem/logo.png",
+      "img": "/images/project-images/apigem/logo.png",
       "introduction": {
         "description": "Apigem is a French company based in Saint Cannat, specializing in the development of software packages for the management of medical clinics. The Apigem information system enables better management of patients and staff through various modules accessible according to user profile.",
         "introduction": "Apigem Web is a web-based application for consulting staff schedules, patient operations and patient files. Apigem can also be used to manage and consult appointments.",
