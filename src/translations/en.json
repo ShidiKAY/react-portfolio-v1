@@ -87,7 +87,7 @@
     },
     "bubo": {
       "description": "Develop a tool to monitor the information system (IS) of companies and improve its quality and data protection.",
-      "img": "/public/images/project-images/bubo/logo.png",
+      "img": "/images/project-images/bubo/logo.png",
       "introduction": {
         "description": "Objectif Cloud est une entreprise de Cyber Sécurité réalisant des prestations ayant pour vocation d’offrir une meilleure protection de la donnée et de l’information, et de prévenir les incidents de sécurité. En qualité de développeur, je réalise avec l'équipe, l'outil de supervision \"BUBO Sentry\" permettant aux entreprises d’avoir une vision globale de l’état de leur système d’information.",
         "introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
@@ -283,7 +283,7 @@
     },
     "hml": {
       "description": "Harmonia Mundi Livre est specialise dans la distribution de livre. Elle travail avec les libraires et les editeurs.",
-      "img": "/public/images/project-images/hml/logo.png",
+      "img": "/images/project-images/hml/logo.png",
       "introduction": {
         "description": "Harmonia Mundi Livre is located in the culture sector, providing diffusion and distribution solutions to its partners.",
         "introduction": "Mediabase is the central tool used by salespeople and publishers for product referencing and the generation of commercial material.",
@@ -421,7 +421,7 @@
     },
     "hopps": {
       "description": "Hopps Groupe in the distribution sector needs tools to supervise its IT infrastructure like AlertCenter with dashboards",
-      "img": "/public/images/project-images/hopps/logo.png",
+      "img": "/images/project-images/hopps/logo.png",
       "introduction": {
         "description": "Hopps Groupe has many needs in terms of software and applications. Their tools are mostly developed in-house and need to be maintained because they are so important.",
         "introduction": "Maintenance and evolution of cloud tools. The company's internal tools, particularly those used by engineers in the infrastructure department, were developed in-house.\nThey are connected to business applications, and they need to evolve over time as required.",
@@ -504,7 +504,7 @@
     },
     "scf": {
       "description": "Additional referencing support for the French-speaking community as an alternative to the English official website",
-      "img": "/public/images/project-images/scf/logo.png",
+      "img": "/images/project-images/scf/logo.png",
       "introduction": {
         "description": "The game related to the site is under development, and all content is currently in English. We propose an alternative for the French-speaking community ",
         "introduction": "Personal project to become an additional support for a community of 6000 users on a chat application (Discord)!",

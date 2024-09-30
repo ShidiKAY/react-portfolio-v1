@@ -27,7 +27,7 @@
   "projects": {
     "apigem": {
       "description": "Refonte de l'application web Apigem pour une meilleure ergonomie et accessibilité",
-      "img": "/public/images/project-images/apigem/logo.png",
+      "img": "/images/project-images/apigem/logo.png",
       "introduction": {
         "description": "Apigem est une entreprise française située à Saint Cannat, spécialisée dans le développement de progiciels pour la gestion des cliniques médicales. Le système d’information Apigem permet une meilleure gestion des patients et du personnel à travers différents modules accessibles selon le profil des utilisateurs.",
         "introduction": "Apigem Web est une application web qui permet la consultation des plannings du personnel, des opérations des patients et de leurs dossiers. Apigem permet également de gérer et consulter des rendez-vous.",
@@ -87,7 +87,7 @@
     },
     "bubo": {
       "description": "Développer un outil pour surveiller le système d'information (SI) des entreprises et améliorer sa qualité et la protection des données.",
-      "img": "/public/images/project-images/bubo/logo.png",
+      "img": "/images/project-images/bubo/logo.png",
       "introduction": {
         "description": "Objectif Cloud est une entreprise de Cyber Sécurité réalisant des prestations ayant pour vocation d’offrir une meilleure protection de la donnée et de l’information, et de prévenir les incidents de sécurité. En qualité de développeur, je réalise avec l'équipe, l'outil de supervision \"BUBO Sentry\" permettant aux entreprises d’avoir une vision globale de l’état de leur système d’information.",
         "introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveilAler le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
@@ -283,7 +283,7 @@
     },
     "hml": {
       "description": "Harmonia Mundi Livre est specialise dans la distribution de livre. Elle travail avec les libraires et les editeurs.",
-      "img": "/public/images/project-images/hml/logo.png",
+      "img": "/images/project-images/hml/logo.png",
       "introduction": {
         "description": "Harmonia Mundi Livre se situe dans le secteur de la culture, apportant des solutions de diffusion et de distribution à ses partenaires.",
         "introduction": "La Mediabase est l'outils centrale utilisé par les commerciaux et les éditeurs pour le référencement des produits et la generation de materiel commercial.",
@@ -421,7 +421,7 @@
     },
     "hopps": {
       "description": "Hopps Groupe dans la distribution a besoins d'outils pour superviser son infra infrastructure informatique comme AlertCenter",
-      "img": "/public/images/project-images/hopps/logo.png",
+      "img": "/images/project-images/hopps/logo.png",
       "introduction": {
         "description": "Hopps groupe a de nombreux besoins en termes de logiciels et applicatifs. Leur outils sont la plus part développés en internes et ont besoin d'être maintenus car ils sont importants.",
         "introduction": "Maintiens et évolution des outils du cloud. Les outils internes de la société, notamment du pôle infrastructure utilisés par les ingénieurs ont été réalisés en interne.\nIls sont connectés à des applications métiers et elles ont besoin d'évoluer dans le temps selon le besoin.",
@@ -504,7 +504,7 @@
     },
     "scf": {
       "description": "Un support supplémentaire de référencement pour la communauté francophone comme alternative au site officiel en anglais",
-      "img": "/public/images/project-images/scf/logo.png",
+      "img": "/images/project-images/scf/logo.png",
       "introduction": {
         "description": "Le jeu en rapport avec le site est en développement, et tous les contenus sont en anglais actuellement. Nous proposons une alternative pour la communauté francophone ",
         "introduction": "Projet personnel visant à devenir un support supplémentaire pour une communauté de 6000 utilisateurs sur une application de tchat (Discord)!",
