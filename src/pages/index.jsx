@@ -11,12 +11,14 @@ export default function Home() {
         />
         <meta
           name="description"
-          content="Prasad Chavan portfolio. I am web developer, data analyst and machine learning enthusiast. PrasadChavan, Prasadchavan, prasad chavan"
+          content="AIT YOUS Kamal's portfolio. I am web developer with many years' experience in web development, I specialize in Back-End, business applications and custom software development.
+
+"
         />
-        <title>Prasad Chavan</title>
+        <title>AIT YOUS Kamal</title>
       </Head>
       {/* Your Home page content goes here */}
-      <h1>Prasad Chavan</h1>
+      <h1>AIT YOUS Kamal</h1>
       <p>Welcome to my portfolio!</p>
       {/* Add more content, images, links, etc. */}
     </div>
