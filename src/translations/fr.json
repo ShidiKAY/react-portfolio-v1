@@ -107,7 +107,7 @@
               "description": [
                 "Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
               ],
-              "img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+              "img": "/images/project-images/bubo/oldgestuser.png",
               "title": "Le choix de la technologie"
             },
             "3": {
@@ -158,7 +158,7 @@
                 "- Permet de complier le CSS et le Javascript en les allégeant dans un repértoire public.",
                 "- En suite il suffit de pécifier l'entrée webpack dans le template twig..\n"
               ],
-              "img": "https://i.ibb.co/gVrbRTG/negestuser.png",
+              "img": "/images/project-images/bubo/negestuser.png",
               "title": "Le plugin Webpack Encore"
             },
             "4": {
@@ -168,7 +168,7 @@
                 "- Le compteur possède un titre, une valeur numérique sur fond blanc avec un effet d'ombre. Le nombre de compteurs est défini par la taille de chaques colonnes.",
                 "- Mise à jour des tableaux bootstrap vers UIkit. Création d'un kit personnalisé pour tous les autres composants."
               ],
-              "img": "https://i.ibb.co/LS0T1Ng/oldgestuser.png",
+              "img": "/images/project-images/bubo/oldgestuser.png",
               "title": "Mise en place d’UIkit"
             },
             "5": {
@@ -196,7 +196,7 @@
                 "- Exploiter grace à l'application les données brutes envoyé par l'outil externe OpenVas qui est un scanneur de vulnérabilité.",
                 "- Signaler l'existance d'une vulnérabilité et signalier s'il est nécaéssaire de réaliser une action pour la gérer."
               ],
-              "img": "https://i.ibb.co/d4H97jB/Mockup-Dasboard-Principal.jpg",
+              "img": "/images/project-images/bubo/Mockup-Dasboard-Principal.jpg",
               "title": "Objectifs"
             },
             "2": {
@@ -206,7 +206,7 @@
                 "- J'utilise la date de la vulnérabilité pour savoir si elle est apparu plusieurs fois et avoir un historique de celle ci.",
                 "- Génération des modifications dans la base de données. Les données sont implémentés par le script. Le répository généré permet d'y accéder."
               ],
-              "img": "https://i.ibb.co/Ctd4CPH/gsv1.png",
+              "img": "/images/project-images/bubo/gsv1.png",
               "title": "Base de données"
             },
             "3": {
@@ -219,7 +219,7 @@
                 "- Le tri et la paagination rechargent uniquement le tabelau et non la page, avec le nombre d'élément choisis. C'est plus rapide, plus simple à utiliser.",
                 "- La suite a été de diffuser ces modifications sur l'ensemble du site et les fonctions suivantes."
               ],
-              "img": "https://i.ibb.co/W036tzf/thumbnail-Vuln-rabilit-s-Dashboard.png",
+              "img": "/images/project-images/bubo/thumbnail-Vuln-rabilit-s-Dashboard.png",
               "title": "Les tableaux dynamiques et paginés"
             },
             "4": {

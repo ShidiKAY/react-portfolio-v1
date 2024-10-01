@@ -58,7 +58,7 @@ const About = () => {
 
                 <img
                   className="radius rounded-full lg:vw-100 vh-50 "
-                  src="https://kamalaityous.fr/img/profile.png"
+                  src="/images/profile.png"
                   alt=""
                 ></img>
               </motion.div>
