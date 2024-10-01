@@ -82,7 +82,7 @@ const Home = () => {
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-8 grid-cols-2">
             <Link
-              to="/contact"
+              // to="/contact"
               onClick={() =>
                 (window.location.href = "mailto:kamal.aityous@gmail.com")
               }
