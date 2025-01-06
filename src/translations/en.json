@@ -282,7 +282,7 @@
       ]
     },
     "hml": {
-      "description": "Harmonia Mundi Livre est specialise dans la distribution de livre. Elle travail avec les libraires et les editeurs.",
+      "description": "Harmonia Mundi Livre specializes in book distribution. It works with booksellers and publishers.",
       "img": "/images/project-images/hml/logo.png",
       "introduction": {
         "description": "Harmonia Mundi Livre is located in the culture sector, providing diffusion and distribution solutions to its partners.",
@@ -584,8 +584,8 @@
             }
           ],
           "group": {
-            "intro": "Data Interceptor est un service de l’application. Il est issue de l’api http://sc-api.com/ open source qui a été adaptée ici afin qu’elle soit utilisé comme service. Ainsi, nous n’appelons plus de route, il n’y a plus d’api. Nous utilisons directement les fonctions du service.",
-            "titre": "The data scraper"
+            "intro": "Refactoring the application with an API to manage data and a React front-end for more performance and modernity.",
+            "titre": "Separation of front and back end"
           }
         }
       ]
