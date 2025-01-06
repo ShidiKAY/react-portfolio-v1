@@ -559,8 +559,8 @@
             }
           ],
           "group": {
-            "intro": "Refactorisation de l'application avec une API pour gérer les données et un front-end React pour plus de performance et de modernité.",
-            "titre": "Separation du front et du back"
+            "intro": "Data Interceptor est un service de l’application. Il est issue de l’api http://sc-api.com/ open source qui a été adaptée ici afin qu’elle soit utilisé comme service. Ainsi, nous n’appelons plus de route, il n’y a plus d’api. Nous utilisons directement les fonctions du service.",
+            "titre": "Le scrappeur de données"
           }
         },
         {
@@ -584,8 +584,8 @@
             }
           ],
           "group": {
-            "intro": "Data Interceptor est un service de l’application. Il est issue de l’api http://sc-api.com/ open source qui a été adaptée ici afin qu’elle soit utilisé comme service. Ainsi, nous n’appelons plus de route, il n’y a plus d’api. Nous utilisons directement les fonctions du service.",
-            "titre": "Le scrappeur de données"
+            "intro": "Refactorisation de l'application avec une API pour gérer les données et un front-end React pour plus de performance et de modernité.",
+            "titre": "Separation du front et du back"
           }
         }
       ]
