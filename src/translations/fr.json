@@ -179,7 +179,7 @@
                 "- Avantages : Courbes modernes, colorés, affichées dynamyqment et supportant JQuery. Possibilité de zoomer sur une période et d'exporter.",
                 "- Validation de la cohérence des données"
               ],
-              "img": "https://kamalaityous.fr/img/portfolio/bubo/chartsfilt1.png",
+              "img": "/images/project-images/bubo/chartsfilt1.png",
               "title": "Changement de plugin charts"
             }
           },

@@ -46,7 +46,7 @@
             }
           },
           "group": {
-            "intro": "intro intro",
+            "intro": "",
             "titre": "Ecosystem analysis"
           }
         },
@@ -79,7 +79,7 @@
             }
           },
           "group": {
-            "intro": "intro intro",
+            "intro": "",
             "titre": "Migrating first pages"
           }
         }
@@ -89,8 +89,8 @@
       "description": "Develop a tool to monitor the information system (IS) of companies and improve its quality and data protection.",
       "img": "/images/project-images/bubo/logo.png",
       "introduction": {
-        "description": "Objectif Cloud est une entreprise de Cyber Sécurité réalisant des prestations ayant pour vocation d’offrir une meilleure protection de la donnée et de l’information, et de prévenir les incidents de sécurité. En qualité de développeur, je réalise avec l'équipe, l'outil de supervision \"BUBO Sentry\" permettant aux entreprises d’avoir une vision globale de l’état de leur système d’information.",
-        "introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveiller le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
+        "description": "Objectif Cloud is a Cyber Security company providing services designed to offer better protection for data and information, and to prevent security incidents. As a developer, I worked with the team to create the “BUBO Sentry” supervision tool, giving companies a global view of the status of their information systems.",
+        "introduction": "The main project is the creation of a monitoring tool for companies wishing to reinforce the quality of their information system and the protection of their data. The aim is to propose indicators for monitoring the I.S., such as dynamic and effective dashboards giving an overall view of the information system.",
         "name": "Bubo Cybersec",
         "title": "OBJECTIF CLOUD"
       },
@@ -179,7 +179,7 @@
                 "- Advantages: Modern curves, colorful, dynamically displayed and supporting JQuery. Ability to zoom in on a period and export.",
                 "- Validation of data consistency"
               ],
-              "img": "https://kamalaityous.fr/img/portfolio/bubo/chartsfilt1.png",
+              "img": "/images/project-images/bubo/chartsfilt1.png",
               "title": "Change of charts plugin"
             }
           },
