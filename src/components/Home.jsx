@@ -91,7 +91,7 @@ const Home = () => {
               {t("common.contactme")}
             </Link>
             <Link
-              to="/Cv_KamalAITYOUS.pdf"
+              to={"/" + t("common.getresumefile")}
               target="_blank"
               rel="noopener noreferrer"
               className="px-12 py-3 text-sm font-medium text-culturedWhite bg-mnBlue rounded shadow active:bg-blue-500 hover:bg-carolinaBlue focus:outline-none focus:ring"
