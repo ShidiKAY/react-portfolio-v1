@@ -81,7 +81,7 @@ const Skills = () => {
           {Object.keys(skills).map((category, index) => (
             <ul
               key={index}
-              className="flex justify-start items-center flex-row flex-wrap gap-8 mb-2 bg-blue-50 p-8 rounded-2xl"
+              className="flex flex-col md:flex-row justify-start items-center flex-wrap gap-8 mb-2 bg-blue-50 p-8 rounded-2xl"
             >
               <span className="text-blue-500 text-2xl w-full text-center md:w-fit">
                 {category}

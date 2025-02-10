@@ -10,7 +10,10 @@ const Project = ({ projectId }) => {
   return (
     <div className="project-card">
       <div className="div-img">
-        <img src={t(`projects.${projectId}.img`)} alt="Image du projet" />
+        <img
+          src={t(`projects.${projectId}.img`)}
+          alt={t(`projects.${projectId}.introduction.name`)}
+        />
       </div>
       <div>
         <h3> {t(`projects.${projectId}.introduction.name`)}</h3>

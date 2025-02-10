@@ -124,21 +124,18 @@ const About = () => {
                 }}
               >
                 <p className="text-left font-normal mb-4 flex-wrap">
-                  {t("common.aboutp1")}
-                  {/* <a
-                  href="https://github.com/ShidiKAY"
-                  className="underline text-blue-500"
-                >
-                  here
-                </a> */}
+                  {t("common.aboutp1")}{" "}
+                  {/* Update this with your latest experience */}
                 </p>
                 {/* <p className="text-left font-normal mb-5 flex-wrap"></p> */}
                 <p className="text-left font-normal mb-4 flex-wrap">
-                  {t("common.aboutp2")}
+                  {t("common.aboutp2")}{" "}
+                  {/* Update this with your latest skills */}
                 </p>
                 {/* <p className="text-left font-normal mb-5 flex-wrap"></p> */}
                 <p className="text-left font-normal mb-4 flex-wrap">
-                  {t("common.aboutp3")}
+                  {t("common.aboutp3")}{" "}
+                  {/* Update this with your latest projects */}
                 </p>
               </motion.div>
             </motion.div>
