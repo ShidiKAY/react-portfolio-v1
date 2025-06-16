@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import routes from "./routes";
+import GoToTop from "./components/GoToTop";
 
 import ReactModal from "react-modal";
 
@@ -53,6 +54,9 @@ const AppContent = () => {
 
         {!isProjectDetailPage && <About />}
         {/* Ajoutez du contenu, des images, des liens, etc. */}
+
+        {/* Go to Top button */}
+        <GoToTop />
       </div>
     </div>
   );

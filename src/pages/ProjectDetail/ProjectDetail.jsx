@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { useParams, useNavigate } from "react-router-dom";
 import Head from "react-helmet";
 import { useEffect, useState } from "react";
+import GoToTop from "../../components/GoToTop";
 
 const ProjectDetail = () => {
   const { t } = useTranslation();
@@ -304,6 +305,9 @@ const ProjectDetail = () => {
           </div>
         )}
       </div>
+
+      {/* Go to Top button */}
+      <GoToTop />
     </div>
   );
 };
