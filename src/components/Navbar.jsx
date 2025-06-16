@@ -1,13 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { SiMalt } from "react-icons/si";
 import { Link, useLocation } from "react-router-dom";
-import {
-  Link as ScrollLink,
-  Events,
-  animateScroll as scroll,
-} from "react-scroll"; // Import ScrollLink and animateScroll
+import { Link as ScrollLink, Events } from "react-scroll"; // Import ScrollLink and animateScroll
 import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
@@ -238,8 +234,8 @@ const Navbar = () => {
                         : "cursor-pointer hover:text-blue-500"
                     }
                   >
-                    <Link id="home" href="/">
-                      <a onClick={handleMobileNav}>Home</a>
+                    <Link id="home" to="/">
+                      Home
                     </Link>
                   </h1>
                   <h1
@@ -249,8 +245,8 @@ const Navbar = () => {
                         : "cursor-pointer hover:text-blue-500"
                     }
                   >
-                    <Link id="about" href="/about">
-                      <a onClick={handleMobileNav}>About</a>
+                    <Link id="about" to="/about" onClick={handleMobileNav}>
+                      About
                     </Link>
                   </h1>
                   <h1
@@ -260,8 +256,12 @@ const Navbar = () => {
                         : "cursor-pointer hover:text-blue-500"
                     }
                   >
-                    <Link id="projects" href="/projects">
-                      <a onClick={handleMobileNav}>Projects</a>
+                    <Link
+                      id="projects"
+                      to="/projects"
+                      onClick={handleMobileNav}
+                    >
+                      Projects
                     </Link>
                   </h1>
                   <h1
@@ -271,8 +271,8 @@ const Navbar = () => {
                         : "cursor-pointer hover:text-blue-500"
                     }
                   >
-                    <Link id="blog" href="/blog">
-                      <a onClick={handleMobileNav}>Blog</a>
+                    <Link id="blog" to="/blog" onClick={handleMobileNav}>
+                      Blog
                     </Link>
                   </h1>
 

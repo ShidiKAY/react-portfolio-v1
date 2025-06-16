@@ -1,14 +1,14 @@
-import React from "react";
-import ProjectModal from "./modals/ProjectModal";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import PropTypes from "prop-types";
 
 import "/src/styles/radixui.css";
 
 const Project = ({ projectId }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
-    <div className="project-card">
+    <Link to={`/projects/${projectId}`} className="project-card">
       <div className="div-img">
         <img
           src={t(`projects.${projectId}.img`)}
@@ -18,7 +18,7 @@ const Project = ({ projectId }) => {
       <div>
         <h3> {t(`projects.${projectId}.introduction.name`)}</h3>
         <p>{t(`projects.${projectId}.description`)}</p>
-        <ProjectModal projectId={projectId}></ProjectModal>
+        {/* <ProjectModal projectId={projectId}></ProjectModal> */}
       </div>
 
       <style>
@@ -47,6 +47,16 @@ const Project = ({ projectId }) => {
             display: inline-block; /* Allow multiple cards per row */
           }
 
+          .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+          }
+
+          .project-card:active {
+            transform: translateY(0);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          }
 
           /* Media query for smaller screens (adjust breakpoint as needed) */
           @media (max-width: 768px) {
@@ -193,8 +203,12 @@ const Project = ({ projectId }) => {
         }
       `}
       </style>
-    </div>
+    </Link>
   );
+};
+
+Project.propTypes = {
+  projectId: PropTypes.string.isRequired,
 };
 
 export default Project;

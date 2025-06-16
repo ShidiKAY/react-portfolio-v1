@@ -1,10 +1,16 @@
+import React from "react";
+
 export default [
   {
     path: "/",
-    component: () => import("./pages/Home"),
+    component: React.lazy(() => import("./components/Home")),
   },
   {
     path: "/about",
-    component: () => import("./pages/About"),
+    component: React.lazy(() => import("./components/About")),
+  },
+  {
+    path: "/projects/:projectId",
+    component: React.lazy(() => import("./pages/ProjectDetail/ProjectDetail")),
   },
 ];

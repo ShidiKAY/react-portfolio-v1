@@ -1,6 +1,5 @@
-import React from "react";
-import Project from "./Project";
 import { useTranslation } from "react-i18next";
+import Project from "./Project";
 
 const projects = [
   {
@@ -21,7 +20,7 @@ const projects = [
 ];
 
 const Projects = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   return (
     <div className="w-full pb-32">
