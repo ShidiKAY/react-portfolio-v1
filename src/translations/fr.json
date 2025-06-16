@@ -1,24 +1,32 @@
 {
   "common": {
-    "about": "A propos",
+    "about": "À propos",
     "abouthelloim": "Bonjour, je suis",
-    "aboutp1": "👨‍💻 Avec plusieurs années d'expérience dans le développement web, je suis spécialisé dans le Back-End, les applications de gestion et le développement de logiciels sur mesure.",
-    "aboutp2": "✅ Que vous ayez besoin de développer une application web complexe, de mettre en place un système de gestion efficace ou d'améliorer les performances de votre site existant, je suis là pour vous accompagner à chaque étape du processus, de la conception à la livraison, en passant par le déploiement et la maintenance.",
-    "aboutp3": "💬 Contactez-moi dès maintenant pour discuter de votre projet et commençons à travailler ensemble pour réaliser vos objectifs !",
-    "contact": "Contacter",
+    "aboutp1": "👨‍💻 Avec de nombreuses années d'expérience dans le développement web, je me spécialise dans le Back-End, les applications métier et le développement de logiciels sur mesure.",
+    "aboutp2": "✅ Que vous ayez besoin de développer une application web complexe, de mettre en place un système de gestion efficace ou d'améliorer les performances de votre site existant, je suis là pour vous accompagner à chaque étape, de la conception à la livraison, au déploiement et à la maintenance.",
+    "aboutp3": "💬 Contactez-moi maintenant pour discuter de votre projet et commençons à travailler ensemble pour atteindre vos objectifs !",
+    "contact": "Contact",
     "contactme": "Me contacter",
-    "getresume": "Résumé",
-    "getresumefile": "Cv_KamalAITYOUS.pdf",
+    "getresume": "CV",
+    "getresumefile": "FR_CV_KamalAITYOUS.pdf",
     "home": "Accueil",
     "language": "Langue",
-    "main1": "Faites de votre application Web",
-    "main2": "une réalité",
+    "main1": "Faites de votre application web",
+    "main2": "Une réalité",
     "projects": "Projets",
     "seeMore": "Voir plus",
-    "selectLanguage": "Sélectionner la langue",
+    "selectLanguage": "Sélectionner une langue",
     "skills": "Compétences",
-    "sub1": "À la recherche d'un développeur freelance polyvalent pour\n            concrétiser vos projets web ?",
-    "sub2": "Vous êtes au bon endroit !"
+    "sub1": "Vous cherchez un développeur freelance polyvalent pour vous aider\n            dans vos projets web ?",
+    "sub2": "Vous êtes au bon endroit !",
+    "technologies": "Technologies :",
+    "softSkills": "Soft Skills :",
+    "projectContext": "Contexte du Projet",
+    "myRole": "Mon Rôle",
+    "keyActions": "Actions Clés & Impact",
+    "keyChallenges": "Défis Clés",
+    "solutionsImplemented": "Solutions Mises en Œuvre",
+    "externalLinks": "Liens Externes"
   },
   "portfolio": {
     "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
@@ -29,9 +37,16 @@
     "apigem": {
       "description": "Refonte de l'application web Apigem pour une meilleure ergonomie et accessibilité",
       "img": "/images/project-images/apigem/logo.png",
+      "mainTechnologies": ["PHP", "Bootstrap", "jQuery", "MySQL"],
+      "softSkills": [
+        "Résolution de problèmes",
+        "Collaboration d'équipe",
+        "Documentation technique",
+        "Design d'expérience utilisateur"
+      ],
       "introduction": {
-        "description": "Apigem est une entreprise française située à Saint Cannat, spécialisée dans le développement de progiciels pour la gestion des cliniques médicales. Le système d’information Apigem permet une meilleure gestion des patients et du personnel à travers différents modules accessibles selon le profil des utilisateurs.",
-        "introduction": "Apigem Web est une application web qui permet la consultation des plannings du personnel, des opérations des patients et de leurs dossiers. Apigem permet également de gérer et consulter des rendez-vous.",
+        "description": "Apigem est une entreprise française basée à Saint Cannat, spécialisée dans le développement de progiciels pour la gestion des cliniques médicales. Le système d'information Apigem permet une meilleure gestion des patients et du personnel grâce à différents modules accessibles selon le profil utilisateur.",
+        "introduction": "Apigem Web est une application web permettant de consulter les plannings du personnel, les opérations des patients et les dossiers patients. Apigem permet également de gérer et consulter les rendez-vous.",
         "name": "Apigem web",
         "title": "Apigem"
       },
@@ -64,8 +79,8 @@
               "description": [
                 "- Migration de la page login vers un nouveau design, intégration des nouvelles fonctionnalités.",
                 "- Transformation du menu vertical en un menu horizontal et responsive, regroupant les modules par familles.",
-                "- Mise en place d’un système de routage avec réécriture des URL pour des adresses de navigation plus propres et sécurisées.",
-                "- Migration de la page d’affichage des plannings, intégration d’un affichage adaptatif pour les smartphones via JavaScript (jQuery), avec condition dans le moteur de templates pour afficher les données en fonction de la résolution de l'écran."
+                "- Mise en place d'un système de routage avec réécriture des URL pour des adresses de navigation plus propres et sécurisées.",
+                "- Migration de la page d'affichage des plannings, intégration d'un affichage adaptatif pour les smartphones via JavaScript (jQuery), avec condition dans le moteur de templates pour afficher les données en fonction de la résolution de l'écran."
               ],
               "title": "Migration des premières pages"
             },
@@ -89,9 +104,16 @@
     "bubo": {
       "description": "Développer un outil pour surveiller le système d'information (SI) des entreprises et améliorer sa qualité et la protection des données.",
       "img": "/images/project-images/bubo/logo.png",
+      "mainTechnologies": ["Symfony 4", "PHP", "UIkit", "MySQL", "Webpack"],
+      "softSkills": [
+        "Architecture système",
+        "Leadership technique",
+        "Refactorisation de code",
+        "Optimisation des performances"
+      ],
       "introduction": {
-        "description": "Objectif Cloud est une entreprise de Cyber Sécurité réalisant des prestations ayant pour vocation d’offrir une meilleure protection de la donnée et de l’information, et de prévenir les incidents de sécurité. En qualité de développeur, je réalise avec l'équipe, l'outil de supervision \"BUBO Sentry\" permettant aux entreprises d’avoir une vision globale de l’état de leur système d’information.",
-        "introduction": "Le projet principal est la réalisation d’un outil de supervision pour les entreprises désirant renforcer la qualité de leur système d’information et la protection de leurs données. Il s’agit de proposer des indicateurs permettant de surveilAler le S.I. comme, par exemple, des tableaux de bord dynamiques et efficaces donnant une vision globale sur le système d’information.",
+        "description": "Objectif Cloud est une entreprise de Cyber Sécurité proposant des services conçus pour offrir une meilleure protection des données et des informations, et pour prévenir les incidents de sécurité. En tant que développeur, j'ai travaillé avec l'équipe pour créer l'outil de supervision \"BUBO Sentry\", donnant aux entreprises une vue globale de l'état de leurs systèmes d'information.",
+        "introduction": "Le projet principal est la création d'un outil de supervision pour les entreprises souhaitant renforcer la qualité de leur système d'information et la protection de leurs données. L'objectif est de proposer des indicateurs pour le suivi du S.I., comme des tableaux de bord dynamiques et efficaces donnant une vue d'ensemble du système d'information.",
         "name": "Bubo Cybersec",
         "title": "OBJECTIF CLOUD"
       },
@@ -150,7 +172,7 @@
                 "- Installation simple des plugins en ligne de commande.",
                 "- Inconvénients : thème difficile à personnaliser. Possède déjà un design avancé. Besoin d'une identité propre à l'application."
               ],
-              "title": "Installation d’UIkit"
+              "title": "Installation d'UIkit"
             },
             "3": {
               "description": [
@@ -170,7 +192,7 @@
                 "- Mise à jour des tableaux bootstrap vers UIkit. Création d'un kit personnalisé pour tous les autres composants."
               ],
               "img": "/images/project-images/bubo/oldgestuser.png",
-              "title": "Mise en place d’UIkit"
+              "title": "Mise en place d'UIkit"
             },
             "5": {
               "description": [
@@ -283,12 +305,19 @@
       ]
     },
     "hml": {
-      "description": "Harmonia Mundi Livre est specialise dans la distribution de livre. Elle travail avec les libraires et les editeurs.",
+      "description": "Harmonia Mundi Livre est spécialisée dans la distribution de livres. Elle travaille avec des libraires et des éditeurs.",
       "img": "/images/project-images/hml/logo.png",
+      "mainTechnologies": ["PHP", "MySQL", "JavaScript", "HTML/CSS"],
+      "softSkills": [
+        "Analyse de données",
+        "Optimisation des processus métier",
+        "Communication client",
+        "Gestion de projet"
+      ],
       "introduction": {
-        "description": "Harmonia Mundi Livre se situe dans le secteur de la culture, apportant des solutions de diffusion et de distribution à ses partenaires.",
-        "introduction": "La Mediabase est l'outils centrale utilisé par les commerciaux et les éditeurs pour le référencement des produits et la generation de materiel commercial.",
-        "name": "Medbiabase",
+        "description": "Harmonia Mundi Livre est située dans le secteur culturel, fournissant des solutions de diffusion et de distribution à ses partenaires.",
+        "introduction": "Mediabase est l'outil central utilisé par les commerciaux et les éditeurs pour le référencement des produits et la génération de matériel commercial.",
+        "name": "Mediabase",
         "title": "Harmonia Mundi Livre"
       },
       "tasks": [
@@ -421,11 +450,18 @@
       ]
     },
     "hopps": {
-      "description": "Hopps Groupe dans la distribution a besoins d'outils pour superviser son infra infrastructure informatique comme AlertCenter",
+      "description": "Hopps Groupe dans le secteur de la distribution a besoin d'outils pour superviser son infrastructure informatique comme AlertCenter avec des tableaux de bord",
       "img": "/images/project-images/hopps/logo.png",
+      "mainTechnologies": ["PHP", "MySQL", "JavaScript", "Bootstrap"],
+      "softSkills": [
+        "Intégration système",
+        "Support technique",
+        "Documentation",
+        "Coordination d'équipe"
+      ],
       "introduction": {
-        "description": "Hopps groupe a de nombreux besoins en termes de logiciels et applicatifs. Leur outils sont la plus part développés en internes et ont besoin d'être maintenus car ils sont importants.",
-        "introduction": "Maintiens et évolution des outils du cloud. Les outils internes de la société, notamment du pôle infrastructure utilisés par les ingénieurs ont été réalisés en interne.\nIls sont connectés à des applications métiers et elles ont besoin d'évoluer dans le temps selon le besoin.",
+        "description": "Hopps Groupe a de nombreux besoins en termes de logiciels et d'applications. Leurs outils sont principalement développés en interne et doivent être maintenus car ils sont très importants.",
+        "introduction": "Maintenance et évolution des outils cloud. Les outils internes de l'entreprise, notamment ceux utilisés par les ingénieurs du département infrastructure, ont été développés en interne.\nIls sont connectés aux applications métier, et ils doivent évoluer dans le temps selon les besoins.",
         "name": "Hopps Group",
         "title": "AlertCenter"
       },
@@ -504,11 +540,18 @@
       ]
     },
     "scf": {
-      "description": "Un support supplémentaire de référencement pour la communauté francophone comme alternative au site officiel en anglais",
+      "description": "Support supplémentaire de référencement pour la communauté francophone comme alternative au site officiel en anglais",
       "img": "/images/project-images/scf/logo.png",
+      "mainTechnologies": ["React", "Node.js", "MongoDB", "Discord API"],
+      "softSkills": [
+        "Gestion de communauté",
+        "Intégration d'API",
+        "Scraping de données",
+        "Design d'expérience utilisateur"
+      ],
       "introduction": {
-        "description": "Le jeu en rapport avec le site est en développement, et tous les contenus sont en anglais actuellement. Nous proposons une alternative pour la communauté francophone ",
-        "introduction": "Projet personnel visant à devenir un support supplémentaire pour une communauté de 6000 utilisateurs sur une application de tchat (Discord)!",
+        "description": "Le jeu en rapport avec le site est en développement, et tous les contenus sont en anglais actuellement. Nous proposons une alternative pour la communauté francophone",
+        "introduction": "Projet personnel visant à devenir un support supplémentaire pour une communauté de 6000 utilisateurs sur une application de tchat (Discord) !",
         "name": "Star Citizen Francophone Web",
         "title": "Star Citizen Francophone"
       },
@@ -560,7 +603,7 @@
             }
           ],
           "group": {
-            "intro": "Data Interceptor est un service de l’application. Il est issue de l’api http://sc-api.com/ open source qui a été adaptée ici afin qu’elle soit utilisé comme service. Ainsi, nous n’appelons plus de route, il n’y a plus d’api. Nous utilisons directement les fonctions du service.",
+            "intro": "Data Interceptor est un service de l'application. Il est issue de l'api http://sc-api.com/ open source qui a été adaptée ici afin qu'elle soit utilisé comme service. Ainsi, nous n'appelons plus de route, il n'y a plus d'api. Nous utilisons directement les fonctions du service.",
             "titre": "Le scrappeur de données"
           }
         },

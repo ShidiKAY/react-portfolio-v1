@@ -18,7 +18,15 @@
     "selectLanguage": "Select a language",
     "skills": "Skills",
     "sub1": "Looking for a versatile freelance developer to help you\n            your web projects?",
-    "sub2": "You've come to the right place!"
+    "sub2": "You've come to the right place!",
+    "technologies": "Technologies:",
+    "softSkills": "Soft Skills:",
+    "projectContext": "Project Context",
+    "myRole": "My Role",
+    "keyActions": "Key Actions & Impact",
+    "keyChallenges": "Key Challenges",
+    "solutionsImplemented": "Solutions Implemented",
+    "externalLinks": "External Links"
   },
   "portfolio": {
     "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
@@ -29,6 +37,13 @@
     "apigem": {
       "description": "Redesign of the Apigem web application for improved ergonomics and accessibility",
       "img": "/images/project-images/apigem/logo.png",
+      "mainTechnologies": ["PHP", "Bootstrap", "jQuery", "MySQL"],
+      "softSkills": [
+        "Problem Solving",
+        "Team Collaboration",
+        "Technical Documentation",
+        "User Experience Design"
+      ],
       "introduction": {
         "description": "Apigem is a French company based in Saint Cannat, specializing in the development of software packages for the management of medical clinics. The Apigem information system enables better management of patients and staff through various modules accessible according to user profile.",
         "introduction": "Apigem Web is a web-based application for consulting staff schedules, patient operations and patient files. Apigem can also be used to manage and consult appointments.",
@@ -89,8 +104,15 @@
     "bubo": {
       "description": "Develop a tool to monitor the information system (IS) of companies and improve its quality and data protection.",
       "img": "/images/project-images/bubo/logo.png",
+      "mainTechnologies": ["Symfony 4", "PHP", "UIkit", "MySQL", "Webpack"],
+      "softSkills": [
+        "System Architecture",
+        "Technical Leadership",
+        "Code Refactoring",
+        "Performance Optimization"
+      ],
       "introduction": {
-        "description": "Objectif Cloud is a Cyber Security company providing services designed to offer better protection for data and information, and to prevent security incidents. As a developer, I worked with the team to create the “BUBO Sentry” supervision tool, giving companies a global view of the status of their information systems.",
+        "description": "Objectif Cloud is a Cyber Security company providing services designed to offer better protection for data and information, and to prevent security incidents. As a developer, I worked with the team to create the \"BUBO Sentry\" supervision tool, giving companies a global view of the status of their information systems.",
         "introduction": "The main project is the creation of a monitoring tool for companies wishing to reinforce the quality of their information system and the protection of their data. The aim is to propose indicators for monitoring the I.S., such as dynamic and effective dashboards giving an overall view of the information system.",
         "name": "Bubo Cybersec",
         "title": "OBJECTIF CLOUD"
@@ -285,6 +307,13 @@
     "hml": {
       "description": "Harmonia Mundi Livre specializes in book distribution. It works with booksellers and publishers.",
       "img": "/images/project-images/hml/logo.png",
+      "mainTechnologies": ["PHP", "MySQL", "JavaScript", "HTML/CSS"],
+      "softSkills": [
+        "Data Analysis",
+        "Business Process Optimization",
+        "Client Communication",
+        "Project Management"
+      ],
       "introduction": {
         "description": "Harmonia Mundi Livre is located in the culture sector, providing diffusion and distribution solutions to its partners.",
         "introduction": "Mediabase is the central tool used by salespeople and publishers for product referencing and the generation of commercial material.",
@@ -423,6 +452,13 @@
     "hopps": {
       "description": "Hopps Groupe in the distribution sector needs tools to supervise its IT infrastructure like AlertCenter with dashboards",
       "img": "/images/project-images/hopps/logo.png",
+      "mainTechnologies": ["PHP", "MySQL", "JavaScript", "Bootstrap"],
+      "softSkills": [
+        "System Integration",
+        "Technical Support",
+        "Documentation",
+        "Team Coordination"
+      ],
       "introduction": {
         "description": "Hopps Groupe has many needs in terms of software and applications. Their tools are mostly developed in-house and need to be maintained because they are so important.",
         "introduction": "Maintenance and evolution of cloud tools. The company's internal tools, particularly those used by engineers in the infrastructure department, were developed in-house.\nThey are connected to business applications, and they need to evolve over time as required.",
@@ -506,8 +542,15 @@
     "scf": {
       "description": "Additional referencing support for the French-speaking community as an alternative to the English official website",
       "img": "/images/project-images/scf/logo.png",
+      "mainTechnologies": ["React", "Node.js", "MongoDB", "Discord API"],
+      "softSkills": [
+        "Community Management",
+        "API Integration",
+        "Data Scraping",
+        "User Experience Design"
+      ],
       "introduction": {
-        "description": "The game related to the site is under development, and all content is currently in English. We propose an alternative for the French-speaking community ",
+        "description": "The game related to the site is under development, and all content is currently in English. We propose an alternative for the French-speaking community",
         "introduction": "Personal project to become an additional support for a community of 6000 users on a chat application (Discord)!",
         "name": "Star Citizen Francophone Web",
         "title": "Star Citizen Francophone"
@@ -535,7 +578,7 @@
             {
               "description": [
                 "- The Scrapper service uses a url and the service to retrieve the page from a site. The service parse using regular expressions.",
-                "- The item or list of usable items returned by the service is recorded by the “Cacher” service, which uses the data and stores it in the database.",
+                "- The item or list of usable items returned by the service is recorded by the \"Cacher\" service, which uses the data and stores it in the database.",
                 "- Redesign to meet current web criteria (responsibe, modern appearance...).",
                 "- Templatization of the site's web pages via a template engine. Remove all redundancy."
               ],
@@ -544,7 +587,7 @@
             {
               "description": [
                 "- When registering, the user enters his nickname on the official site.",
-                "- Using the “synchronize from profile” page, the user can use the interceptor service.",
+                "- Using the \"synchronize from profile\" page, the user can use the interceptor service.",
                 "- The service fetches the user's profile page from the official site and extracts all public data.",
                 "- A verification step ensures that it is indeed your profile that will be saved.",
                 "- The database is then updated with these data, and they are now visible on our site."
@@ -560,7 +603,7 @@
             }
           ],
           "group": {
-            "intro": "Data Interceptor est un service de l’application. Il est issue de l’api http://sc-api.com/ open source qui a été adaptée ici afin qu’elle soit utilisé comme service. Ainsi, nous n’appelons plus de route, il n’y a plus d’api. Nous utilisons directement les fonctions du service.",
+            "intro": "Data Interceptor is an application service. It comes from the open source API http://sc-api.com/ which has been adapted here to be used as a service. Thus, we no longer call a route, there is no more API. We directly use the service functions.",
             "titre": "The data scraper"
           }
         },

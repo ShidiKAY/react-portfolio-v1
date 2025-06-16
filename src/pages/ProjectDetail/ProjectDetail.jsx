@@ -30,6 +30,18 @@ const ProjectDetail = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Handle Escape key press
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === "Escape") {
+        navigate(-1);
+      }
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [navigate]);
+
   const project = t(`projects.${projectId}`, { returnObjects: true });
 
   if (!project) {
@@ -40,6 +52,8 @@ const ProjectDetail = () => {
   const externalLinks = project.externalLinks || [];
   const challenges = project.challenges || [];
   const solutions = project.solutions || [];
+  const mainTechnologies = project.mainTechnologies || [];
+  const softSkills = project.softSkills || [];
 
   return (
     <div className="relative min-h-screen bg-white">
@@ -80,21 +94,18 @@ const ProjectDetail = () => {
         </Head>
 
         {/* Project Header */}
-        <div className="max-w-4xl mx-auto mt-16 mb-16">
-          <h1 className="text-5xl font-bold mb-6 text-gray-900 text-center font-montserrat uppercase">
+        <div className="max-w-4xl mx-auto mt-16 mb-12">
+          <h1 className="text-5xl font-bold mb-8 text-gray-900 text-left font-montserrat uppercase">
             {project.introduction.name}
           </h1>
 
-          {/* Star Separator */}
-          <hr className="star-primary mb-8" />
-
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed text-center">
+          <p className="text-xl text-gray-600 mb-8 leading-relaxed text-justify">
             {project.description}
           </p>
 
           {/* Project Stats */}
-          <div className="flex flex-wrap gap-6 mb-12 justify-center">
-            <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full">
+          <div className="flex flex-wrap gap-6 mb-8 -ml-4">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 text-blue-500"
@@ -109,7 +120,7 @@ const ProjectDetail = () => {
               </svg>
               <span className="text-gray-700">6 months</span>
             </div>
-            <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 text-green-500"
@@ -120,7 +131,7 @@ const ProjectDetail = () => {
               </svg>
               <span className="text-gray-700">Team of 5</span>
             </div>
-            <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-full">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 text-purple-500"
@@ -137,17 +148,58 @@ const ProjectDetail = () => {
             </div>
           </div>
 
+          {/* Main Technologies and Soft Skills */}
+          <div className="space-y-4 mb-8">
+            {/* Main Technologies */}
+            {mainTechnologies.length > 0 && (
+              <div className="flex items-center gap-3">
+                <span className="text-gray-700 font-medium min-w-[120px]">
+                  {t("common.technologies")}
+                </span>
+                <div className="flex flex-wrap gap-1.5">
+                  {mainTechnologies.map((tech, index) => (
+                    <span
+                      key={index}
+                      className="px-2.5 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Soft Skills */}
+            {softSkills.length > 0 && (
+              <div className="flex items-center gap-3">
+                <span className="text-gray-700 font-medium min-w-[120px]">
+                  {t("common.softSkills")}
+                </span>
+                <div className="flex flex-wrap gap-1.5">
+                  {softSkills.map((skill, index) => (
+                    <span
+                      key={index}
+                      className="px-2.5 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+
           {/* Technologies Used */}
           {technologies.length > 0 && (
-            <div className="mb-12">
-              <h2 className="text-2xl font-semibold mb-6 text-gray-800 text-center">
+            <div className="mb-12 bg-gray-50 p-6 rounded-lg">
+              <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
                 Technologies & Skills
               </h2>
-              <div className="flex flex-wrap gap-3 justify-center">
+              <div className="flex flex-wrap gap-2 justify-start">
                 {technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="px-4 py-2 bg-blue-50 text-blue-700 rounded-full text-sm font-medium"
+                    className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium"
                   >
                     {tech}
                   </span>
@@ -155,155 +207,162 @@ const ProjectDetail = () => {
               </div>
             </div>
           )}
-        </div>
 
-        {/* Project Overview */}
-        <div className="max-w-4xl mx-auto mb-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 bg-gray-50 p-8 rounded-lg">
-            <div>
-              <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-                Project Context
-              </h2>
-              <p className="text-gray-700 leading-relaxed">
-                {project.introduction.introduction}
-              </p>
-            </div>
-            <div>
-              <h2 className="text-2xl font-semibold mb-4 text-gray-800">
-                My Role
-              </h2>
-              <p className="text-gray-700 leading-relaxed">
-                {project.introduction.description}
-              </p>
+          {/* Project Overview */}
+          <div className="max-w-4xl mx-auto mb-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-gray-50 p-6 rounded-lg">
+              <div>
+                <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
+                  {t("common.projectContext")}
+                </h2>
+                <p className="text-gray-700 leading-relaxed text-justify">
+                  {project.introduction.introduction}
+                </p>
+              </div>
+              <div className="lg:border-l lg:border-gray-200 lg:pl-8">
+                <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
+                  {t("common.myRole")}
+                </h2>
+                <p className="text-gray-700 leading-relaxed text-justify">
+                  {project.introduction.description}
+                </p>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Key Actions & Impact */}
-        {project.tasks && project.tasks.length > 0 && (
-          <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-2xl font-semibold mb-8 text-gray-800 text-center">
-              Key Actions & Impact
-            </h2>
-            <div className="space-y-12">
-              {project.tasks.map((taskGroup, groupIndex) => (
-                <div
-                  key={groupIndex}
-                  className="relative bg-gray-50 p-8 rounded-lg"
-                >
-                  <h3 className="text-xl font-bold mb-4 text-gray-800">
-                    {taskGroup.group.titre}
-                  </h3>
-                  {taskGroup.group.intro && (
-                    <p className="mb-6 text-gray-700 leading-relaxed">
-                      {taskGroup.group.intro}
-                    </p>
-                  )}
-                  <div className="space-y-8">
-                    {Object.keys(taskGroup.data).map((taskId, dataIndex) => (
-                      <div
-                        key={dataIndex}
-                        className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-1 before:h-[calc(100%-1rem)] before:bg-blue-500"
-                      >
-                        <h4 className="font-semibold text-gray-800 mb-2">
-                          {taskGroup.data[taskId].title}
-                        </h4>
-                        <div className="text-gray-700 space-y-2">
-                          {taskGroup.data[taskId].description.map(
-                            (desc, idx) => (
-                              <p key={idx} className="leading-relaxed">
-                                {desc}
-                              </p>
-                            )
+          {/* Key Actions & Impact */}
+          {project.tasks && project.tasks.length > 0 && (
+            <div className="max-w-4xl mx-auto mb-12">
+              <h2 className="text-xl font-semibold mb-6 text-gray-800 text-left">
+                {t("common.keyActions")}
+              </h2>
+              <div className="space-y-8">
+                {project.tasks.map((taskGroup, groupIndex) => (
+                  <div
+                    key={groupIndex}
+                    className="relative bg-gray-50 p-6 rounded-lg"
+                  >
+                    <h3 className="text-lg font-bold mb-4 text-gray-800 text-left">
+                      {taskGroup.group.titre}
+                    </h3>
+                    {taskGroup.group.intro && (
+                      <p className="mb-4 text-gray-700 leading-relaxed text-justify">
+                        {taskGroup.group.intro}
+                      </p>
+                    )}
+                    <div className="space-y-6">
+                      {Object.keys(taskGroup.data).map((taskId, dataIndex) => (
+                        <div
+                          key={dataIndex}
+                          className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-1 before:h-[calc(100%-1rem)] before:bg-blue-500"
+                        >
+                          <h4 className="font-semibold text-gray-800 mb-3 text-left">
+                            {taskGroup.data[taskId].title}
+                          </h4>
+                          <div className="text-gray-700 space-y-3">
+                            {taskGroup.data[taskId].description.map(
+                              (desc, idx) => (
+                                <p
+                                  key={idx}
+                                  className="leading-relaxed text-justify"
+                                >
+                                  {desc}
+                                </p>
+                              )
+                            )}
+                          </div>
+                          {taskGroup.data[taskId].img && (
+                            <img
+                              src={taskGroup.data[taskId].img}
+                              alt={taskGroup.data[taskId].title}
+                              className="mt-4 max-w-full h-auto rounded-lg mx-auto"
+                            />
                           )}
                         </div>
-                        {taskGroup.data[taskId].img && (
-                          <img
-                            src={taskGroup.data[taskId].img}
-                            alt={taskGroup.data[taskId].title}
-                            className="mt-4 max-w-full h-auto rounded-lg"
-                          />
-                        )}
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* Challenges & Solutions */}
-        {(challenges.length > 0 || solutions.length > 0) && (
-          <div className="max-w-4xl mx-auto mb-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-              {challenges.length > 0 && (
-                <div className="bg-gray-50 p-8 rounded-lg">
-                  <h2 className="text-2xl font-semibold mb-6 text-gray-800">
-                    Key Challenges
-                  </h2>
-                  <ul className="space-y-4">
-                    {challenges.map((challenge, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <span className="text-red-500 mt-1">•</span>
-                        <span className="text-gray-700">{challenge}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
-              {solutions.length > 0 && (
-                <div className="bg-gray-50 p-8 rounded-lg">
-                  <h2 className="text-2xl font-semibold mb-6 text-gray-800">
-                    Solutions Implemented
-                  </h2>
-                  <ul className="space-y-4">
-                    {solutions.map((solution, index) => (
-                      <li key={index} className="flex items-start gap-3">
-                        <span className="text-green-500 mt-1">✓</span>
-                        <span className="text-gray-700">{solution}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              )}
+          {/* Challenges & Solutions */}
+          {(challenges.length > 0 || solutions.length > 0) && (
+            <div className="max-w-4xl mx-auto mb-12">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                {challenges.length > 0 && (
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
+                      {t("common.keyChallenges")}
+                    </h2>
+                    <ul className="space-y-3">
+                      {challenges.map((challenge, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <span className="text-red-500 mt-1">•</span>
+                          <span className="text-gray-700 text-justify">
+                            {challenge}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+                {solutions.length > 0 && (
+                  <div className="bg-gray-50 p-6 rounded-lg">
+                    <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
+                      {t("common.solutionsImplemented")}
+                    </h2>
+                    <ul className="space-y-3">
+                      {solutions.map((solution, index) => (
+                        <li key={index} className="flex items-start gap-3">
+                          <span className="text-green-500 mt-1">✓</span>
+                          <span className="text-gray-700 text-justify">
+                            {solution}
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {/* External Links */}
-        {externalLinks.length > 0 && (
-          <div className="max-w-4xl mx-auto mb-16">
-            <h2 className="text-2xl font-semibold mb-6 text-gray-800 text-center">
-              External Links
-            </h2>
-            <div className="flex flex-wrap gap-4 justify-center">
-              {externalLinks.map((link, index) => (
-                <a
-                  key={index}
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors duration-200"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 mr-2"
-                    viewBox="0 0 20 20"
-                    fill="currentColor"
+          {/* External Links */}
+          {externalLinks.length > 0 && (
+            <div className="max-w-4xl mx-auto mb-12">
+              <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
+                {t("common.externalLinks")}
+              </h2>
+              <div className="flex flex-wrap gap-3 justify-start">
+                {externalLinks.map((link, index) => (
+                  <a
+                    key={index}
+                    href={link.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors duration-200"
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                  {link.name}
-                </a>
-              ))}
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-5 w-5 mr-2"
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                    {link.name}
+                  </a>
+                ))}
+              </div>
             </div>
-          </div>
-        )}
+          )}
+        </div>
       </div>
 
       {/* Go to Top button */}
