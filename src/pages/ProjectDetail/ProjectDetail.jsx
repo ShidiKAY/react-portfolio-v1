@@ -10,6 +10,117 @@ const ProjectDetail = () => {
   const navigate = useNavigate();
   const [scrollProgress, setScrollProgress] = useState(0);
 
+  // Function to highlight technical terms and impactful words
+  const highlightTerms = (text) => {
+    // Technical terms to highlight in blue
+    const technicalTerms = [
+      "FPDF",
+      "Zend Framework",
+      "Docker",
+      "Samba",
+      "Apache",
+      "Ubuntu",
+      "PDF",
+      "Excel",
+      "CSV",
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "PHP",
+      "MySQL",
+      "Template F",
+      "Template G",
+      "pixel-by-pixel",
+      "drag-and-drop",
+    ];
+
+    // Impactful terms to highlight in purple
+    const impactfulTerms = [
+      // Performance improvements
+      "one day to 20 minutes",
+      "performance bottlenecks",
+      "memory management",
+      "d'une journée à 20 minutes",
+      "goulots d'étranglement",
+      "gestion de la mémoire",
+
+      // Security and reliability
+      "zero downtime",
+      "data integrity",
+      "secure configurations",
+      "sans interruption",
+      "intégrité des données",
+      "configurations sécurisées",
+
+      // User experience
+      "user-friendly",
+      "intuitive interface",
+      "automated notification",
+      "interface intuitive",
+      "notification automatisée",
+
+      // System features
+      "role-based access",
+      "granular permissions",
+      "field-level permissions",
+      "contrôle d'accès",
+      "permissions granulaire",
+      "niveau des champs",
+
+      // Technical achievements
+      "template-based generation",
+      "caching mechanisms",
+      "automated validation",
+      "génération basée sur des modèles",
+      "mécanismes de cache",
+      "validation automatisée",
+    ];
+
+    // Create regex patterns
+    const techPattern = new RegExp(`\\b(${technicalTerms.join("|")})\\b`, "gi");
+    const impactPattern = new RegExp(`(${impactfulTerms.join("|")})`, "gi");
+
+    // First split by technical terms
+    let parts = text.split(techPattern).map((part, index) => {
+      if (
+        technicalTerms.some((term) => term.toLowerCase() === part.toLowerCase())
+      ) {
+        return (
+          <span key={`tech-${index}`} className="text-blue-600">
+            {part}
+          </span>
+        );
+      }
+      return part;
+    });
+
+    // Then split by impactful terms
+    parts = parts.map((part, index) => {
+      if (typeof part === "string") {
+        return part.split(impactPattern).map((subPart, subIndex) => {
+          if (
+            impactfulTerms.some(
+              (term) => term.toLowerCase() === subPart.toLowerCase()
+            )
+          ) {
+            return (
+              <span
+                key={`impact-${index}-${subIndex}`}
+                className="text-purple-600"
+              >
+                {subPart}
+              </span>
+            );
+          }
+          return subPart;
+        });
+      }
+      return part;
+    });
+
+    return parts;
+  };
+
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -34,7 +145,11 @@ const ProjectDetail = () => {
   useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
-        navigate(-1);
+        if (window.history.length > 2) {
+          navigate(-1);
+        } else {
+          navigate("/#projects");
+        }
       }
     };
 
@@ -66,7 +181,13 @@ const ProjectDetail = () => {
       {/* Fixed back button */}
       <div className="fixed top-4 left-4 z-50">
         <button
-          onClick={() => navigate(-1)}
+          onClick={() => {
+            if (window.history.length > 2) {
+              navigate(-1);
+            } else {
+              navigate("/#projects");
+            }
+          }}
           className="flex items-center gap-2 bg-white/80 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
         >
           <svg
@@ -219,7 +340,7 @@ const ProjectDetail = () => {
                   {project.introduction.introduction}
                 </p>
               </div>
-              <div className="lg:border-l lg:border-gray-200 lg:pl-8">
+              <div>
                 <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
                   {t("common.myRole")}
                 </h2>
@@ -247,7 +368,7 @@ const ProjectDetail = () => {
                     </h3>
                     {taskGroup.group.intro && (
                       <p className="mb-4 text-gray-700 leading-relaxed text-justify">
-                        {taskGroup.group.intro}
+                        {highlightTerms(taskGroup.group.intro)}
                       </p>
                     )}
                     <div className="space-y-6">
@@ -266,7 +387,7 @@ const ProjectDetail = () => {
                                   key={idx}
                                   className="leading-relaxed text-justify"
                                 >
-                                  {desc}
+                                  {highlightTerms(desc)}
                                 </p>
                               )
                             )}
