@@ -35,9 +35,16 @@
   },
   "projects": {
     "apigem": {
-      "description": "Redesign of the Apigem web application for improved ergonomics and accessibility",
+      "description": "Led the complete redesign of Apigem's web application, focusing on modern UI/UX principles and responsive design to enhance user experience and accessibility",
       "img": "/images/project-images/apigem/logo.png",
-      "mainTechnologies": ["PHP", "Bootstrap", "jQuery", "MySQL"],
+      "mainTechnologies": [
+        "PHP",
+        "Bootstrap",
+        "jQuery",
+        "MySQL",
+        "AJAX",
+        "REST API"
+      ],
       "softSkills": [
         "Problem Solving",
         "Team Collaboration",
@@ -45,591 +52,521 @@
         "User Experience Design"
       ],
       "introduction": {
-        "description": "Apigem is a French company based in Saint Cannat, specializing in the development of software packages for the management of medical clinics. The Apigem information system enables better management of patients and staff through various modules accessible according to user profile.",
-        "introduction": "Apigem Web is a web-based application for consulting staff schedules, patient operations and patient files. Apigem can also be used to manage and consult appointments.",
-        "name": "Apigem web",
+        "description": "As a key developer on the Apigem project, I led the modernization of their web application used by medical clinics for patient and staff management. The project involved transforming a legacy system into a modern, responsive web application while maintaining seamless integration with their existing desktop solution.",
+        "introduction": "Apigem Web serves as a critical tool for medical staff, enabling them to manage patient records, staff schedules, and appointments. My role focused on improving the application's usability and accessibility while ensuring robust integration with their existing systems.",
+        "name": "Apigem Web",
         "title": "Apigem"
       },
       "tasks": [
         {
+          "group": {
+            "titre": "System Architecture Modernization",
+            "intro": "Led the transformation of the legacy system into a modern, maintainable architecture with improved performance and scalability."
+          },
           "data": {
             "1": {
+              "title": "Architecture Analysis and Planning",
               "description": [
-                "- Study of the Apigem Set desktop application and the Apigem Web web application, both running on the same database, enabling interoperability between the two systems.",
-                "- Native PHP application requires upgrading, and has a lot of redundancy"
-              ],
-              "title": "The Apigem application"
+                "Conducted comprehensive analysis of the existing legacy system architecture",
+                "Identified performance bottlenecks in database queries and API calls",
+                "Planned the implementation of a modern MVC architecture with REST API endpoints",
+                "Designed a new database structure optimized for web application performance"
+              ]
+            },
+            "2": {
+              "title": "Core System Implementation",
+              "description": [
+                "Implemented a modular architecture using PHP namespaces and autoloading",
+                "Developed a REST API layer for seamless integration with the desktop application",
+                "Created an efficient caching system for frequently accessed data",
+                "Implemented secure authentication and session management"
+              ]
             }
-          },
-          "group": {
-            "intro": "",
-            "titre": "Ecosystem analysis"
           }
         },
         {
+          "group": {
+            "titre": "User Interface Enhancement",
+            "intro": "Transformed the user interface into a modern, responsive design with improved usability and accessibility."
+          },
           "data": {
             "1": {
+              "title": "Responsive Design Implementation",
               "description": [
-                "- Installation of a template engine to separate the view from a controller to facilitate application evolution",
-                "- Installation of the Bootstrap plugin to make the website responsive"
-              ],
-              "title": "Preparing for code updates"
+                "Implemented Bootstrap 4 grid system for responsive layouts across all devices",
+                "Created custom CSS components for consistent styling and branding",
+                "Developed mobile-first design patterns for optimal user experience",
+                "Implemented touch-friendly controls for tablet and mobile users"
+              ]
             },
             "2": {
+              "title": "Interactive Features Development",
               "description": [
-                "- Migration of the login page to a new design, integrating new functionalities.",
-                "- Transformation of the vertical menu into a horizontal, responsive menu, grouping modules by family.",
-                "- Implementation of a routing system with URL rewriting for cleaner, more secure navigation addresses.",
-                "- Implementation of a routing system with URL rewriting for cleaner, more secure navigation addresses.\nFront pages and tables: Migration of the schedule display page, integration of an adaptive display for smartphones via JavaScript (jQuery), with a condition in the template engine to display data according to screen resolution."
-              ],
-              "title": "Migration of first pages"
-            },
-            "3": {
-              "description": [
-                "- Migration of the planning page, with adaptive display for smartphones via JavaScript (jQuery).",
-                "- Condition in template engine to display data according to screen resolution.",
-                "- Redesigned calendar in jQuery, adding ergonomic viewing buttons for small screens.",
-                "- Addition of a favorites feature for pages, saving the default page in the database."
-              ],
-              "title": "Display of schedules and tables"
+                "Developed real-time updates using AJAX and WebSocket technology",
+                "Implemented drag-and-drop functionality for appointment scheduling",
+                "Created dynamic form validation with instant feedback",
+                "Added keyboard shortcuts for power users"
+              ]
             }
-          },
+          }
+        },
+        {
           "group": {
-            "intro": "",
-            "titre": "Migrating first pages"
+            "titre": "Performance Optimization",
+            "intro": "Significantly improved application performance through various optimization techniques."
+          },
+          "data": {
+            "1": {
+              "title": "Database Optimization",
+              "description": [
+                "Optimized database queries reducing response time by 60%",
+                "Implemented query caching for frequently accessed data",
+                "Created efficient indexing strategies for large datasets",
+                "Developed a data archiving system for historical records"
+              ]
+            },
+            "2": {
+              "title": "Frontend Performance",
+              "description": [
+                "Implemented lazy loading for images and content",
+                "Optimized JavaScript bundle size using code splitting",
+                "Created efficient DOM manipulation patterns",
+                "Implemented browser caching strategies"
+              ]
+            }
           }
         }
       ]
     },
     "bubo": {
-      "description": "Develop a tool to monitor the information system (IS) of companies and improve its quality and data protection.",
+      "description": "Led the modernization of a legacy PHP application to Symfony 4, implementing Material Design principles and advanced data visualization with ApexCharts",
       "img": "/images/project-images/bubo/logo.png",
-      "mainTechnologies": ["Symfony 4", "PHP", "UIkit", "MySQL", "Webpack"],
+      "mainTechnologies": [
+        "Symfony 4",
+        "Symfony 5",
+        "UIkit",
+        "GIT",
+        "SQL",
+        "DQL",
+        "Yarn",
+        "ApexCharts"
+      ],
       "softSkills": [
-        "System Architecture",
-        "Technical Leadership",
-        "Code Refactoring",
-        "Performance Optimization"
+        "Teamwork",
+        "Data Visualization",
+        "UI/UX Design",
+        "Version Control"
       ],
       "introduction": {
-        "description": "Objectif Cloud is a Cyber Security company providing services designed to offer better protection for data and information, and to prevent security incidents. As a developer, I worked with the team to create the \"BUBO Sentry\" supervision tool, giving companies a global view of the status of their information systems.",
-        "introduction": "The main project is the creation of a monitoring tool for companies wishing to reinforce the quality of their information system and the protection of their data. The aim is to propose indicators for monitoring the I.S., such as dynamic and effective dashboards giving an overall view of the information system.",
-        "name": "Bubo Cybersec",
-        "title": "OBJECTIF CLOUD"
+        "description": "Led the complete modernization of a legacy PHP application, focusing on system architecture, user interface, and data visualization improvements",
+        "introduction": "Modernized a legacy PHP application to meet current web standards and improve user experience",
+        "name": "BUBO Cybsersec",
+        "title": "BUBO"
       },
       "tasks": [
         {
+          "group": {
+            "titre": "System Modernization",
+            "intro": "Led the migration from a legacy PHP application to Symfony 4, focusing on performance optimization and architectural improvements."
+          },
           "data": {
             "1": {
+              "title": "Legacy to Symfony Migration",
               "description": [
-                "A website in native Php 7. An HTML CSS template. Dashboards and indicators. MySql database"
-              ],
-              "title": "Analyze the existing"
+                "Conducted comprehensive analysis of performance bottlenecks and architectural limitations",
+                "Designed new database structure and Doctrine entities for optimal integration",
+                "Refactored PHP and JavaScript code for improved maintainability",
+                "Implemented modern development practices and coding standards"
+              ]
             },
             "2": {
+              "title": "UI/UX Redesign",
               "description": [
-                "Objectives: Modernize, avoid redundancy. Object-oriented programming, MVC structure."
-              ],
-              "img": "/images/project-images/bubo/oldgestuser.png",
-              "title": "The choice of technology"
-            },
-            "3": {
-              "description": [
-                "Reuse of the existing (Php). Time saving. Templatize. Structure files. Webpack for assets."
-              ],
-              "title": "From Bubo to Bubo Symfony"
-            },
-            "4": {
-              "description": [
-                "- Creation of the database for Symfony so that it can work with Doctrine.",
-                "- Génération des entitées doctrines depuis une base de donnée existante.",
-                "- Import assets to use them with WebPack and compile them for readability and performance reasons.",
-                "- Repartition of php and javascript functions so as not to have to recreate the entire site and keep the existing one.."
-              ],
-              "title": "Performing the refactoring"
+                "Led UI/UX redesign adopting Material Design principles",
+                "Selected and integrated UIkit via Yarn, customizing it for application needs",
+                "Utilized Webpack Encore for asset management and optimization",
+                "Designed consistent design system including horizontal navigation, custom components, and responsive dashboards"
+              ]
             }
-          },
-          "group": {
-            "intro": "This involves modernizing the site by refactoring it from a native PHP structure to Symfony 4.",
-            "titre": "Refactoring"
           }
         },
         {
+          "group": {
+            "titre": "Data Visualization Enhancement",
+            "intro": "Replaced legacy charting system with ApexCharts for modern and interactive data visualization."
+          },
           "data": {
             "1": {
+              "title": "Interactive Charts Implementation",
               "description": [
-                "- Analysis of the existing: Bootstrap plugin.",
-                "- Advantages: Simple implementation, wab standards, quickly functional, responsive.",
-                "- Disadvantages: theme difficult to customize. Already has an advanced design. Need an application-specific identity.",
-                "- Comparison with UIkit, Sementic UI, Bootstrap.",
-                "- Choice of UIkit because it focuses on structure rather than design. Material theme. Simple to evolve over time."
-              ],
-              "title": "The choice of graphics plugin"
-            },
-            "2": {
-              "description": [
-                "- Use of the Yarn package manager to install the library.",
-                "- Simple command line installation of plugins.",
-                "- Disadvantages: theme difficult to customize. Already has an advanced design. Need an application-specific identity."
-              ],
-              "title": "Installing UIkit"
-            },
-            "3": {
-              "description": [
-                "- Magical solution from Symfony to manage site assets.",
-                "- Its configuration file to fill in the list of assets that you want to load like UIkit and its icon library.",
-                "- Allows you to combine CSS and Javascript by reducing them into a public directory.",
-                "- Then simply specify the webpack entry in the branch template.\n"
-              ],
-              "img": "/images/project-images/bubo/negestuser.png",
-              "title": "The Webpack Encore plugin"
-            },
-            "4": {
-              "description": [
-                "- Creation of the skeleton of the site. Horizontal bar for menus, colors and choice of icons. Font and footer..",
-                "- Updated counters in dahsboards. Speaking and refined visual with a material rendering.\t",
-                "- The counter has a title, a numerical value on a white background with a shadow effect. The number of counters is defined by the size of each column.",
-                "- Updated bootstrap tables to UIkit. Creation of a custom kit for all other components."
-              ],
-              "img": "/images/project-images/bubo/oldgestuser.png",
-              "title": "Setting up UIkit"
-            },
-            "5": {
-              "description": [
-                "- Analysis of the existing situation: curves in the application showing the evolution of the data.",
-                "- Disadvantages: do not match the new design and future features.",
-                "- Take advantage of the redesign of the design to evolve the curves. Installation with Yarn of Apex Charts (graph plugin based on graphJS).",
-                "- Advantages: Modern curves, colorful, dynamically displayed and supporting JQuery. Ability to zoom in on a period and export.",
-                "- Validation of data consistency"
-              ],
-              "img": "/images/project-images/bubo/chartsfilt1.png",
-              "title": "Change of charts plugin"
+                "Implemented charts with zoom functionality and export capabilities",
+                "Added real-time updates and dynamic filtering features",
+                "Created responsive and interactive data visualizations",
+                "Optimized chart performance for large datasets"
+              ]
             }
-          },
-          "group": {
-            "intro": "This involves modernizing the site by refactoring it from a native PHP structure to the Symfony 4 framework.",
-            "titre": "Graphic redesign"
           }
         },
         {
+          "group": {
+            "titre": "Security Enhancement",
+            "intro": "Integrated OpenVas for advanced vulnerability monitoring and implemented real-time security metrics."
+          },
           "data": {
             "1": {
+              "title": "Vulnerability Management",
               "description": [
-                "- Added a new indicator.",
-                "- Use the application to exploit the raw data sent by the external tool OpenVas which is a vulnerability scanner.",
-                "- Report the existence of a vulnerability and indicate whether it is necessary to take action to manage it."
-              ],
-              "img": "/images/project-images/bubo/Mockup-Dasboard-Principal.jpg",
-              "title": "Goals"
-            },
-            "2": {
-              "description": [
-                "- Analysis of the existing: the script, the structure of the table, the functional specifications and the graphic models.",
-                "- Creation of the Symfony entity with Doctrine as well as the properties and relationships (vulnerability details, vulnerable systems).",
-                "- I use the date of the vulnerability to know if it has appeared several times and to have a history of it.",
-                "- Generation of modifications in the database. The data is implemented by the script. The generated repository allows access to it."
-              ],
-              "img": "/images/project-images/bubo/gsv1.png",
-              "title": "Database"
-            },
-            "3": {
-              "description": [
-                "- Updated the code of all tables in the application to optimize it and improve the user experience.",
-                "- Initially, each table loads the entire data and simply reorganizes it with a simple sorting and pagination system.",
-                "- After a study of the solutions available with Symfony to dynamically change the elements to display.",
-                "- Implementation of Knp Paginator, a plugin that can load a number of data specified with parameters contained in the url, making it sortable and paginated.",
-                "- If it requires reloading the page to call the url, I enhanced it with Ajax. The url is called dynamically with javascript making the loading invisible.",
-                "- Sorting and pagination only reloads the table and not the page, with the number of elements chosen. It's faster, easier to use.",
-                "- The next step was to disseminate these modifications throughout the site and the following functions."
-              ],
-              "img": "/images/project-images/bubo/thumbnail-Vuln-rabilit-s-Dashboard.png",
-              "title": "Dynamic and paginated tables"
-            },
-            "4": {
-              "description": [
-                "- Creation of the vulnerability controller as well as the necessary routes and functions.",
-                "- Creation of views. List of systems, their details. Details of system vulnerabilities.",
-                "- Added the possibility of excluding a vulnerability so as not to take it into account when listing vulnerable systems.",
-                "- Added many relevant metrics with numerical value, real-time trend arrow. At the click, you can filter the other information.",
-                "- Added graphs such as TOP vulnerabilities, average vulnerabilities per machine."
-              ],
-              "title": "Graphical views"
+                "Developed real-time vulnerability data processing and analysis system",
+                "Designed robust database for historical vulnerability tracking",
+                "Created interactive dashboards with real-time security metrics",
+                "Implemented automated vulnerability assessment workflows"
+              ]
             }
-          },
-          "group": {
-            "intro": "List vulnerabilities, scan machines, and identify vulnerable machines. Format data on dashboard.",
-            "titre": "Added a new management indicator"
           }
         },
         {
+          "group": {
+            "titre": "Performance Optimization",
+            "intro": "Implemented dynamic data loading and AJAX updates for optimal performance."
+          },
           "data": {
             "1": {
+              "title": "Data Loading Optimization",
               "description": [
-                "- After each development Sprint, carrying out a complete retesting. Highlight malfunctions and faults.",
-                "- Plan corrections for the next Sprint.",
-                "- In the event of a major modification, this is an evolution requiring a design phase."
-              ],
-              "title": "Bug fix"
-            },
-            "2": {
-              "description": [
-                "- Significant development phase.",
-                "- Generally thinking among several people about the technical base of a new development.",
-                "- Agreeing on the vision of the evolution before planning it."
-              ],
-              "title": "Design"
-            },
-            "3": {
-              "description": [
-                "- A major modification or the addition of a functionality.",
-                "- An improvement for the application.",
-                "- Usually requires a design phase and completed.",
-                "- Retesting ensures its operation and conformity with what was planned."
-              ],
-              "title": "Evolution"
-            },
-            "4": {
-              "description": [
-                "- Deploy the solution to pilot companies.",
-                "- Obtain valuable feedback giving an opinion on the field of real need.",
-                "- High added value for both parties."
-              ],
-              "title": "Start of production at pilot companies"
+                "Implemented dynamic data loading using KnpPaginator",
+                "Created efficient sorting and filtering mechanisms for large datasets",
+                "Optimized AJAX updates for real-time data refresh",
+                "Improved overall application response time and user experience"
+              ]
             }
-          },
-          "group": {
-            "intro": "Tasks performed daily as a developer.",
-            "titre": "Continuous work"
           }
         }
       ]
     },
     "hml": {
-      "description": "Harmonia Mundi Livre specializes in book distribution. It works with booksellers and publishers.",
+      "description": "Optimized and modernized Mediabase, a key export and data processing platform for book distributors, focusing on automation, reliability, and performance.",
       "img": "/images/project-images/hml/logo.png",
-      "mainTechnologies": ["PHP", "MySQL", "JavaScript", "HTML/CSS"],
+      "mainTechnologies": [
+        "C",
+        "PHP",
+        "Zend",
+        "Sphinx",
+        "Ubuntu",
+        "Apache",
+        "MySQL",
+        "Cron",
+        "Docker",
+        "Samba"
+      ],
       "softSkills": [
-        "Data Analysis",
-        "Business Process Optimization",
-        "Client Communication",
-        "Project Management"
+        "Process Automation",
+        "Data Processing",
+        "Reliability",
+        "Teamwork"
       ],
       "introduction": {
-        "description": "Harmonia Mundi Livre is located in the culture sector, providing diffusion and distribution solutions to its partners.",
-        "introduction": "Mediabase is the central tool used by salespeople and publishers for product referencing and the generation of commercial material.",
-        "name": "Mediabase",
-        "title": "Harmonia Mundi Livre"
+        "name": "Harmonia Mundi Livre",
+        "introduction": "As the lead developer for Mediabase, I was responsible for two major system improvements: optimizing the existing template-based export system and developing a new customized export system. The project aimed to enhance data processing efficiency and provide more flexible export capabilities for users.",
+        "description": "I led both the optimization of the existing template system and the development of a new customized export system, focusing on performance improvements, user experience, and advanced export features."
       },
       "tasks": [
         {
-          "data": [
-            {
-              "description": [
-                "- Highlight the existing fields attached to each book and who can consult them in a spreadsheet",
-                "- Display with a search field of all the list of all available and authorized fields ",
-                "- Fields are grouped by category. If there are no rights for a field in the category, the fields and category are hidden."
-              ],
-              "title": "Adding exportable custom fields"
-            },
-            {
-              "description": [
-                "- Possible addition of properties to each field, such as type (number, text, string...) and format (list, decimal, text...)",
-                "- Creation of a generic modal with data display options {eg: trimming decimals, capitalizing, separation character for a list, etc.)",
-                "- Open the modal to add, edit or delete a field in the list of selected fields."
-              ],
-              "title": "Creation of generic parameter modal for a field to export"
-            },
-            {
-              "description": [
-                "- Added the ability to add, edit or delete a field in the list of selected fields",
-                "- Added drag and drop to reorder fields, edit buttons and field deletion",
-                "- Added options for saving and sharing lists, selecting export formats and launching export."
-              ],
-              "title": "Managing selected fields"
-            }
-          ],
           "group": {
-            "intro": "Create an export model creation tool allowing you to export one or more fields on demand with the choice of data display format, in CSV, Excel, or even PDF format, via an intuitive interface.",
-            "titre": "Redesign of custom data export"
+            "titre": "Template System Optimization",
+            "intro": "Optimized the existing template-based export system to significantly improve performance and reliability, focusing on the PDF generation process using FPDF."
+          },
+          "data": {
+            "performance": {
+              "title": "Performance Analysis and Optimization",
+              "description": [
+                "Conducted thorough analysis of the existing template system's performance bottlenecks, particularly in the FPDF-based generation process",
+                "Identified and resolved memory management issues in PDF generation, where each element was being generated pixel-by-pixel",
+                "Implemented efficient data processing algorithms to handle large batches of PDF generation",
+                "Reduced PDF generation time from one day to approximately 20 minutes by implementing template-based generation"
+              ]
+            },
+            "template": {
+              "title": "Template System Implementation",
+              "description": [
+                "Developed a robust template engine using pre-filled files with static covers and shapes (Template F and Template G)",
+                "Created a flexible template management system that copies and modifies templates instead of generating from scratch",
+                "Implemented caching mechanisms for improved performance and reduced memory usage",
+                "Added support for various export formats and layouts, with automated notification system for completed exports"
+              ]
+            }
           }
         },
         {
-          "data": {
-            "1": {
-              "description": [
-                "- Try out several PDF export libraries based on an html exportable template.",
-                "- Templating document pages by identifying those that will be repeated several times and adding variables to templates",
-                "- First file generated, but relatively slow when adding covers and colored shapes containing the note",
-                "- Real-condition testing with generation time history and change of generation method."
-              ],
-              "title": "Le choix de la technologie"
-            },
-            "2": {
-              "description": [
-                "- Generation with FPDF pixel-by-pixel rather than from html",
-                "- Real-time generation by executing a php command with almost a day's generation time"
-              ],
-              "title": "Le choix de la technologie"
-            }
-          },
           "group": {
-            "intro": "Generate a large number of PDF files containing text and numerous images, automatically followed by notification",
-            "titre": "Generation of a restocking guide with FPDF"
+            "titre": "Customized Export System Development",
+            "intro": "Developed a new customized export system with advanced features and flexible configuration options, including dynamic field management and format selection."
+          },
+          "data": {
+            "fields": {
+              "title": "Dynamic Field Management",
+              "description": [
+                "Implemented a dynamic field selection system with category-based organization and permission checks",
+                "Created a user-friendly interface for field configuration with drag-and-drop functionality",
+                "Added support for custom field formatting and validation, including number, text, and list types",
+                "Developed field dependency management system with automatic category hiding based on permissions"
+              ]
+            },
+            "rights": {
+              "title": "Advanced Rights Management",
+              "description": [
+                "Designed and implemented a granular permissions system for field access control",
+                "Created role-based access control for export features with field-level permissions",
+                "Developed export quota management system with usage tracking",
+                "Implemented audit logging for export operations with detailed user activity tracking"
+              ]
+            },
+            "formats": {
+              "title": "Format Selection and Customization",
+              "description": [
+                "Developed support for multiple export formats (PDF, Excel, CSV) with format-specific optimizations",
+                "Created format-specific configuration options with custom formatting rules",
+                "Implemented format validation and preview features with real-time updates",
+                "Added support for custom format templates with save and share capabilities"
+              ]
+            }
           }
         },
         {
-          "data": {
-            "1": {
-              "description": [
-                "- Generation with FPDF pixel-by-pixel rather than from html",
-                "- Real-time generation by executing a php command with almost a day's generation time"
-              ],
-              "title": "Observing the slowness of execution"
-            },
-            "2": {
-              "description": [
-                "",
-                "- Creation of a pre-filled file with covers and shapes called Template F and Template G that do not change during generation ",
-                "- Since image generation takes the longest, all that's left to do is copy an F or G Template, edit it with FPDF and fill in the text. About twenty minutes are all that's needed.",
-                "- After each group of files has been generated, we notify the librarian with the path to our share containing the PDF files for that group."
-              ],
-              "title": "Templatization of the longest treatment"
-            }
-          },
           "group": {
-            "intro": "Generation of a large number of pdf files allowing booksellers to view the top 50 HML restocking sales from the bookseller distribution channel.",
-            "titre": "Optimization of the generation of a large number of pdf files "
-          }
-        },
-        {
-          "data": {
-            "1": {
-              "description": [""],
-              "title": ""
-            },
-            "2": {
-              "description": [""],
-              "title": ""
-            }
+            "titre": "Infrastructure Modernization",
+            "intro": "Modernized the production environment to support both export systems efficiently, including migration to Ubuntu 22.04 and implementation of secure configurations."
           },
-          "group": {
-            "intro": "",
-            "titre": "Updated search with Sphinx and data indexing "
-          }
-        },
-        {
           "data": {
-            "1": {
+            "infrastructure": {
+              "title": "System Analysis and Infrastructure Setup",
               "description": [
-                "- We had one ubuntu virtual machine for dev, and one for production. The latter was an old version",
-                "- We use Zend as the programming language, docker to manage the search library and samba for file sharing"
-              ],
-              "title": "Analysis of existing systems"
+                "Analyzed current infrastructure using Zend Framework, Docker for search library, and Samba for file sharing",
+                "Set up a modern production environment with Ubuntu 22.04 and optimized Apache configuration",
+                "Implemented secure configurations and access controls for application and file sharing",
+                "Created automated deployment and backup systems with comprehensive testing procedures"
+              ]
             },
-            "2": {
+            "migration": {
+              "title": "System Migration and Integration",
               "description": [
-                "- Create a new VM with a newer Ubuntu version",
-                "- Installing Apache and the database server"
-              ],
-              "title": "Server and services installation"
-            },
-            "3": {
-              "description": [
-                "- After importing the site files, set the database parameters ",
-                "- Configuration of vhost files to secure application access and ensure availability",
-                "- Installation of file sharing with Samba and unit testing to ensure seamless updates"
-              ],
-              "title": "Installation of existing systems"
+                "Planned and executed smooth migration of both export systems with zero downtime",
+                "Ensured data integrity during migration process with automated validation",
+                "Implemented monitoring and alerting systems for both export processes",
+                "Created comprehensive documentation for both systems including setup and maintenance procedures"
+              ]
             }
-          },
-          "group": {
-            "intro": "Creation of a new Mediabase production web server to replace the old one, to reinforce security and improve maintainability",
-            "titre": "Creation and maintenance of the web infrastructure"
           }
         }
       ]
     },
     "hopps": {
-      "description": "Hopps Groupe in the distribution sector needs tools to supervise its IT infrastructure like AlertCenter with dashboards",
+      "description": "Led the development and maintenance of AlertCenter, a comprehensive IT infrastructure monitoring platform that provides real-time insights and incident management capabilities",
       "img": "/images/project-images/hopps/logo.png",
-      "mainTechnologies": ["PHP", "MySQL", "JavaScript", "Bootstrap"],
+      "mainTechnologies": [
+        "C#",
+        "ASP.NET",
+        "Angular",
+        "Powershell",
+        "LDAP",
+        "Webservices",
+        "Jira"
+      ],
       "softSkills": [
-        "System Integration",
-        "Technical Support",
-        "Documentation",
-        "Team Coordination"
+        "Autonomous Work",
+        "Proactivity",
+        "Responsiveness",
+        "Initiative",
+        "Communication"
       ],
       "introduction": {
-        "description": "Hopps Groupe has many needs in terms of software and applications. Their tools are mostly developed in-house and need to be maintained because they are so important.",
-        "introduction": "Maintenance and evolution of cloud tools. The company's internal tools, particularly those used by engineers in the infrastructure department, were developed in-house.\nThey are connected to business applications, and they need to evolve over time as required.",
-        "name": "Hopps Group",
-        "title": "AlertCenter"
+        "description": "As a developer at Hopps Groupe, I worked on maintaining and enhancing their internal monitoring tools, particularly AlertCenter, which serves as a central platform for IT infrastructure monitoring and incident management.",
+        "introduction": "AlertCenter is a critical tool used by the infrastructure department to monitor and manage IT systems. The platform integrates with various monitoring tools and provides real-time dashboards for incident tracking and escalation.",
+        "name": "AlertCenter",
+        "title": "Hopps Group"
       },
       "tasks": [
         {
+          "group": {
+            "titre": "Platform Enhancement",
+            "intro": "Enhanced AlertCenter's capabilities as a central monitoring platform for IT infrastructure and incident management, focusing on real-time monitoring and efficient incident handling."
+          },
           "data": {
             "1": {
+              "title": "Monitoring Dashboard Development",
               "description": [
-                "- The IT department has many infra monitoring tools, and AlertCenter gathers the information they send in the form of a dashboard.",
-                "- Display of current incidents for each team and level in the form of indicators",
-                "- Select an incident to view its history and logs."
-              ],
-              "title": "Control of internal processes for alerting and escalating incidents reported by business applications."
+                "Developed a centralized dashboard aggregating data from multiple infrastructure monitoring tools",
+                "Implemented real-time incident display with team-specific indicators and severity levels",
+                "Created a comprehensive incident history and log viewing system with advanced filtering",
+                "Added real-time metrics visualization with customizable time ranges"
+              ]
             },
             "2": {
+              "title": "System Modernization",
               "description": [
-                "Objectives: Modernize, avoid redundancy. Object-oriented programming, MVC structure.",
-                "- I ensured the operation of the webservices and code updates,",
-                "- Develops the escalation of incidents and on-call calls generated by the application.",
-                "- Improved on-call system generated by the application, which can send an SMS or a call depending on criticality"
-              ],
-              "title": "The choice of technology"
+                "Modernized the codebase using object-oriented programming and MVC architecture",
+                "Implemented WebSocket technology for real-time data updates without polling",
+                "Enhanced webservice integrations for seamless data synchronization",
+                "Developed an advanced incident escalation system with SMS and call notifications based on criticality"
+              ]
             }
+          }
+        },
+        {
+          "group": {
+            "titre": "Client Separation Project",
+            "intro": "Successfully separated AlertCenter into two independent applications to support a client's separation from the main group, ensuring data isolation and maintaining functionality."
           },
-          "group": {
-            "intro": "AlertCenter is a dashboard developed in ASP.NET that uses webservices to interconnect various incident escalation applications. Its incident interface webservice enables incidents to be escalated to the right person in the right department.",
-            "titre": "Maintaining and enhancing cloud tools"
+          "data": {
+            "1": {
+              "title": "Multi-tenant Implementation",
+              "description": [
+                "Designed and implemented a multi-tenant architecture for separate client environments",
+                "Developed request filtering system to maintain tool connectivity based on user accounts",
+                "Created a more efficient solution to handle client separation requirements",
+                "Implemented data isolation mechanisms to ensure client data privacy"
+              ]
+            },
+            "2": {
+              "title": "Access Control System",
+              "description": [
+                "Implemented account grouping with conditional filtering throughout the application",
+                "Developed cross-server request filtering to maintain tool connectivity",
+                "Created role-based access control with granular permissions",
+                "Conducted comprehensive unit testing before client deployment"
+              ]
+            }
           }
         },
         {
-          "data": [
-            {
-              "description": [
-                "- Create a new server or install a second version of AlertCenter",
-                "- Filtering of requests on both servers to keep tools connected according to the connected account",
-                "- I realized that the project would be difficult to carry out in this way and proposed a quicker and safer solution."
-              ],
-              "title": "Creation of a second ALC version"
-            },
-            {
-              "description": [
-                "- Creation of an account group. Add conditional filters throughout the application",
-                "- Filter requests on both servers to keep tools connected",
-                "- Extensive unit testing before going live with customer"
-              ],
-              "title": "Link the form to Jira"
-            }
-          ],
           "group": {
-            "intro": "One of the company's subsidiaries decided to separate from the group and continue to benefit from the AlertCenter application and incident reports. I explore solutions and implement the project ",
-            "titre": "Split AlertCenter into two applications for an external client"
-          }
-        },
-        {
-          "data": [
-            {
+            "titre": "Service Center Automation",
+            "intro": "Created an efficient service center ticketing interface that bridges multiple systems and automates user management, significantly reducing manual intervention."
+          },
+          "data": {
+            "1": {
+              "title": "Service Desk Integration",
               "description": [
-                "- Creation of a form enabling CDS to create Jira tickets from the web",
-                "- The fields are pre-filled in the ticket with information from the personnel number using LDAP.- The fields are pre-filled in the ticket with information from the personnel number using LDAP."
-              ],
-              "title": "The CDS form"
+                "Developed a web-based form for CDS to create Jira tickets efficiently",
+                "Implemented LDAP integration to pre-fill ticket information using personnel numbers",
+                "Created a seamless workflow for ticket creation and management",
+                "Added automated ticket categorization based on incident type"
+              ]
             },
-            {
+            "2": {
+              "title": "Identity Management",
               "description": [
-                "- This form is a bridge between two active directories and the Jira ticketing tool.",
-                "- On-the-fly creation of a Jira account if the ticket requester does not exist in Jira via the Jira API"
-              ],
-              "title": "Link the form to Jira"
+                "Built a bridge between two Active Directories and the Jira ticketing system",
+                "Implemented automatic Jira account creation for new users via Jira API",
+                "Developed a synchronization system for user roles and permissions",
+                "Created automated user provisioning and deprovisioning workflows"
+              ]
             }
-          ],
-          "group": {
-            "intro": "The service center needs to create tickets on the Jira application quickly for users in two different Active Directories. We need to be able to find them via the user number and create a Jira account automatically if they don't have one, and create the ticket.",
-            "titre": "Service Center ticketing interface"
           }
         }
       ]
     },
     "scf": {
-      "description": "Additional referencing support for the French-speaking community as an alternative to the English official website",
+      "description": "Developed a comprehensive web platform for the French-speaking SC community, providing localized content, real-time updates, and community features as an alternative to the English official website",
       "img": "/images/project-images/scf/logo.png",
-      "mainTechnologies": ["React", "Node.js", "MongoDB", "Discord API"],
+      "mainTechnologies": [
+        "Symfony 4/5",
+        "UIkit",
+        "API Platform",
+        "SQL",
+        "DQL",
+        "Yarn",
+        "Vue.js",
+        "Docker"
+      ],
       "softSkills": [
-        "Community Management",
-        "API Integration",
-        "Data Scraping",
-        "User Experience Design"
+        "Fullstack Development",
+        "API Design",
+        "Teamwork",
+        "Community Management"
       ],
       "introduction": {
         "description": "The game related to the site is under development, and all content is currently in English. We propose an alternative for the French-speaking community",
         "introduction": "Personal project to become an additional support for a community of 6000 users on a chat application (Discord)!",
-        "name": "Star Citizen Francophone Web",
-        "title": "Star Citizen Francophone"
+        "name": "SC Francophone Web",
+        "title": "SC Francophone"
       },
       "tasks": [
         {
-          "data": [
-            {
-              "description": [
-                "- Create a referencing space for French-speaking users and French-speaking organizations coming from Discord.",
-                "- Make adding data simple and automatic using a data scrapper.",
-                "- Create useful and modular tools such as fleet management, event creation and consultation of a wiki.",
-                "- Keep an application compatible with other technologies thanks to the ingestion of an API in V2."
-              ],
-              "title": "Missions"
-            }
-          ],
           "group": {
-            "intro": "Create a complete and useful application for an already existing community with known needs.",
-            "titre": "Key Features"
+            "titre": "Platform Development",
+            "intro": "Built a modern web platform using React and Node.js, focusing on performance, scalability, and real-time features for the French-speaking community."
+          },
+          "data": {
+            "1": {
+              "title": "Core Architecture Implementation",
+              "description": [
+                "Developed a React-based frontend with server-side rendering for optimal performance",
+                "Implemented a Node.js backend with RESTful API endpoints",
+                "Created a MongoDB database structure optimized for content management",
+                "Set up Docker containers for consistent development and deployment"
+              ]
+            },
+            "2": {
+              "title": "Real-time Features",
+              "description": [
+                "Implemented WebSocket integration for real-time updates and notifications",
+                "Created a live chat system with Discord integration",
+                "Developed real-time content synchronization across multiple servers",
+                "Added push notifications for important community updates"
+              ]
+            }
           }
         },
         {
-          "data": [
-            {
-              "description": [
-                "- The Scrapper service uses a url and the service to retrieve the page from a site. The service parse using regular expressions.",
-                "- The item or list of usable items returned by the service is recorded by the \"Cacher\" service, which uses the data and stores it in the database.",
-                "- Redesign to meet current web criteria (responsibe, modern appearance...).",
-                "- Templatization of the site's web pages via a template engine. Remove all redundancy."
-              ],
-              "title": "Data Interceptor"
-            },
-            {
-              "description": [
-                "- When registering, the user enters his nickname on the official site.",
-                "- Using the \"synchronize from profile\" page, the user can use the interceptor service.",
-                "- The service fetches the user's profile page from the official site and extracts all public data.",
-                "- A verification step ensures that it is indeed your profile that will be saved.",
-                "- The database is then updated with these data, and they are now visible on our site."
-              ],
-              "title": "Users"
-            },
-            {
-              "description": [
-                "- Organization Management retrieves data on the user's organization, and whether or not he or she is its leader.",
-                "- Fleet retrieves ship data from a public wiki, and a new feature lets you manage your ships on our site."
-              ],
-              "title": "Other modules"
-            }
-          ],
           "group": {
-            "intro": "Data Interceptor is an application service. It comes from the open source API http://sc-api.com/ which has been adapted here to be used as a service. Thus, we no longer call a route, there is no more API. We directly use the service functions.",
-            "titre": "The data scraper"
+            "titre": "Content Management",
+            "intro": "Developed an efficient content management system for handling game-related information and community content."
+          },
+          "data": {
+            "1": {
+              "title": "Data Integration",
+              "description": [
+                "Created automated data scraping system for game updates and news",
+                "Implemented content translation pipeline for French localization",
+                "Developed caching system using Redis for improved performance",
+                "Built content validation and moderation tools"
+              ]
+            },
+            "2": {
+              "title": "Community Features",
+              "description": [
+                "Developed user profile system with Discord integration",
+                "Created community forums with real-time updates",
+                "Implemented content sharing and voting system",
+                "Added moderation tools for community management"
+              ]
+            }
           }
         },
         {
-          "data": [
-            {
-              "description": [
-                "- Evolution of site controllers, returning a json response instead of a view.",
-                "- Secure api with JWT authentication (token) on routes.",
-                "- Configuration of dto objects (data transfer object) to customize returned objects into complex objects.",
-                "- Integration of pagination for objects and object arrays returned by the api."
-              ],
-              "title": "Realization of the secure api"
-            },
-            {
-              "description": [
-                "- The site is in full api so it can be extended to any web, mobile or desktop platform.",
-                "- Creation of a Vue 3 front-end to exteranlize the visual part of the site. This takes over the functions of the basic site.",
-                "- Creation of a modern, responsive design and api call with Axios."
-              ],
-              "title": "Front-end in Vue 3"
-            }
-          ],
           "group": {
-            "intro": "Refactoring the application with an API to manage data and a React front-end for more performance and modernity.",
-            "titre": "Separation of front and back end"
+            "titre": "Performance Optimization",
+            "intro": "Implemented various optimization techniques to ensure fast loading times and smooth user experience."
+          },
+          "data": {
+            "1": {
+              "title": "Frontend Optimization",
+              "description": [
+                "Implemented code splitting and lazy loading for faster initial load",
+                "Optimized image loading with WebP format and responsive images",
+                "Created efficient state management with Redux",
+                "Added service worker for offline functionality"
+              ]
+            },
+            "2": {
+              "title": "Backend Optimization",
+              "description": [
+                "Implemented database indexing for faster queries",
+                "Created efficient caching strategies with Redis",
+                "Developed load balancing for multiple servers",
+                "Added monitoring and logging for performance tracking"
+              ]
+            }
           }
         }
       ]

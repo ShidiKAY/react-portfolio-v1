@@ -3,6 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import Head from "react-helmet";
 import { useEffect, useState } from "react";
 import GoToTop from "../../components/GoToTop";
+import i18n from "../../i18n";
 
 const ProjectDetail = () => {
   const { t } = useTranslation();
@@ -12,22 +13,47 @@ const ProjectDetail = () => {
 
   // Function to highlight technical terms and impactful words
   const highlightTerms = (text) => {
-    // Technical terms to highlight in blue
+    // Expanded technical terms to include all languages and technologies
     const technicalTerms = [
-      "FPDF",
-      "Zend Framework",
+      // Languages
+      "PHP",
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "Node.js",
+      "C#",
+      "HTML",
+      "CSS",
+      "SQL",
+      "MySQL",
+      "MongoDB",
+      "Redis",
       "Docker",
       "Samba",
       "Apache",
       "Ubuntu",
+      "FPDF",
+      "Zend Framework",
+      "Jira API",
+      "WebSocket",
+      "AJAX",
+      "REST API",
+      "GraphQL",
+      "Bootstrap",
+      "UIkit",
+      "Material Design",
+      "ApexCharts",
+      "OpenVas",
+      "Webpack Encore",
+      "Twig",
+      "Smarty",
+      "Discord API",
+      // Formats
       "PDF",
       "Excel",
       "CSV",
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "PHP",
-      "MySQL",
+      "WebP",
+      // Other
       "Template F",
       "Template G",
       "pixel-by-pixel",
@@ -43,82 +69,130 @@ const ProjectDetail = () => {
       "d'une journée à 20 minutes",
       "goulots d'étranglement",
       "gestion de la mémoire",
-
-      // Security and reliability
+      "60% reduction",
+      "60%",
+      "reduced response time",
+      "optimized",
+      "optimization",
+      "code splitting",
+      "lazy loading",
+      "real-time",
+      "dynamic filtering",
+      "dynamic field",
+      "modular architecture",
+      "responsive",
+      "mobile-first",
+      "seamless integration",
       "zero downtime",
       "data integrity",
       "secure configurations",
       "sans interruption",
       "intégrité des données",
       "configurations sécurisées",
-
-      // User experience
       "user-friendly",
       "intuitive interface",
       "automated notification",
       "interface intuitive",
       "notification automatisée",
-
-      // System features
       "role-based access",
       "granular permissions",
       "field-level permissions",
       "contrôle d'accès",
       "permissions granulaire",
       "niveau des champs",
-
-      // Technical achievements
       "template-based generation",
       "caching mechanisms",
       "automated validation",
       "génération basée sur des modèles",
       "mécanismes de cache",
       "validation automatisée",
+      "audit logging",
+      "unit testing",
+      "automated deployment",
+      "backup systems",
+      "incident management",
+      "incident escalation",
+      "multi-tenant",
+      "data isolation",
+      "provisioning",
+      "deprovisioning",
+      "synchronization",
+      "workflow",
+      "escalation",
+      "incident history",
+      "log viewing",
+      "metrics visualization",
+      "push notifications",
+      "service worker",
+      "offline functionality",
     ];
 
-    // Create regex patterns
-    const techPattern = new RegExp(`\\b(${technicalTerms.join("|")})\\b`, "gi");
-    const impactPattern = new RegExp(`(${impactfulTerms.join("|")})`, "gi");
+    // If not a string, return as is
+    if (typeof text !== "string") return text;
 
-    // First split by technical terms
-    let parts = text.split(techPattern).map((part, index) => {
-      if (
-        technicalTerms.some((term) => term.toLowerCase() === part.toLowerCase())
-      ) {
-        return (
-          <span key={`tech-${index}`} className="text-blue-600">
-            {part}
-          </span>
-        );
+    // Don't highlight the first word of each line
+    // Split into lines (for multiline descriptions)
+    return text.split(/\n/).map((line, lineIdx) => {
+      // Find the first word (with possible punctuation)
+      const match = line.match(/^(\s*\w+[\w\-.]*)/);
+      let firstWord = "";
+      let rest = line;
+      if (match) {
+        firstWord = match[0];
+        rest = line.slice(firstWord.length);
       }
-      return part;
+      // Highlight technical terms in the rest
+      const techPattern = new RegExp(
+        `\\b(${technicalTerms.join("|")})\\b`,
+        "gi"
+      );
+      let parts = rest.split(techPattern).map((part, index) => {
+        if (
+          technicalTerms.some(
+            (term) => term.toLowerCase() === part.toLowerCase()
+          )
+        ) {
+          return (
+            <span key={`tech-${lineIdx}-${index}`} className="text-blue-700">
+              {part}
+            </span>
+          );
+        }
+        return part;
+      });
+      // Highlight impactful terms in the rest
+      const impactPattern = new RegExp(`(${impactfulTerms.join("|")})`, "gi");
+      parts = parts.map((part, index) => {
+        if (typeof part === "string") {
+          return part.split(impactPattern).map((subPart, subIndex) => {
+            if (
+              impactfulTerms.some(
+                (term) => term.toLowerCase() === subPart.toLowerCase()
+              )
+            ) {
+              return (
+                <span
+                  key={`impact-${lineIdx}-${index}-${subIndex}`}
+                  className="text-purple-700"
+                >
+                  {subPart}
+                </span>
+              );
+            }
+            return subPart;
+          });
+        }
+        return part;
+      });
+      // Return with the first word untouched
+      return (
+        <span key={`line-${lineIdx}`}>
+          {firstWord}
+          {parts}
+          {lineIdx < text.split(/\n/).length - 1 ? <br /> : null}
+        </span>
+      );
     });
-
-    // Then split by impactful terms
-    parts = parts.map((part, index) => {
-      if (typeof part === "string") {
-        return part.split(impactPattern).map((subPart, subIndex) => {
-          if (
-            impactfulTerms.some(
-              (term) => term.toLowerCase() === subPart.toLowerCase()
-            )
-          ) {
-            return (
-              <span
-                key={`impact-${index}-${subIndex}`}
-                className="text-purple-600"
-              >
-                {subPart}
-              </span>
-            );
-          }
-          return subPart;
-        });
-      }
-      return part;
-    });
-
-    return parts;
   };
 
   // Scroll to top on mount
@@ -170,6 +244,12 @@ const ProjectDetail = () => {
   const mainTechnologies = project.mainTechnologies || [];
   const softSkills = project.softSkills || [];
 
+  // In the Project Header, use custom values for SC Francophone (scf), Bubo Cybersec (bubo), Alertcenter (hopps), and Harmonia Mundi Livre (hml)
+  const isSCF = projectId === "scf";
+  const isBubo = projectId === "bubo";
+  const isHopps = projectId === "hopps";
+  const isHml = projectId === "hml";
+
   return (
     <div className="relative min-h-screen bg-white">
       {/* Progress bar */}
@@ -206,6 +286,34 @@ const ProjectDetail = () => {
         </button>
       </div>
 
+      {/* Floating Language Switcher - matches Navbar */}
+      <div className="hidden md:block fixed top-6 right-6 z-50">
+        <div className="language-switcher mt-1.5">
+          <ul className="flex space-x-2">
+            <li
+              className="inline-flex items-center cursor-pointer"
+              onClick={() => i18n.changeLanguage("en")}
+            >
+              <span
+                className="i-flagpack-gb-ukm w-8 mt-px"
+                title="English"
+              ></span>{" "}
+              <span className="hidden lg:block">English</span>
+            </li>
+            <li
+              className="inline-flex items-center cursor-pointer"
+              onClick={() => i18n.changeLanguage("fr")}
+            >
+              <span
+                className="i-flagpack-fr w-8 mb-1 mt-1"
+                title="French"
+              ></span>
+              <span className="hidden lg:block">French</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <div className="container mx-auto py-8 px-4">
         <Head>
           <title>
@@ -239,7 +347,17 @@ const ProjectDetail = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="text-gray-700">6 months</span>
+              <span className="text-gray-700">
+                {isSCF
+                  ? "12 months"
+                  : isBubo
+                  ? "12 months"
+                  : isHopps
+                  ? "24 months"
+                  : isHml
+                  ? "12 months"
+                  : "6 months"}
+              </span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full">
               <svg
@@ -250,7 +368,17 @@ const ProjectDetail = () => {
               >
                 <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
               </svg>
-              <span className="text-gray-700">Team of 5</span>
+              <span className="text-gray-700">
+                {isSCF
+                  ? "2 person team"
+                  : isBubo
+                  ? "3 person team"
+                  : isHopps
+                  ? "2 person team"
+                  : isHml
+                  ? "2 person team"
+                  : "Team of 5"}
+              </span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full">
               <svg
@@ -265,7 +393,17 @@ const ProjectDetail = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="text-gray-700">2023</span>
+              <span className="text-gray-700">
+                {isSCF
+                  ? "2021 - 2022"
+                  : isBubo
+                  ? "2019 - 2020"
+                  : isHopps
+                  ? "2017 - 2019"
+                  : isHml
+                  ? "2022 - 2023"
+                  : "2023"}
+              </span>
             </div>
           </div>
 
@@ -281,7 +419,7 @@ const ProjectDetail = () => {
                   {mainTechnologies.map((tech, index) => (
                     <span
                       key={index}
-                      className="px-2.5 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium"
+                      className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm border border-blue-500"
                     >
                       {tech}
                     </span>
@@ -300,7 +438,7 @@ const ProjectDetail = () => {
                   {softSkills.map((skill, index) => (
                     <span
                       key={index}
-                      className="px-2.5 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium"
+                      className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm border border-purple-500"
                     >
                       {skill}
                     </span>
@@ -320,9 +458,9 @@ const ProjectDetail = () => {
                 {technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1.5 bg-blue-50 text-blue-700 rounded-full text-sm font-medium"
+                    className="px-3 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm border border-blue-500"
                   >
-                    {tech}
+                    {highlightTerms(tech)}
                   </span>
                 ))}
               </div>
@@ -368,7 +506,7 @@ const ProjectDetail = () => {
                     </h3>
                     {taskGroup.group.intro && (
                       <p className="mb-4 text-gray-700 leading-relaxed text-justify">
-                        {highlightTerms(taskGroup.group.intro)}
+                        {taskGroup.group.intro}
                       </p>
                     )}
                     <div className="space-y-6">

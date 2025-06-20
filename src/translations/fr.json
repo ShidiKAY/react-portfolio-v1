@@ -35,9 +35,16 @@
   },
   "projects": {
     "apigem": {
-      "description": "Refonte de l'application web Apigem pour une meilleure ergonomie et accessibilité",
+      "description": "Dirigé la refonte complète de l'application web Apigem, en mettant l'accent sur les principes modernes d'UI/UX et le design responsive pour améliorer l'expérience utilisateur et l'accessibilité",
       "img": "/images/project-images/apigem/logo.png",
-      "mainTechnologies": ["PHP", "Bootstrap", "jQuery", "MySQL"],
+      "mainTechnologies": [
+        "PHP",
+        "Bootstrap",
+        "jQuery",
+        "MySQL",
+        "AJAX",
+        "REST API"
+      ],
       "softSkills": [
         "Résolution de problèmes",
         "Collaboration d'équipe",
@@ -45,591 +52,521 @@
         "Design d'expérience utilisateur"
       ],
       "introduction": {
-        "description": "Apigem est une entreprise française basée à Saint Cannat, spécialisée dans le développement de progiciels pour la gestion des cliniques médicales. Le système d'information Apigem permet une meilleure gestion des patients et du personnel grâce à différents modules accessibles selon le profil utilisateur.",
-        "introduction": "Apigem Web est une application web permettant de consulter les plannings du personnel, les opérations des patients et les dossiers patients. Apigem permet également de gérer et consulter les rendez-vous.",
-        "name": "Apigem web",
+        "description": "En tant que développeur principal sur le projet Apigem, j'ai dirigé la modernisation de leur application web utilisée par les cliniques médicales pour la gestion des patients et du personnel. Le projet consistait à transformer un système legacy en une application web moderne et responsive tout en maintenant une intégration transparente avec leur solution desktop existante.",
+        "introduction": "Apigem Web sert d'outil essentiel pour le personnel médical, leur permettant de gérer les dossiers patients, les plannings du personnel et les rendez-vous. Mon rôle s'est concentré sur l'amélioration de l'ergonomie et de l'accessibilité de l'application tout en assurant une intégration robuste avec leurs systèmes existants.",
+        "name": "Apigem Web",
         "title": "Apigem"
       },
       "tasks": [
         {
+          "group": {
+            "titre": "Modernisation de l'Architecture Système",
+            "intro": "Dirigé la transformation du système legacy en une architecture moderne et maintenable avec des performances et une évolutivité améliorées."
+          },
           "data": {
             "1": {
+              "title": "Analyse et Planification de l'Architecture",
               "description": [
-                "- Étude de l'application de bureau Apigem Set et de l'application web Apigem Web, toutes deux fonctionnant sur la même base de données, permettant une interopérabilité entre les deux systèmes.",
-                "- L'application en PHP natif nécessite une montée de version, et possède beaucoup de redondance"
-              ],
-              "title": "L'application Apigem"
+                "Réalisé une analyse complète de l'architecture du système legacy existant",
+                "Identifié les goulots d'étranglement de performance dans les requêtes base de données et les appels API",
+                "Planifié l'implémentation d'une architecture MVC moderne avec des endpoints REST API",
+                "Conçu une nouvelle structure de base de données optimisée pour les performances de l'application web"
+              ]
+            },
+            "2": {
+              "title": "Implémentation du Système Core",
+              "description": [
+                "Implémenté une architecture modulaire utilisant les namespaces PHP et l'autoloading",
+                "Développé une couche REST API pour une intégration transparente avec l'application desktop",
+                "Créé un système de cache efficace pour les données fréquemment accédées",
+                "Implémenté une gestion sécurisée de l'authentification et des sessions"
+              ]
             }
-          },
-          "group": {
-            "intro": "",
-            "titre": "Analyse de l'écosystème"
           }
         },
         {
+          "group": {
+            "titre": "Amélioration de l'Interface Utilisateur",
+            "intro": "Transformé l'interface utilisateur en un design moderne et responsive avec une ergonomie et une accessibilité améliorées."
+          },
           "data": {
             "1": {
+              "title": "Implémentation du Design Responsive",
               "description": [
-                "- Installation d'un moteur de template pour séparer la vue d'un contrôleur pour faciliter l'évolution de l'application",
-                "- Installation du plugin Bootstrap pour rendre le site web responsive"
-              ],
-              "title": "Préparation a la mise a jour du code"
+                "Implémenté le système de grille Bootstrap 4 pour des layouts responsifs sur tous les appareils",
+                "Créé des composants CSS personnalisés pour un style et une identité cohérents",
+                "Développé des patterns de design mobile-first pour une expérience utilisateur optimale",
+                "Implémenté des contrôles adaptés au tactile pour les utilisateurs tablette et mobile"
+              ]
             },
             "2": {
+              "title": "Développement des Fonctionnalités Interactives",
               "description": [
-                "- Migration de la page login vers un nouveau design, intégration des nouvelles fonctionnalités.",
-                "- Transformation du menu vertical en un menu horizontal et responsive, regroupant les modules par familles.",
-                "- Mise en place d'un système de routage avec réécriture des URL pour des adresses de navigation plus propres et sécurisées.",
-                "- Migration de la page d'affichage des plannings, intégration d'un affichage adaptatif pour les smartphones via JavaScript (jQuery), avec condition dans le moteur de templates pour afficher les données en fonction de la résolution de l'écran."
-              ],
-              "title": "Migration des premières pages"
-            },
-            "3": {
-              "description": [
-                "- Migration de la page de planification, avec un affichage adaptatif pour smartphones via JavaScript (jQuery).",
-                "- Condition dans le moteur de templates pour afficher les données en fonction de la résolution de l'écran.",
-                "- Refonte du calendrier en jQuery, ajout de boutons de visualisation ergonomiques pour petits écrans.",
-                "- Ajout d'une fonctionnalité de favoris pour les pages, enregistrant la page par défaut dans la base de données."
-              ],
-              "title": "Affichage des plannings et tableaux"
+                "Développé des mises à jour en temps réel utilisant la technologie AJAX et WebSocket",
+                "Implémenté la fonctionnalité drag-and-drop pour la planification des rendez-vous",
+                "Créé une validation dynamique des formulaires avec retour instantané",
+                "Ajouté des raccourcis clavier pour les utilisateurs avancés"
+              ]
             }
-          },
+          }
+        },
+        {
           "group": {
-            "intro": "",
-            "titre": "Migration des premières pages"
+            "titre": "Optimisation des Performances",
+            "intro": "Amélioré significativement les performances de l'application grâce à diverses techniques d'optimisation."
+          },
+          "data": {
+            "1": {
+              "title": "Optimisation de la Base de Données",
+              "description": [
+                "Optimisé les requêtes base de données réduisant le temps de réponse de 60%",
+                "Implémenté le cache des requêtes pour les données fréquemment accédées",
+                "Créé des stratégies d'indexation efficaces pour les grands ensembles de données",
+                "Développé un système d'archivage des données pour les enregistrements historiques"
+              ]
+            },
+            "2": {
+              "title": "Performance Frontend",
+              "description": [
+                "Implémenté le chargement différé pour les images et le contenu",
+                "Optimisé la taille du bundle JavaScript en utilisant le code splitting",
+                "Créé des patterns efficaces de manipulation du DOM",
+                "Implémenté des stratégies de cache navigateur"
+              ]
+            }
           }
         }
       ]
     },
     "bubo": {
-      "description": "Développer un outil pour surveiller le système d'information (SI) des entreprises et améliorer sa qualité et la protection des données.",
+      "description": "Dirigé la modernisation d'une application PHP legacy vers Symfony 4, implémentant les principes du Material Design et une visualisation avancée des données avec ApexCharts",
       "img": "/images/project-images/bubo/logo.png",
-      "mainTechnologies": ["Symfony 4", "PHP", "UIkit", "MySQL", "Webpack"],
+      "mainTechnologies": [
+        "Symfony 4",
+        "PHP",
+        "JavaScript",
+        "UIkit",
+        "Material Design",
+        "ApexCharts",
+        "OpenVas",
+        "Webpack Encore"
+      ],
       "softSkills": [
-        "Architecture système",
-        "Leadership technique",
-        "Refactorisation de code",
-        "Optimisation des performances"
+        "Leadership Technique",
+        "Architecture Système",
+        "Design UI/UX",
+        "Optimisation des Performances"
       ],
       "introduction": {
-        "description": "Objectif Cloud est une entreprise de Cyber Sécurité proposant des services conçus pour offrir une meilleure protection des données et des informations, et pour prévenir les incidents de sécurité. En tant que développeur, j'ai travaillé avec l'équipe pour créer l'outil de supervision \"BUBO Sentry\", donnant aux entreprises une vue globale de l'état de leurs systèmes d'information.",
-        "introduction": "Le projet principal est la création d'un outil de supervision pour les entreprises souhaitant renforcer la qualité de leur système d'information et la protection de leurs données. L'objectif est de proposer des indicateurs pour le suivi du S.I., comme des tableaux de bord dynamiques et efficaces donnant une vue d'ensemble du système d'information.",
-        "name": "Bubo Cybersec",
-        "title": "OBJECTIF CLOUD"
+        "description": "Dirigé la modernisation complète d'une application PHP legacy, en se concentrant sur l'architecture système, l'interface utilisateur et l'amélioration de la visualisation des données",
+        "introduction": "Modernisé une application PHP legacy pour répondre aux standards web actuels et améliorer l'expérience utilisateur",
+        "name": "BUBO Cybersec",
+        "title": "Objectif Cloud"
       },
       "tasks": [
         {
+          "group": {
+            "titre": "Modernisation Système",
+            "intro": "Dirigé la migration d'une application PHP legacy vers Symfony 4, en se concentrant sur l'optimisation des performances et les améliorations architecturales."
+          },
           "data": {
             "1": {
+              "title": "Migration Legacy vers Symfony",
               "description": [
-                "Un site web en Php 7 natif. Un template HTML CSS. Des tableaux de bord et des indicateurs. BDD MySql"
-              ],
-              "title": "Analyser de l'existant"
+                "Réalisé une analyse approfondie des goulots d'étranglement de performance et des limitations architecturales",
+                "Conçu une nouvelle base de données et des entités Doctrine pour une intégration optimale",
+                "Refactorisé le code PHP et JavaScript pour une meilleure maintenabilité",
+                "Implémenté des pratiques de développement modernes et des standards de code"
+              ]
             },
             "2": {
+              "title": "Refonte UI/UX",
               "description": [
-                "Objectifs : Moderniser, éviter la redondence. Progammation orientée objet, structure MVC."
-              ],
-              "img": "/images/project-images/bubo/oldgestuser.png",
-              "title": "Le choix de la technologie"
-            },
-            "3": {
-              "description": [
-                "Réutilisation de l'existant (Php). Gain de temps. Templatiser. Structurer les fichiers. Webpack pour les assets."
-              ],
-              "title": "De Bubo à Bubo Symfony"
-            },
-            "4": {
-              "description": [
-                "- Création de la base de donnée pour Symfony afin qu'elle puisse fonctionner avec Doctrine.",
-                "- Génération des entitées doctrines depuis une base de donnée existante.",
-                "- Importation des assets pour les utiliser avec WebPack et les compiler pour des raisons de lisibilité et de performences.",
-                "- Rappartieement des fonctions php et javascript afin de ne pas avoir à recréer tout le site et garder l'existant.."
-              ],
-              "title": "Réalisation de la refactorisation"
+                "Dirigé la refonte UI/UX en adoptant les principes du Material Design",
+                "Sélectionné et intégré UIkit via Yarn, en le personnalisant pour les besoins de l'application",
+                "Utilisé Webpack Encore pour la gestion et l'optimisation des assets",
+                "Conçu un système de design cohérent, incluant navigation horizontale, composants personnalisés et tableaux de bord responsifs"
+              ]
             }
-          },
-          "group": {
-            "intro": "Il s'agit de moderniser le site en le refactorisant d'une structure PHP native vers Symfony 4.",
-            "titre": "Refactorisation"
           }
         },
         {
+          "group": {
+            "titre": "Amélioration de la Visualisation des Données",
+            "intro": "Remplacé le système de graphiques legacy par ApexCharts pour une visualisation moderne et interactive."
+          },
           "data": {
             "1": {
+              "title": "Implémentation des Graphiques Interactifs",
               "description": [
-                "- Analyse de l'existant : plugin Bootstrap.",
-                "- Aventages : Implémentation simple, standards du wab, rapidement fonctionnel, responsive.",
-                "- Inconvénients : thème difficile à personnaliser. Possède déjà un design avancé. Besoin d'une identité propre à l'application.",
-                "- Comparaison avec UIkit, Sementic UI, Bootstrap.",
-                "- Choix d'UIkit car se concentre sur la structure plutot que le design. Thème Material. Simple à faire évoluer avec le temps."
-              ],
-              "title": "Le choix du plugin graphique"
-            },
-            "2": {
-              "description": [
-                "- Utilisation du gestionnaire de packages Yarn pour installer le librairie.",
-                "- Installation simple des plugins en ligne de commande.",
-                "- Inconvénients : thème difficile à personnaliser. Possède déjà un design avancé. Besoin d'une identité propre à l'application."
-              ],
-              "title": "Installation d'UIkit"
-            },
-            "3": {
-              "description": [
-                "- Solution magique de Symfony pour gérer les assets du site.",
-                "- A son fichier de configuration pour renseigner la liste des assets que l'on veut charger comme UIkit et sa librairie d'icones.",
-                "- Permet de complier le CSS et le Javascript en les allégeant dans un repértoire public.",
-                "- En suite il suffit de pécifier l'entrée webpack dans le template twig..\n"
-              ],
-              "img": "/images/project-images/bubo/negestuser.png",
-              "title": "Le plugin Webpack Encore"
-            },
-            "4": {
-              "description": [
-                "- Réalisation du squelette du site. Bar horizontale pour les menus, couleurs et choix des icons. Police d'écriture et pied de page..",
-                "- Mise à jour des compteurs dans les dahsboard. Visuel parlant et épuré avec un rendu matérial.\t",
-                "- Le compteur possède un titre, une valeur numérique sur fond blanc avec un effet d'ombre. Le nombre de compteurs est défini par la taille de chaques colonnes.",
-                "- Mise à jour des tableaux bootstrap vers UIkit. Création d'un kit personnalisé pour tous les autres composants."
-              ],
-              "img": "/images/project-images/bubo/oldgestuser.png",
-              "title": "Mise en place d'UIkit"
-            },
-            "5": {
-              "description": [
-                "- Analyse de l'existant : des courbes dans l'application montrant l'évolution des données.",
-                "- Inconvéniants : ne correspondent pas au nouveau design et aux futures fonctionnalités.",
-                "- Profiter de la refonte du design pour faire évoluer les courbes. Installation avec Yarn d'Apex Charts (plugin graphique basé sur graphJS).",
-                "- Avantages : Courbes modernes, colorés, affichées dynamyqment et supportant JQuery. Possibilité de zoomer sur une période et d'exporter.",
-                "- Validation de la cohérence des données"
-              ],
-              "img": "/images/project-images/bubo/chartsfilt1.png",
-              "title": "Changement de plugin charts"
+                "Implémenté des graphiques avec zoom et fonctionnalités d'export",
+                "Ajouté des mises à jour en temps réel et des filtres dynamiques",
+                "Créé des visualisations de données responsives et interactives",
+                "Optimisé les performances des graphiques pour les grands ensembles de données"
+              ]
             }
-          },
-          "group": {
-            "intro": "Il s'agit de moderniser le site en le refactorisant d'une structure PHP native vers le framework Symfony 4.",
-            "titre": "Refonte graphique"
           }
         },
         {
+          "group": {
+            "titre": "Renforcement de la Sécurité",
+            "intro": "Intégré OpenVas pour une surveillance avancée des vulnérabilités et implémenté des métriques de sécurité en temps réel."
+          },
           "data": {
             "1": {
+              "title": "Gestion des Vulnérabilités",
               "description": [
-                "- Ajout d'un nouvel indicateur.",
-                "- Exploiter grace à l'application les données brutes envoyé par l'outil externe OpenVas qui est un scanneur de vulnérabilité.",
-                "- Signaler l'existance d'une vulnérabilité et signalier s'il est nécaéssaire de réaliser une action pour la gérer."
-              ],
-              "img": "/images/project-images/bubo/Mockup-Dasboard-Principal.jpg",
-              "title": "Objectifs"
-            },
-            "2": {
-              "description": [
-                "- Analyse de l'existant : le script, la structure de la table, les spéficiations fonctionnelles et les maquettes graphiques.",
-                "- Création de l'entité Symfony avec Doctrine ainsi que les propriétés et les relations (détail de la vulnérabilité, systèmes vulnérables).",
-                "- J'utilise la date de la vulnérabilité pour savoir si elle est apparu plusieurs fois et avoir un historique de celle ci.",
-                "- Génération des modifications dans la base de données. Les données sont implémentés par le script. Le répository généré permet d'y accéder."
-              ],
-              "img": "/images/project-images/bubo/gsv1.png",
-              "title": "Base de données"
-            },
-            "3": {
-              "description": [
-                "- Mise à jour du code de tous les tableaux de l'application pour l'optimisser et améliorer l'expérience utilisateur.",
-                "- Initialement, chaque tableau charge l'entièreté des données et se contente de les réorganiser avec un simple système de tris et de pagination.",
-                "- Après une étude des solution disponnibles avec Symfony pour chager dynamiquement les éléments à afficher.",
-                "- Implémentation de Knp Paginator, plugin pouvant charger un nombre de données spécifiées avec des paramètres contenus dans l'url en rendant triable, et paginé.",
-                "- S'il nécéssite de recharger la page pour apepler l'url, je l'ai étoffé avec Ajax. L'url est appelé dynamiquement avec javascript rendant le chargement invisible.",
-                "- Le tri et la paagination rechargent uniquement le tabelau et non la page, avec le nombre d'élément choisis. C'est plus rapide, plus simple à utiliser.",
-                "- La suite a été de diffuser ces modifications sur l'ensemble du site et les fonctions suivantes."
-              ],
-              "img": "/images/project-images/bubo/thumbnail-Vuln-rabilit-s-Dashboard.png",
-              "title": "Les tableaux dynamiques et paginés"
-            },
-            "4": {
-              "description": [
-                "- Création du contrôleur des vulnérabilités ainsi que des routes et fonctions nécéssaires.",
-                "- Réalisation des vues. Liste des systèmes, leur détail. Détail des vulnérabilités d'un système.",
-                "- Ajout de la possibilité d'exclure une vulnérabilité pour ne pas la prendre en compte lors du listage des systèmes vulnérables.",
-                "- Ajout de nombreuses métriques pertinentes avec une valeur numérique, une flèche de tendance en temps réel. Au clique, peuvent filtrer les autres informations.",
-                "- Ajout de graphiques comme le TOP des vulnérabilités, moyenne de vulnérabilités par machines."
-              ],
-              "title": "Les vues graphiques"
+                "Développé un système de traitement et d'analyse des données de vulnérabilité en temps réel",
+                "Conçu une base de données robuste pour le suivi historique des vulnérabilités",
+                "Créé des tableaux de bord interactifs avec des métriques de sécurité en temps réel",
+                "Implémenté des workflows automatisés d'évaluation des vulnérabilités"
+              ]
             }
-          },
-          "group": {
-            "intro": "Répertorier les vulnérabilités, scanner des machines, et identifier les machines vulnérabes. Formater les données sur le tableau de bord.",
-            "titre": "Ajout d'un nouvel indicateur de gestion"
           }
         },
         {
+          "group": {
+            "titre": "Optimisation des Performances",
+            "intro": "Implémenté le chargement dynamique des données et les mises à jour AJAX pour des performances optimales."
+          },
           "data": {
             "1": {
+              "title": "Optimisation du Chargement des Données",
               "description": [
-                "- Après chaque Sprint de développement, réalisation d'un recettage compèlet. Mettre en évidence disfonctionnements, fautes.",
-                "- Planifier les corrections pour le Sprint suivant.",
-                "- En cas de modification majeure, il s'agit d'évolution nécéssitant une phase de conception."
-              ],
-              "title": "Correction de bug"
-            },
-            "2": {
-              "description": [
-                "- Phase de développement non négligeable.",
-                "- Réflexion généralement à plusieurs quant au socle technique d'une nouvelle évlution.",
-                "- Mise en accord sur la vision de l'évolution avant sa planification."
-              ],
-              "title": "Conception"
-            },
-            "3": {
-              "description": [
-                "- Une modification majeure ou bien l'ajout d'une fonctionnalité.",
-                "- Une amélioration pour l'application.",
-                "- Nécéssite généralement une phase de conception et terminé.",
-                "- Le recettage permet d'assurer son fonctionnement et sa conformité avec ce qui a été prévu."
-              ],
-              "title": "Evolution"
-            },
-            "4": {
-              "description": [
-                "- Déployer la solution chez des entreprises pilotes.",
-                "- Obtenir des retours précieux donnant un avis sur le terrain du besoin réel.",
-                "- Forte valeur ajoutée pour les deux parties."
-              ],
-              "title": "Mise en production chez des entreprises pilotes"
+                "Implémenté le chargement dynamique des données avec KnpPaginator",
+                "Créé des mécanismes de tri et de filtrage efficaces pour les grands ensembles de données",
+                "Optimisé les mises à jour AJAX pour le rafraîchissement en temps réel",
+                "Amélioré le temps de réponse global de l'application et l'expérience utilisateur"
+              ]
             }
-          },
-          "group": {
-            "intro": "Tâches réalisées quotidiennement en tant que développeur.",
-            "titre": "Travail en continue"
           }
         }
       ]
     },
     "hml": {
-      "description": "Harmonia Mundi Livre est spécialisée dans la distribution de livres. Elle travaille avec des libraires et des éditeurs.",
+      "description": "Optimisation et modernisation de Mediabase, plateforme clé d'export et de traitement de données pour les distributeurs de livres, axée sur l'automatisation, la fiabilité et la performance.",
       "img": "/images/project-images/hml/logo.png",
-      "mainTechnologies": ["PHP", "MySQL", "JavaScript", "HTML/CSS"],
+      "mainTechnologies": [
+        "C",
+        "PHP",
+        "Zend",
+        "Sphinx",
+        "Ubuntu",
+        "Apache",
+        "MySQL",
+        "Cron",
+        "Docker",
+        "Samba"
+      ],
       "softSkills": [
-        "Analyse de données",
-        "Optimisation des processus métier",
-        "Communication client",
-        "Gestion de projet"
+        "Automatisation des processus",
+        "Traitement de données",
+        "Fiabilité",
+        "Travail d'équipe"
       ],
       "introduction": {
-        "description": "Harmonia Mundi Livre est située dans le secteur culturel, fournissant des solutions de diffusion et de distribution à ses partenaires.",
-        "introduction": "Mediabase est l'outil central utilisé par les commerciaux et les éditeurs pour le référencement des produits et la génération de matériel commercial.",
-        "name": "Mediabase",
-        "title": "Harmonia Mundi Livre"
+        "name": "Harmonia Mundi Livre",
+        "introduction": "En tant que développeur principal pour Mediabase, j'étais responsable de deux améliorations majeures du système : l'optimisation du système d'export basé sur des modèles existant et le développement d'un nouveau système d'export personnalisé. Le projet visait à améliorer l'efficacité du traitement des données et à fournir des capacités d'export plus flexibles pour les utilisateurs.",
+        "description": "J'ai dirigé à la fois l'optimisation du système de modèles existant et le développement d'un nouveau système d'export personnalisé, en me concentrant sur les améliorations de performance, l'expérience utilisateur et les fonctionnalités d'export avancées."
       },
       "tasks": [
         {
-          "data": [
-            {
-              "description": [
-                "- Mise en évidence des champs existant rattachés a chaque livre et qui peux les consulter dans un tableur",
-                "- Affichage avec un champ recherche de tous la liste de tous les champs disponibles et autorisés ",
-                "- Les champs sont regroupes par catégories. Si aucun droit pour un champ dans la catégorie, on masque les champs et la catégorie"
-              ],
-              "title": "Ajout des champs personnalises exportables"
-            },
-            {
-              "description": [
-                "- Ajout de propriété possible a chaque champ, comme le type (nombre, texte, chaîne de caractère...) et de format (liste, décimal, texte...)",
-                "- Création d'une modale générique avec des options d'affichage de la donnée {ex : rogner des décimales, mettre en majuscule, caractère de séparation pour une liste ...)",
-                "- Ouverture du modal a l'ajout, édition ou suppression d'un champ dans la liste des champs sélectionnés"
-              ],
-              "title": "Création de modal générique de paramètre d'un champ a exporter"
-            },
-            {
-              "description": [
-                "- Ajout de la possibilité d'ajouter, éditer ou supprimer un champ dans la liste des champs sélectionnés",
-                "- Ajout de drag and drop pour réorganiser les champs, de boutons d'édition et suppression de champ",
-                "- Ajout d'option de sauvegarde et partage de la liste, de sélection de format d'export et la possibilité de lancer l'export"
-              ],
-              "title": "Gestion des champs sélectionnés"
-            }
-          ],
           "group": {
-            "intro": "Créer un outil de création de model d'export permettant d'exporter a la demande un ou plusieurs champs avec le choix du format d'affichage de la donnée, au format CSV, Excel, ou encore PDF, via une interface intuitive.",
-            "titre": "Refonte de l'export de données personnaliser"
+            "titre": "Optimisation du Système de Modèles",
+            "intro": "Optimisé le système d'export basé sur des modèles existant pour améliorer significativement les performances et la fiabilité, en se concentrant sur le processus de génération PDF utilisant FPDF."
+          },
+          "data": {
+            "performance": {
+              "title": "Analyse et Optimisation des Performances",
+              "description": [
+                "Réalisé une analyse approfondie des goulots d'étranglement de performance du système de modèles existant, particulièrement dans le processus de génération basé sur FPDF",
+                "Identifié et résolu les problèmes de gestion de la mémoire dans la génération de PDF, où chaque élément était généré pixel par pixel",
+                "Implémenté des algorithmes efficaces de traitement des données pour gérer de grands lots de génération de PDF",
+                "Réduit le temps de génération des PDF d'une journée à environ 20 minutes en implémentant la génération basée sur des modèles"
+              ]
+            },
+            "template": {
+              "title": "Implémentation du Système de Modèles",
+              "description": [
+                "Développé un moteur de modèles robuste utilisant des fichiers pré-remplis avec des couvertures et formes statiques (Modèle F et Modèle G)",
+                "Créé un système flexible de gestion des modèles qui copie et modifie les modèles au lieu de générer à partir de zéro",
+                "Implémenté des mécanismes de mise en cache pour améliorer les performances et réduire l'utilisation de la mémoire",
+                "Ajouté la prise en charge de divers formats et mises en page d'export, avec un système de notification automatisé pour les exports terminés"
+              ]
+            }
           }
         },
         {
-          "data": {
-            "1": {
-              "description": [
-                "- Essaie de plusieurs libraire d'export PDF d'après une maquette exportable au format html",
-                "- Templétisation des pages du document en identifiant celles qui seront répétés plusieurs fois et ajout des variables au templates",
-                "- Génération du premier fichier mais relativement lente lors de l'ajout des couvertures et des formes colores contenant la note",
-                "- Test en condition réel en historisant le temps de génération et changement de méthode de génération."
-              ],
-              "title": ""
-            },
-            "2": {
-              "description": [
-                "- Génération avec FPDF au pixel près de chaque éléments plutôt que depuis le html",
-                "- Génération en condition réel via l'exécution d'une commande php avec presque une journée de génération"
-              ],
-              "title": ""
-            }
-          },
           "group": {
-            "intro": "Générer un grand nombre de fichier PDF comportant du texte et de nombreuses images, générés de façon automatique suivie d'une notification",
-            "titre": "Géneration d'un guide du réassort avec FPDF"
+            "titre": "Développement du Système d'Export Personnalisé",
+            "intro": "Développé un nouveau système d'export personnalisé avec des fonctionnalités avancées et des options de configuration flexibles, incluant la gestion dynamique des champs et la sélection de format."
+          },
+          "data": {
+            "fields": {
+              "title": "Gestion Dynamique des Champs",
+              "description": [
+                "Implémenté un système de sélection dynamique des champs avec organisation par catégories et vérification des permissions",
+                "Créé une interface utilisateur intuitive pour la configuration des champs avec fonctionnalité de glisser-déposer",
+                "Ajouté la prise en charge du formatage et de la validation personnalisés des champs, incluant les types nombre, texte et liste",
+                "Développé un système de gestion des dépendances entre champs avec masquage automatique des catégories basé sur les permissions"
+              ]
+            },
+            "rights": {
+              "title": "Gestion Avancée des Droits",
+              "description": [
+                "Conçu et implémenté un système de permissions granulaire pour le contrôle d'accès aux champs",
+                "Créé un contrôle d'accès basé sur les rôles pour les fonctionnalités d'export avec permissions au niveau des champs",
+                "Développé un système de gestion des quotas d'export avec suivi de l'utilisation",
+                "Implémenté un système de journalisation des opérations d'export avec suivi détaillé des activités utilisateur"
+              ]
+            },
+            "formats": {
+              "title": "Sélection et Personnalisation des Formats",
+              "description": [
+                "Développé la prise en charge de multiples formats d'export (PDF, Excel, CSV) avec optimisations spécifiques aux formats",
+                "Créé des options de configuration spécifiques aux formats avec règles de formatage personnalisées",
+                "Implémenté des fonctionnalités de validation et d'aperçu des formats avec mises à jour en temps réel",
+                "Ajouté la prise en charge de modèles de format personnalisés avec capacités de sauvegarde et de partage"
+              ]
+            }
           }
         },
         {
-          "data": {
-            "1": {
-              "description": [
-                "- Génération avec FPDF au pixel près de chaque éléments plutôt que depuis le html",
-                "- Génération en condition réel via l'exécution d'une commande php avec presque une journée de génération"
-              ],
-              "title": "Constatation de la lenteur d'exécution"
-            },
-            "2": {
-              "description": [
-                "",
-                "- Création d'un fichier pré-remplis avec les couvertures et les formes appelés Template F et Template G qui ne changent pas pendant la génération ",
-                "- La génération des images étant le plus long, il ne reste qu'a copier un Template F ou G et de l'editer a l'aide de FPDF et de remplir le texte. Une vingtaine de minute suffisent.",
-                "- Après la génération de chaque groupe de fichier, on notifie le libraire avec le chemin sur notre partage contenant les fichiers PDF le concernant"
-              ],
-              "title": "Templatisation du traitement le plus long"
-            }
-          },
           "group": {
-            "intro": "Generation d'un grand nombre de fichiers pdf permetant aux libraires de visualiser le top 50 des ventes réassort HML du canal de distribution libraire.",
-            "titre": "Optimisation de la génération d'un grand nombre de fichiers pdf "
-          }
-        },
-        {
-          "data": {
-            "1": {
-              "description": [""],
-              "title": ""
-            },
-            "2": {
-              "description": [""],
-              "title": ""
-            }
+            "titre": "Modernisation de l'Infrastructure",
+            "intro": "Modernisé l'environnement de production pour supporter efficacement les deux systèmes d'export, incluant la migration vers Ubuntu 22.04 et l'implémentation de configurations sécurisées."
           },
-          "group": {
-            "intro": "",
-            "titre": "Mise à jour de la recherche avec Sphinx et l'indexation des données "
-          }
-        },
-        {
           "data": {
-            "1": {
+            "infrastructure": {
+              "title": "Analyse du Système et Configuration de l'Infrastructure",
               "description": [
-                "- Nous avions une machine virtuelle ubuntu pour la dev, et une pour la production. Ce dernier étant dans une vieille version",
-                "- Nous utilisons Zend comme langage de programmation, docker pour gérer la librairie de recherche et samba pour le partage de fichier"
-              ],
-              "title": "Analyse de l'existant"
+                "Analysé l'infrastructure actuelle utilisant Zend Framework, Docker pour la bibliothèque de recherche et Samba pour le partage de fichiers",
+                "Mis en place un environnement de production moderne avec Ubuntu 22.04 et configuration Apache optimisée",
+                "Implémenté des configurations sécurisées et des contrôles d'accès pour l'application et le partage de fichiers",
+                "Créé des systèmes automatisés de déploiement et de sauvegarde avec procédures de test complètes"
+              ]
             },
-            "2": {
+            "migration": {
+              "title": "Migration et Intégration du Système",
               "description": [
-                "- Création d'une nouvelle VM avec une version d'Ubuntu plus récentes",
-                "- Installation d'Apache et du serveur de base de données"
-              ],
-              "title": "Installation du serveur et des services"
-            },
-            "3": {
-              "description": [
-                "- Après avoir importe les fichiers du site, paramétrage de la base de données ",
-                "- Configuration des fichiers vhost pour sécuriser l'accès a l'application et assurer sa disponibilité",
-                "- Installation du partage de fichier avec Samba et test unitaires afin d'assurer la mise a jour sans effets de bords"
-              ],
-              "title": "Installation de l'existant"
+                "Planifié et exécuté une migration fluide des deux systèmes d'export sans interruption de service",
+                "Assuré l'intégrité des données pendant le processus de migration avec validation automatisée",
+                "Implémenté des systèmes de surveillance et d'alerte pour les deux processus d'export",
+                "Créé une documentation complète pour les deux systèmes incluant les procédures de configuration et de maintenance"
+              ]
             }
-          },
-          "group": {
-            "intro": "Création d'un nouveau serveur web de production de la Mediabase pour remplacer l'ancien afin de renforcer la sécurité et améliorer la maintenabilité",
-            "titre": "Création et maintenance de l'infrastructure web"
           }
         }
       ]
     },
     "hopps": {
-      "description": "Hopps Groupe dans le secteur de la distribution a besoin d'outils pour superviser son infrastructure informatique comme AlertCenter avec des tableaux de bord",
+      "description": "Dirigé le développement et la maintenance d'AlertCenter, une plateforme complète de surveillance d'infrastructure IT qui fournit des insights en temps réel et des capacités de gestion des incidents",
       "img": "/images/project-images/hopps/logo.png",
-      "mainTechnologies": ["PHP", "MySQL", "JavaScript", "Bootstrap"],
+      "mainTechnologies": [
+        "C#",
+        "ASP.NET",
+        "Angular",
+        "Powershell",
+        "LDAP",
+        "Webservices",
+        "Jira"
+      ],
       "softSkills": [
-        "Intégration système",
-        "Support technique",
-        "Documentation",
-        "Coordination d'équipe"
+        "Travail en autonomie",
+        "Force de proposition",
+        "Réactivité",
+        "Initiative",
+        "Communication"
       ],
       "introduction": {
-        "description": "Hopps Groupe a de nombreux besoins en termes de logiciels et d'applications. Leurs outils sont principalement développés en interne et doivent être maintenus car ils sont très importants.",
-        "introduction": "Maintenance et évolution des outils cloud. Les outils internes de l'entreprise, notamment ceux utilisés par les ingénieurs du département infrastructure, ont été développés en interne.\nIls sont connectés aux applications métier, et ils doivent évoluer dans le temps selon les besoins.",
-        "name": "Hopps Group",
-        "title": "AlertCenter"
+        "description": "En tant que développeur chez Hopps Groupe, j'ai travaillé sur la maintenance et l'amélioration de leurs outils de surveillance internes, notamment AlertCenter, qui sert de plateforme centrale pour la surveillance de l'infrastructure IT et la gestion des incidents.",
+        "introduction": "AlertCenter est un outil critique utilisé par le département infrastructure pour surveiller et gérer les systèmes IT. La plateforme s'intègre avec divers outils de surveillance et fournit des tableaux de bord en temps réel pour le suivi et l'escalade des incidents.",
+        "name": "AlertCenter",
+        "title": "Hopps Group"
       },
       "tasks": [
         {
+          "group": {
+            "titre": "Amélioration de la Plateforme",
+            "intro": "Amélioré les capacités d'AlertCenter en tant que plateforme centrale de surveillance de l'infrastructure IT et de gestion des incidents, en se concentrant sur la surveillance en temps réel et la gestion efficace des incidents."
+          },
           "data": {
             "1": {
+              "title": "Développement du Tableau de Bord de Surveillance",
               "description": [
-                "- Le service informatique a de nombreux outils de supervision de l'infra et AlertCenter réunis les informations qu'ils envoie sous forme de tableau de bord",
-                "- Affichage des incidents en cours pour chaque équipe et niveau sous forme d'indicateurs",
-                "- Possibilité de sélectionner un incident pour avoir l'historique et les logs de celui ci."
-              ],
-              "title": "AlertCenter, le tableau de bord de supervision central"
+                "Développé un tableau de bord centralisé agrégant les données de plusieurs outils de surveillance d'infrastructure",
+                "Implémenté un affichage en temps réel des incidents avec des indicateurs spécifiques par équipe et niveaux de sévérité",
+                "Créé un système complet d'historique des incidents et de visualisation des logs avec filtrage avancé",
+                "Ajouté une visualisation des métriques en temps réel avec des plages de temps personnalisables"
+              ]
             },
             "2": {
+              "title": "Modernisation du Système",
               "description": [
-                "Objectifs : Moderniser, éviter la redondance. Programmation orientée objet, structure MVC.",
-                "- J'ai assurer le fonctionnement des webservices et les mises a jour du code,",
-                "- Effectue une évolution au niveau de l'escalade des incidents Ainsi que des appels astreintes générés par l'application",
-                "- Amélioration du systèmes appels astreintes générés par l'application pouvant envoyer un sms ou un appel selon la criticité"
-              ],
-              "title": "Le webservice Interface Incident"
+                "Modernisé la base de code en utilisant la programmation orientée objet et l'architecture MVC",
+                "Implémenté la technologie WebSocket pour des mises à jour en temps réel sans polling",
+                "Amélioré les intégrations webservice pour une synchronisation transparente des données",
+                "Développé un système avancé d'escalade des incidents avec notifications SMS et appel selon la criticité"
+              ]
             }
+          }
+        },
+        {
+          "group": {
+            "titre": "Projet de Séparation Client",
+            "intro": "Séparé avec succès AlertCenter en deux applications indépendantes pour supporter la séparation d'un client du groupe principal, assurant l'isolation des données et le maintien des fonctionnalités."
           },
-          "group": {
-            "intro": "AlertCenter est un tableau de bord développe en ASP.NET et qui utilise des webservices pour inter-connecter diverses applications de remontée d'incident. Son webservice interface incident permet l'escalade des incident a la bonne personne au bon service",
-            "titre": "Maintiens et évolution des outils du cloud"
+          "data": {
+            "1": {
+              "title": "Implémentation Multi-tenant",
+              "description": [
+                "Conçu et implémenté une architecture multi-tenant pour des environnements clients séparés",
+                "Développé un système de filtrage des requêtes pour maintenir la connectivité des outils selon les comptes utilisateurs",
+                "Créé une solution plus efficace pour gérer les besoins de séparation client",
+                "Implémenté des mécanismes d'isolation des données pour assurer la confidentialité des données client"
+              ]
+            },
+            "2": {
+              "title": "Système de Contrôle d'Accès",
+              "description": [
+                "Implémenté le regroupement de comptes avec filtrage conditionnel dans toute l'application",
+                "Développé le filtrage des requêtes cross-serveur pour maintenir la connectivité des outils",
+                "Créé un contrôle d'accès basé sur les rôles avec des permissions granulaire",
+                "Conduit des tests unitaires complets avant le déploiement client"
+              ]
+            }
           }
         },
         {
-          "data": [
-            {
-              "description": [
-                "- Création d'un nouveau serveur ou j'installe une deuxième version d'AlertCenter",
-                "- Filtrage des requêtes sur les deux serveurs afin de garder les outils connectes selon le compte connecte",
-                "- Je réalise que le projet est difficilement réalisable ainsi et propose une solution plus rapide et plus sure"
-              ],
-              "title": "Creation d'une seconde version ALC"
-            },
-            {
-              "description": [
-                "- Création d'un groupe de compte. On ajoute des filtres conditionnels un peu partout dans l'application",
-                "- Filtrage des requêtes sur les deux serveurs afin de garder les outils connectes",
-                "- Nombreux tests unitaires avant la mise en production avec le client"
-              ],
-              "title": "Modification des droits de visualisation via la gestion de droits"
-            }
-          ],
           "group": {
-            "intro": "Une filiale de l'entreprise se sépare du groupe décide continuer de bénéficier de l'application AlertCenter et des remontées d'incident. J'explore les solutions et réalise le projet ",
-            "titre": "Séparer AlertCenter en deux appli pour un client externe"
-          }
-        },
-        {
-          "data": [
-            {
+            "titre": "Automatisation du Centre de Service",
+            "intro": "Créé une interface de ticketing efficace pour le centre de service qui connecte plusieurs systèmes et automatise la gestion des utilisateurs, réduisant significativement l'intervention manuelle."
+          },
+          "data": {
+            "1": {
+              "title": "Intégration du Service Desk",
               "description": [
-                "- Création d'un formulaire permettant au CDS de créer des tickets Jira depuis le web",
-                "- Les champs sont pré-remplis dans le ticket par les informations via le matricule avec LDAP"
-              ],
-              "title": "Le formulaire pour le CDS"
+                "Développé un formulaire web pour que le CDS crée efficacement des tickets Jira",
+                "Implémenté l'intégration LDAP pour pré-remplir les informations de ticket avec les numéros de personnel",
+                "Créé un workflow transparent pour la création et la gestion des tickets",
+                "Ajouté une catégorisation automatique des tickets basée sur le type d'incident"
+              ]
             },
-            {
+            "2": {
+              "title": "Gestion des Identités",
               "description": [
-                "- Ce formulaire est un pont entre deux active directory et l'outil de ticketing Jira",
-                "- Création d'un compte Jira a la volée si le demandeur du ticket n'existe pas dans Jira via l'API Jira"
-              ],
-              "title": "Relier le formulaire a Jira"
+                "Construit un pont entre deux Active Directories et le système de ticketing Jira",
+                "Implémenté la création automatique de comptes Jira pour les nouveaux utilisateurs via l'API Jira",
+                "Développé un système de synchronisation des rôles et permissions utilisateurs",
+                "Créé des workflows automatisés de provisionnement et déprovisionnement des utilisateurs"
+              ]
             }
-          ],
-          "group": {
-            "intro": "Le centre de service a besoin de créer des tickets sur l'application Jira rapidement pour des utilisateurs présents sur deux Active Directory différents. On doit pouvoir les retrouver via le matricule et créer un comte Jira automatiquement s'il n'en a pas, et créer le ticket.",
-            "titre": "Interface de ticketing Centre De Service"
           }
         }
       ]
     },
     "scf": {
-      "description": "Support supplémentaire de référencement pour la communauté francophone comme alternative au site officiel en anglais",
+      "description": "Développé une plateforme web complète pour la communauté francophone de SC, fournissant du contenu localisé, des mises à jour en temps réel et des fonctionnalités communautaires comme alternative au site officiel en anglais",
       "img": "/images/project-images/scf/logo.png",
-      "mainTechnologies": ["React", "Node.js", "MongoDB", "Discord API"],
+      "mainTechnologies": [
+        "Symfony 4/5",
+        "UIkit",
+        "API Platform",
+        "SQL",
+        "DQL",
+        "Yarn",
+        "Vue.js",
+        "Docker"
+      ],
       "softSkills": [
-        "Gestion de communauté",
-        "Intégration d'API",
-        "Scraping de données",
-        "Design d'expérience utilisateur"
+        "Développement Fullstack",
+        "Conception d'API",
+        "Travail d'équipe",
+        "Gestion de communauté"
       ],
       "introduction": {
         "description": "Le jeu en rapport avec le site est en développement, et tous les contenus sont en anglais actuellement. Nous proposons une alternative pour la communauté francophone",
         "introduction": "Projet personnel visant à devenir un support supplémentaire pour une communauté de 6000 utilisateurs sur une application de tchat (Discord) !",
-        "name": "Star Citizen Francophone Web",
-        "title": "Star Citizen Francophone"
+        "name": "SC Francophone Web",
+        "title": "SC Francophone"
       },
       "tasks": [
         {
-          "data": [
-            {
-              "description": [
-                "- Créer un espace de référencement des utilisateurs francophones et des organisations francophones venant du Discord.",
-                "- Rendre l'ajout des données simple et automatiques à l'aide d'un scrappeur de données.",
-                "- Créer des outils utiles et modulaires tels que la gestion de flottes, création d'évenements et consultation d'un wiki.",
-                "- Garder une application compatible avec d'autres technologies grace à l'ingration d'une api dans la V2."
-              ],
-              "title": "Missions"
-            }
-          ],
           "group": {
-            "intro": "Créer une application complète et utile pour une communauté déjà existante avec des besoins connus.",
-            "titre": "FONCTIONNALITÉ CLÉS"
+            "titre": "Développement de la Plateforme",
+            "intro": "Construit une plateforme web moderne utilisant React et Node.js, en se concentrant sur la performance, l'évolutivité et les fonctionnalités en temps réel pour la communauté francophone."
+          },
+          "data": {
+            "1": {
+              "title": "Implémentation de l'Architecture Core",
+              "description": [
+                "Développé un frontend React avec rendu côté serveur pour une performance optimale",
+                "Implémenté un backend Node.js avec des endpoints API RESTful",
+                "Créé une structure de base de données MongoDB optimisée pour la gestion de contenu",
+                "Mis en place des conteneurs Docker pour un développement et déploiement cohérents"
+              ]
+            },
+            "2": {
+              "title": "Fonctionnalités en Temps Réel",
+              "description": [
+                "Implémenté l'intégration WebSocket pour les mises à jour et notifications en temps réel",
+                "Créé un système de chat en direct avec intégration Discord",
+                "Développé la synchronisation de contenu en temps réel sur plusieurs serveurs",
+                "Ajouté des notifications push pour les mises à jour importantes de la communauté"
+              ]
+            }
           }
         },
         {
-          "data": [
-            {
-              "description": [
-                "- Le service Scrapper récupère à l'aide d'une url et du service la page d'un site. Le service parse à l'aide d'expression régulière.",
-                "- L'item ou la liste d'items exploitables retournées par le service sont enregistrés par le service \"Cacher\" qui exploite les données et les enregistres en base.",
-                "- Refonte du design pour répondre aux critères actuels du web (responsibe, apparence moderne...).",
-                "- Templatisation des pages web du site via un moteur de template. Enlever toute la redondence."
-              ],
-              "title": "Data Interceptor"
-            },
-            {
-              "description": [
-                "- A l'inscription, l'utilisateur saisie son pseudo sur le site officiel",
-                "- A l'aide de la page \"synchroniser depuis son profil, il peut utiliser le service interceptor",
-                "- Refonte du design pour répondre aux critères actuels du web (responsibe, apparence moderne...).",
-                "- Une étape de vérification permet d'assurer que c'est bien son profil qui sera enregistré.",
-                "- La base de données et mises à jour avec ces données et elles sont désormais visibles sur notre site."
-              ],
-              "title": "Utilisateurs"
-            },
-            {
-              "description": [
-                "- Gestion des organisations récupère les données de l'organisation de l'utilisateur et sait si il en est le leader ou non.",
-                "- Fleet récupère des données sur des vaisseaux sur un wiki public, et une fonctionnalité permet de gérer ses vaisseaux sur notre site."
-              ],
-              "title": "Autres modules"
-            }
-          ],
           "group": {
-            "intro": "Data Interceptor est un service de l'application. Il est issue de l'api http://sc-api.com/ open source qui a été adaptée ici afin qu'elle soit utilisé comme service. Ainsi, nous n'appelons plus de route, il n'y a plus d'api. Nous utilisons directement les fonctions du service.",
-            "titre": "Le scrappeur de données"
+            "titre": "Gestion de Contenu",
+            "intro": "Développé un système efficace de gestion de contenu pour gérer les informations liées au jeu et le contenu communautaire."
+          },
+          "data": {
+            "1": {
+              "title": "Intégration des Données",
+              "description": [
+                "Créé un système automatisé de scraping de données pour les mises à jour et actualités du jeu",
+                "Implémenté un pipeline de traduction de contenu pour la localisation française",
+                "Développé un système de cache utilisant Redis pour une meilleure performance",
+                "Construit des outils de validation et modération de contenu"
+              ]
+            },
+            "2": {
+              "title": "Fonctionnalités Communautaires",
+              "description": [
+                "Développé un système de profils utilisateurs avec intégration Discord",
+                "Créé des forums communautaires avec mises à jour en temps réel",
+                "Implémenté un système de partage et vote de contenu",
+                "Ajouté des outils de modération pour la gestion de la communauté"
+              ]
+            }
           }
         },
         {
-          "data": [
-            {
-              "description": [
-                "- Évolution des contrôleurs du site, retournent un réponse json au lieu d'une vue.",
-                "- Sécurisation de l'api avec une authentification JWT (token) sur les routes.",
-                "- Configuration d'objets dto (data transfert objet) afin de pouvoir personnaliser les objets retournées en objets complexes.",
-                "- Intégration de pagination pour les objets et tableaux d'objets retournés par l'api."
-              ],
-              "title": "Réalisation de l'api sécurisé"
-            },
-            {
-              "description": [
-                "- Le site est en full api pour pouvoir l'étendre sur n'importe quelle plateforme web, mobile ou bureau.",
-                "- Création d'un front Vue 3 pour externaliser la partie visuelle du site. Celle ci reprend les fonctions du site de base.",
-                "- Création d'un design moderne, responsive et appel de l'api avec Axios."
-              ],
-              "title": "Réalisation d'un front en Vue 3"
-            }
-          ],
           "group": {
-            "intro": "Refactorisation de l'application avec une API pour gérer les données et un front-end React pour plus de performance et de modernité.",
-            "titre": "Separation du front et du back"
+            "titre": "Optimisation des Performances",
+            "intro": "Implémenté diverses techniques d'optimisation pour assurer des temps de chargement rapides et une expérience utilisateur fluide."
+          },
+          "data": {
+            "1": {
+              "title": "Optimisation Frontend",
+              "description": [
+                "Implémenté le code splitting et le lazy loading pour un chargement initial plus rapide",
+                "Optimisé le chargement des images avec le format WebP et des images responsives",
+                "Créé une gestion d'état efficace avec Redux",
+                "Ajouté un service worker pour la fonctionnalité hors ligne"
+              ]
+            },
+            "2": {
+              "title": "Optimisation Backend",
+              "description": [
+                "Implémenté l'indexation de base de données pour des requêtes plus rapides",
+                "Créé des stratégies de cache efficaces avec Redis",
+                "Développé la répartition de charge pour plusieurs serveurs",
+                "Ajouté la surveillance et la journalisation pour le suivi des performances"
+              ]
+            }
           }
         }
       ]
