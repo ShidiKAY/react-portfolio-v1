@@ -273,11 +273,7 @@ const ProjectDetail = () => {
   useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
-        if (window.history.length > 2) {
-          navigate(-1);
-        } else {
-          navigate("/#projects");
-        }
+        navigate("/#projects");
       }
     };
 
@@ -324,15 +320,9 @@ const ProjectDetail = () => {
       />
 
       {/* Fixed back button */}
-      <div className="fixed top-4 left-4 z-50">
+      <div className="fixed top-4 left-4 z-[200]">
         <button
-          onClick={() => {
-            if (window.history.length > 2) {
-              navigate(-1);
-            } else {
-              navigate("/#projects");
-            }
-          }}
+          onClick={() => navigate("/#projects")}
           className="flex items-center gap-2 bg-white/80 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
           aria-label="Go back"
         >
@@ -419,8 +409,11 @@ const ProjectDetail = () => {
       <div>
         {/* Left Side */}
         <div
-          className="fixed top-0 left-0 h-full w-32 z-[101] group cursor-pointer transition flex items-center justify-start"
-          onClick={() => navigate(`/projects/${prevProjectId}`)}
+          className="fixed top-0 left-0 h-full w-32 z-[100] group cursor-pointer transition flex items-center justify-start"
+          onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            setTimeout(() => navigate(`/projects/${prevProjectId}`), 200);
+          }}
           aria-label="Previous project"
           tabIndex={0}
           onKeyDown={(e) =>
@@ -455,8 +448,11 @@ const ProjectDetail = () => {
         </div>
         {/* Right Side */}
         <div
-          className="fixed top-0 right-0 h-full w-32 z-[101] group cursor-pointer transition flex items-center justify-end"
-          onClick={() => navigate(`/projects/${nextProjectId}`)}
+          className="fixed top-0 right-0 h-full w-32 z-[100] group cursor-pointer transition flex items-center justify-end"
+          onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+            setTimeout(() => navigate(`/projects/${nextProjectId}`), 200);
+          }}
           aria-label="Next project"
           tabIndex={0}
           onKeyDown={(e) =>

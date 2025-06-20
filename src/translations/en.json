@@ -247,7 +247,6 @@
       "description": "Optimized and modernized Mediabase, a key export and data processing platform for book distributors, focusing on automation, reliability, and performance.",
       "img": "/images/project-images/hml/logo.png",
       "mainTechnologies": [
-        "C",
         "PHP",
         "Zend",
         "Sphinx",
