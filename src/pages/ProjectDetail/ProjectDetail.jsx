@@ -5,6 +5,60 @@ import { useEffect, useState } from "react";
 import GoToTop from "../../components/GoToTop";
 import i18n from "../../i18n";
 
+const PROJECT_ORDER = ["apigem", "bubo", "hml", "hopps", "scf"];
+const TOOLTIP_DESCRIPTIONS = {
+  // Technologies
+  PHP: "A popular general-purpose scripting language especially suited to web development.",
+  "Symfony 4/5": "A modern PHP framework for web applications.",
+  UIkit: "A lightweight and modular front-end framework.",
+  "API Platform": "A framework to build modern API-driven projects.",
+  SQL: "Structured Query Language for managing data in databases.",
+  DQL: "Doctrine Query Language, used with Doctrine ORM.",
+  Yarn: "A package manager for code.",
+  "Vue.js": "A progressive JavaScript framework for building user interfaces.",
+  Docker:
+    "A platform for developing, shipping, and running applications in containers.",
+  C: "A general-purpose programming language.",
+  Zend: "A PHP framework for web applications.",
+  Sphinx: "A full-text search engine.",
+  Ubuntu: "A popular Linux distribution.",
+  Apache: "A widely-used web server software.",
+  MySQL: "A popular open-source relational database.",
+  Cron: "A time-based job scheduler in Unix-like systems.",
+  Samba: "A free software re-implementation of the SMB networking protocol.",
+  "C#": "A modern, object-oriented programming language developed by Microsoft.",
+  "ASP.NET":
+    "A web framework for building modern web apps and services with .NET.",
+  Angular: "A TypeScript-based open-source web application framework.",
+  Powershell:
+    "A task automation and configuration management framework from Microsoft.",
+  LDAP: "A protocol for accessing and maintaining distributed directory information services.",
+  Webservices:
+    "Software systems designed to support interoperable machine-to-machine interaction over a network.",
+  Jira: "A tool for issue tracking and project management.",
+  // Soft skills
+  Teamwork: "Ability to work effectively within a team.",
+  "Fullstack Development":
+    "Experience with both front-end and back-end development.",
+  "API Design": "Designing robust and scalable APIs.",
+  "Community Management": "Managing and engaging with user communities.",
+  "Process Automation": "Automating repetitive tasks and processes.",
+  "Data Processing": "Handling and transforming data efficiently.",
+  Reliability: "Ensuring systems are dependable and robust.",
+  "Autonomous Work": "Ability to work independently.",
+  Proactivity: "Taking initiative and acting in advance.",
+  Responsiveness: "Reacting quickly and positively.",
+  Initiative: "Ability to assess and initiate things independently.",
+  Communication: "Effectively conveying information and ideas.",
+  "Force de proposition": "Capacité à proposer des idées et des solutions.",
+  "Travail en autonomie": "Capacité à travailler de façon indépendante.",
+  Réactivité: "Capacité à réagir rapidement et efficacement.",
+  "Automatisation des processus":
+    "Mise en place de solutions pour automatiser les tâches répétitives.",
+  "Traitement de données": "Gestion et transformation efficace des données.",
+  Fiabilité: "Assurer la robustesse et la stabilité des systèmes.",
+};
+
 const ProjectDetail = () => {
   const { t } = useTranslation();
   const { projectId } = useParams();
@@ -250,6 +304,17 @@ const ProjectDetail = () => {
   const isHopps = projectId === "hopps";
   const isHml = projectId === "hml";
 
+  // Find next/previous project IDs
+  const currentIdx = PROJECT_ORDER.indexOf(projectId);
+  const prevProjectId =
+    PROJECT_ORDER[
+      (currentIdx - 1 + PROJECT_ORDER.length) % PROJECT_ORDER.length
+    ];
+  const nextProjectId = PROJECT_ORDER[(currentIdx + 1) % PROJECT_ORDER.length];
+
+  // Helper for tooltips
+  const getTooltip = (tag) => TOOLTIP_DESCRIPTIONS[tag] || tag;
+
   return (
     <div className="relative min-h-screen bg-white">
       {/* Progress bar */}
@@ -269,6 +334,7 @@ const ProjectDetail = () => {
             }
           }}
           className="flex items-center gap-2 bg-white/80 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
+          aria-label="Go back"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -286,13 +352,20 @@ const ProjectDetail = () => {
         </button>
       </div>
 
-      {/* Floating Language Switcher - matches Navbar */}
-      <div className="hidden md:block fixed top-6 right-6 z-50">
+      {/* Floating Language Switcher and Print Button - aligned */}
+      <div className="hidden md:flex fixed top-6 right-6 z-50 flex-row items-center space-x-2">
         <div className="language-switcher mt-1.5">
           <ul className="flex space-x-2">
             <li
               className="inline-flex items-center cursor-pointer"
               onClick={() => i18n.changeLanguage("en")}
+              tabIndex={0}
+              aria-label="Switch to English"
+              role="button"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ")
+                  i18n.changeLanguage("en");
+              }}
             >
               <span
                 className="i-flagpack-gb-ukm w-8 mt-px"
@@ -303,6 +376,13 @@ const ProjectDetail = () => {
             <li
               className="inline-flex items-center cursor-pointer"
               onClick={() => i18n.changeLanguage("fr")}
+              tabIndex={0}
+              aria-label="Switch to French"
+              role="button"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ")
+                  i18n.changeLanguage("fr");
+              }}
             >
               <span
                 className="i-flagpack-fr w-8 mb-1 mt-1"
@@ -311,6 +391,103 @@ const ProjectDetail = () => {
               <span className="hidden lg:block">French</span>
             </li>
           </ul>
+        </div>
+        <button
+          onClick={() => window.print()}
+          className="flex items-center gap-2 bg-white/80 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
+          aria-label="Print this project"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-5 w-5"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2m-6 0v4m0 0h4m-4 0H8"
+            />
+          </svg>
+          Print
+        </button>
+      </div>
+
+      {/* Side Navigation Buttons (fixed, full height, always visible, each on its side) */}
+      <div>
+        {/* Left Side */}
+        <div
+          className="fixed top-0 left-0 h-full w-32 z-[101] group cursor-pointer transition flex items-center justify-start"
+          onClick={() => navigate(`/projects/${prevProjectId}`)}
+          aria-label="Previous project"
+          tabIndex={0}
+          onKeyDown={(e) =>
+            (e.key === "Enter" || e.key === " ") &&
+            navigate(`/projects/${prevProjectId}`)
+          }
+          role="button"
+        >
+          {/* Overlay on hover */}
+          <div className="absolute inset-0 z-0 transition duration-200 opacity-100 white group-hover:bg-gray-200/40" />
+          <div className="relative z-10 flex items-center justify-center w-full">
+            <div className="w-14 h-14 rounded-full bg-white/90 border border-gray-300 flex items-center justify-center transition">
+              <svg
+                className="h-8 w-8 text-gray-500 transition"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M15 19l-7-7 7-7"
+                />
+              </svg>
+            </div>
+          </div>
+          {/* Tooltip */}
+          <div className="absolute left-36 top-1/2 -translate-y-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-20">
+            Previous Project
+          </div>
+        </div>
+        {/* Right Side */}
+        <div
+          className="fixed top-0 right-0 h-full w-32 z-[101] group cursor-pointer transition flex items-center justify-end"
+          onClick={() => navigate(`/projects/${nextProjectId}`)}
+          aria-label="Next project"
+          tabIndex={0}
+          onKeyDown={(e) =>
+            (e.key === "Enter" || e.key === " ") &&
+            navigate(`/projects/${nextProjectId}`)
+          }
+          role="button"
+        >
+          {/* Overlay on hover */}
+          <div className="absolute inset-0 z-0 transition duration-200 opacity-100 white group-hover:bg-gray-200/40" />
+          <div className="relative z-10 flex items-center justify-center w-full">
+            <div className="w-14 h-14 rounded-full bg-white/90 border border-gray-300 flex items-center justify-center transition">
+              <svg
+                className="h-8 w-8 text-gray-500 transition"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M9 5l7 7-7 7"
+                />
+              </svg>
+            </div>
+          </div>
+          {/* Tooltip */}
+          <div className="absolute right-36 top-1/2 -translate-y-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-20">
+            Next Project
+          </div>
         </div>
       </div>
 
@@ -327,6 +504,16 @@ const ProjectDetail = () => {
           <h1 className="text-5xl font-bold mb-8 text-gray-900 text-left font-montserrat uppercase">
             {project.introduction.name}
           </h1>
+
+          {/* Project Image */}
+          {project.img && (
+            <img
+              src={project.img}
+              alt={project.introduction.name}
+              className="mb-8 w-full max-h-72 object-contain rounded-lg shadow"
+              style={{ background: "#f8fafc" }}
+            />
+          )}
 
           <p className="text-xl text-gray-600 mb-8 leading-relaxed text-justify">
             {project.description}
@@ -420,6 +607,9 @@ const ProjectDetail = () => {
                     <span
                       key={index}
                       className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm border border-blue-500"
+                      tabIndex={0}
+                      aria-label={getTooltip(tech)}
+                      title={getTooltip(tech)}
                     >
                       {tech}
                     </span>
@@ -439,6 +629,9 @@ const ProjectDetail = () => {
                     <span
                       key={index}
                       className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm border border-purple-500"
+                      tabIndex={0}
+                      aria-label={getTooltip(skill)}
+                      title={getTooltip(skill)}
                     >
                       {skill}
                     </span>
