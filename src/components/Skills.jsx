@@ -1,27 +1,35 @@
-import { DiDotnet } from "react-icons/di";
 import {
   FaCss3Alt,
   FaHtml5,
   FaJs,
   FaPhp,
-  FaReact,
-  FaNode,
   FaLinux,
-  FaWindows,
-  FaGitlab,
   FaGithub,
+  FaChartBar,
+  FaDatabase,
+  FaCloud,
+  FaSync,
+  FaServer,
+  FaClock,
+  FaNetworkWired,
 } from "react-icons/fa";
+import { DiDotnet } from "react-icons/di";
 import {
   SiMysql,
-  SiPostgresql,
   SiSymfony,
   SiDocker,
   SiZend,
   SiCakephp,
-} from "react-icons/si"; // Simple Icons
+  SiJquery,
+  SiVuedotjs,
+  SiApache,
+  SiJira,
+  SiCsharp,
+  SiDotnet,
+} from "react-icons/si";
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 const Skills = () => {
   const [isVisible, setIsVisible] = useState(false); // State for animation
@@ -38,31 +46,37 @@ const Skills = () => {
       { name: "Cake", icon: SiCakephp },
       { name: "Zend", icon: SiZend },
       { name: "PHP", icon: FaPhp },
-      { name: "Node.js", icon: FaNode },
       { name: "MySQL", icon: SiMysql },
+      { name: "SQL", icon: FaDatabase },
+      { name: "REST API", icon: FaServer },
     ],
     Frontend: [
-      { name: "React", icon: FaReact },
       { name: "HTML", icon: FaHtml5 },
       { name: "CSS", icon: FaCss3Alt },
       { name: "JavaScript", icon: FaJs },
+      { name: "Vue.js", icon: SiVuedotjs },
+      { name: "jQuery", icon: SiJquery },
     ],
-    FullStack: [
+    Fullstack: [
       { name: ".NET", icon: DiDotnet },
-      { name: "Linux", icon: FaLinux },
-      { name: "Windows", icon: FaWindows },
+      { name: "C#", icon: SiCsharp },
+      { name: "ASP.NET", icon: SiDotnet },
     ],
     DevOps: [
       { name: "Docker", icon: SiDocker },
-      { name: "GitLab", icon: FaGitlab },
-      { name: "GitHub", icon: FaGithub },
+      { name: "GIT", icon: FaGithub },
+      { name: "Apache", icon: SiApache },
+      { name: "Cron", icon: FaClock },
+      { name: "Samba", icon: FaNetworkWired },
+      { name: "Ubuntu", icon: FaLinux },
     ],
-    Others: [
-      { name: "API REST", icon: null },
-      { name: "Web Services" },
-      { name: "Méthode Agile", icon: null },
-      { name: "Conception Web" },
+    Data: [
+      { name: "ApexCharts", icon: FaChartBar },
+      { name: "Jira", icon: SiJira },
+      { name: "Webservices", icon: FaCloud },
+      { name: "AJAX", icon: FaSync },
     ],
+    Other: [{ name: "Méthode Agile" }, { name: "Conception Web" }],
   };
 
   return (
