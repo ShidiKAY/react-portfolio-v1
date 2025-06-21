@@ -1,14 +1,15 @@
 import { motion } from "framer-motion";
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Projects from "./Projects";
 import Skills from "./Skills";
+import SkillsModern from "./SkillsModern";
 import { useTranslation } from "react-i18next";
 
 const About = () => {
   // You can use useState and useEffect here to manage animation state and logic (optional)
   const [isVisible, setIsVisible] = useState(false);
   const refAbout = useRef(null);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   // Show/Hide text section of About when it's displayed
   useEffect(() => {
@@ -143,6 +144,8 @@ const About = () => {
           <div id="toprojects" className="flex flex-col md:ml-px mt-10">
             <Projects />
           </div>
+          {/* Affiche SkillsModern juste après les projets, avant Skills */}
+          <SkillsModern />
           <div
             id="toskills"
             className="md:mx-px text-bold text-3xl mt-10 lg:px-52 md:px-1"
