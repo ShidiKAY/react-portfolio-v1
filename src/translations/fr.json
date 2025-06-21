@@ -17,6 +17,9 @@
     "seeMore": "Voir plus",
     "selectLanguage": "Sélectionner une langue",
     "skills": "Compétences",
+    "skills_search_placeholder": "Rechercher une technologie ou compétence...",
+    "skills_search_aria": "Rechercher une compétence",
+    "skills_mastered_tooltip": "Maîtrisé",
     "sub1": "Vous cherchez un développeur freelance polyvalent pour vous aider\n            dans vos projets web ?",
     "sub2": "Vous êtes au bon endroit !",
     "technologies": "Technologies :",
@@ -26,7 +29,15 @@
     "keyActions": "Actions Clés & Impact",
     "keyChallenges": "Défis Clés",
     "solutionsImplemented": "Solutions Mises en Œuvre",
-    "externalLinks": "Liens Externes"
+    "externalLinks": "Liens Externes",
+    "skills_category_Backend": "Back-end",
+    "skills_category_Frontend": "Front-end",
+    "skills_category_Fullstack": "Fullstack",
+    "skills_category_DevOps": "DevOps",
+    "skills_category_Data": "Données",
+    "skills_category_Other": "Autres",
+    "skills_other_agile": "Méthode Agile",
+    "skills_other_webdesign": "Conception Web"
   },
   "portfolio": {
     "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",

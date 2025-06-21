@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import Projects from "./Projects";
-import Skills from "./Skills";
+// import Skills from "./Skills";
 import SkillsModern from "./SkillsModern";
 import { useTranslation } from "react-i18next";
 
@@ -141,17 +141,20 @@ const About = () => {
               </motion.div>
             </motion.div>
           </div>
+          {/* SkillsModern juste après About, avant les projets */}
+          <SkillsModern />
           <div id="toprojects" className="flex flex-col md:ml-px mt-10">
             <Projects />
           </div>
           {/* Affiche SkillsModern juste après les projets, avant Skills */}
-          <SkillsModern />
+          {/**
           <div
             id="toskills"
             className="md:mx-px text-bold text-3xl mt-10 lg:px-52 md:px-1"
           >
             <Skills />
           </div>
+          */}
         </div>
       </div>
     </div>
