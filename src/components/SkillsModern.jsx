@@ -12,6 +12,12 @@ import {
   FaServer,
   FaClock,
   FaNetworkWired,
+  FaBootstrap,
+  FaCube,
+  FaPuzzlePiece,
+  FaKey,
+  FaCogs,
+  FaLayerGroup,
 } from "react-icons/fa";
 import { DiDotnet } from "react-icons/di";
 import {
@@ -26,6 +32,9 @@ import {
   SiJira,
   SiCsharp,
   SiDotnet,
+  SiUikit,
+  SiYarn,
+  SiWebpack,
 } from "react-icons/si";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState, useRef } from "react";
@@ -60,6 +69,52 @@ const SKILL_DESCRIPTIONS = {
   AJAX: "Asynchronous JS and XML.",
   "Méthode Agile": "Agile project management.",
   "Conception Web": "Web design best practices.",
+  Bootstrap: "Popular CSS framework for responsive web design.",
+  UIkit: "Lightweight and modular front-end framework.",
+  Yarn: "Fast, reliable, and secure dependency management.",
+  DQL: "Doctrine Query Language for database queries in PHP.",
+  Sphinx: "Full-text search engine for fast information retrieval.",
+  Powershell:
+    "Task automation and configuration management framework from Microsoft.",
+  LDAP: "Protocol for accessing and maintaining distributed directory information services.",
+  "API Platform": "Framework to build modern API-driven projects.",
+  "Material Design":
+    "Design language developed by Google for consistent UI/UX.",
+  OpenVas: "Open-source vulnerability scanner and manager.",
+  "Webpack Encore": "Symfony's wrapper for Webpack, for asset management.",
+  Teamwork: "Ability to work effectively within a team.",
+  "Team Collaboration": "Ability to work effectively within a team.",
+  "Problem Solving": "Ability to analyze and resolve complex issues.",
+  "Technical Documentation": "Writing and maintaining technical documentation.",
+  "User Experience Design":
+    "Designing user-friendly and accessible interfaces.",
+  "Data Visualization": "Presenting data in a clear and impactful way.",
+  "UI/UX Design": "Designing modern, responsive user interfaces.",
+  "Version Control": "Managing code changes and collaboration.",
+  "Leadership Technique":
+    "Leading teams and projects with technical expertise.",
+  "Architecture Système": "Designing robust and scalable system architectures.",
+  "Optimisation des Performances":
+    "Improving application speed and efficiency.",
+  "Fullstack Development":
+    "Experience with both front-end and back-end development.",
+  "API Design": "Designing robust and scalable APIs.",
+  "Community Management": "Managing and engaging with user communities.",
+  "Process Automation": "Automating repetitive tasks and processes.",
+  "Data Processing": "Handling and transforming data efficiently.",
+  Reliability: "Ensuring systems are dependable and robust.",
+  "Autonomous Work": "Ability to work independently.",
+  Proactivity: "Taking initiative and acting in advance.",
+  Responsiveness: "Reacting quickly and positively.",
+  Initiative: "Ability to assess and initiate things independently.",
+  Communication: "Effectively conveying information and ideas.",
+  "Force de proposition": "Ability to propose ideas and solutions.",
+  "Travail en autonomie": "Ability to work independently.",
+  Réactivité: "Ability to react quickly and efficiently.",
+  "Automatisation des processus":
+    "Implementing solutions to automate repetitive tasks.",
+  "Traitement de données": "Efficient data management and transformation.",
+  Fiabilité: "Ensuring system robustness and stability.",
 };
 
 const MASTERED_SKILLS = [
@@ -76,6 +131,37 @@ const MASTERED_SKILLS = [
   "Jira",
 ];
 
+const SOFT_SKILLS = [
+  "Teamwork",
+  "Team Collaboration",
+  "Problem Solving",
+  "Technical Documentation",
+  "User Experience Design",
+  "Data Visualization",
+  "UI/UX Design",
+  "Version Control",
+  "Leadership Technique",
+  "Architecture Système",
+  "Optimisation des Performances",
+  "Fullstack Development",
+  "API Design",
+  "Community Management",
+  "Process Automation",
+  "Data Processing",
+  "Reliability",
+  "Autonomous Work",
+  "Proactivity",
+  "Responsiveness",
+  "Initiative",
+  "Communication",
+  "Force de proposition",
+  "Travail en autonomie",
+  "Réactivité",
+  "Automatisation des processus",
+  "Traitement de données",
+  "Fiabilité",
+];
+
 const skills = {
   Backend: [
     { name: "Symfony", icon: SiSymfony },
@@ -85,6 +171,11 @@ const skills = {
     { name: "MySQL", icon: SiMysql },
     { name: "SQL", icon: FaDatabase },
     { name: "REST API", icon: FaServer },
+    { name: "DQL", icon: FaKey },
+    { name: "Sphinx", icon: FaCube },
+    { name: "LDAP", icon: FaKey },
+    { name: "API Platform", icon: FaPuzzlePiece },
+    { name: "OpenVas", icon: FaCogs },
   ],
   Frontend: [
     { name: "HTML", icon: FaHtml5 },
@@ -92,11 +183,16 @@ const skills = {
     { name: "JavaScript", icon: FaJs },
     { name: "Vue.js", icon: SiVuedotjs },
     { name: "jQuery", icon: SiJquery },
+    { name: "Bootstrap", icon: FaBootstrap },
+    { name: "UIkit", icon: SiUikit },
+    { name: "Material Design", icon: FaLayerGroup },
   ],
   Fullstack: [
     { name: ".NET", icon: DiDotnet },
     { name: "C#", icon: SiCsharp },
     { name: "ASP.NET", icon: SiDotnet },
+    { name: "Yarn", icon: SiYarn },
+    { name: "Webpack Encore", icon: SiWebpack },
   ],
   DevOps: [
     { name: "Docker", icon: SiDocker },
@@ -111,13 +207,15 @@ const skills = {
     { name: "Jira", icon: SiJira },
     { name: "Webservices", icon: FaCloud },
     { name: "AJAX", icon: FaSync },
+    { name: "Powershell", icon: FaCogs },
   ],
   Other: [{ name: "Méthode Agile" }, { name: "Conception Web" }],
+  SoftSkills: SOFT_SKILLS.map((name) => ({ name, isSoft: true })),
 };
 
 const categories = ["All", ...Object.keys(skills)];
 
-const SkillPill = ({ skill, idx, mastered, masteredTooltip }) => {
+const SkillPill = ({ skill, idx, mastered, masteredTooltip, isSoft }) => {
   const { t } = useTranslation();
   const Icon = skill.icon;
   const hasDesc = !!SKILL_DESCRIPTIONS[skill.name];
@@ -129,14 +227,27 @@ const SkillPill = ({ skill, idx, mastered, masteredTooltip }) => {
     displayName = t("common.skills_other_agile");
   if (skill.name === "Conception Web")
     displayName = t("common.skills_other_webdesign");
+  // Determine if soft skill
+  const isSoftSkill = isSoft || SOFT_SKILLS.includes(skill.name);
+  const pillClass = isSoftSkill
+    ? "relative inline-flex items-center gap-1 px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm border border-purple-300 focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 cursor-pointer select-none transition"
+    : "relative inline-flex items-center gap-1 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm border border-blue-300 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 cursor-pointer select-none transition";
+  const tooltipClass = isSoftSkill
+    ? "absolute left-0 bottom-full mb-1 z-50 px-2 py-1.5 rounded-xl bg-white/90 border border-purple-200 text-purple-800 text-xs text-center whitespace-pre-line pointer-events-none min-w-max max-w-xs break-words"
+    : "absolute left-0 bottom-full mb-1 z-50 px-2 py-1.5 rounded-xl bg-white/90 border border-blue-100 text-gray-700 text-xs text-center whitespace-pre-line pointer-events-none min-w-max max-w-xs break-words";
+  // Tooltip: use translation if available, else fallback
+  const tooltipText = t(
+    `skills_desc.${skill.name}`,
+    SKILL_DESCRIPTIONS[skill.name]
+      ? { defaultValue: SKILL_DESCRIPTIONS[skill.name] }
+      : {}
+  );
   return (
     <motion.span
       ref={pillRef}
-      className="relative inline-flex items-center gap-1 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm border border-blue-300 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 cursor-pointer select-none transition"
+      className={pillClass}
       tabIndex={0}
-      aria-label={
-        skill.name + (hasDesc ? ": " + SKILL_DESCRIPTIONS[skill.name] : "")
-      }
+      aria-label={skill.name + (hasDesc ? ": " + tooltipText : "")}
       onMouseEnter={() => setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
       onFocus={() => setShowTooltip(true)}
@@ -145,7 +256,12 @@ const SkillPill = ({ skill, idx, mastered, masteredTooltip }) => {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.32, delay: idx * 0.03 }}
     >
-      {Icon && <Icon size={18} className="text-blue-500" />}
+      {Icon && (
+        <Icon
+          size={18}
+          className={isSoftSkill ? "text-purple-400" : "text-blue-500"}
+        />
+      )}
       {displayName}
       {mastered && (
         <span className="ml-1" title={masteredTooltip}>
@@ -158,10 +274,10 @@ const SkillPill = ({ skill, idx, mastered, masteredTooltip }) => {
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 8 }}
-          className="absolute left-0 bottom-full mb-1 z-30 px-2 py-1.5 rounded-xl bg-white/90 shadow-lg border border-blue-100 text-gray-700 text-xs text-center whitespace-pre-line pointer-events-none min-w-max max-w-xs break-words"
+          className={tooltipClass}
           aria-live="polite"
         >
-          {SKILL_DESCRIPTIONS[skill.name]}
+          {tooltipText}
         </motion.div>
       )}
     </motion.span>
@@ -172,10 +288,12 @@ SkillPill.propTypes = {
   skill: PropTypes.shape({
     name: PropTypes.string.isRequired,
     icon: PropTypes.elementType,
+    isSoft: PropTypes.bool,
   }).isRequired,
   idx: PropTypes.number.isRequired,
   mastered: PropTypes.bool.isRequired,
   masteredTooltip: PropTypes.string.isRequired,
+  isSoft: PropTypes.bool,
 };
 
 const SkillsModern = () => {
@@ -188,15 +306,26 @@ const SkillsModern = () => {
     setFadeIn(true);
   }, []);
 
-  // Flatten skills for "All"
-  const allSkills = Object.entries(skills).flatMap(([cat, arr]) =>
-    arr.map((s) => ({ ...s, category: cat }))
-  );
-  const displayedSkills = (
-    selectedCategory === "All"
-      ? allSkills
-      : allSkills.filter((s) => s.category === selectedCategory)
-  ).filter((s) => s.name.toLowerCase().includes(search.trim().toLowerCase()));
+  // Only include soft skills in 'SoftSkills' filter, not in 'All'
+  const allSkills = Object.entries(skills)
+    .filter(([cat]) => cat !== "SoftSkills")
+    .flatMap(([cat, arr]) => arr.map((s) => ({ ...s, category: cat })));
+  let displayedSkills;
+  if (selectedCategory === "All") {
+    displayedSkills = allSkills.filter((s) =>
+      s.name.toLowerCase().includes(search.trim().toLowerCase())
+    );
+  } else if (selectedCategory === "SoftSkills") {
+    displayedSkills = skills["SoftSkills"].filter((s) =>
+      s.name.toLowerCase().includes(search.trim().toLowerCase())
+    );
+  } else {
+    displayedSkills = allSkills.filter(
+      (s) =>
+        s.category === selectedCategory &&
+        s.name.toLowerCase().includes(search.trim().toLowerCase())
+    );
+  }
 
   return (
     <section
@@ -209,8 +338,8 @@ const SkillsModern = () => {
           {t("common.skills")}
         </h2>
         {/* Filtres catégories + recherche */}
-        <div className="flex flex-wrap justify-center md:justify-between gap-2 mb-6 items-center">
-          <div className="flex flex-wrap gap-2">
+        <div className="flex flex-row flex-nowrap gap-2 mb-6 items-center w-full">
+          <div className="flex gap-2 flex-1 min-w-0">
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -229,7 +358,7 @@ const SkillsModern = () => {
               </button>
             ))}
           </div>
-          <div className="flex-grow max-w-xs w-full relative ml-2">
+          <div className="relative flex-shrink-0 max-w-[220px] min-w-[100px] w-full">
             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-400 pointer-events-none">
               {/* Icône loupe SVG */}
               <svg
@@ -249,7 +378,7 @@ const SkillsModern = () => {
             </span>
             <input
               type="text"
-              className="pl-9 pr-3 py-1.5 rounded-full border border-blue-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-full"
+              className="pl-9 pr-3 py-1.5 rounded-full border border-blue-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-full min-w-0"
               placeholder={t("common.skills_search_placeholder")}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
@@ -258,7 +387,7 @@ const SkillsModern = () => {
           </div>
         </div>
         {/* Pills grid */}
-        <div className="flex flex-wrap gap-2 justify-center">
+        <div className="flex flex-wrap gap-2 justify-center items-center w-full mx-auto">
           {displayedSkills.map((skill, idx) => {
             const mastered = MASTERED_SKILLS.includes(skill.name);
             return (
@@ -268,6 +397,7 @@ const SkillsModern = () => {
                 idx={idx}
                 mastered={mastered}
                 masteredTooltip={t("common.skills_mastered_tooltip")}
+                isSoft={skill.isSoft}
               />
             );
           })}
@@ -278,3 +408,14 @@ const SkillsModern = () => {
 };
 
 export default SkillsModern;
+export { SkillPill };
+
+// Flat map of skill name to icon for easy lookup
+export const skillIcons = {};
+Object.values(skills)
+  .flat()
+  .forEach(({ name, icon }) => {
+    if (icon) skillIcons[name] = icon;
+  });
+
+export { SKILL_DESCRIPTIONS };

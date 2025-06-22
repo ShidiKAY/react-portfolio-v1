@@ -4,60 +4,13 @@ import Head from "react-helmet";
 import { useEffect, useState } from "react";
 import GoToTop from "../../components/GoToTop";
 import i18n from "../../i18n";
+import {
+  SkillPill,
+  SKILL_DESCRIPTIONS,
+  skillIcons,
+} from "../../components/SkillsModern";
 
 const PROJECT_ORDER = ["apigem", "bubo", "hml", "hopps", "scf"];
-const TOOLTIP_DESCRIPTIONS = {
-  // Technologies
-  PHP: "A popular general-purpose scripting language especially suited to web development.",
-  "Symfony 4/5": "A modern PHP framework for web applications.",
-  UIkit: "A lightweight and modular front-end framework.",
-  "API Platform": "A framework to build modern API-driven projects.",
-  SQL: "Structured Query Language for managing data in databases.",
-  DQL: "Doctrine Query Language, used with Doctrine ORM.",
-  Yarn: "A package manager for code.",
-  "Vue.js": "A progressive JavaScript framework for building user interfaces.",
-  Docker:
-    "A platform for developing, shipping, and running applications in containers.",
-  C: "A general-purpose programming language.",
-  Zend: "A PHP framework for web applications.",
-  Sphinx: "A full-text search engine.",
-  Ubuntu: "A popular Linux distribution.",
-  Apache: "A widely-used web server software.",
-  MySQL: "A popular open-source relational database.",
-  Cron: "A time-based job scheduler in Unix-like systems.",
-  Samba: "A free software re-implementation of the SMB networking protocol.",
-  "C#": "A modern, object-oriented programming language developed by Microsoft.",
-  "ASP.NET":
-    "A web framework for building modern web apps and services with .NET.",
-  Angular: "A TypeScript-based open-source web application framework.",
-  Powershell:
-    "A task automation and configuration management framework from Microsoft.",
-  LDAP: "A protocol for accessing and maintaining distributed directory information services.",
-  Webservices:
-    "Software systems designed to support interoperable machine-to-machine interaction over a network.",
-  Jira: "A tool for issue tracking and project management.",
-  // Soft skills
-  Teamwork: "Ability to work effectively within a team.",
-  "Fullstack Development":
-    "Experience with both front-end and back-end development.",
-  "API Design": "Designing robust and scalable APIs.",
-  "Community Management": "Managing and engaging with user communities.",
-  "Process Automation": "Automating repetitive tasks and processes.",
-  "Data Processing": "Handling and transforming data efficiently.",
-  Reliability: "Ensuring systems are dependable and robust.",
-  "Autonomous Work": "Ability to work independently.",
-  Proactivity: "Taking initiative and acting in advance.",
-  Responsiveness: "Reacting quickly and positively.",
-  Initiative: "Ability to assess and initiate things independently.",
-  Communication: "Effectively conveying information and ideas.",
-  "Force de proposition": "Capacité à proposer des idées et des solutions.",
-  "Travail en autonomie": "Capacité à travailler de façon indépendante.",
-  Réactivité: "Capacité à réagir rapidement et efficacement.",
-  "Automatisation des processus":
-    "Mise en place de solutions pour automatiser les tâches répétitives.",
-  "Traitement de données": "Gestion et transformation efficace des données.",
-  Fiabilité: "Assurer la robustesse et la stabilité des systèmes.",
-};
 
 const ProjectDetail = () => {
   const { t } = useTranslation();
@@ -307,9 +260,6 @@ const ProjectDetail = () => {
       (currentIdx - 1 + PROJECT_ORDER.length) % PROJECT_ORDER.length
     ];
   const nextProjectId = PROJECT_ORDER[(currentIdx + 1) % PROJECT_ORDER.length];
-
-  // Helper for tooltips
-  const getTooltip = (tag) => TOOLTIP_DESCRIPTIONS[tag] || tag;
 
   return (
     <div className="relative min-h-screen bg-white">
@@ -600,15 +550,22 @@ const ProjectDetail = () => {
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {mainTechnologies.map((tech, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm border border-blue-500"
-                      tabIndex={0}
-                      aria-label={getTooltip(tech)}
-                      title={getTooltip(tech)}
-                    >
-                      {tech}
-                    </span>
+                    <SkillPill
+                      key={tech}
+                      skill={{
+                        name: tech,
+                        icon: skillIcons[tech],
+                        description: t(
+                          `skills_desc.${tech}`,
+                          SKILL_DESCRIPTIONS[tech]
+                            ? { defaultValue: SKILL_DESCRIPTIONS[tech] }
+                            : {}
+                        ),
+                      }}
+                      idx={index}
+                      mastered={false}
+                      masteredTooltip={t("common.skills_mastered_tooltip")}
+                    />
                   ))}
                 </div>
               </div>
@@ -622,15 +579,23 @@ const ProjectDetail = () => {
                 </span>
                 <div className="flex flex-wrap gap-1.5">
                   {softSkills.map((skill, index) => (
-                    <span
-                      key={index}
-                      className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm border border-purple-500"
-                      tabIndex={0}
-                      aria-label={getTooltip(skill)}
-                      title={getTooltip(skill)}
-                    >
-                      {skill}
-                    </span>
+                    <SkillPill
+                      key={skill}
+                      skill={{
+                        name: skill,
+                        isSoft: true,
+                        color: "purple",
+                        description: t(
+                          `skills_desc.${skill}`,
+                          SKILL_DESCRIPTIONS[skill]
+                            ? { defaultValue: SKILL_DESCRIPTIONS[skill] }
+                            : {}
+                        ),
+                      }}
+                      idx={index}
+                      mastered={false}
+                      masteredTooltip={t("common.skills_mastered_tooltip")}
+                    />
                   ))}
                 </div>
               </div>
