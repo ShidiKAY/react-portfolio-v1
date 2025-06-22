@@ -4,10 +4,12 @@ import Projects from "./Projects";
 // import Skills from "./Skills";
 import SkillsModern from "./SkillsModern";
 import { useTranslation } from "react-i18next";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const About = () => {
   // You can use useState and useEffect here to manage animation state and logic (optional)
   const [isVisible, setIsVisible] = useState(false);
+  const [expanded, setExpanded] = useState(false);
   const refAbout = useRef(null);
   const { t } = useTranslation();
 
@@ -23,6 +25,86 @@ const About = () => {
     });
     observer.observe(refAbout.current);
   }, []); // Empty dependency array ensures useEffect runs only once
+
+  // Extract lines from about_rich
+  const aboutRich = t("common.about_rich");
+  const aboutLines = aboutRich
+    .split("\n")
+    .filter((line) => line.trim() !== "" && !line.trim().startsWith("Hello"));
+  // First paragraph (experience)
+  const experienceIdx = aboutLines.findIndex((line) =>
+    line.trim().startsWith("💻")
+  );
+  const supportIdx = aboutLines.findIndex((line) =>
+    line.trim().startsWith("✅")
+  );
+  const contactIdx = aboutLines.findIndex((line) =>
+    line.trim().startsWith("💬")
+  );
+  const firstParagraph = aboutLines[experienceIdx];
+  const secondParagraph = aboutLines[supportIdx];
+  // Points (💻, 🔌, etc.) are between supportIdx+1 and contactIdx
+  const pointsLines = aboutLines.slice(supportIdx + 1, contactIdx);
+  // Parse points as icon/text
+  const detailedPoints = pointsLines
+    .map((line) => {
+      const match = line.match(
+        /^(\p{Emoji_Presentation}|\p{Emoji}\uFE0F?)\s*(.*)$/u
+      );
+      if (match) {
+        return { icon: match[1], text: match[2] };
+      }
+      return null;
+    })
+    .filter(Boolean);
+  // Last paragraph (contact)
+  const contactLine = contactIdx !== -1 ? aboutLines[contactIdx] : "";
+
+  // For fade/collapse
+  const collapsedMaxHeight = 180; // px, adjust for visible preview
+  const [contentHeight, setContentHeight] = useState(null);
+  const [collapsedContentHeight, setCollapsedContentHeight] = useState(null);
+  const detailsRef = useRef(null);
+  const collapsedRef = useRef(null);
+  useEffect(() => {
+    if (detailsRef.current) {
+      setContentHeight(detailsRef.current.scrollHeight);
+    }
+    if (collapsedRef.current) {
+      setCollapsedContentHeight(collapsedRef.current.scrollHeight);
+    }
+  }, [detailsRef, collapsedRef, t]);
+
+  // Make the fade higher above the chevron (e.g., 72px instead of 48px)
+  const CHEVRON_HEIGHT = 72; // 3 lines when open
+  const FADE_OFFSET = 144; // 6 lines when collapsed
+  const OVERLAY_EXTRA_BOTTOM = 32; // px, extra overlay below the text
+  const overlayStyle = {
+    position: "absolute",
+    left: 0,
+    right: 0,
+    top: 0,
+    height:
+      !expanded && collapsedContentHeight
+        ? Math.max(
+            collapsedContentHeight - FADE_OFFSET + OVERLAY_EXTRA_BOTTOM,
+            0
+          )
+        : 0,
+    background: !expanded
+      ? "linear-gradient(to top, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,0) 100%)"
+      : "none",
+    cursor: "pointer",
+    zIndex: 20,
+    pointerEvents: "auto",
+    transition: "height 0.4s cubic-bezier(0.4,0,0.2,1), background 0.3s",
+    userSelect: "none",
+    borderBottomLeftRadius: 12,
+    borderBottomRightRadius: 12,
+  };
+  const textUnderOverlayStyle = !expanded
+    ? { userSelect: "none", pointerEvents: "none", filter: "blur(0px)" }
+    : { userSelect: "auto", pointerEvents: "auto", filter: "none" };
 
   return (
     <div id="toabout" className="h-screen lg:pl-0 lg:pr-0">
@@ -124,20 +206,107 @@ const About = () => {
                   },
                 }}
               >
-                <p className="text-left font-normal mb-4 flex-wrap">
-                  {t("common.aboutp1")}{" "}
-                  {/* Update this with your latest experience */}
-                </p>
-                {/* <p className="text-left font-normal mb-5 flex-wrap"></p> */}
-                <p className="text-left font-normal mb-4 flex-wrap">
-                  {t("common.aboutp2")}{" "}
-                  {/* Update this with your latest skills */}
-                </p>
-                {/* <p className="text-left font-normal mb-5 flex-wrap"></p> */}
-                <p className="text-left font-normal mb-4 flex-wrap">
-                  {t("common.aboutp3")}{" "}
-                  {/* Update this with your latest projects */}
-                </p>
+                {/* Always visible: first two paragraphs */}
+                {firstParagraph && (
+                  <p className="text-left font-normal mb-4 flex-wrap">
+                    {firstParagraph}
+                  </p>
+                )}
+                {secondParagraph && (
+                  <p className="text-left font-normal mb-4 flex-wrap">
+                    {secondParagraph}
+                  </p>
+                )}
+                {/* Collapsible: points as indented list + contact line */}
+                <div className="relative" style={{ minHeight: 80 }}>
+                  <div
+                    ref={detailsRef}
+                    id="about-rich-details"
+                    style={{
+                      maxHeight: expanded ? contentHeight : collapsedMaxHeight,
+                      transition: "max-height 0.5s cubic-bezier(0.4,0,0.2,1)",
+                      overflow: "hidden",
+                      position: "relative",
+                      borderBottomLeftRadius: 12,
+                      borderBottomRightRadius: 12,
+                      paddingBottom: expanded
+                        ? CHEVRON_HEIGHT
+                        : CHEVRON_HEIGHT + FADE_OFFSET,
+                    }}
+                    aria-expanded={expanded}
+                    aria-controls="about-rich-details"
+                  >
+                    <div
+                      style={textUnderOverlayStyle}
+                      ref={!expanded ? collapsedRef : null}
+                    >
+                      <ul className="list-none pl-6 pr-4 space-y-3">
+                        {detailedPoints.map((point, idx) =>
+                          point.text ? (
+                            <li
+                              key={idx}
+                              className="flex items-start gap-2 text-base"
+                            >
+                              <span className="text-xl mt-1">{point.icon}</span>
+                              <span>{point.text}</span>
+                            </li>
+                          ) : null
+                        )}
+                      </ul>
+                      {contactLine && (
+                        <p className="text-left font-normal mt-4 flex-wrap">
+                          {contactLine}
+                        </p>
+                      )}
+                    </div>
+                    {/* Overlay covers the visible content and toggles expand/collapse */}
+                    {!expanded &&
+                      collapsedContentHeight &&
+                      contentHeight > collapsedMaxHeight && (
+                        <div
+                          style={overlayStyle}
+                          aria-hidden="true"
+                          onClick={() => setExpanded(true)}
+                          tabIndex={-1}
+                        />
+                      )}
+                  </div>
+                  {/* Chevron always visible below the text */}
+                  <div
+                    className="w-full flex justify-center items-center"
+                    style={{
+                      height: CHEVRON_HEIGHT,
+                      marginTop: -CHEVRON_HEIGHT,
+                    }}
+                  >
+                    {!expanded && contentHeight > collapsedMaxHeight && (
+                      <button
+                        className="bg-white/80 dark:bg-slate-800/80 rounded-full p-2 shadow focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        aria-expanded={expanded}
+                        aria-controls="about-rich-details"
+                        onClick={() => setExpanded(true)}
+                        tabIndex={0}
+                        title={t("common.read_more", "Read more")}
+                        style={{ zIndex: 30 }}
+                      >
+                        <FaChevronDown className="w-6 h-6 animate-bounce" />
+                      </button>
+                    )}
+                    {expanded && contentHeight > collapsedMaxHeight && (
+                      <button
+                        className="bg-white/80 dark:bg-slate-800/80 rounded-full p-2 shadow focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        aria-expanded={expanded}
+                        aria-controls="about-rich-details"
+                        onClick={() => setExpanded(false)}
+                        tabIndex={0}
+                        title={t("common.show_less", "Show less")}
+                        style={{ zIndex: 30 }}
+                      >
+                        <FaChevronUp className="w-6 h-6" />
+                      </button>
+                    )}
+                  </div>
+                </div>
               </motion.div>
             </motion.div>
           </div>

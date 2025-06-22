@@ -5,6 +5,7 @@
     "aboutp1": "👨‍💻 Avec de nombreuses années d'expérience dans le développement web, je me spécialise dans le Back-End, les applications métier et le développement de logiciels sur mesure.",
     "aboutp2": "✅ Que vous ayez besoin de développer une application web complexe, de mettre en place un système de gestion efficace ou d'améliorer les performances de votre site existant, je suis là pour vous accompagner à chaque étape, de la conception à la livraison, au déploiement et à la maintenance.",
     "aboutp3": "💬 Contactez-moi maintenant pour discuter de votre projet et commençons à travailler ensemble pour atteindre vos objectifs !",
+    "about_rich": "Bonjour,\n\n💻 Avec plusieurs années d'expérience en développement web, j'ai travaillé auprès de grands groupes et de startups dans des secteurs variés tels que la distribution, l'innovation et la cybersécurité. Je suis spécialisé dans le back-end, les applications de gestion et le développement de logiciels sur mesure.\n\n✅ Que vous ayez besoin de développer une application web complexe, de mettre en place un système de gestion performant ou d'améliorer les performances de votre site existant, je suis là pour vous accompagner à chaque étape du processus, de la conception à la livraison, en passant par le déploiement et la maintenance.\n💻 Développement web : Je développe de nouvelles fonctionnalités, assure la maintenance et l'évolution de l'existant, et corrige les bugs. Avec mon expertise en ASP.NET, PHP et les frameworks Symfony, CakePHP et Zend, je vous offre des solutions sur mesure adaptées à vos besoins.\n🔌 Connexion d'API : Je peux intégrer des applications tierces pour enrichir vos solutions web ou créer votre propre API pour interconnecter vos applications, améliorant ainsi l'efficacité et la productivité de vos systèmes.\n🔧 Refactorisation : Je restructure et optimise le code existant pour faciliter la maintenance et l'évolution, tout en améliorant la lisibilité et la performance de votre application.\n🎨 Refonte graphique : Je conçois des interfaces utilisateur modernes et réactives, offrant une expérience utilisateur optimale adaptée à toutes les tailles d'écran.\n🌐 Gestion de serveurs web : Je mets en place et configure des infrastructures de serveurs web performantes et sécurisées, ou vous aide à changer de nom de domaine.\n💬 Contactez moi dès maintenant pour discuter de votre projet et travaillons ensemble pour atteindre vos objectifs !",
     "contact": "Contact",
     "contactme": "Me contacter",
     "getresume": "CV",
@@ -37,7 +38,9 @@
     "skills_category_Data": "Données",
     "skills_category_Other": "Autres",
     "skills_other_agile": "Méthode Agile",
-    "skills_other_webdesign": "Conception Web"
+    "skills_other_webdesign": "Conception Web",
+    "read_more": "En savoir plus",
+    "show_less": "Réduire"
   },
   "portfolio": {
     "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",

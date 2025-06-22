@@ -5,6 +5,7 @@
     "aboutp1": "👨‍💻 With many years' experience in web development, I specialize in Back-End, business applications and custom software development.",
     "aboutp2": "✅ Whether you need to develop a complex web application, set up an efficient management system or improve the performance of your existing site, I'm here to support you every step of the way, from design to delivery, deployment and maintenance.",
     "aboutp3": "💬 Contact me now to discuss your project and let's start working together to achieve your goals!",
+    "about_rich": "Hello,\n\n👨‍💻 With several years of experience in web development, I have worked with large corporations and startups in various sectors such as retail, innovation, and cybersecurity. I specialize in back-end, management applications, and custom software development.\n\n✅ Whether you need to develop a complex web application, set up a high-performance management system, or improve your existing site's performance, I am here to support you at every stage of the process, from design to delivery, including deployment and maintenance.\n💻 Web development: I develop new features, maintain and evolve existing systems, and fix bugs. With my expertise in ASP.NET, PHP, and the Symfony, CakePHP, and Zend frameworks, I offer tailor-made solutions adapted to your needs.\n🔌 API integration: I can integrate third-party applications to enrich your web solutions or create your own API to interconnect your applications, thus improving the efficiency and productivity of your systems.\n🔧 Refactoring: I restructure and optimize existing code to facilitate maintenance and evolution, while improving readability and application performance.\n🎨 UI redesign: I design modern, responsive user interfaces, providing an optimal user experience on all screen sizes.\n🌐 Web server management: I set up and configure high-performance, secure web server infrastructures, or help you change your domain name.\n💬 Contact me now to discuss your project and let's work together to achieve your goals!",
     "contact": "Contact",
     "contactme": "Contact me",
     "getresume": "Resume",
@@ -37,6 +38,8 @@
     "skills_category_Data": "Data",
     "skills_category_Other": "Other",
     "skills_other_agile": "Agile Methodology",
+    "skills_other_webdesign": "Web Design",
+    "read_more": "Read more",
     "skills_other_webdesign": "Web Design"
   },
   "portfolio": {
