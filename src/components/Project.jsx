@@ -144,7 +144,7 @@ const Project = ({ projectId, idx }) => {
           {title}
         </h3>
         {/* Image with object-cover and neutral bg */}
-        <div className="relative h-40 w-full flex items-center justify-center bg-blue-50 border-b border-blue-100">
+        <div className="relative h-40 w-full flex items-center justify-center bg-blue-50 border-b border-blue-100 overflow-hidden z-0">
           <img
             src={img}
             alt={title}
