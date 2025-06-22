@@ -310,8 +310,10 @@ const About = () => {
               </motion.div>
             </motion.div>
           </div>
-          {/* SkillsModern juste après About, avant les projets */}
-          <SkillsModern />
+          {/* SkillsModern juste avant les projets */}
+          <div id="toskills">
+            <SkillsModern />
+          </div>
           <div id="toprojects" className="flex flex-col md:ml-px mt-10">
             <Projects />
           </div>

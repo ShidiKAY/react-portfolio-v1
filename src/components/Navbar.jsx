@@ -114,17 +114,6 @@ const Navbar = () => {
                       {t("common.about")}
                     </ScrollLink>
                   </h1>
-                  <h1 className={handleActiveLink("toprojects")}>
-                    <ScrollLink
-                      to="toprojects"
-                      smooth={true}
-                      duration={500}
-                      className="cursor-pointer"
-                      onSetActive={() => setActiveLink("toprojects")}
-                    >
-                      {t("common.projects")}
-                    </ScrollLink>
-                  </h1>
                   <h1 className={handleActiveLink("toskills")}>
                     <ScrollLink
                       to="toskills"
@@ -134,6 +123,17 @@ const Navbar = () => {
                       onSetActive={() => setActiveLink("toskills")}
                     >
                       {t("common.skills")}
+                    </ScrollLink>
+                  </h1>
+                  <h1 className={handleActiveLink("toprojects")}>
+                    <ScrollLink
+                      to="toprojects"
+                      smooth={true}
+                      duration={500}
+                      className="cursor-pointer"
+                      onSetActive={() => setActiveLink("toprojects")}
+                    >
+                      {t("common.projects")}
                     </ScrollLink>
                   </h1>
                 </div>
@@ -234,7 +234,7 @@ const Navbar = () => {
                         : "cursor-pointer hover:text-blue-500"
                     }
                   >
-                    <Link id="home" to="/">
+                    <Link id="home" to="/" onClick={handleMobileNav}>
                       Home
                     </Link>
                   </h1>
@@ -247,6 +247,17 @@ const Navbar = () => {
                   >
                     <Link id="about" to="/about" onClick={handleMobileNav}>
                       About
+                    </Link>
+                  </h1>
+                  <h1
+                    className={
+                      pathname == "/skills"
+                        ? "text-blue-500"
+                        : "cursor-pointer hover:text-blue-500"
+                    }
+                  >
+                    <Link id="skills" to="/skills" onClick={handleMobileNav}>
+                      Skills
                     </Link>
                   </h1>
                   <h1
