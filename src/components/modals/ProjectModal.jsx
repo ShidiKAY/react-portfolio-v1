@@ -1,13 +1,10 @@
 import * as Dialog from "@radix-ui/react-dialog";
-import React from "react";
+import PropTypes from "prop-types";
 import { useTranslation } from "react-i18next";
 
 const ProjectModal = ({ projectId }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
-  };
   return (
     <div>
       <Dialog.Root className="">
@@ -30,7 +27,7 @@ const ProjectModal = ({ projectId }) => {
                   {t(`projects.${projectId}.introduction.description`)}
                 </span>
 
-                <h2>TÂCHES RÉALISÉES</h2>
+                <h2>{t("common.project_tasks_title")}</h2>
 
                 <div className="my-card px-10">
                   {/* <div className="my-card-inside">
@@ -79,7 +76,12 @@ const ProjectModal = ({ projectId }) => {
                                         returnObjects: true,
                                       }).tasks[dedex]["data"][id_task].img
                                     }
-                                    alt="Task Image"
+                                    alt={
+                                      t(`projects.${projectId}`, {
+                                        returnObjects: true,
+                                      }).tasks[dedex]["data"][id_task].title ||
+                                      t("common.project_tasks_title")
+                                    }
                                   />
                                 </div>
                               )}
@@ -134,6 +136,10 @@ const ProjectModal = ({ projectId }) => {
       </Dialog.Root>
     </div>
   );
+};
+
+ProjectModal.propTypes = {
+  projectId: PropTypes.string.isRequired,
 };
 
 export default ProjectModal;

@@ -70,7 +70,11 @@
     "skills_desc.Réactivité": "Réagir rapidement et efficacement.",
     "skills_desc.Automatisation des processus": "Mise en place de solutions pour automatiser les tâches.",
     "skills_desc.Traitement de données": "Gestion et transformation efficace des données.",
-    "skills_desc.Fiabilité": "Garantir la stabilité et la robustesse des systèmes."
+    "skills_desc.Fiabilité": "Garantir la stabilité et la robustesse des systèmes.",
+    "skills_category_All": "Tous",
+    "project_nav_next": "Projet suivant",
+    "project_nav_prev": "Projet précédent",
+    "project_tasks_title": "TÂCHES RÉALISÉES"
   },
   "portfolio": {
     "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",

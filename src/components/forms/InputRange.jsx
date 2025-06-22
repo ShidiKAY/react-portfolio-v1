@@ -1,15 +1,26 @@
+import PropTypes from "prop-types";
+
 export function InputRange({ label, value, onChange, min, max }) {
+  const id = label.replace(/\s+/g, "-").toLowerCase() + "-input-range";
   return (
     <div>
-      <label>{label}</label>
+      <label htmlFor={id}>{label}</label>
       <input
+        id={id}
         type="range"
-        label={label}
         min={min}
         max={max}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-      ></input>
+      />
     </div>
   );
 }
+
+InputRange.propTypes = {
+  label: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  onChange: PropTypes.func.isRequired,
+  min: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  max: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+};

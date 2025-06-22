@@ -354,7 +354,9 @@ const SkillsModern = () => {
                 tabIndex={0}
                 aria-label={cat}
               >
-                {cat === "All" ? "All" : t("common.skills_category_" + cat)}
+                {cat === "All"
+                  ? t("common.skills_category_All")
+                  : t("common.skills_category_" + cat)}
               </button>
             ))}
           </div>

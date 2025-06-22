@@ -393,7 +393,7 @@ const ProjectDetail = () => {
           </div>
           {/* Tooltip */}
           <div className="absolute left-36 top-1/2 -translate-y-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-20">
-            Previous Project
+            {t("common.project_nav_prev")}
           </div>
         </div>
         {/* Right Side */}
@@ -432,7 +432,7 @@ const ProjectDetail = () => {
           </div>
           {/* Tooltip */}
           <div className="absolute right-36 top-1/2 -translate-y-1/2 bg-gray-800 text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-20">
-            Next Project
+            {t("common.project_nav_next")}
           </div>
         </div>
       </div>

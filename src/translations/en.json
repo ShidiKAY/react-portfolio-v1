@@ -70,7 +70,11 @@
     "skills_desc.Réactivité": "Ability to react quickly and efficiently.",
     "skills_desc.Automatisation des processus": "Implementing solutions to automate repetitive tasks.",
     "skills_desc.Traitement de données": "Efficient data management and transformation.",
-    "skills_desc.Fiabilité": "Ensuring system robustness and stability."
+    "skills_desc.Fiabilité": "Ensuring system robustness and stability.",
+    "skills_category_All": "All",
+    "project_nav_next": "Next Project",
+    "project_nav_prev": "Previous Project",
+    "project_tasks_title": "Tasks Completed"
   },
   "portfolio": {
     "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",

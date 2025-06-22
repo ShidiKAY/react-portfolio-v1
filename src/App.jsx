@@ -24,21 +24,19 @@ const AppContent = () => {
 
   return (
     <div className="App">
-      <div>
-        {/* Métadonnées */}
-        <meta
-          name="google-site-verification"
-          content="VJs2G3ynvYQ1KG06ciOhdPdklC1gIUEkJ2KcplrnfWU"
-        />
-        <meta
-          name="description"
-          content="Portfolio de Kamal AIT YOUS. Je suis développeur web, analyste de données et passionné de machine learning. PrasadChavan, Prasadchavan, Kamal AIT YOUS"
-        />
-        <title>Kamal AIT YOUS</title>
-
-        {/* Contenu de la page d'accueil */}
+      {/* Header placeholder for future extensibility */}
+      <header>
+        {/* You can add a logo or site title here in the future */}
+      </header>
+      {/* Navigation */}
+      {!isProjectDetailPage && (
+        <nav aria-label="Main navigation">
+          <Navbar />
+        </nav>
+      )}
+      {/* Main content */}
+      <main id="main-content">
         <div className="bg-wendyBlue">
-          {!isProjectDetailPage && <Navbar />}
           <Suspense fallback={<div>Loading...</div>}>
             <Routes>
               {routes.map((route, index) => (
@@ -51,13 +49,19 @@ const AppContent = () => {
             </Routes>
           </Suspense>
         </div>
-
-        {!isProjectDetailPage && <About />}
-        {/* Ajoutez du contenu, des images, des liens, etc. */}
-
-        {/* Go to Top button */}
-        <GoToTop />
-      </div>
+        {/* About section */}
+        {!isProjectDetailPage && (
+          <section aria-labelledby="about-section">
+            <About />
+          </section>
+        )}
+      </main>
+      {/* Go to Top button (outside main for accessibility) */}
+      <GoToTop />
+      {/* Footer placeholder for future extensibility */}
+      <footer>
+        {/* You can add contact info or copyright here in the future */}
+      </footer>
     </div>
   );
 };
