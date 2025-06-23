@@ -63,7 +63,6 @@ const About = () => {
   // For fade/collapse
   const collapsedMaxHeight = 180; // px, adjust for visible preview
   const [contentHeight, setContentHeight] = useState(null);
-  const [collapsedContentHeight, setCollapsedContentHeight] = useState(null);
   const detailsRef = useRef(null);
   const collapsedRef = useRef(null);
   useEffect(() => {
@@ -71,37 +70,14 @@ const About = () => {
       setContentHeight(detailsRef.current.scrollHeight);
     }
     if (collapsedRef.current) {
-      setCollapsedContentHeight(collapsedRef.current.scrollHeight);
+      setContentHeight(collapsedRef.current.scrollHeight);
     }
   }, [detailsRef, collapsedRef, t]);
 
   // Make the fade higher above the chevron (e.g., 72px instead of 48px)
   const CHEVRON_HEIGHT = 72; // 3 lines when open
   const FADE_OFFSET = 144; // 6 lines when collapsed
-  const OVERLAY_EXTRA_BOTTOM = 32; // px, extra overlay below the text
-  const overlayStyle = {
-    position: "absolute",
-    left: 0,
-    right: 0,
-    top: 0,
-    height:
-      !expanded && collapsedContentHeight
-        ? Math.max(
-            collapsedContentHeight - FADE_OFFSET + OVERLAY_EXTRA_BOTTOM,
-            0
-          )
-        : 0,
-    background: !expanded
-      ? "linear-gradient(to top, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.7) 60%, rgba(255,255,255,0) 100%)"
-      : "none",
-    cursor: "pointer",
-    zIndex: 20,
-    pointerEvents: "auto",
-    transition: "height 0.4s cubic-bezier(0.4,0,0.2,1), background 0.3s",
-    userSelect: "none",
-    borderBottomLeftRadius: 12,
-    borderBottomRightRadius: 12,
-  };
+  // const overlayStyle = { ... } // SUPPRIMÉ car plus utilisé
   const textUnderOverlayStyle = !expanded
     ? { userSelect: "none", pointerEvents: "none", filter: "blur(0px)" }
     : { userSelect: "auto", pointerEvents: "auto", filter: "none" };
@@ -260,16 +236,7 @@ const About = () => {
                       )}
                     </div>
                     {/* Overlay covers the visible content and toggles expand/collapse */}
-                    {!expanded &&
-                      collapsedContentHeight &&
-                      contentHeight > collapsedMaxHeight && (
-                        <div
-                          style={overlayStyle}
-                          aria-hidden="true"
-                          onClick={() => setExpanded(true)}
-                          tabIndex={-1}
-                        />
-                      )}
+                    {/* (SUPPRIMÉ: overlayStyle et le div d'overlay) */}
                   </div>
                   {/* Chevron always visible below the text */}
                   <div
