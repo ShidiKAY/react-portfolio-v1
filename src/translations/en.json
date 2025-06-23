@@ -109,25 +109,25 @@
         {
           "group": {
             "titre": "System Architecture Modernization",
-            "intro": "Led the transformation of the legacy system into a modern, maintainable architecture with improved performance and scalability."
+            "intro": "To lead the transformation of the legacy system into a modern, maintainable architecture with improved performance and scalability."
           },
           "data": {
             "1": {
               "title": "Architecture Analysis and Planning",
               "description": [
-                "Conducted comprehensive analysis of the existing legacy system architecture",
-                "Identified performance bottlenecks in database queries and API calls",
-                "Planned the implementation of a modern MVC architecture with REST API endpoints",
-                "Designed a new database structure optimized for web application performance"
+                "Conduct a comprehensive analysis of the existing legacy system architecture",
+                "Identify performance bottlenecks in database queries and API calls",
+                "Plan the implementation of a modern MVC architecture with REST API endpoints",
+                "Design a new database structure optimized for web application performance"
               ]
             },
             "2": {
               "title": "Core System Implementation",
               "description": [
-                "Implemented a modular architecture using PHP namespaces and autoloading",
-                "Developed a REST API layer for seamless integration with the desktop application",
-                "Created an efficient caching system for frequently accessed data",
-                "Implemented secure authentication and session management"
+                "Implement a modular architecture using PHP namespaces and autoloading",
+                "Develop a REST API layer for seamless integration with the desktop application",
+                "Create an efficient caching system for frequently accessed data",
+                "Implement secure authentication and session management"
               ]
             }
           }
@@ -141,19 +141,19 @@
             "1": {
               "title": "Responsive Design Implementation",
               "description": [
-                "Implemented Bootstrap 4 grid system for responsive layouts across all devices",
-                "Created custom CSS components for consistent styling and branding",
-                "Developed mobile-first design patterns for optimal user experience",
-                "Implemented touch-friendly controls for tablet and mobile users"
+                "Implement Bootstrap 4 grid system for responsive layouts across all devices",
+                "Create custom CSS components for consistent styling and branding",
+                "Develop mobile-first design patterns for optimal user experience",
+                "Implement touch-friendly controls for tablet and mobile users"
               ]
             },
             "2": {
               "title": "Interactive Features Development",
               "description": [
-                "Developed real-time updates using AJAX and WebSocket technology",
-                "Implemented drag-and-drop functionality for appointment scheduling",
-                "Created dynamic form validation with instant feedback",
-                "Added keyboard shortcuts for power users"
+                "Develop real-time updates using AJAX and WebSocket technology",
+                "Implement drag-and-drop functionality for appointment scheduling",
+                "Create dynamic form validation with instant feedback",
+                "Add keyboard shortcuts for power users"
               ]
             }
           }
@@ -167,19 +167,19 @@
             "1": {
               "title": "Database Optimization",
               "description": [
-                "Optimized database queries reducing response time by 60%",
-                "Implemented query caching for frequently accessed data",
-                "Created efficient indexing strategies for large datasets",
-                "Developed a data archiving system for historical records"
+                "Optimize database queries reducing response time by 60%",
+                "Implement query caching for frequently accessed data",
+                "Create efficient indexing strategies for large datasets",
+                "Develop a data archiving system for historical records"
               ]
             },
             "2": {
               "title": "Frontend Performance",
               "description": [
-                "Implemented lazy loading for images and content",
-                "Optimized JavaScript bundle size using code splitting",
-                "Created efficient DOM manipulation patterns",
-                "Implemented browser caching strategies"
+                "Implement lazy loading for images and content",
+                "Optimize JavaScript bundle size using code splitting",
+                "Create efficient DOM manipulation patterns",
+                "Implement browser caching strategies"
               ]
             }
           }
@@ -214,25 +214,25 @@
         {
           "group": {
             "titre": "System Modernization",
-            "intro": "Led the migration from a legacy PHP application to Symfony 4, focusing on performance optimization and architectural improvements."
+            "intro": "To lead the migration from a legacy PHP application to Symfony 4, focusing on performance optimization and architectural improvements."
           },
           "data": {
             "1": {
               "title": "Legacy to Symfony Migration",
               "description": [
-                "Conducted comprehensive analysis of performance bottlenecks and architectural limitations",
-                "Designed new database structure and Doctrine entities for optimal integration",
-                "Refactored PHP and JavaScript code for improved maintainability",
-                "Implemented modern development practices and coding standards"
+                "Conduct comprehensive analysis of performance bottlenecks and architectural limitations",
+                "Design new database structure and Doctrine entities for optimal integration",
+                "Refactor PHP and JavaScript code for improved maintainability",
+                "Implement modern development practices and coding standards"
               ]
             },
             "2": {
               "title": "UI/UX Redesign",
               "description": [
-                "Led UI/UX redesign adopting Material Design principles",
-                "Selected and integrated UIkit via Yarn, customizing it for application needs",
-                "Utilized Webpack Encore for asset management and optimization",
-                "Designed consistent design system including horizontal navigation, custom components, and responsive dashboards"
+                "Lead UI/UX redesign adopting Material Design principles",
+                "Select and integrate UIkit via Yarn, customizing it for application needs",
+                "Utilize Webpack Encore for asset management and optimization",
+                "Design consistent design system including horizontal navigation, custom components, and responsive dashboards"
               ]
             }
           }
@@ -240,16 +240,16 @@
         {
           "group": {
             "titre": "Data Visualization Enhancement",
-            "intro": "Replaced legacy charting system with ApexCharts for modern and interactive data visualization."
+            "intro": "To replace legacy charting system with ApexCharts for modern and interactive data visualization."
           },
           "data": {
             "1": {
               "title": "Interactive Charts Implementation",
               "description": [
-                "Implemented charts with zoom functionality and export capabilities",
-                "Added real-time updates and dynamic filtering features",
-                "Created responsive and interactive data visualizations",
-                "Optimized chart performance for large datasets"
+                "Implement charts with zoom functionality and export capabilities",
+                "Add real-time updates and dynamic filtering features",
+                "Create responsive and interactive data visualizations",
+                "Optimize chart performance for large datasets"
               ]
             }
           }
@@ -257,16 +257,16 @@
         {
           "group": {
             "titre": "Security Enhancement",
-            "intro": "Integrated OpenVas for advanced vulnerability monitoring and implemented real-time security metrics."
+            "intro": "To integrate OpenVas for advanced vulnerability monitoring and implement real-time security metrics."
           },
           "data": {
             "1": {
               "title": "Vulnerability Management",
               "description": [
-                "Developed real-time vulnerability data processing and analysis system",
-                "Designed robust database for historical vulnerability tracking",
-                "Created interactive dashboards with real-time security metrics",
-                "Implemented automated vulnerability assessment workflows"
+                "Develop real-time vulnerability data processing and analysis system",
+                "Design robust database for historical vulnerability tracking",
+                "Create interactive dashboards with real-time security metrics",
+                "Implement automated vulnerability assessment workflows"
               ]
             }
           }
@@ -274,16 +274,16 @@
         {
           "group": {
             "titre": "Performance Optimization",
-            "intro": "Implemented dynamic data loading and AJAX updates for optimal performance."
+            "intro": "To implement dynamic data loading and AJAX updates for optimal performance."
           },
           "data": {
             "1": {
               "title": "Data Loading Optimization",
               "description": [
-                "Implemented dynamic data loading using KnpPaginator",
-                "Created efficient sorting and filtering mechanisms for large datasets",
-                "Optimized AJAX updates for real-time data refresh",
-                "Improved overall application response time and user experience"
+                "Implement dynamic data loading using KnpPaginator",
+                "Create efficient sorting and filtering mechanisms for large datasets",
+                "Optimize AJAX updates for real-time data refresh",
+                "Improve overall application response time and user experience"
               ]
             }
           }
@@ -319,25 +319,25 @@
         {
           "group": {
             "titre": "Template System Optimization",
-            "intro": "Optimized the existing template-based export system to significantly improve performance and reliability, focusing on the PDF generation process using FPDF."
+            "intro": "To optimize the existing template-based export system to significantly improve performance and reliability, focusing on the PDF generation process using FPDF."
           },
           "data": {
             "performance": {
               "title": "Performance Analysis and Optimization",
               "description": [
-                "Conducted thorough analysis of the existing template system's performance bottlenecks, particularly in the FPDF-based generation process",
-                "Identified and resolved memory management issues in PDF generation, where each element was being generated pixel-by-pixel",
-                "Implemented efficient data processing algorithms to handle large batches of PDF generation",
-                "Reduced PDF generation time from one day to approximately 20 minutes by implementing template-based generation"
+                "Conduct a thorough analysis of the existing template system's performance bottlenecks, particularly in the FPDF-based generation process",
+                "Identify and resolve memory management issues in PDF generation, where each element is generated pixel-by-pixel",
+                "Implement efficient data processing algorithms to handle large batches of PDF generation",
+                "Reduce PDF generation time from one day to approximately 20 minutes by implementing template-based generation"
               ]
             },
             "template": {
               "title": "Template System Implementation",
               "description": [
-                "Developed a robust template engine using pre-filled files with static covers and shapes (Template F and Template G)",
-                "Created a flexible template management system that copies and modifies templates instead of generating from scratch",
-                "Implemented caching mechanisms for improved performance and reduced memory usage",
-                "Added support for various export formats and layouts, with automated notification system for completed exports"
+                "Develop a robust template engine using pre-filled files with static covers and shapes (Template F and Template G)",
+                "Create a flexible template management system that copies and modifies templates instead of generating from scratch",
+                "Implement caching mechanisms for improved performance and reduced memory usage",
+                "Add support for various export formats and layouts, with automated notification system for completed exports"
               ]
             }
           }
@@ -345,34 +345,34 @@
         {
           "group": {
             "titre": "Customized Export System Development",
-            "intro": "Developed a new customized export system with advanced features and flexible configuration options, including dynamic field management and format selection."
+            "intro": "To develop a new customized export system with advanced features and flexible configuration options, including dynamic field management and format selection."
           },
           "data": {
             "fields": {
               "title": "Dynamic Field Management",
               "description": [
-                "Implemented a dynamic field selection system with category-based organization and permission checks",
-                "Created a user-friendly interface for field configuration with drag-and-drop functionality",
-                "Added support for custom field formatting and validation, including number, text, and list types",
-                "Developed field dependency management system with automatic category hiding based on permissions"
+                "Implement a dynamic field selection system with category-based organization and permission checks",
+                "Create a user-friendly interface for field configuration with drag-and-drop functionality",
+                "Add support for custom field formatting and validation, including number, text, and list types",
+                "Develop field dependency management system with automatic category hiding based on permissions"
               ]
             },
             "rights": {
               "title": "Advanced Rights Management",
               "description": [
-                "Designed and implemented a granular permissions system for field access control",
-                "Created role-based access control for export features with field-level permissions",
-                "Developed export quota management system with usage tracking",
-                "Implemented audit logging for export operations with detailed user activity tracking"
+                "Design and implement a granular permissions system for field access control",
+                "Create role-based access control for export features with field-level permissions",
+                "Develop export quota management system with usage tracking",
+                "Implement audit logging for export operations with detailed user activity tracking"
               ]
             },
             "formats": {
               "title": "Format Selection and Customization",
               "description": [
-                "Developed support for multiple export formats (PDF, Excel, CSV) with format-specific optimizations",
-                "Created format-specific configuration options with custom formatting rules",
-                "Implemented format validation and preview features with real-time updates",
-                "Added support for custom format templates with save and share capabilities"
+                "Develop support for multiple export formats (PDF, Excel, CSV) with format-specific optimizations",
+                "Create format-specific configuration options with custom formatting rules",
+                "Implement format validation and preview features with real-time updates",
+                "Add support for custom format templates with save and share capabilities"
               ]
             }
           }
@@ -380,25 +380,25 @@
         {
           "group": {
             "titre": "Infrastructure Modernization",
-            "intro": "Modernized the production environment to support both export systems efficiently, including migration to Ubuntu 22.04 and implementation of secure configurations."
+            "intro": "To modernize the production environment to support both export systems efficiently, including migration to Ubuntu 22.04 and implementation of secure configurations."
           },
           "data": {
             "infrastructure": {
               "title": "System Analysis and Infrastructure Setup",
               "description": [
-                "Analyzed current infrastructure using Zend Framework, Docker for search library, and Samba for file sharing",
+                "Analyze current infrastructure using Zend Framework, Docker for search library, and Samba for file sharing",
                 "Set up a modern production environment with Ubuntu 22.04 and optimized Apache configuration",
-                "Implemented secure configurations and access controls for application and file sharing",
-                "Created automated deployment and backup systems with comprehensive testing procedures"
+                "Implement secure configurations and access controls for application and file sharing",
+                "Create automated deployment and backup systems with comprehensive testing procedures"
               ]
             },
             "migration": {
               "title": "System Migration and Integration",
               "description": [
-                "Planned and executed smooth migration of both export systems with zero downtime",
-                "Ensured data integrity during migration process with automated validation",
-                "Implemented monitoring and alerting systems for both export processes",
-                "Created comprehensive documentation for both systems including setup and maintenance procedures"
+                "Plan and execute smooth migration of both export systems with zero downtime",
+                "Ensure data integrity during migration process with automated validation",
+                "Implement monitoring and alerting systems for both export processes",
+                "Create comprehensive documentation for both systems including setup and maintenance procedures"
               ]
             }
           }
@@ -433,25 +433,25 @@
         {
           "group": {
             "titre": "Platform Enhancement",
-            "intro": "Enhanced AlertCenter's capabilities as a central monitoring platform for IT infrastructure and incident management, focusing on real-time monitoring and efficient incident handling."
+            "intro": "To enhance AlertCenter's capabilities as a central monitoring platform for IT infrastructure and incident management, focusing on real-time monitoring and efficient incident handling."
           },
           "data": {
             "1": {
               "title": "Monitoring Dashboard Development",
               "description": [
-                "Developed a centralized dashboard aggregating data from multiple infrastructure monitoring tools",
-                "Implemented real-time incident display with team-specific indicators and severity levels",
-                "Created a comprehensive incident history and log viewing system with advanced filtering",
-                "Added real-time metrics visualization with customizable time ranges"
+                "Develop a centralized dashboard aggregating data from multiple infrastructure monitoring tools",
+                "Implement real-time incident display with team-specific indicators and severity levels",
+                "Create a comprehensive incident history and log viewing system with advanced filtering",
+                "Add real-time metrics visualization with customizable time ranges"
               ]
             },
             "2": {
               "title": "System Modernization",
               "description": [
-                "Modernized the codebase using object-oriented programming and MVC architecture",
-                "Implemented WebSocket technology for real-time data updates without polling",
-                "Enhanced webservice integrations for seamless data synchronization",
-                "Developed an advanced incident escalation system with SMS and call notifications based on criticality"
+                "Modernize the codebase using object-oriented programming and MVC architecture",
+                "Implement WebSocket technology for real-time data updates without polling",
+                "Enhance webservice integrations for seamless data synchronization",
+                "Develop an advanced incident escalation system with SMS and call notifications based on criticality"
               ]
             }
           }
@@ -459,16 +459,16 @@
         {
           "group": {
             "titre": "Client Separation Project",
-            "intro": "Successfully separated AlertCenter into two independent applications to support a client's separation from the main group, ensuring data isolation and maintaining functionality."
+            "intro": "To successfully separate AlertCenter into two independent applications to support a client's separation from the main group, ensuring data isolation and maintaining functionality."
           },
           "data": {
             "1": {
               "title": "Multi-tenant Implementation",
               "description": [
-                "Designed and implemented a multi-tenant architecture for separate client environments",
-                "Developed request filtering system to maintain tool connectivity based on user accounts",
-                "Created a more efficient solution to handle client separation requirements",
-                "Implemented data isolation mechanisms to ensure client data privacy"
+                "Design and implement a multi-tenant architecture for separate client environments",
+                "Develop request filtering system to maintain tool connectivity based on user accounts",
+                "Create a more efficient solution to handle client separation requirements",
+                "Implement data isolation mechanisms to ensure client data privacy"
               ]
             },
             "2": {
@@ -485,25 +485,25 @@
         {
           "group": {
             "titre": "Service Center Automation",
-            "intro": "Created an efficient service center ticketing interface that bridges multiple systems and automates user management, significantly reducing manual intervention."
+            "intro": "To create an efficient service center ticketing interface that bridges multiple systems and automates user management, significantly reducing manual intervention."
           },
           "data": {
             "1": {
               "title": "Service Desk Integration",
               "description": [
-                "Developed a web-based form for CDS to create Jira tickets efficiently",
-                "Implemented LDAP integration to pre-fill ticket information using personnel numbers",
-                "Created a seamless workflow for ticket creation and management",
-                "Added automated ticket categorization based on incident type"
+                "Develop a web-based form for CDS to create Jira tickets efficiently",
+                "Implement LDAP integration to pre-fill ticket information using personnel numbers",
+                "Create a seamless workflow for ticket creation and management",
+                "Add automated ticket categorization based on incident type"
               ]
             },
             "2": {
               "title": "Identity Management",
               "description": [
-                "Built a bridge between two Active Directories and the Jira ticketing system",
-                "Implemented automatic Jira account creation for new users via Jira API",
-                "Developed a synchronization system for user roles and permissions",
-                "Created automated user provisioning and deprovisioning workflows"
+                "Build a bridge between two Active Directories and the Jira ticketing system",
+                "Implement automatic Jira account creation for new users via Jira API",
+                "Develop a synchronization system for user roles and permissions",
+                "Create automated user provisioning and deprovisioning workflows"
               ]
             }
           }
@@ -539,25 +539,25 @@
         {
           "group": {
             "titre": "Platform Development",
-            "intro": "Built a modern web platform using React and Node.js, focusing on performance, scalability, and real-time features for the French-speaking community."
+            "intro": "To build a modern web platform using React and Node.js, focusing on performance, scalability, and real-time features for the French-speaking community."
           },
           "data": {
             "1": {
               "title": "Core Architecture Implementation",
               "description": [
-                "Developed a React-based frontend with server-side rendering for optimal performance",
-                "Implemented a Node.js backend with RESTful API endpoints",
-                "Created a MongoDB database structure optimized for content management",
+                "Develop a React frontend with server-side rendering for optimal performance",
+                "Implement a Node.js backend with RESTful API endpoints",
+                "Create an optimized MongoDB database structure for content management",
                 "Set up Docker containers for consistent development and deployment"
               ]
             },
             "2": {
               "title": "Real-time Features",
               "description": [
-                "Implemented WebSocket integration for real-time updates and notifications",
-                "Created a live chat system with Discord integration",
-                "Developed real-time content synchronization across multiple servers",
-                "Added push notifications for important community updates"
+                "Implement WebSocket integration for real-time updates and notifications",
+                "Create a live chat system with Discord integration",
+                "Develop real-time content synchronization across multiple servers",
+                "Add push notifications for important community updates"
               ]
             }
           }
@@ -571,19 +571,19 @@
             "1": {
               "title": "Data Integration",
               "description": [
-                "Created automated data scraping system for game updates and news",
-                "Implemented content translation pipeline for French localization",
-                "Developed caching system using Redis for improved performance",
-                "Built content validation and moderation tools"
+                "Create automated data scraping system for game updates and news",
+                "Implement content translation pipeline for French localization",
+                "Develop caching system using Redis for improved performance",
+                "Build content validation and moderation tools"
               ]
             },
             "2": {
               "title": "Community Features",
               "description": [
-                "Developed user profile system with Discord integration",
-                "Created community forums with real-time updates",
-                "Implemented content sharing and voting system",
-                "Added moderation tools for community management"
+                "Develop user profile system with Discord integration",
+                "Create community forums with real-time updates",
+                "Implement content sharing and voting system",
+                "Add moderation tools for community management"
               ]
             }
           }
@@ -597,19 +597,19 @@
             "1": {
               "title": "Frontend Optimization",
               "description": [
-                "Implemented code splitting and lazy loading for faster initial load",
-                "Optimized image loading with WebP format and responsive images",
-                "Created efficient state management with Redux",
-                "Added service worker for offline functionality"
+                "Implement code splitting and lazy loading for faster initial load",
+                "Optimize image loading with WebP format and responsive images",
+                "Create efficient state management with Redux",
+                "Add service worker for offline functionality"
               ]
             },
             "2": {
               "title": "Backend Optimization",
               "description": [
-                "Implemented database indexing for faster queries",
-                "Created efficient caching strategies with Redis",
-                "Developed load balancing for multiple servers",
-                "Added monitoring and logging for performance tracking"
+                "Implement database indexing for faster queries",
+                "Create efficient caching strategies with Redis",
+                "Develop load balancing for multiple servers",
+                "Add monitoring and logging for performance tracking"
               ]
             }
           }

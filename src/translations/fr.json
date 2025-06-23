@@ -313,32 +313,32 @@
       ],
       "introduction": {
         "name": "Harmonia Mundi Livre",
-        "introduction": "En tant que développeur principal pour Mediabase, j'étais responsable de deux améliorations majeures du système : l'optimisation du système d'export basé sur des modèles existant et le développement d'un nouveau système d'export personnalisé. Le projet visait à améliorer l'efficacité du traitement des données et à fournir des capacités d'export plus flexibles pour les utilisateurs.",
-        "description": "J'ai dirigé à la fois l'optimisation du système de modèles existant et le développement d'un nouveau système d'export personnalisé, en me concentrant sur les améliorations de performance, l'expérience utilisateur et les fonctionnalités d'export avancées."
+        "introduction": "En tant que développeur principal pour Mediabase, j'ai été responsable de deux améliorations majeures du système Mediabase : optimiser le système d'export basé sur des modèles existant et développer un nouveau système d'export personnalisé. Le projet vise à améliorer l'efficacité du traitement des données et à fournir des capacités d'export plus flexibles pour les utilisateurs.",
+        "description": "Diriger à la fois l'optimisation du système de modèles existant et le développement d'un nouveau système d'export personnalisé, en se concentrant sur les améliorations de performance, l'expérience utilisateur et les fonctionnalités d'export avancées."
       },
       "tasks": [
         {
           "group": {
             "titre": "Optimisation du Système de Modèles",
-            "intro": "Optimisé le système d'export basé sur des modèles existant pour améliorer significativement les performances et la fiabilité, en se concentrant sur le processus de génération PDF utilisant FPDF."
+            "intro": "Optimiser le système d'export basé sur des modèles existant pour améliorer significativement les performances et la fiabilité, en se concentrant sur le processus de génération PDF utilisant FPDF."
           },
           "data": {
             "performance": {
               "title": "Analyse et Optimisation des Performances",
               "description": [
-                "Réalisé une analyse approfondie des goulots d'étranglement de performance du système de modèles existant, particulièrement dans le processus de génération basé sur FPDF",
-                "Identifié et résolu les problèmes de gestion de la mémoire dans la génération de PDF, où chaque élément était généré pixel par pixel",
-                "Implémenté des algorithmes efficaces de traitement des données pour gérer de grands lots de génération de PDF",
-                "Réduit le temps de génération des PDF d'une journée à environ 20 minutes en implémentant la génération basée sur des modèles"
+                "Réaliser une analyse approfondie des goulots d'étranglement de performance du système de modèles existant, particulièrement dans le processus de génération basé sur FPDF",
+                "Identifier et résoudre les problèmes de gestion de la mémoire dans la génération de PDF, où chaque élément est généré pixel par pixel",
+                "Implémenter des algorithmes efficaces de traitement des données pour gérer de grands lots de génération de PDF",
+                "Réduire le temps de génération des PDF d'une journée à environ 20 minutes en implémentant la génération basée sur des modèles"
               ]
             },
             "template": {
               "title": "Implémentation du Système de Modèles",
               "description": [
-                "Développé un moteur de modèles robuste utilisant des fichiers pré-remplis avec des couvertures et formes statiques (Modèle F et Modèle G)",
-                "Créé un système flexible de gestion des modèles qui copie et modifie les modèles au lieu de générer à partir de zéro",
-                "Implémenté des mécanismes de mise en cache pour améliorer les performances et réduire l'utilisation de la mémoire",
-                "Ajouté la prise en charge de divers formats et mises en page d'export, avec un système de notification automatisé pour les exports terminés"
+                "Développer un moteur de modèles robuste utilisant des fichiers pré-remplis avec des couvertures et formes statiques (Modèle F et Modèle G)",
+                "Créer un système flexible de gestion des modèles qui copie et modifie les modèles au lieu de générer à partir de zéro",
+                "Implémenter des mécanismes de mise en cache pour améliorer les performances et réduire l'utilisation de la mémoire",
+                "Ajouter la prise en charge de divers formats et mises en page d'export, avec un système de notification automatisé pour les exports terminés"
               ]
             }
           }
@@ -346,34 +346,34 @@
         {
           "group": {
             "titre": "Développement du Système d'Export Personnalisé",
-            "intro": "Développé un nouveau système d'export personnalisé avec des fonctionnalités avancées et des options de configuration flexibles, incluant la gestion dynamique des champs et la sélection de format."
+            "intro": "Développer un nouveau système d'export personnalisé avec des fonctionnalités avancées et des options de configuration flexibles, incluant la gestion dynamique des champs et la sélection de format."
           },
           "data": {
             "fields": {
               "title": "Gestion Dynamique des Champs",
               "description": [
-                "Implémenté un système de sélection dynamique des champs avec organisation par catégories et vérification des permissions",
-                "Créé une interface utilisateur intuitive pour la configuration des champs avec fonctionnalité de glisser-déposer",
-                "Ajouté la prise en charge du formatage et de la validation personnalisés des champs, incluant les types nombre, texte et liste",
-                "Développé un système de gestion des dépendances entre champs avec masquage automatique des catégories basé sur les permissions"
+                "Implémenter un système de sélection dynamique des champs avec organisation par catégories et vérification des permissions",
+                "Créer une interface utilisateur intuitive pour la configuration des champs avec fonctionnalité de glisser-déposer",
+                "Ajouter la prise en charge du formatage et de la validation personnalisés des champs, incluant les types nombre, texte et liste",
+                "Développer un système de gestion des dépendances entre champs avec masquage automatique des catégories basé sur les permissions"
               ]
             },
             "rights": {
               "title": "Gestion Avancée des Droits",
               "description": [
-                "Conçu et implémenté un système de permissions granulaire pour le contrôle d'accès aux champs",
-                "Créé un contrôle d'accès basé sur les rôles pour les fonctionnalités d'export avec permissions au niveau des champs",
-                "Développé un système de gestion des quotas d'export avec suivi de l'utilisation",
-                "Implémenté un système de journalisation des opérations d'export avec suivi détaillé des activités utilisateur"
+                "Concevoir et implémenter un système de permissions granulaire pour le contrôle d'accès aux champs",
+                "Créer un contrôle d'accès basé sur les rôles pour les fonctionnalités d'export avec permissions au niveau des champs",
+                "Développer un système de gestion des quotas d'export avec suivi de l'utilisation",
+                "Implémenter un système de journalisation des opérations d'export avec suivi détaillé des activités utilisateur"
               ]
             },
             "formats": {
               "title": "Sélection et Personnalisation des Formats",
               "description": [
-                "Développé la prise en charge de multiples formats d'export (PDF, Excel, CSV) avec optimisations spécifiques aux formats",
-                "Créé des options de configuration spécifiques aux formats avec règles de formatage personnalisées",
-                "Implémenté des fonctionnalités de validation et d'aperçu des formats avec mises à jour en temps réel",
-                "Ajouté la prise en charge de modèles de format personnalisés avec capacités de sauvegarde et de partage"
+                "Développer la prise en charge de multiples formats d'export (PDF, Excel, CSV) avec optimisations spécifiques aux formats",
+                "Créer des options de configuration spécifiques aux formats avec règles de formatage personnalisées",
+                "Implémenter des fonctionnalités de validation et d'aperçu des formats avec mises à jour en temps réel",
+                "Ajouter la prise en charge de modèles de format personnalisés avec capacités de sauvegarde et de partage"
               ]
             }
           }
@@ -381,25 +381,25 @@
         {
           "group": {
             "titre": "Modernisation de l'Infrastructure",
-            "intro": "Modernisé l'environnement de production pour supporter efficacement les deux systèmes d'export, incluant la migration vers Ubuntu 22.04 et l'implémentation de configurations sécurisées."
+            "intro": "Moderniser l'environnement de production pour supporter efficacement les deux systèmes d'export, incluant la migration vers Ubuntu 22.04 et l'implémentation de configurations sécurisées."
           },
           "data": {
             "infrastructure": {
               "title": "Analyse du Système et Configuration de l'Infrastructure",
               "description": [
-                "Analysé l'infrastructure actuelle utilisant Zend Framework, Docker pour la bibliothèque de recherche et Samba pour le partage de fichiers",
-                "Mis en place un environnement de production moderne avec Ubuntu 22.04 et configuration Apache optimisée",
-                "Implémenté des configurations sécurisées et des contrôles d'accès pour l'application et le partage de fichiers",
-                "Créé des systèmes automatisés de déploiement et de sauvegarde avec procédures de test complètes"
+                "Analyser l'infrastructure actuelle utilisant Zend Framework, Docker pour la bibliothèque de recherche et Samba pour le partage de fichiers",
+                "Mettre en place un environnement de production moderne avec Ubuntu 22.04 et configuration Apache optimisée",
+                "Implémenter des configurations sécurisées et des contrôles d'accès pour l'application et le partage de fichiers",
+                "Créer des systèmes automatisés de déploiement et de sauvegarde avec procédures de test complètes"
               ]
             },
             "migration": {
               "title": "Migration et Intégration du Système",
               "description": [
-                "Planifié et exécuté une migration fluide des deux systèmes d'export sans interruption de service",
-                "Assuré l'intégrité des données pendant le processus de migration avec validation automatisée",
-                "Implémenté des systèmes de surveillance et d'alerte pour les deux processus d'export",
-                "Créé une documentation complète pour les deux systèmes incluant les procédures de configuration et de maintenance"
+                "Planifier et exécuter une migration fluide des deux systèmes d'export sans interruption de service",
+                "Assurer l'intégrité des données pendant le processus de migration avec validation automatisée",
+                "Implémenter des systèmes de surveillance et d'alerte pour les deux processus d'export",
+                "Créer une documentation complète pour les deux systèmes incluant les procédures de configuration et de maintenance"
               ]
             }
           }
@@ -407,7 +407,7 @@
       ]
     },
     "hopps": {
-      "description": "Dirigé le développement et la maintenance d'AlertCenter, une plateforme complète de surveillance d'infrastructure IT qui fournit des insights en temps réel et des capacités de gestion des incidents",
+      "description": "Diriger le développement et la maintenance d'AlertCenter, une plateforme complète de surveillance d'infrastructure IT qui fournit des insights en temps réel et des capacités de gestion des incidents",
       "img": "/images/project-images/hopps/logo.png",
       "mainTechnologies": [
         "C#",
@@ -434,25 +434,25 @@
         {
           "group": {
             "titre": "Amélioration de la Plateforme",
-            "intro": "Amélioré les capacités d'AlertCenter en tant que plateforme centrale de surveillance de l'infrastructure IT et de gestion des incidents, en se concentrant sur la surveillance en temps réel et la gestion efficace des incidents."
+            "intro": "Améliorer les capacités d'AlertCenter en tant que plateforme centrale de surveillance de l'infrastructure IT et de gestion des incidents, en se concentrant sur la surveillance en temps réel et la gestion efficace des incidents."
           },
           "data": {
             "1": {
               "title": "Développement du Tableau de Bord de Surveillance",
               "description": [
-                "Développé un tableau de bord centralisé agrégant les données de plusieurs outils de surveillance d'infrastructure",
-                "Implémenté un affichage en temps réel des incidents avec des indicateurs spécifiques par équipe et niveaux de sévérité",
-                "Créé un système complet d'historique des incidents et de visualisation des logs avec filtrage avancé",
-                "Ajouté une visualisation des métriques en temps réel avec des plages de temps personnalisables"
+                "Développer un tableau de bord centralisé agrégant les données de plusieurs outils de surveillance d'infrastructure",
+                "Implémenter un affichage en temps réel des incidents avec des indicateurs spécifiques par équipe et niveaux de sévérité",
+                "Créer un système complet d'historique des incidents et de visualisation des logs avec filtrage avancé",
+                "Ajouter une visualisation des métriques en temps réel avec des plages de temps personnalisables"
               ]
             },
             "2": {
               "title": "Modernisation du Système",
               "description": [
-                "Modernisé la base de code en utilisant la programmation orientée objet et l'architecture MVC",
-                "Implémenté la technologie WebSocket pour des mises à jour en temps réel sans polling",
-                "Amélioré les intégrations webservice pour une synchronisation transparente des données",
-                "Développé un système avancé d'escalade des incidents avec notifications SMS et appel selon la criticité"
+                "Moderniser la base de code en utilisant la programmation orientée objet et l'architecture MVC",
+                "Implémenter la technologie WebSocket pour des mises à jour en temps réel sans polling",
+                "Améliorer les intégrations webservice pour une synchronisation transparente des données",
+                "Développer un système avancé d'escalade des incidents avec notifications SMS et appel selon la criticité"
               ]
             }
           }
@@ -460,25 +460,25 @@
         {
           "group": {
             "titre": "Projet de Séparation Client",
-            "intro": "Séparé avec succès AlertCenter en deux applications indépendantes pour supporter la séparation d'un client du groupe principal, assurant l'isolation des données et le maintien des fonctionnalités."
+            "intro": "Séparer avec succès AlertCenter en deux applications indépendantes pour supporter la séparation d'un client du groupe principal, assurant l'isolation des données et le maintien des fonctionnalités."
           },
           "data": {
             "1": {
               "title": "Implémentation Multi-tenant",
               "description": [
-                "Conçu et implémenté une architecture multi-tenant pour des environnements clients séparés",
-                "Développé un système de filtrage des requêtes pour maintenir la connectivité des outils selon les comptes utilisateurs",
-                "Créé une solution plus efficace pour gérer les besoins de séparation client",
-                "Implémenté des mécanismes d'isolation des données pour assurer la confidentialité des données client"
+                "Conçevoir et implémenté une architecture multi-tenant pour des environnements clients séparés",
+                "Développer un système de filtrage des requêtes pour maintenir la connectivité des outils selon les comptes utilisateurs",
+                "Créer une solution plus efficace pour gérer les besoins de séparation client",
+                "Implémenter des mécanismes d'isolation des données pour assurer la confidentialité des données client"
               ]
             },
             "2": {
               "title": "Système de Contrôle d'Accès",
               "description": [
-                "Implémenté le regroupement de comptes avec filtrage conditionnel dans toute l'application",
-                "Développé le filtrage des requêtes cross-serveur pour maintenir la connectivité des outils",
-                "Créé un contrôle d'accès basé sur les rôles avec des permissions granulaire",
-                "Conduit des tests unitaires complets avant le déploiement client"
+                "Implémenter le regroupement de comptes avec filtrage conditionnel dans toute l'application",
+                "Développer le filtrage des requêtes cross-serveur pour maintenir la connectivité des outils",
+                "Créer un contrôle d'accès basé sur les rôles avec des permissions granulaire",
+                "Conduir des tests unitaires complets avant le déploiement client"
               ]
             }
           }
@@ -486,25 +486,25 @@
         {
           "group": {
             "titre": "Automatisation du Centre de Service",
-            "intro": "Créé une interface de ticketing efficace pour le centre de service qui connecte plusieurs systèmes et automatise la gestion des utilisateurs, réduisant significativement l'intervention manuelle."
+            "intro": "Créer une interface de ticketing efficace pour le centre de service qui connecte plusieurs systèmes et automatise la gestion des utilisateurs, réduisant significativement l'intervention manuelle."
           },
           "data": {
             "1": {
               "title": "Intégration du Service Desk",
               "description": [
-                "Développé un formulaire web pour que le CDS crée efficacement des tickets Jira",
-                "Implémenté l'intégration LDAP pour pré-remplir les informations de ticket avec les numéros de personnel",
-                "Créé un workflow transparent pour la création et la gestion des tickets",
-                "Ajouté une catégorisation automatique des tickets basée sur le type d'incident"
+                "Développer un formulaire web pour que le CDS crée efficacement des tickets Jira",
+                "Implémenter l'intégration LDAP pour pré-remplir les informations de ticket avec les numéros de personnel",
+                "Créer un workflow transparent pour la création et la gestion des tickets",
+                "Ajouter une catégorisation automatique des tickets basée sur le type d'incident"
               ]
             },
             "2": {
               "title": "Gestion des Identités",
               "description": [
-                "Construit un pont entre deux Active Directories et le système de ticketing Jira",
-                "Implémenté la création automatique de comptes Jira pour les nouveaux utilisateurs via l'API Jira",
-                "Développé un système de synchronisation des rôles et permissions utilisateurs",
-                "Créé des workflows automatisés de provisionnement et déprovisionnement des utilisateurs"
+                "Construir un pont entre deux Active Directories et le système de ticketing Jira",
+                "Implémenter la création automatique de comptes Jira pour les nouveaux utilisateurs via l'API Jira",
+                "Développer un système de synchronisation des rôles et permissions utilisateurs",
+                "Créer des workflows automatisés de provisionnement et déprovisionnement des utilisateurs"
               ]
             }
           }
@@ -512,7 +512,7 @@
       ]
     },
     "scf": {
-      "description": "Développé une plateforme web complète pour la communauté francophone de SC, fournissant du contenu localisé, des mises à jour en temps réel et des fonctionnalités communautaires comme alternative au site officiel en anglais",
+      "description": "Développer une plateforme web complète pour la communauté francophone de SC, fournissant du contenu localisé, des mises à jour en temps réel et des fonctionnalités communautaires comme alternative au site officiel en anglais",
       "img": "/images/project-images/scf/logo.png",
       "mainTechnologies": [
         "Symfony",
@@ -540,25 +540,25 @@
         {
           "group": {
             "titre": "Développement de la Plateforme",
-            "intro": "Construit une plateforme web moderne utilisant React et Node.js, en se concentrant sur la performance, l'évolutivité et les fonctionnalités en temps réel pour la communauté francophone."
+            "intro": "Construir une plateforme web moderne utilisant React et Node.js, en se concentrant sur la performance, l'évolutivité et les fonctionnalités en temps réel pour la communauté francophone."
           },
           "data": {
             "1": {
               "title": "Implémentation de l'Architecture Core",
               "description": [
-                "Développé un frontend React avec rendu côté serveur pour une performance optimale",
-                "Implémenté un backend Node.js avec des endpoints API RESTful",
-                "Créé une structure de base de données MongoDB optimisée pour la gestion de contenu",
-                "Mis en place des conteneurs Docker pour un développement et déploiement cohérents"
+                "Développer un frontend React avec rendu côté serveur pour une performance optimale",
+                "Implémenter un backend Node.js avec des endpoints API RESTful",
+                "Créer une structure de base de données MongoDB optimisée pour la gestion de contenu",
+                "Mettre en place des conteneurs Docker pour un développement et déploiement cohérents"
               ]
             },
             "2": {
               "title": "Fonctionnalités en Temps Réel",
               "description": [
-                "Implémenté l'intégration WebSocket pour les mises à jour et notifications en temps réel",
-                "Créé un système de chat en direct avec intégration Discord",
-                "Développé la synchronisation de contenu en temps réel sur plusieurs serveurs",
-                "Ajouté des notifications push pour les mises à jour importantes de la communauté"
+                "Implémenter l'intégration WebSocket pour les mises à jour et notifications en temps réel",
+                "Créer un système de chat en direct avec intégration Discord",
+                "Développer la synchronisation de contenu en temps réel sur plusieurs serveurs",
+                "Ajouter des notifications push pour les mises à jour importantes de la communauté"
               ]
             }
           }
@@ -566,25 +566,25 @@
         {
           "group": {
             "titre": "Gestion de Contenu",
-            "intro": "Développé un système efficace de gestion de contenu pour gérer les informations liées au jeu et le contenu communautaire."
+            "intro": "Développer un système efficace de gestion de contenu pour gérer les informations liées au jeu et le contenu communautaire."
           },
           "data": {
             "1": {
               "title": "Intégration des Données",
               "description": [
-                "Créé un système automatisé de scraping de données pour les mises à jour et actualités du jeu",
-                "Implémenté un pipeline de traduction de contenu pour la localisation française",
-                "Développé un système de cache utilisant Redis pour une meilleure performance",
-                "Construit des outils de validation et modération de contenu"
+                "Créer un système automatisé de scraping de données pour les mises à jour et actualités du jeu",
+                "Implémenter un pipeline de traduction de contenu pour la localisation française",
+                "Développer un système de cache utilisant Redis pour une meilleure performance",
+                "Construir des outils de validation et modération de contenu"
               ]
             },
             "2": {
               "title": "Fonctionnalités Communautaires",
               "description": [
-                "Développé un système de profils utilisateurs avec intégration Discord",
-                "Créé des forums communautaires avec mises à jour en temps réel",
-                "Implémenté un système de partage et vote de contenu",
-                "Ajouté des outils de modération pour la gestion de la communauté"
+                "Développer un système de profils utilisateurs avec intégration Discord",
+                "Créer des forums communautaires avec mises à jour en temps réel",
+                "Implémenter un système de partage et vote de contenu",
+                "Ajouter des outils de modération pour la gestion de la communauté"
               ]
             }
           }
@@ -592,25 +592,25 @@
         {
           "group": {
             "titre": "Optimisation des Performances",
-            "intro": "Implémenté diverses techniques d'optimisation pour assurer des temps de chargement rapides et une expérience utilisateur fluide."
+            "intro": "Implémenter diverses techniques d'optimisation pour assurer des temps de chargement rapides et une expérience utilisateur fluide."
           },
           "data": {
             "1": {
               "title": "Optimisation Frontend",
               "description": [
-                "Implémenté le code splitting et le lazy loading pour un chargement initial plus rapide",
-                "Optimisé le chargement des images avec le format WebP et des images responsives",
-                "Créé une gestion d'état efficace avec Redux",
-                "Ajouté un service worker pour la fonctionnalité hors ligne"
+                "Implémenter le code splitting et le lazy loading pour un chargement initial plus rapide",
+                "Optimiser le chargement des images avec le format WebP et des images responsives",
+                "Créer une gestion d'état efficace avec Redux",
+                "Ajouter un service worker pour la fonctionnalité hors ligne"
               ]
             },
             "2": {
               "title": "Optimisation Backend",
               "description": [
-                "Implémenté l'indexation de base de données pour des requêtes plus rapides",
-                "Créé des stratégies de cache efficaces avec Redis",
-                "Développé la répartition de charge pour plusieurs serveurs",
-                "Ajouté la surveillance et la journalisation pour le suivi des performances"
+                "Implémenter l'indexation de base de données pour des requêtes plus rapides",
+                "Créer des stratégies de cache efficaces avec Redis",
+                "Développer la répartition de charge pour plusieurs serveurs",
+                "Ajouter la surveillance et la journalisation pour le suivi des performances"
               ]
             }
           }
