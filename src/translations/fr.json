@@ -115,19 +115,19 @@
             "1": {
               "title": "Analyse et Planification de l'Architecture",
               "description": [
-                "Réalisé une analyse complète de l'architecture du système legacy existant",
-                "Identifié les goulots d'étranglement de performance dans les requêtes base de données et les appels API",
-                "Planifié l'implémentation d'une architecture MVC moderne avec des endpoints REST API",
-                "Conçu une nouvelle structure de base de données optimisée pour les performances de l'application web"
+                "Réaliser une analyse complète de l'architecture du système legacy existant",
+                "Identifier les goulots d'étranglement de performance dans les requêtes base de données et les appels API",
+                "Planifier l'implémentation d'une architecture MVC moderne avec des endpoints REST API",
+                "Concevoir une nouvelle structure de base de données optimisée pour les performances de l'application web"
               ]
             },
             "2": {
               "title": "Implémentation du Système Core",
               "description": [
-                "Implémenté une architecture modulaire utilisant les namespaces PHP et l'autoloading",
-                "Développé une couche REST API pour une intégration transparente avec l'application desktop",
-                "Créé un système de cache efficace pour les données fréquemment accédées",
-                "Implémenté une gestion sécurisée de l'authentification et des sessions"
+                "Implémenter une architecture modulaire utilisant les namespaces PHP et l'autoloading",
+                "Développer une couche REST API pour une intégration transparente avec l'application desktop",
+                "Créer un système de cache efficace pour les données fréquemment accédées",
+                "Implémenter une gestion sécurisée de l'authentification et des sessions"
               ]
             }
           }
@@ -141,19 +141,19 @@
             "1": {
               "title": "Implémentation du Design Responsive",
               "description": [
-                "Implémenté le système de grille Bootstrap 4 pour des layouts responsifs sur tous les appareils",
-                "Créé des composants CSS personnalisés pour un style et une identité cohérents",
-                "Développé des patterns de design mobile-first pour une expérience utilisateur optimale",
-                "Implémenté des contrôles adaptés au tactile pour les utilisateurs tablette et mobile"
+                "Implémenter le système de grille Bootstrap 4 pour des layouts responsifs sur tous les appareils",
+                "Créer des composants CSS personnalisés pour un style et une identité cohérents",
+                "Développer des patterns de design mobile-first pour une expérience utilisateur optimale",
+                "Implémenter des contrôles adaptés au tactile pour les utilisateurs tablette et mobile"
               ]
             },
             "2": {
               "title": "Développement des Fonctionnalités Interactives",
               "description": [
-                "Développé des mises à jour en temps réel utilisant la technologie AJAX et WebSocket",
-                "Implémenté la fonctionnalité drag-and-drop pour la planification des rendez-vous",
-                "Créé une validation dynamique des formulaires avec retour instantané",
-                "Ajouté des raccourcis clavier pour les utilisateurs avancés"
+                "Développer des mises à jour en temps réel utilisant la technologie AJAX et WebSocket",
+                "Implémenter la fonctionnalité drag-and-drop pour la planification des rendez-vous",
+                "Créer une validation dynamique des formulaires avec retour instantané",
+                "Ajouter des raccourcis clavier pour les utilisateurs avancés"
               ]
             }
           }
@@ -167,19 +167,19 @@
             "1": {
               "title": "Optimisation de la Base de Données",
               "description": [
-                "Optimisé les requêtes base de données réduisant le temps de réponse de 60%",
-                "Implémenté le cache des requêtes pour les données fréquemment accédées",
-                "Créé des stratégies d'indexation efficaces pour les grands ensembles de données",
-                "Développé un système d'archivage des données pour les enregistrements historiques"
+                "Optimiser les requêtes base de données réduisant le temps de réponse de 60%",
+                "Implémenter le cache des requêtes pour les données fréquemment accédées",
+                "Créer des stratégies d'indexation efficaces pour les grands ensembles de données",
+                "Développer un système d'archivage des données pour les enregistrements historiques"
               ]
             },
             "2": {
               "title": "Performance Frontend",
               "description": [
-                "Implémenté le chargement différé pour les images et le contenu",
-                "Optimisé la taille du bundle JavaScript en utilisant le code splitting",
-                "Créé des patterns efficaces de manipulation du DOM",
-                "Implémenté des stratégies de cache navigateur"
+                "Implémenter le chargement différé pour les images et le contenu",
+                "Optimiser la taille du bundle JavaScript en utilisant le code splitting",
+                "Créer des patterns efficaces de manipulation du DOM",
+                "Implémenter des stratégies de cache navigateur"
               ]
             }
           }
@@ -221,19 +221,19 @@
             "1": {
               "title": "Migration Legacy vers Symfony",
               "description": [
-                "Réalisé une analyse approfondie des goulots d'étranglement de performance et des limitations architecturales",
-                "Conçu une nouvelle base de données et des entités Doctrine pour une intégration optimale",
-                "Refactorisé le code PHP et JavaScript pour une meilleure maintenabilité",
-                "Implémenté des pratiques de développement modernes et des standards de code"
+                "Réaliser une analyse approfondie des goulots d'étranglement de performance et des limitations architecturales",
+                "Concevoir une nouvelle base de données et des entités Doctrine pour une intégration optimale",
+                "Refactoriser le code PHP et JavaScript pour une meilleure maintenabilité",
+                "Implémenter des pratiques de développement modernes et des standards de code"
               ]
             },
             "2": {
               "title": "Refonte UI/UX",
               "description": [
-                "Dirigé la refonte UI/UX en adoptant les principes du Material Design",
-                "Sélectionné et intégré UIkit via Yarn, en le personnalisant pour les besoins de l'application",
-                "Utilisé Webpack Encore pour la gestion et l'optimisation des assets",
-                "Conçu un système de design cohérent, incluant navigation horizontale, composants personnalisés et tableaux de bord responsifs"
+                "Diriger la refonte UI/UX en adoptant les principes du Material Design",
+                "Sélectionner et intégrer UIkit via Yarn, en le personnalisant pour les besoins de l'application",
+                "Utiliser Webpack Encore pour la gestion et l'optimisation des assets",
+                "Concevoir un système de design cohérent, incluant navigation horizontale, composants personnalisés et tableaux de bord responsifs"
               ]
             }
           }
@@ -247,10 +247,10 @@
             "1": {
               "title": "Implémentation des Graphiques Interactifs",
               "description": [
-                "Implémenté des graphiques avec zoom et fonctionnalités d'export",
-                "Ajouté des mises à jour en temps réel et des filtres dynamiques",
-                "Créé des visualisations de données responsives et interactives",
-                "Optimisé les performances des graphiques pour les grands ensembles de données"
+                "Implémenter des graphiques avec zoom et fonctionnalités d'export",
+                "Ajouter des mises à jour en temps réel et des filtres dynamiques",
+                "Créer des visualisations de données responsives et interactives",
+                "Optimiser les performances des graphiques pour les grands ensembles de données"
               ]
             }
           }
@@ -264,10 +264,10 @@
             "1": {
               "title": "Gestion des Vulnérabilités",
               "description": [
-                "Développé un système de traitement et d'analyse des données de vulnérabilité en temps réel",
-                "Conçu une base de données robuste pour le suivi historique des vulnérabilités",
-                "Créé des tableaux de bord interactifs avec des métriques de sécurité en temps réel",
-                "Implémenté des workflows automatisés d'évaluation des vulnérabilités"
+                "Développer un système de traitement et d'analyse des données de vulnérabilité en temps réel",
+                "Concevoir une base de données robuste pour le suivi historique des vulnérabilités",
+                "Créer des tableaux de bord interactifs avec des métriques de sécurité en temps réel",
+                "Implémenter des workflows automatisés d'évaluation des vulnérabilités"
               ]
             }
           }
@@ -281,10 +281,10 @@
             "1": {
               "title": "Optimisation du Chargement des Données",
               "description": [
-                "Implémenté le chargement dynamique des données avec KnpPaginator",
-                "Créé des mécanismes de tri et de filtrage efficaces pour les grands ensembles de données",
-                "Optimisé les mises à jour AJAX pour le rafraîchissement en temps réel",
-                "Amélioré le temps de réponse global de l'application et l'expérience utilisateur"
+                "Implémenter le chargement dynamique des données avec KnpPaginator",
+                "Créer des mécanismes de tri et de filtrage efficaces pour les grands ensembles de données",
+                "Optimiser les mises à jour AJAX pour le rafraîchissement en temps réel",
+                "Améliorer le temps de réponse global de l'application et l'expérience utilisateur"
               ]
             }
           }

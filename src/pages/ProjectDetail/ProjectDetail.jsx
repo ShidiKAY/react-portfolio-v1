@@ -293,7 +293,7 @@ const ProjectDetail = () => {
       </div>
 
       {/* Floating Language Switcher and Print Button - aligned */}
-      <div className="hidden md:flex fixed top-6 right-6 z-50 flex-row items-center space-x-2">
+      <div className="fixed top-4 right-4 z-[9999] flex flex-row items-center space-x-2">
         <div className="language-switcher mt-1.5">
           <ul className="flex space-x-2">
             <li
@@ -334,7 +334,7 @@ const ProjectDetail = () => {
         </div>
         <button
           onClick={() => window.print()}
-          className="flex items-center gap-2 bg-white/80 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
+          className="flex items-center gap-2 bg-white text-gray-800 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
           aria-label="Print this project"
         >
           <svg
