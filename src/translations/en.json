@@ -1,7 +1,7 @@
 {
   "common": {
     "about": "About",
-    "abouthelloim": "Hello, i'm",
+    "abouthelloim": "Hello, I'm",
     "aboutp1": "👨‍💻 With many years' experience in web development, I specialize in Back-End, business applications and custom software development.",
     "aboutp2": "✅ Whether you need to develop a complex web application, set up an efficient management system or improve the performance of your existing site, I'm here to support you every step of the way, from design to delivery, deployment and maintenance.",
     "aboutp3": "💬 Contact me now to discuss your project and let's start working together to achieve your goals!",
@@ -74,7 +74,7 @@
     "skills_category_All": "All",
     "project_nav_next": "Next Project",
     "project_nav_prev": "Previous Project",
-    "project_tasks_title": "Tasks Completed"
+    "project_tasks_title": "Tasks completed"
   },
   "portfolio": {
     "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
