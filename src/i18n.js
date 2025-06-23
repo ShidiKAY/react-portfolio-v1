@@ -17,8 +17,8 @@ i18n
         translation: fr,
       },
     },
-    lng: "en", // Set the default language
-    fallbackLng: "en", // Fallback language if translations are missing
+    lng: "fr", // Set the default language to French
+    fallbackLng: "fr", // Fallback language if translations are missing
   });
 
 export default i18n;
