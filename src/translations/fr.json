@@ -88,7 +88,7 @@
   },
   "projects": {
     "apigem": {
-      "description": "Dirigé la refonte complète de l'application web Apigem, en mettant l'accent sur les principes modernes d'UI/UX et le design responsive pour améliorer l'expérience utilisateur et l'accessibilité",
+      "description": "Refondre l'application web Apigem avec un design UI/UX moderne et responsive pour améliorer l'expérience utilisateur et l'accessibilité.",
       "img": "/images/project-images/apigem/logo.png",
       "mainTechnologies": [
         "PHP",
@@ -192,7 +192,7 @@
       ]
     },
     "bubo": {
-      "description": "Dirigé la modernisation d'une application PHP legacy vers Symfony 4, implémentant les principes du Material Design et une visualisation avancée des données avec ApexCharts",
+      "description": "Moderniser une application PHP legacy vers Symfony 4, appliquer les principes du Material Design et ajouter une visualisation avancée des données avec ApexCharts.",
       "img": "/images/project-images/bubo/logo.png",
       "mainTechnologies": [
         "Symfony",
@@ -297,7 +297,7 @@
       ]
     },
     "hml": {
-      "description": "Optimisation et modernisation de Mediabase, plateforme clé d'export et de traitement de données pour les distributeurs de livres, axée sur l'automatisation, la fiabilité et la performance.",
+      "description": "Optimiser et moderniser Mediabase, plateforme clé d'export et de traitement de données pour les distributeurs de livres, en mettant l'accent sur l'automatisation, la fiabilité et la performance.",
       "img": "/images/project-images/hml/logo.png",
       "mainTechnologies": [
         "PHP",
@@ -412,7 +412,7 @@
       ]
     },
     "hopps": {
-      "description": "Diriger le développement et la maintenance d'AlertCenter, une plateforme complète de surveillance d'infrastructure IT qui fournit des insights en temps réel et des capacités de gestion des incidents",
+      "description": "Développer et maintenir AlertCenter, une plateforme complète de surveillance d'infrastructure IT offrant des insights en temps réel et des capacités de gestion des incidents.",
       "img": "/images/project-images/hopps/logo.png",
       "mainTechnologies": [
         "C#",
@@ -517,7 +517,7 @@
       ]
     },
     "scf": {
-      "description": "Développer une plateforme web complète pour la communauté francophone de SC, fournissant du contenu localisé, des mises à jour en temps réel et des fonctionnalités communautaires comme alternative au site officiel en anglais",
+      "description": "Développer une plateforme web complète pour la communauté francophone de SC, fournissant du contenu localisé, des mises à jour en temps réel et des fonctionnalités communautaires comme alternative au site officiel en anglais.",
       "img": "/images/project-images/scf/logo.png",
       "mainTechnologies": [
         "Symfony",

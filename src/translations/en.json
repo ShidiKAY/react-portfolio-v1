@@ -88,7 +88,7 @@
   },
   "projects": {
     "apigem": {
-      "description": "Led the complete redesign of Apigem's web application, focusing on modern UI/UX principles and responsive design to enhance user experience and accessibility",
+      "description": "Redesign Apigem's web application with a modern UI/UX and responsive design to enhance user experience and accessibility.",
       "img": "/images/project-images/apigem/logo.png",
       "mainTechnologies": [
         "PHP",
@@ -192,7 +192,7 @@
       ]
     },
     "bubo": {
-      "description": "Led the modernization of a legacy PHP application to Symfony 4, implementing Material Design principles and advanced data visualization with ApexCharts",
+      "description": "Modernize a legacy PHP application to Symfony 4, implement Material Design principles, and add advanced data visualization with ApexCharts.",
       "img": "/images/project-images/bubo/logo.png",
       "mainTechnologies": [
         "Symfony",
@@ -296,7 +296,7 @@
       ]
     },
     "hml": {
-      "description": "Optimized and modernized Mediabase, a key export and data processing platform for book distributors, focusing on automation, reliability, and performance.",
+      "description": "Optimize and modernize Mediabase, a key export and data processing platform for book distributors, focusing on automation, reliability, and performance.",
       "img": "/images/project-images/hml/logo.png",
       "mainTechnologies": [
         "PHP",
@@ -411,7 +411,7 @@
       ]
     },
     "hopps": {
-      "description": "Led the development and maintenance of AlertCenter, a comprehensive IT infrastructure monitoring platform that provides real-time insights and incident management capabilities",
+      "description": "Develop and maintain AlertCenter, a comprehensive IT infrastructure monitoring platform providing real-time insights and incident management capabilities.",
       "img": "/images/project-images/hopps/logo.png",
       "mainTechnologies": [
         "C#",
@@ -516,7 +516,7 @@
       ]
     },
     "scf": {
-      "description": "Developed a comprehensive web platform for the French-speaking SC community, providing localized content, real-time updates, and community features as an alternative to the English official website",
+      "description": "Develop a comprehensive web platform for the French-speaking SC community, providing localized content, real-time updates, and community features as an alternative to the English official website.",
       "img": "/images/project-images/scf/logo.png",
       "mainTechnologies": [
         "Symfony",
