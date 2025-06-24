@@ -74,7 +74,12 @@
     "skills_category_All": "Tous",
     "project_nav_next": "Projet suivant",
     "project_nav_prev": "Projet précédent",
-    "project_tasks_title": "Tâches réalisées"
+    "project_tasks_title": "Tâches réalisées",
+    "duration_one": "{{count}} mois",
+    "duration_other": "{{count}} mois",
+    "team_one": "Équipe de {{count}} personne",
+    "team_other": "Équipe de {{count}} personnes",
+    "period": "{{period}}"
   },
   "portfolio": {
     "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",

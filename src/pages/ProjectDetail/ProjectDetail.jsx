@@ -482,14 +482,14 @@ const ProjectDetail = () => {
               </svg>
               <span className="text-gray-700">
                 {isSCF
-                  ? "12 months"
+                  ? t("common.duration", { count: 12 })
                   : isBubo
-                  ? "12 months"
+                  ? t("common.duration", { count: 12 })
                   : isHopps
-                  ? "24 months"
+                  ? t("common.duration", { count: 24 })
                   : isHml
-                  ? "12 months"
-                  : "6 months"}
+                  ? t("common.duration", { count: 12 })
+                  : t("common.duration", { count: 6 })}
               </span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full">
@@ -503,14 +503,14 @@ const ProjectDetail = () => {
               </svg>
               <span className="text-gray-700">
                 {isSCF
-                  ? "2 person team"
+                  ? t("common.team", { count: 2 })
                   : isBubo
-                  ? "3 person team"
+                  ? t("common.team", { count: 3 })
                   : isHopps
-                  ? "2 person team"
+                  ? t("common.team", { count: 2 })
                   : isHml
-                  ? "2 person team"
-                  : "Team of 5"}
+                  ? t("common.team", { count: 2 })
+                  : t("common.team", { count: 5 })}
               </span>
             </div>
             <div className="flex items-center gap-2 px-4 py-2 rounded-full">
@@ -528,14 +528,14 @@ const ProjectDetail = () => {
               </svg>
               <span className="text-gray-700">
                 {isSCF
-                  ? "2021 - 2022"
+                  ? t("common.period", { period: "2021 - 2022" })
                   : isBubo
-                  ? "2019 - 2020"
+                  ? t("common.period", { period: "2019 - 2020" })
                   : isHopps
-                  ? "2017 - 2019"
+                  ? t("common.period", { period: "2017 - 2019" })
                   : isHml
-                  ? "2022 - 2023"
-                  : "2023"}
+                  ? t("common.period", { period: "2022 - 2023" })
+                  : t("common.period", { period: "2023" })}
               </span>
             </div>
           </div>
