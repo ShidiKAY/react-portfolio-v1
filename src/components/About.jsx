@@ -4,12 +4,10 @@ import Projects from "./Projects";
 // import Skills from "./Skills";
 import SkillsModern from "./SkillsModern";
 import { useTranslation } from "react-i18next";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const About = () => {
   // You can use useState and useEffect here to manage animation state and logic (optional)
   const [isVisible, setIsVisible] = useState(false);
-  const [expanded, setExpanded] = useState(false);
   const refAbout = useRef(null);
   const { t } = useTranslation();
 
@@ -59,28 +57,6 @@ const About = () => {
     .filter(Boolean);
   // Last paragraph (contact)
   const contactLine = contactIdx !== -1 ? aboutLines[contactIdx] : "";
-
-  // For fade/collapse
-  const collapsedMaxHeight = 180; // px, adjust for visible preview
-  const [contentHeight, setContentHeight] = useState(null);
-  const detailsRef = useRef(null);
-  const collapsedRef = useRef(null);
-  useEffect(() => {
-    if (detailsRef.current) {
-      setContentHeight(detailsRef.current.scrollHeight);
-    }
-    if (collapsedRef.current) {
-      setContentHeight(collapsedRef.current.scrollHeight);
-    }
-  }, [detailsRef, collapsedRef, t]);
-
-  // Make the fade higher above the chevron (e.g., 72px instead of 48px)
-  const CHEVRON_HEIGHT = 72; // 3 lines when open
-  const FADE_OFFSET = 144; // 6 lines when collapsed
-  // const overlayStyle = { ... } // SUPPRIMÉ car plus utilisé
-  const textUnderOverlayStyle = !expanded
-    ? { userSelect: "none", pointerEvents: "none", filter: "blur(0px)" }
-    : { userSelect: "auto", pointerEvents: "auto", filter: "none" };
 
   return (
     <div id="toabout" className="h-screen lg:pl-0 lg:pr-0">
@@ -195,82 +171,24 @@ const About = () => {
                 )}
                 {/* Collapsible: points as indented list + contact line */}
                 <div className="relative" style={{ minHeight: 80 }}>
-                  <div
-                    ref={detailsRef}
-                    id="about-rich-details"
-                    style={{
-                      maxHeight: expanded ? contentHeight : collapsedMaxHeight,
-                      transition: "max-height 0.5s cubic-bezier(0.4,0,0.2,1)",
-                      overflow: "hidden",
-                      position: "relative",
-                      borderBottomLeftRadius: 12,
-                      borderBottomRightRadius: 12,
-                      paddingBottom: expanded
-                        ? CHEVRON_HEIGHT
-                        : CHEVRON_HEIGHT + FADE_OFFSET,
-                    }}
-                    aria-expanded={expanded}
-                    aria-controls="about-rich-details"
-                  >
-                    <div
-                      style={textUnderOverlayStyle}
-                      ref={!expanded ? collapsedRef : null}
-                    >
-                      <ul className="list-none pl-6 pr-4 space-y-3">
-                        {detailedPoints.map((point, idx) =>
-                          point.text ? (
-                            <li
-                              key={idx}
-                              className="flex items-start gap-2 text-base"
-                            >
-                              <span className="text-xl mt-1">{point.icon}</span>
-                              <span>{point.text}</span>
-                            </li>
-                          ) : null
-                        )}
-                      </ul>
-                      {contactLine && (
-                        <p className="text-left font-normal mt-4 flex-wrap">
-                          {contactLine}
-                        </p>
+                  <div id="about-rich-details">
+                    <ul className="list-none pl-6 pr-4 space-y-3">
+                      {detailedPoints.map((point, idx) =>
+                        point.text ? (
+                          <li
+                            key={idx}
+                            className="flex items-start gap-2 text-base"
+                          >
+                            <span className="text-xl mt-1">{point.icon}</span>
+                            <span>{point.text}</span>
+                          </li>
+                        ) : null
                       )}
-                    </div>
-                    {/* Overlay covers the visible content and toggles expand/collapse */}
-                    {/* (SUPPRIMÉ: overlayStyle et le div d'overlay) */}
-                  </div>
-                  {/* Chevron always visible below the text */}
-                  <div
-                    className="w-full flex justify-center items-center"
-                    style={{
-                      height: CHEVRON_HEIGHT,
-                      marginTop: -CHEVRON_HEIGHT,
-                    }}
-                  >
-                    {!expanded && contentHeight > collapsedMaxHeight && (
-                      <button
-                        className="bg-white/80 dark:bg-slate-800/80 rounded-full p-2 shadow focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        aria-expanded={expanded}
-                        aria-controls="about-rich-details"
-                        onClick={() => setExpanded(true)}
-                        tabIndex={0}
-                        title={t("common.read_more", "Read more")}
-                        style={{ zIndex: 30 }}
-                      >
-                        <FaChevronDown className="w-6 h-6 animate-bounce" />
-                      </button>
-                    )}
-                    {expanded && contentHeight > collapsedMaxHeight && (
-                      <button
-                        className="bg-white/80 dark:bg-slate-800/80 rounded-full p-2 shadow focus:outline-none focus:ring-2 focus:ring-blue-400"
-                        aria-expanded={expanded}
-                        aria-controls="about-rich-details"
-                        onClick={() => setExpanded(false)}
-                        tabIndex={0}
-                        title={t("common.show_less", "Show less")}
-                        style={{ zIndex: 30 }}
-                      >
-                        <FaChevronUp className="w-6 h-6" />
-                      </button>
+                    </ul>
+                    {contactLine && (
+                      <p className="text-left font-normal mt-4 flex-wrap">
+                        {contactLine}
+                      </p>
                     )}
                   </div>
                 </div>
