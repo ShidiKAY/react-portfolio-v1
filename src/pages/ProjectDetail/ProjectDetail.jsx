@@ -584,7 +584,6 @@ const ProjectDetail = () => {
                       skill={{
                         name: skill,
                         isSoft: true,
-                        color: "purple",
                         description: t(
                           `skills_desc.${skill}`,
                           SKILL_DESCRIPTIONS[skill]
@@ -595,6 +594,7 @@ const ProjectDetail = () => {
                       idx={index}
                       mastered={false}
                       masteredTooltip={t("common.skills_mastered_tooltip")}
+                      isSoft={true}
                     />
                   ))}
                 </div>
