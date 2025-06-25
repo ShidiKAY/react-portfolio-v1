@@ -247,12 +247,6 @@ const ProjectDetail = () => {
   const mainTechnologies = project.mainTechnologies || [];
   const softSkills = project.softSkills || [];
 
-  // In the Project Header, use custom values for SC Francophone (scf), Bubo Cybersec (bubo), Alertcenter (hopps), and Harmonia Mundi Livre (hml)
-  const isSCF = projectId === "scf";
-  const isBubo = projectId === "bubo";
-  const isHopps = projectId === "hopps";
-  const isHml = projectId === "hml";
-
   // Find next/previous project IDs
   const currentIdx = PROJECT_ORDER.indexOf(projectId);
   const prevProjectId =
@@ -437,7 +431,7 @@ const ProjectDetail = () => {
         </div>
       </div>
 
-      <div className="container mx-auto py-8 px-4">
+      <div className="container mx-auto w-full py-6 px-2 sm:px-4">
         <Head>
           <title>
             {project.introduction.name} Project - Kamal Ait Yous Portfolio
@@ -446,8 +440,8 @@ const ProjectDetail = () => {
         </Head>
 
         {/* Project Header */}
-        <div className="max-w-4xl mx-auto mt-16 mb-12">
-          <h1 className="text-5xl font-bold mb-8 text-gray-900 text-left font-montserrat uppercase">
+        <div className="max-w-4xl w-full mx-auto mt-10 sm:mt-16 mb-8 sm:mb-12 px-0 sm:px-4">
+          <h1 className="text-3xl sm:text-5xl font-bold mb-6 sm:mb-8 text-gray-900 text-left font-montserrat uppercase break-words">
             {project.introduction.name}
           </h1>
 
@@ -461,12 +455,12 @@ const ProjectDetail = () => {
             />
           )}
 
-          <p className="text-xl text-gray-600 mb-8 leading-relaxed text-justify">
+          <p className="text-base sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed text-justify break-words">
             {project.description}
           </p>
 
           {/* Project Stats */}
-          <div className="flex flex-wrap gap-6 mb-8 -ml-4">
+          <div className="flex flex-wrap gap-4 sm:gap-6 mb-6 sm:mb-8 -ml-2 sm:-ml-4">
             <div className="flex items-center gap-2 px-4 py-2 rounded-full">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -525,14 +519,14 @@ const ProjectDetail = () => {
           </div>
 
           {/* Main Technologies and Soft Skills */}
-          <div className="space-y-4 mb-8">
+          <div className="space-y-4 mb-6 sm:mb-8">
             {/* Main Technologies */}
             {mainTechnologies.length > 0 && (
-              <div className="flex items-center gap-3">
-                <span className="text-gray-700 font-medium min-w-[120px]">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+                <span className="text-gray-700 font-medium min-w-[100px] sm:min-w-[120px]">
                   {t("common.technologies")}
                 </span>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 w-full">
                   {mainTechnologies.map((tech, index) => (
                     <SkillPill
                       key={tech}
@@ -557,11 +551,11 @@ const ProjectDetail = () => {
 
             {/* Soft Skills */}
             {softSkills.length > 0 && (
-              <div className="flex items-center gap-3">
-                <span className="text-gray-700 font-medium min-w-[120px]">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
+                <span className="text-gray-700 font-medium min-w-[100px] sm:min-w-[120px]">
                   {t("common.softSkills")}
                 </span>
-                <div className="flex flex-wrap gap-1.5">
+                <div className="flex flex-wrap gap-1.5 w-full">
                   {softSkills.map((skill, index) => (
                     <SkillPill
                       key={skill}
@@ -588,11 +582,11 @@ const ProjectDetail = () => {
 
           {/* Technologies Used */}
           {technologies.length > 0 && (
-            <div className="mb-12 bg-gray-50 p-6 rounded-lg">
+            <div className="mb-8 sm:mb-12 bg-gray-50 p-4 sm:p-6 rounded-lg w-full overflow-x-auto">
               <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
                 Technologies & Skills
               </h2>
-              <div className="flex flex-wrap gap-2 justify-start">
+              <div className="flex flex-wrap gap-2 justify-start w-full">
                 {technologies.map((tech, index) => (
                   <span
                     key={index}
@@ -606,8 +600,8 @@ const ProjectDetail = () => {
           )}
 
           {/* Project Overview */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 bg-gray-50 p-6 rounded-lg">
+          <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 bg-gray-50 p-4 sm:p-6 rounded-lg w-full">
               <div>
                 <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
                   {t("common.projectContext")}
@@ -629,15 +623,15 @@ const ProjectDetail = () => {
 
           {/* Key Actions & Impact */}
           {project.tasks && project.tasks.length > 0 && (
-            <div className="max-w-4xl mx-auto mb-12">
+            <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
               <h2 className="text-xl font-semibold mb-6 text-gray-800 text-left">
                 {t("common.keyActions")}
               </h2>
-              <div className="space-y-8">
+              <div className="space-y-6 sm:space-y-8">
                 {project.tasks.map((taskGroup, groupIndex) => (
                   <div
                     key={groupIndex}
-                    className="relative bg-gray-50 p-6 rounded-lg"
+                    className="relative bg-gray-50 p-4 sm:p-6 rounded-lg w-full overflow-x-auto"
                   >
                     <h3 className="text-lg font-bold mb-4 text-gray-800 text-left">
                       {taskGroup.group.titre}
@@ -651,12 +645,12 @@ const ProjectDetail = () => {
                       {Object.keys(taskGroup.data).map((taskId, dataIndex) => (
                         <div
                           key={dataIndex}
-                          className="relative pl-6 before:absolute before:left-0 before:top-2 before:w-1 before:h-[calc(100%-1rem)] before:bg-blue-500"
+                          className="relative pl-4 sm:pl-6 before:absolute before:left-0 before:top-2 before:w-1 before:h-[calc(100%-1rem)] before:bg-blue-500"
                         >
                           <h4 className="font-semibold text-gray-800 mb-3 text-left">
                             {taskGroup.data[taskId].title}
                           </h4>
-                          <div className="text-gray-700 space-y-3">
+                          <div className="text-gray-700 space-y-2 sm:space-y-3 break-words">
                             {taskGroup.data[taskId].description.map(
                               (desc, idx) => (
                                 <p
@@ -673,6 +667,7 @@ const ProjectDetail = () => {
                               src={taskGroup.data[taskId].img}
                               alt={taskGroup.data[taskId].title}
                               className="mt-4 max-w-full h-auto rounded-lg mx-auto"
+                              style={{ maxWidth: "100%" }}
                             />
                           )}
                         </div>
@@ -686,14 +681,14 @@ const ProjectDetail = () => {
 
           {/* Challenges & Solutions */}
           {(challenges.length > 0 || solutions.length > 0) && (
-            <div className="max-w-4xl mx-auto mb-12">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 w-full">
                 {challenges.length > 0 && (
-                  <div className="bg-gray-50 p-6 rounded-lg">
+                  <div className="bg-gray-50 p-4 sm:p-6 rounded-lg w-full overflow-x-auto">
                     <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
                       {t("common.keyChallenges")}
                     </h2>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2 sm:space-y-3">
                       {challenges.map((challenge, index) => (
                         <li key={index} className="flex items-start gap-3">
                           <span className="text-red-500 mt-1">•</span>
@@ -706,11 +701,11 @@ const ProjectDetail = () => {
                   </div>
                 )}
                 {solutions.length > 0 && (
-                  <div className="bg-gray-50 p-6 rounded-lg">
+                  <div className="bg-gray-50 p-4 sm:p-6 rounded-lg w-full overflow-x-auto">
                     <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
                       {t("common.solutionsImplemented")}
                     </h2>
-                    <ul className="space-y-3">
+                    <ul className="space-y-2 sm:space-y-3">
                       {solutions.map((solution, index) => (
                         <li key={index} className="flex items-start gap-3">
                           <span className="text-green-500 mt-1">✓</span>
@@ -728,11 +723,11 @@ const ProjectDetail = () => {
 
           {/* External Links */}
           {externalLinks.length > 0 && (
-            <div className="max-w-4xl mx-auto mb-12">
+            <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
               <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
                 {t("common.externalLinks")}
               </h2>
-              <div className="flex flex-wrap gap-3 justify-start">
+              <div className="flex flex-wrap gap-2 sm:gap-3 justify-start w-full">
                 {externalLinks.map((link, index) => (
                   <a
                     key={index}
