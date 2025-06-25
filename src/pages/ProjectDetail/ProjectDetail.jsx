@@ -485,6 +485,14 @@ const ProjectDetail = () => {
             {project.introduction.name} Project - Kamal Ait Yous Portfolio
           </title>
           <meta name="description" content={project.description} />
+          <meta
+            property="og:image"
+            content="https://kamal-portfolio.vercel.app/images/profile-rounded2.png"
+          />
+          <meta
+            name="twitter:image"
+            content="https://kamal-portfolio.vercel.app/images/profile-rounded2.png"
+          />
         </Head>
 
         {/* Project Header */}
