@@ -9,3 +9,13 @@ code {
   padding-left: 5px;
   border-radius: 4px;
 }
+
+@media (min-width: 768px) {
+  .skills-scrollbar {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  .skills-scrollbar::-webkit-scrollbar {
+    display: none !important;
+  }
+}

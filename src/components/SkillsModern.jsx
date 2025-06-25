@@ -338,8 +338,11 @@ const SkillsModern = () => {
           {t("common.skills")}
         </h2>
         {/* Filtres catégories + recherche */}
-        <div className="flex flex-row flex-nowrap gap-2 mb-6 items-center w-full">
-          <div className="flex gap-2 flex-1 min-w-0">
+        <div className="flex flex-col md:flex-row gap-2 mb-6 items-center w-full">
+          <div
+            className="skills-scrollbar flex flex-row gap-2 overflow-x-auto flex-nowrap md:overflow-x-visible md:flex-wrap w-full md:max-w-fit md:w-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-transparent"
+            style={{ scrollbarColor: "#cbd5e1 #fff", scrollbarWidth: "thin" }}
+          >
             {categories.map((cat) => (
               <button
                 key={cat}
@@ -360,7 +363,7 @@ const SkillsModern = () => {
               </button>
             ))}
           </div>
-          <div className="relative flex-shrink-0 max-w-[220px] min-w-[100px] w-full">
+          <div className="relative flex-shrink-0 min-w-[130px] max-w-[180px] w-full ml-0 md:ml-1 mt-2 md:mt-0">
             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-400 pointer-events-none">
               {/* Icône loupe SVG */}
               <svg
@@ -421,3 +424,15 @@ Object.values(skills)
   });
 
 export { SKILL_DESCRIPTIONS };
+
+/* Add this CSS to your global stylesheet (e.g., src/styles/globals.css):
+@media (min-width: 768px) {
+  .skills-scrollbar {
+    scrollbar-width: none !important;
+    -ms-overflow-style: none !important;
+  }
+  .skills-scrollbar::-webkit-scrollbar {
+    display: none !important;
+  }
+}
+*/
