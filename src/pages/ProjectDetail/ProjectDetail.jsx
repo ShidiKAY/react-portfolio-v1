@@ -298,23 +298,6 @@ const ProjectDetail = () => {
           <ul className="flex space-x-2">
             <li
               className="inline-flex items-center cursor-pointer"
-              onClick={() => i18n.changeLanguage("en")}
-              tabIndex={0}
-              aria-label="Switch to English"
-              role="button"
-              onKeyDown={(e) => {
-                if (e.key === "Enter" || e.key === " ")
-                  i18n.changeLanguage("en");
-              }}
-            >
-              <span
-                className="i-flagpack-gb-ukm w-8 mt-px"
-                title="English"
-              ></span>{" "}
-              <span className="hidden lg:block">English</span>
-            </li>
-            <li
-              className="inline-flex items-center cursor-pointer"
               onClick={() => i18n.changeLanguage("fr")}
               tabIndex={0}
               aria-label="Switch to French"
@@ -329,6 +312,23 @@ const ProjectDetail = () => {
                 title="French"
               ></span>
               <span className="hidden lg:block">French</span>
+            </li>
+            <li
+              className="inline-flex items-center cursor-pointer"
+              onClick={() => i18n.changeLanguage("en")}
+              tabIndex={0}
+              aria-label="Switch to English"
+              role="button"
+              onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ")
+                  i18n.changeLanguage("en");
+              }}
+            >
+              <span
+                className="i-flagpack-gb-ukm w-8 mt-px"
+                title="English"
+              ></span>{" "}
+              <span className="hidden lg:block">English</span>
             </li>
           </ul>
         </div>

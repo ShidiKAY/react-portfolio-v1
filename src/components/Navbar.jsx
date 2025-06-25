@@ -145,16 +145,6 @@ const Navbar = () => {
                     <ul className="flex space-x-2">
                       <li
                         className="inline-flex items-center cursor-pointer"
-                        onClick={() => changeLanguage("en")}
-                      >
-                        <span
-                          className="i-flagpack-gb-ukm w-8 mt-px"
-                          title="English"
-                        ></span>{" "}
-                        <span className="hidden lg:block">English</span>
-                      </li>
-                      <li
-                        className="inline-flex items-center cursor-pointer"
                         onClick={() => changeLanguage("fr")}
                       >
                         <span
@@ -162,6 +152,16 @@ const Navbar = () => {
                           title="French"
                         ></span>
                         <span className="hidden lg:block">French</span>
+                      </li>
+                      <li
+                        className="inline-flex items-center cursor-pointer"
+                        onClick={() => changeLanguage("en")}
+                      >
+                        <span
+                          className="i-flagpack-gb-ukm w-8 mt-px"
+                          title="English"
+                        ></span>{" "}
+                        <span className="hidden lg:block">English</span>
                       </li>
                     </ul>
                   </div>
@@ -290,16 +290,6 @@ const Navbar = () => {
                   <ul className="flex space-x-2">
                     <li
                       className="inline-flex items-center cursor-pointer"
-                      onClick={() => changeLanguage("en")}
-                    >
-                      <span
-                        className="i-flagpack-gb-ukm w-6 mt-px mr-1"
-                        title="English"
-                      ></span>{" "}
-                      English
-                    </li>
-                    <li
-                      className="inline-flex items-center cursor-pointer"
                       onClick={() => changeLanguage("fr")}
                     >
                       <span
@@ -307,6 +297,16 @@ const Navbar = () => {
                         title="French"
                       ></span>
                       French
+                    </li>
+                    <li
+                      className="inline-flex items-center cursor-pointer"
+                      onClick={() => changeLanguage("en")}
+                    >
+                      <span
+                        className="i-flagpack-gb-ukm w-6 mt-px mr-1"
+                        title="English"
+                      ></span>{" "}
+                      English
                     </li>
                   </ul>
                 </div>
