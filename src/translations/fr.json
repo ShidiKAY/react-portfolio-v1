@@ -621,6 +621,58 @@
           }
         }
       ]
+    },
+    "freelance": {
+      "description": "Travailler en tant que développeur freelance pour divers clients, réalisant des missions de développement web, de conseil et de solutions sur mesure.",
+      "img": "/images/project-images/freelance/logo.png",
+      "mainTechnologies": ["PHP", "JavaScript", "React", "Symfony", "Node.js"],
+      "softSkills": [
+        "Travail en autonomie",
+        "Communication",
+        "Résolution de problèmes"
+      ],
+      "introduction": {
+        "name": "Freelance",
+        "introduction": "En tant que développeur freelance, j'ai travaillé sur une variété de projets pour des clients de différents secteurs, assurant développement web, conseil et support technique.",
+        "description": "Présentation de quelques missions freelance récentes."
+      },
+      "tasks": [
+        {
+          "group": {
+            "titre": "Refactorisation d'une application métier legacy",
+            "intro": "Moderniser une application métier existante en migrant d'un code PHP legacy vers Symfony 4, avec refonte UI/UX et intégration de visualisations avancées."
+          },
+          "data": {
+            "1": {
+              "title": "Migration technique et refonte UI/UX",
+              "description": [
+                "Analyser l'architecture existante et identifier les points de fragilité",
+                "Migrer le backend PHP legacy vers Symfony 4 pour plus de maintenabilité",
+                "Refondre l'interface utilisateur avec des principes Material Design",
+                "Intégrer des visualisations de données interactives (ApexCharts)",
+                "Optimiser les performances et la sécurité de l'application"
+              ]
+            }
+          }
+        },
+        {
+          "group": {
+            "titre": "Site vitrine Edge Sound (client suisse)",
+            "intro": "Développer un site vitrine en Bootstrap pour présenter des écouteurs innovants destinés aux pilotes d'avions de chasse, à destination d'investisseurs."
+          },
+          "data": {
+            "1": {
+              "title": "Développement du site vitrine",
+              "description": [
+                "Concevoir une interface moderne et responsive avec Bootstrap",
+                "Mettre en avant les caractéristiques techniques des écouteurs Edge Sound",
+                "Créer des pages de présentation produit et d'informations pour investisseurs",
+                "Optimiser le référencement naturel (SEO) du site"
+              ]
+            }
+          }
+        }
+      ]
     }
   }
 }

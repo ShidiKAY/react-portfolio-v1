@@ -18,6 +18,9 @@ const projects = [
   {
     projectId: "apigem",
   },
+  {
+    projectId: "freelance",
+  },
 ];
 
 const Projects = () => {

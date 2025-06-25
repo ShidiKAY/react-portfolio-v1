@@ -620,6 +620,54 @@
           }
         }
       ]
+    },
+    "freelance": {
+      "description": "Work as a freelance developer for various clients, handling web development, consulting, and custom solutions.",
+      "img": "/images/project-images/freelance/logo.png",
+      "mainTechnologies": ["PHP", "JavaScript", "React", "Symfony", "Node.js"],
+      "softSkills": ["Autonomous Work", "Communication", "Problem Solving"],
+      "introduction": {
+        "name": "Freelance",
+        "introduction": "As a freelance developer, I have worked on a variety of projects for clients in different industries, providing web development, consulting, and technical support.",
+        "description": "Presentation of some recent freelance projects."
+      },
+      "tasks": [
+        {
+          "group": {
+            "titre": "Refactoring a legacy business application",
+            "intro": "Modernize an existing business application by migrating from legacy PHP code to Symfony 4, with UI/UX redesign and advanced data visualization integration."
+          },
+          "data": {
+            "1": {
+              "title": "Technical migration and UI/UX redesign",
+              "description": [
+                "Analyze the existing architecture and identify weak points",
+                "Migrate the legacy PHP backend to Symfony 4 for better maintainability",
+                "Redesign the user interface with Material Design principles",
+                "Integrate interactive data visualizations (ApexCharts)",
+                "Optimize application performance and security"
+              ]
+            }
+          }
+        },
+        {
+          "group": {
+            "titre": "Edge Sound showcase site (Swiss client)",
+            "intro": "Develop a Bootstrap showcase site to present innovative headphones for fighter pilots, aimed at investors."
+          },
+          "data": {
+            "1": {
+              "title": "Showcase site development",
+              "description": [
+                "Design a modern, responsive interface with Bootstrap",
+                "Highlight the technical features of Edge Sound headphones",
+                "Create product presentation and investor information pages",
+                "Optimize the site's SEO"
+              ]
+            }
+          }
+        }
+      ]
     }
   }
 }
