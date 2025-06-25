@@ -353,7 +353,7 @@ const ProjectDetail = () => {
       <div>
         {/* Left Side */}
         <div
-          className="fixed top-0 left-0 h-full w-32 z-[100] group cursor-pointer transition flex items-center justify-start"
+          className="hidden md:block fixed top-0 left-0 h-full w-32 z-[100] group cursor-pointer transition flex items-center justify-start"
           onClick={() => {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             setTimeout(() => navigate(`/projects/${prevProjectId}`), 200);
@@ -368,8 +368,8 @@ const ProjectDetail = () => {
         >
           {/* Overlay on hover */}
           <div className="absolute inset-0 z-0 transition duration-200 opacity-100 white group-hover:bg-gray-200/40" />
-          <div className="relative z-10 flex items-center justify-center w-full">
-            <div className="w-14 h-14 rounded-full bg-white/90 border border-gray-300 flex items-center justify-center transition">
+          <div className="relative z-10 flex items-center justify-center w-full h-full">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/90 border border-gray-300 flex items-center justify-center transition">
               <svg
                 className="h-8 w-8 text-gray-500 transition"
                 fill="none"
@@ -392,7 +392,7 @@ const ProjectDetail = () => {
         </div>
         {/* Right Side */}
         <div
-          className="fixed top-0 right-0 h-full w-32 z-[100] group cursor-pointer transition flex items-center justify-end"
+          className="hidden md:block fixed top-0 right-0 h-full w-32 z-[100] group cursor-pointer transition flex items-center justify-end"
           onClick={() => {
             window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
             setTimeout(() => navigate(`/projects/${nextProjectId}`), 200);
@@ -407,8 +407,8 @@ const ProjectDetail = () => {
         >
           {/* Overlay on hover */}
           <div className="absolute inset-0 z-0 transition duration-200 opacity-100 white group-hover:bg-gray-200/40" />
-          <div className="relative z-10 flex items-center justify-center w-full">
-            <div className="w-14 h-14 rounded-full bg-white/90 border border-gray-300 flex items-center justify-center transition">
+          <div className="relative z-10 flex items-center justify-center w-full h-full">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/90 border border-gray-300 flex items-center justify-center transition">
               <svg
                 className="h-8 w-8 text-gray-500 transition"
                 fill="none"
@@ -430,6 +430,54 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Mobile-only: show just the circle button with arrow, fixed at bottom left */}
+      <button
+        className="md:hidden fixed left-4 top-1/2 -translate-y-1/2 z-[101] w-14 h-14 rounded-full bg-white/90 border border-gray-300 flex items-center justify-center shadow transition"
+        onClick={() => {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          setTimeout(() => navigate(`/projects/${prevProjectId}`), 200);
+        }}
+        aria-label="Previous project"
+      >
+        <svg
+          className="h-8 w-8 text-gray-500 transition"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+
+      {/* Mobile-only: show just the circle button with arrow, fixed at bottom right */}
+      <button
+        className="md:hidden fixed right-4 top-1/2 -translate-y-1/2 z-[101] w-14 h-14 rounded-full bg-white/90 border border-gray-300 flex items-center justify-center shadow transition"
+        onClick={() => {
+          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          setTimeout(() => navigate(`/projects/${nextProjectId}`), 200);
+        }}
+        aria-label="Next project"
+      >
+        <svg
+          className="h-8 w-8 text-gray-500 transition"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
 
       <div className="container mx-auto w-full py-6 px-2 sm:px-4">
         <Head>
