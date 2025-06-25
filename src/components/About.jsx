@@ -59,14 +59,17 @@ const About = () => {
   const contactLine = contactIdx !== -1 ? aboutLines[contactIdx] : "";
 
   return (
-    <div id="toabout" className="py-10 lg:pl-0 lg:pr-0">
-      <div className="flex justify-between md:mx-0 md:pt-32 pt-28 ">
-        <div className="flex flex-col md:ml-px mt-10">
+    <div
+      id="toabout"
+      className="py-10 max-w-screen-lg mx-auto w-full overflow-x-hidden"
+    >
+      <div className="flex flex-col md:mx-0 md:pt-32 pt-10 w-full min-w-0">
+        <div className="flex flex-col mt-6 w-full min-w-0">
           <div
-            className="flex flex-col md:flex-row w-full max-w-full overflow-x-hidden px-2 md:px-0 lg:px-12"
+            className="flex flex-col items-center md:flex-row md:items-start w-full min-w-0 overflow-x-hidden px-2 md:px-0 lg:px-12"
             ref={refAbout}
           >
-            <div className="w-full md:w-1/3 flex-shrink-0 flex justify-center items-start mb-6 md:mb-0">
+            <div className="md:w-2/5 lg:w-1/4 lg:min-w-72 sm:min-w-96 md:min-w-80 xl:min-w-60">
               <motion.div
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
@@ -85,14 +88,14 @@ const About = () => {
                 }}
               >
                 <img
-                  className="radius rounded-full w-32 h-32 mx-auto md:w-48 md:h-48 lg:w-64 lg:h-64"
+                  className="radius rounded-full lg:vw-100 vh-50"
                   src="/images/profile.png"
                   alt=""
                 />
               </motion.div>
             </div>
             <motion.div
-              className="w-full md:w-2/3"
+              className="w-full md:w-2/3 max-w-full overflow-x-hidden min-w-0"
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
               variants={{
@@ -110,7 +113,7 @@ const About = () => {
               }}
             >
               <motion.div
-                className="md:w-54"
+                className="md:w-54 break-words"
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
                 variants={{
@@ -127,7 +130,7 @@ const About = () => {
                   },
                 }}
               >
-                <h1 className="text-3xl font-bold sm:text-4xl mb-8">
+                <h1 className="text-3xl font-bold sm:text-4xl mb-8 break-words">
                   {t("common.abouthelloim")}{" "}
                   <span className="text-blue-500">Kamal</span>
                 </h1>
@@ -153,19 +156,19 @@ const About = () => {
               >
                 {/* Always visible: first two paragraphs */}
                 {firstParagraph && (
-                  <p className="text-left font-normal mb-4 flex-wrap">
+                  <p className="text-left font-normal mb-4 flex-wrap break-words">
                     {firstParagraph}
                   </p>
                 )}
                 {secondParagraph && (
-                  <p className="text-left font-normal mb-4 flex-wrap">
+                  <p className="text-left font-normal mb-4 flex-wrap break-words">
                     {secondParagraph}
                   </p>
                 )}
                 {/* Collapsible: points as indented list + contact line */}
                 <div className="relative" style={{ minHeight: 80 }}>
                   <div id="about-rich-details">
-                    <ul className="list-none pl-6 pr-4 space-y-3">
+                    <ul className="list-none pl-6 pr-4 space-y-3 break-words">
                       {detailedPoints.map((point, idx) =>
                         point.text ? (
                           <li
@@ -173,13 +176,13 @@ const About = () => {
                             className="flex items-start gap-2 text-base"
                           >
                             <span className="text-xl mt-1">{point.icon}</span>
-                            <span>{point.text}</span>
+                            <span className="break-words">{point.text}</span>
                           </li>
                         ) : null
                       )}
                     </ul>
                     {contactLine && (
-                      <p className="text-left font-normal mt-4 flex-wrap">
+                      <p className="text-left font-normal mt-4 flex-wrap break-words">
                         {contactLine}
                       </p>
                     )}

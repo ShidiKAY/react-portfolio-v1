@@ -211,8 +211,8 @@ const Navbar = () => {
             <div
               className={
                 isOpen
-                  ? "fixed left-0 top-0 w-full sm:w[40%] md:w-[30%] h-screen bg-culturedWhite p-10 ease-in duration-300"
-                  : "fixed left-[-100%] top-0 p-10 ease-in duration-300"
+                  ? "fixed left-0 top-0 w-full max-w-xs h-screen bg-culturedWhite p-6 overflow-y-auto ease-in duration-300"
+                  : "fixed left-[-100%] top-0 p-6 ease-in duration-300"
               }
             >
               <div>

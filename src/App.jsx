@@ -1,5 +1,5 @@
 import "./styles/globals.css"; // Importez votre fichier CSS principal (optionnel)
-import { Suspense } from "react";
+// import { Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
@@ -37,17 +37,17 @@ const AppContent = () => {
       {/* Main content */}
       <main id="main-content">
         <div className="bg-wendyBlue">
-          <Suspense fallback={<div>Loading...</div>}>
-            <Routes>
-              {routes.map((route, index) => (
-                <Route
-                  key={index}
-                  path={route.path}
-                  element={<route.component />}
-                />
-              ))}
-            </Routes>
-          </Suspense>
+          {/* <Suspense fallback={<div>Loading...</div>}> */}
+          <Routes>
+            {routes.map((route, index) => (
+              <Route
+                key={index}
+                path={route.path}
+                element={<route.component />}
+              />
+            ))}
+          </Routes>
+          {/* </Suspense> */}
         </div>
         {/* About section */}
         {!isProjectDetailPage && (
