@@ -62,14 +62,15 @@ const About = () => {
     <div
       id="toabout"
       className="py-10 max-w-screen-lg mx-auto w-full overflow-x-hidden"
+      style={{ overflowX: "hidden" }}
     >
       <div className="flex flex-col md:mx-0 md:pt-32 pt-10 w-full min-w-0">
         <div className="flex flex-col mt-6 w-full min-w-0">
           <div
-            className="flex flex-col items-center md:flex-row md:items-start w-full min-w-0 overflow-x-hidden px-2 md:px-0 lg:px-12"
+            className="flex flex-col items-center md:flex-row md:items-start w-full min-w-0 overflow-hidden px-2 md:px-0 lg:px-12"
             ref={refAbout}
           >
-            <div className="md:w-2/5 lg:w-1/4 lg:min-w-72 sm:min-w-96 md:min-w-80 xl:min-w-60">
+            <div className="md:w-2/5 lg:w-1/4 min-w-0">
               <motion.div
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
@@ -95,7 +96,8 @@ const About = () => {
               </motion.div>
             </div>
             <motion.div
-              className="w-full md:w-2/3 max-w-full overflow-x-hidden min-w-0"
+              className="w-full md:w-2/3 max-w-full overflow-hidden min-w-0"
+              style={{ overflow: "hidden" }}
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
               variants={{
@@ -113,7 +115,7 @@ const About = () => {
               }}
             >
               <motion.div
-                className="md:w-54 break-words"
+                className="md:w-54 break-words overflow-hidden"
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
                 variants={{
@@ -137,7 +139,7 @@ const About = () => {
               </motion.div>
 
               <motion.div
-                className="lg:px-2"
+                className="lg:px-2 overflow-hidden"
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
                 variants={{
