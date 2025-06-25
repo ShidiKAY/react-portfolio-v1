@@ -636,6 +636,8 @@
         "introduction": "En tant que développeur freelance, j'ai travaillé sur une variété de projets pour des clients de différents secteurs, assurant développement web, conseil et support technique.",
         "description": "Présentation de quelques missions freelance récentes."
       },
+      "duration": 24,
+      "team": 1,
       "tasks": [
         {
           "group": {

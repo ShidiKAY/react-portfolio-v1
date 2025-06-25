@@ -631,6 +631,8 @@
         "introduction": "As a freelance developer, I have worked on a variety of projects for clients in different industries, providing web development, consulting, and technical support.",
         "description": "Presentation of some recent freelance projects."
       },
+      "duration": 24,
+      "team": 1,
       "tasks": [
         {
           "group": {
