@@ -70,7 +70,7 @@ const About = () => {
             className="flex flex-col items-center md:flex-row md:items-start w-full min-w-0 overflow-hidden px-2 md:px-0 lg:px-12"
             ref={refAbout}
           >
-            <div className="md:w-2/5 lg:w-1/4 min-w-0">
+            <div className="md:w-1/4 lg:w-1/4 min-w-0">
               <motion.div
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
@@ -96,7 +96,7 @@ const About = () => {
               </motion.div>
             </div>
             <motion.div
-              className="w-full md:w-2/3 max-w-full overflow-hidden min-w-0"
+              className="w-full md:w-3/4 max-w-full overflow-hidden min-w-0"
               style={{ overflow: "hidden" }}
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
@@ -115,7 +115,7 @@ const About = () => {
               }}
             >
               <motion.div
-                className="md:w-54 break-words overflow-hidden"
+                className="break-words overflow-hidden"
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
                 variants={{
