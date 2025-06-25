@@ -1,6 +1,6 @@
 import "./styles/globals.css"; // Importez votre fichier CSS principal (optionnel)
-// import { Suspense } from "react";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Suspense } from "react";
 import Navbar from "./components/Navbar";
 import About from "./components/About";
 import routes from "./routes";
@@ -16,6 +16,20 @@ import ReactModal from "react-modal";
 // Définissez l'élément racine pour react-modal
 const appElement = document.getElementById("root");
 ReactModal.setAppElement(appElement);
+
+// Modern spinner for Suspense fallback
+const Spinner = () => (
+  <div
+    style={{
+      minHeight: "60vh",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+    }}
+  >
+    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-opacity-50 border-solid"></div>
+  </div>
+);
 
 // Create a wrapper component to handle conditional rendering
 const AppContent = () => {
@@ -37,17 +51,17 @@ const AppContent = () => {
       {/* Main content */}
       <main id="main-content">
         <div className="bg-wendyBlue">
-          {/* <Suspense fallback={<div>Loading...</div>}> */}
-          <Routes>
-            {routes.map((route, index) => (
-              <Route
-                key={index}
-                path={route.path}
-                element={<route.component />}
-              />
-            ))}
-          </Routes>
-          {/* </Suspense> */}
+          <Suspense fallback={<Spinner />}>
+            <Routes>
+              {routes.map((route, index) => (
+                <Route
+                  key={index}
+                  path={route.path}
+                  element={<route.component />}
+                />
+              ))}
+            </Routes>
+          </Suspense>
         </div>
         {/* About section */}
         {!isProjectDetailPage && (
