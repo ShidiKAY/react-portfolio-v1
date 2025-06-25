@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
 
 // import Bubbles from "./Bubbles";
@@ -30,7 +30,7 @@ const Home = () => {
   // Vous pouvez utiliser useState et useEffect ici pour gérer l'état et la logique de l'animation (optionnel)
   const [isVisible, setIsVisible] = useState(false);
   const refHome = useRef(null);
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   // Show/Hide text section of About when it's displayed
   useEffect(() => {
@@ -66,7 +66,7 @@ const Home = () => {
     >
       <div
         id="tohome"
-        className="container mx-auto flex flex-col justify-center items-center h-[600px]"
+        className="w-full max-w-full overflow-x-hidden px-2 md:px-0 flex flex-col justify-center items-center h-[600px]"
       >
         <div className="text-center h-[200px]">
           <h1 className="text-4xl text-black font-extrabold md:text-4xl">

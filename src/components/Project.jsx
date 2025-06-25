@@ -121,7 +121,7 @@ const Project = ({ projectId, idx }) => {
 
   return (
     <motion.div
-      className="relative group bg-white rounded-xl shadow-sm overflow-visible w-full max-w-xs flex flex-col border border-blue-100 hover:border-blue-400 transition-all duration-300 focus-within:border-blue-400 cursor-pointer"
+      className="relative group bg-white rounded-xl shadow-sm overflow-visible w-full max-w-[95vw] sm:max-w-xs flex flex-col border border-blue-100 hover:border-blue-400 transition-all duration-300 focus-within:border-blue-400 cursor-pointer box-border"
       tabIndex={0}
       aria-label={`View project: ${title}`}
       initial={{ opacity: 0, y: 40 }}

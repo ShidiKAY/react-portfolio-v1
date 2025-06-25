@@ -37,13 +37,13 @@ const Projects = () => {
         <div>Element 5</div>
         <div>Element 6</div>
       </div> */}
-      <div className="mx-auto flex flex-col justify-center md:px-0 lg:px-0">
+      <div className="mx-auto flex flex-col justify-center max-w-full overflow-x-hidden px-2 md:px-0 lg:px-0 min-w-0">
         <p className="font-bold text-blue-900 text-3xl pb-4 text-center">
           {t("common.projects")}
         </p>
         {hasProjects ? (
           <motion.div
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center"
+            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center w-full overflow-x-auto min-w-0"
             initial="hidden"
             animate="visible"
             variants={{

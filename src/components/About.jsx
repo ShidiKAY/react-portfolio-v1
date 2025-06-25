@@ -59,14 +59,14 @@ const About = () => {
   const contactLine = contactIdx !== -1 ? aboutLines[contactIdx] : "";
 
   return (
-    <div id="toabout" className="h-screen lg:pl-0 lg:pr-0">
+    <div id="toabout" className="py-10 lg:pl-0 lg:pr-0">
       <div className="flex justify-between md:mx-0 md:pt-32 pt-28 ">
         <div className="flex flex-col md:ml-px mt-10">
           <div
-            className="md:mx-0 flex flex-col md:flex-wrsap md:flex-row lg:px-12"
+            className="flex flex-col md:flex-row w-full max-w-full overflow-x-hidden px-2 md:px-0 lg:px-12"
             ref={refAbout}
           >
-            <div className="md:w-2/5 lg:w-1/4 lg:min-w-72 sm:min-w-96 md:min-w-80 xl:min-w-60">
+            <div className="w-full md:w-1/3 flex-shrink-0 flex justify-center items-start mb-6 md:mb-0">
               <motion.div
                 initial="hidden"
                 animate={isVisible ? "visible" : "hidden"}
@@ -84,22 +84,15 @@ const About = () => {
                   },
                 }}
               >
-                {/* <h2 className="font-bold text-3xl text-left mb-5">
-                  I&#39;m a
-                  <span className="text-blue-500"> FullStack Developer</span>{" "}
-                  with a passion for
-                  <span className="text-blue-500"> Cloud Computing</span>.
-                </h2> */}
-
                 <img
-                  className="radius rounded-full lg:vw-100 vh-50 "
+                  className="radius rounded-full w-32 h-32 mx-auto md:w-48 md:h-48 lg:w-64 lg:h-64"
                   src="/images/profile.png"
                   alt=""
-                ></img>
+                />
               </motion.div>
             </div>
             <motion.div
-              className="md:w-3/4"
+              className="w-full md:w-2/3"
               initial="hidden"
               animate={isVisible ? "visible" : "hidden"}
               variants={{

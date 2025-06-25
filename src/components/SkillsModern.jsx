@@ -333,7 +333,7 @@ const SkillsModern = () => {
         fadeIn ? "opacity-100" : "opacity-0"
       }`}
     >
-      <div className="max-w-5xl mx-auto">
+      <div className="max-w-5xl mx-auto max-w-full overflow-x-hidden px-2 md:px-0 lg:px-0">
         <h2 className="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-6 tracking-tight">
           {t("common.skills")}
         </h2>
