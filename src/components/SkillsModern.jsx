@@ -392,7 +392,7 @@ const SkillsModern = () => {
           </div>
         </div>
         {/* Pills grid */}
-        <div className="flex flex-wrap gap-2 justify-center items-center w-full mx-auto">
+        <div className="flex flex-wrap gap-2 justify-center items-center w-full mx-auto py-2 px-1">
           {displayedSkills.map((skill, idx) => {
             const mastered = MASTERED_SKILLS.includes(skill.name);
             return (
