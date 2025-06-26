@@ -340,7 +340,7 @@ const SkillsModern = () => {
         {/* Filtres catégories + recherche */}
         <div className="flex flex-col md:flex-row gap-2 mb-6 items-center w-full">
           <div
-            className="skills-scrollbar flex flex-row gap-2 overflow-x-auto flex-nowrap md:overflow-x-visible md:flex-wrap w-full md:max-w-fit md:w-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-transparent"
+            className="skills-scrollbar flex flex-row gap-2 overflow-x-auto flex-nowrap md:overflow-x-visible md:flex-wrap w-full md:max-w-fit md:w-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-transparent py-2 px-1"
             style={{ scrollbarColor: "#cbd5e1 #fff", scrollbarWidth: "thin" }}
           >
             {categories.map((cat) => (
