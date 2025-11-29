@@ -622,6 +622,128 @@
         }
       ]
     },
+    "bbg": {
+      "description": "Mission freelance via ESN pour la holding Bernard Blachère - Développement et modernisation d'applications critiques pour la gestion interne du groupe.",
+      "img": "/images/project-images/bbg/logo.png",
+      "mainTechnologies": [
+        "Symfony",
+        "Vue.js",
+        "PHP",
+        "NestJS",
+        "Docker",
+        "Kubernetes"
+      ],
+      "softSkills": [
+        "Travail en autonomie",
+        "Communication",
+        "Résolution de problèmes",
+        "Adaptabilité",
+        "Développement Full-Stack"
+      ],
+      "introduction": {
+        "name": "Holding Bernard Blachère",
+        "introduction": "Mission freelance via ESN pour la holding Bernard Blachère, groupe leader de la boulangerie-pâtisserie en France. Développement et modernisation d'applications critiques pour la gestion interne du groupe.",
+        "description": "En tant que développeur Full-Stack freelance via ESN, j'interviens sur le développement et la modernisation d'applications critiques pour la gestion interne du groupe. Ma mission inclut la création d'APIs performantes avec Symfony pour l'interconnexion du système d'information, le développement d'interfaces utilisateurs modernes avec Vue.js 3, et l'utilisation d'outils d'infrastructure modernes (Docker, Kubernetes) pour l'intégration continue."
+      },
+      "duration": 2,
+      "team": 10,
+      "period": "Août 2024 - Octobre 2024",
+      "technologies": [
+        "Symfony",
+        "PHP",
+        "Vue.js 3",
+        "NestJS",
+        "Kubernetes",
+        "Docker",
+        "GitLab CI",
+        "PostgreSQL",
+        "JavaScript",
+        "TypeScript"
+      ],
+      "tasks": [
+        {
+          "group": {
+            "titre": "Développement Backend et APIs",
+            "intro": "Création d'APIs performantes avec Symfony pour l'interconnexion du système d'information du groupe."
+          },
+          "data": {
+            "1": {
+              "title": "Développement d'APIs REST avec Symfony",
+              "description": [
+                "Création d'APIs performantes pour l'interconnexion du système d'information",
+                "Développement de services backend robustes et scalables",
+                "Intégration avec les systèmes existants du groupe",
+                "Optimisation des performances et de la sécurité des APIs"
+              ]
+            },
+            "2": {
+              "title": "Architecture et intégration système",
+              "description": [
+                "Conception d'architectures modulaires pour faciliter l'intégration",
+                "Mise en place de stratégies de cache et d'optimisation",
+                "Gestion de la communication entre différents services",
+                "Assurance de la cohérence des données entre systèmes"
+              ]
+            }
+          }
+        },
+        {
+          "group": {
+            "titre": "Développement Frontend avec Vue.js",
+            "intro": "Développement d'interfaces utilisateurs modernes et réactives avec Vue.js 3 pour améliorer l'expérience utilisateur."
+          },
+          "data": {
+            "1": {
+              "title": "Interfaces utilisateurs modernes",
+              "description": [
+                "Développement d'interfaces utilisateurs modernes et réactives avec Vue.js 3",
+                "Création de composants réutilisables et maintenables",
+                "Implémentation de fonctionnalités interactives et dynamiques",
+                "Optimisation des performances frontend et de l'expérience utilisateur"
+              ]
+            },
+            "2": {
+              "title": "Intégration et communication avec les APIs",
+              "description": [
+                "Intégration des interfaces avec les APIs backend Symfony",
+                "Gestion de l'état de l'application et de la synchronisation des données",
+                "Implémentation de la gestion d'erreurs et de la validation côté client",
+                "Assurance d'une expérience utilisateur fluide et réactive"
+              ]
+            }
+          }
+        },
+        {
+          "group": {
+            "titre": "Infrastructure et CI/CD",
+            "intro": "Utilisation d'outils d'infrastructure modernes (Docker, Kubernetes) et intégration de pipelines CI/CD pour accélérer les livraisons."
+          },
+          "data": {
+            "1": {
+              "title": "Containerisation et orchestration",
+              "description": [
+                "Utilisation de Docker pour la containerisation des applications",
+                "Déploiement et orchestration avec Kubernetes",
+                "Gestion des environnements de développement, test et production",
+                "Optimisation de l'infrastructure pour la scalabilité et la performance"
+              ]
+            },
+            "2": {
+              "title": "Pipelines CI/CD avec GitLab CI",
+              "description": [
+                "Intégration de pipelines CI/CD (GitLab CI) pour accélérer les livraisons",
+                "Automatisation des tests, builds et déploiements",
+                "Mise en place de stratégies de déploiement continu",
+                "Amélioration de la qualité du code et réduction du temps de livraison"
+              ]
+            }
+          }
+        }
+      ],
+      "challenges": [],
+      "solutions": [],
+      "externalLinks": []
+    },
     "freelance": {
       "description": "Travailler en tant que développeur freelance pour divers clients, réalisant des missions de développement web, de conseil et de solutions sur mesure.",
       "img": "/images/project-images/freelance/logo.png",

@@ -10,7 +10,15 @@ import {
   skillIcons,
 } from "../../components/SkillsModern";
 
-const PROJECT_ORDER = ["hml", "scf", "bubo", "hopps", "apigem", "freelance"];
+const PROJECT_ORDER = [
+  "hml",
+  "scf",
+  "bubo",
+  "hopps",
+  "apigem",
+  "bbg",
+  "freelance",
+];
 
 const ProjectDetail = () => {
   const { t } = useTranslation();

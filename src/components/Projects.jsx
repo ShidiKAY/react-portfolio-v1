@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    projectId: "bbg",
+  },
+  {
+    projectId: "freelance",
+  },
+  {
     projectId: "hml",
   },
   {
@@ -17,9 +23,6 @@ const projects = [
   },
   {
     projectId: "apigem",
-  },
-  {
-    projectId: "freelance",
   },
 ];
 
