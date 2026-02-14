@@ -11,18 +11,22 @@ const About = () => {
   const refAbout = useRef(null);
   const { t } = useTranslation();
 
-  // Show/Hide text section of About when it's displayed
+  // Show/Hide text section of About when it's displayed (avec cleanup pour éviter setState après unmount)
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      if (entry.isIntersecting) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
-    });
-    observer.observe(refAbout.current);
-  }, []); // Empty dependency array ensures useEffect runs only once
+    const el = refAbout.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (entry?.isIntersecting) setIsVisible(true);
+        else setIsVisible(false);
+      },
+      { rootMargin: "-20px 0px", threshold: 0.1 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   // Extract lines from about_rich
   const aboutRich = t("common.about_rich");
@@ -61,10 +65,10 @@ const About = () => {
   return (
     <div
       id="toabout"
-      className="py-10 max-w-screen-lg mx-auto w-full overflow-x-hidden"
+      className="py-16 sm:py-20 max-w-screen-lg mx-auto w-full overflow-x-hidden text-slate-900 dark:text-slate-100"
       style={{ overflowX: "hidden" }}
     >
-      <div className="flex flex-col md:mx-0 md:pt-32 pt-10 w-full min-w-0">
+      <div className="flex flex-col md:mx-0 md:pt-20 pt-10 w-full min-w-0">
         <div className="flex flex-col mt-6 w-full min-w-0">
           <div
             className="flex flex-col items-center md:flex-row md:items-start w-full min-w-0 overflow-hidden px-2 md:px-0 lg:px-12"
@@ -91,7 +95,11 @@ const About = () => {
                 <img
                   className="radius rounded-full lg:vw-100 vh-50"
                   src="/images/profile.png"
-                  alt=""
+                  alt="Kamal AIT YOUS"
+                  width="200"
+                  height="200"
+                  loading="lazy"
+                  decoding="async"
                 />
               </motion.div>
             </div>
@@ -132,9 +140,9 @@ const About = () => {
                   },
                 }}
               >
-                <h1 className="text-3xl font-bold sm:text-4xl mb-8 break-words">
+                <h1 className="text-3xl font-bold sm:text-4xl mb-8 break-words tracking-wide">
                   {t("common.abouthelloim")}{" "}
-                  <span className="text-blue-500">Kamal</span>
+                  <span className="text-blue-500 dark:text-blue-400">Kamal</span>
                 </h1>
               </motion.div>
 
@@ -158,12 +166,12 @@ const About = () => {
               >
                 {/* Always visible: first two paragraphs */}
                 {firstParagraph && (
-                  <p className="text-left font-normal mb-4 flex-wrap break-words">
+                  <p className="text-left font-normal mb-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
                     {firstParagraph}
                   </p>
                 )}
                 {secondParagraph && (
-                  <p className="text-left font-normal mb-4 flex-wrap break-words">
+                  <p className="text-left font-normal mb-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
                     {secondParagraph}
                   </p>
                 )}
@@ -175,7 +183,7 @@ const About = () => {
                         point.text ? (
                           <li
                             key={idx}
-                            className="flex items-start gap-2 text-base"
+                            className="flex items-start gap-2 text-base text-slate-700 dark:text-slate-300"
                           >
                             <span className="text-xl mt-1">{point.icon}</span>
                             <span className="break-words">{point.text}</span>
@@ -184,7 +192,7 @@ const About = () => {
                       )}
                     </ul>
                     {contactLine && (
-                      <p className="text-left font-normal mt-4 flex-wrap break-words">
+                      <p className="text-left font-normal mt-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
                         {contactLine}
                       </p>
                     )}
@@ -197,7 +205,7 @@ const About = () => {
           <div id="toskills">
             <SkillsModern />
           </div>
-          <div id="toprojects" className="flex flex-col md:ml-px mt-10">
+          <div id="toprojects" className="flex flex-col md:ml-px mt-16 sm:mt-20">
             <Projects />
           </div>
           {/* Affiche SkillsModern juste après les projets, avant Skills */}

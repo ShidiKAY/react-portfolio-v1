@@ -69,13 +69,13 @@ const Home = () => {
         className="w-full max-w-full overflow-x-hidden px-2 md:px-0 flex flex-col justify-center items-center h-[600px]"
       >
         <div className="text-center h-[200px]">
-          <h1 className="text-4xl text-black font-extrabold md:text-4xl">
+          <h1 className="text-4xl text-black dark:text-white font-extrabold md:text-4xl tracking-wide">
             {t("common.main1")}
           </h1>
-          <h1 className="text-4xl text-blue-500 font-extrabold md:text-4xl">
+          <h1 className="text-4xl text-blue-500 dark:text-blue-400 font-extrabold md:text-4xl tracking-wide">
             {t("common.main2")}
           </h1>
-          <p className="text-xl mt-4 sm:leading-relaxed md:text-xl text-black">
+          <p className="text-xl mt-4 sm:leading-relaxed md:text-xl text-black dark:text-slate-200">
             {t("common.sub1")}
             <br></br>
             {t("common.sub2")}

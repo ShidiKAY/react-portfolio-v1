@@ -5,7 +5,7 @@ const {
 } = require("@egoist/tailwindcss-icons");
 
 export default {
-  // Specify paths to components and pages where Tailwind scans for class names
+  darkMode: "class",
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,vue}",
     "./components/**/*.{js,ts,jsx,tsx,vue}",

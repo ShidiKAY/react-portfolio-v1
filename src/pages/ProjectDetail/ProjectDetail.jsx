@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useParams, useNavigate } from "react-router-dom";
 import Head from "react-helmet";
-import { useEffect, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import GoToTop from "../../components/GoToTop";
 import i18n from "../../i18n";
 import {
@@ -168,7 +168,7 @@ const ProjectDetail = () => {
           )
         ) {
           return (
-            <span key={`tech-${lineIdx}-${index}`} className="text-blue-700">
+            <span key={`tech-${lineIdx}-${index}`} className="text-blue-700 dark:text-blue-400">
               {part}
             </span>
           );
@@ -188,7 +188,7 @@ const ProjectDetail = () => {
               return (
                 <span
                   key={`impact-${lineIdx}-${index}-${subIndex}`}
-                  className="text-purple-700"
+                  className="text-purple-700 dark:text-purple-400"
                 >
                   {subPart}
                 </span>
@@ -210,9 +210,59 @@ const ProjectDetail = () => {
     });
   };
 
-  // Scroll to top on mount
+  // Toujours ouvrir en haut : désactiver le smooth du CSS le temps du scroll pour placement instantané
+  const scrollToTopInstant = () => {
+    const html = document.documentElement;
+    const prevBehavior = html.style.scrollBehavior;
+    html.style.scrollBehavior = "auto";
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    html.style.scrollBehavior = prevBehavior;
+  };
+  const mountTimeRef = useRef(Date.now());
+
+  useLayoutEffect(() => {
+    mountTimeRef.current = Date.now();
+    window.history.scrollRestoration = "manual";
+    scrollToTopInstant();
+    for (let i = 0; i < 3; i++) {
+      requestAnimationFrame(scrollToTopInstant);
+    }
+  }, []);
+
+  // Nettoyer l'URL (retirer ?t=...) après montage pour garder une barre d'adresse propre
   useEffect(() => {
-    window.scrollTo(0, 0);
+    if (window.location.search) {
+      navigate(`/projects/${projectId}`, { replace: true });
+    }
+  }, [navigate, projectId]);
+
+  // Rappels pour contrer une restauration de scroll très tardive (réouverture d'un projet déjà visité)
+  useEffect(() => {
+    scrollToTopInstant();
+    const rafs = [0, 1, 2].map(() => requestAnimationFrame(scrollToTopInstant));
+    const delays = [30, 80, 150, 300, 500, 900, 1200].map((ms) =>
+      setTimeout(scrollToTopInstant, ms)
+    );
+    return () => {
+      rafs.forEach((id) => cancelAnimationFrame(id));
+      delays.forEach((id) => clearTimeout(id));
+    };
+  }, []);
+
+  // Tant que le navigateur restaure le scroll, on force le haut (pendant ~1,5 s après ouverture)
+  useEffect(() => {
+    const guardWindowMs = 1500;
+    const onScroll = () => {
+      if (Date.now() - mountTimeRef.current < guardWindowMs && window.scrollY > 0) {
+        scrollToTopInstant();
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: false });
+    const t = setTimeout(() => window.removeEventListener("scroll", onScroll), guardWindowMs);
+    return () => {
+      clearTimeout(t);
+      window.removeEventListener("scroll", onScroll);
+    };
   }, []);
 
   // Handle scroll progress
@@ -230,11 +280,11 @@ const ProjectDetail = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle Escape key press
+  // Handle Escape key press: retour à l'accueil scrollé sur la section Projets
   useEffect(() => {
     const handleEscape = (event) => {
       if (event.key === "Escape") {
-        navigate("/#projects");
+        navigate("/", { state: { scrollToProjects: true } });
       }
     };
 
@@ -264,7 +314,7 @@ const ProjectDetail = () => {
   const nextProjectId = PROJECT_ORDER[(currentIdx + 1) % PROJECT_ORDER.length];
 
   return (
-    <div className="relative min-h-screen bg-white">
+    <div className="relative min-h-screen bg-white dark:bg-slate-900">
       {/* Progress bar */}
       <div
         className="fixed top-0 left-0 h-1 bg-gradient-to-r from-blue-500 to-purple-500 transition-all duration-150 z-[100]"
@@ -274,8 +324,8 @@ const ProjectDetail = () => {
       {/* Fixed back button */}
       <div className="fixed top-4 left-4 z-[200]">
         <button
-          onClick={() => navigate("/#projects")}
-          className="flex items-center gap-2 bg-white/80 backdrop-blur-sm text-gray-800 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
+          onClick={() => navigate("/", { state: { scrollToProjects: true } })}
+          className="flex items-center gap-2 bg-white/80 dark:bg-slate-800/90 backdrop-blur-sm text-gray-800 dark:text-slate-100 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
           aria-label="Go back"
         >
           <svg
@@ -336,7 +386,7 @@ const ProjectDetail = () => {
         </div>
         <button
           onClick={() => window.print()}
-          className="flex items-center gap-2 bg-white text-gray-800 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
+          className="flex items-center gap-2 bg-white dark:bg-slate-800 text-gray-800 dark:text-slate-100 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
           aria-label="Print this project"
         >
           <svg
@@ -377,7 +427,7 @@ const ProjectDetail = () => {
           {/* Overlay on hover */}
           <div className="absolute inset-0 z-0 transition duration-200 opacity-100 white group-hover:bg-gray-200/40" />
           <div className="relative z-10 flex items-center justify-center w-full h-full">
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/90 border border-gray-300 flex items-center justify-center transition">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 flex items-center justify-center transition">
               <svg
                 className="h-8 w-8 text-gray-500 transition"
                 fill="none"
@@ -416,7 +466,7 @@ const ProjectDetail = () => {
           {/* Overlay on hover */}
           <div className="absolute inset-0 z-0 transition duration-200 opacity-100 white group-hover:bg-gray-200/40" />
           <div className="relative z-10 flex items-center justify-center w-full h-full">
-            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white/90 border border-gray-300 flex items-center justify-center transition">
+            <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-14 h-14 rounded-full bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 flex items-center justify-center transition">
               <svg
                 className="h-8 w-8 text-gray-500 transition"
                 fill="none"
@@ -441,7 +491,7 @@ const ProjectDetail = () => {
 
       {/* Mobile-only: show just the circle button with arrow, fixed at bottom left */}
       <button
-        className="md:hidden fixed left-4 top-1/2 -translate-y-1/2 z-[101] w-14 h-14 rounded-full bg-white/90 border border-gray-300 flex items-center justify-center shadow transition"
+        className="md:hidden fixed left-4 top-1/2 -translate-y-1/2 z-[101] w-14 h-14 rounded-full bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 flex items-center justify-center shadow transition"
         onClick={() => {
           window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
           setTimeout(() => navigate(`/projects/${prevProjectId}`), 200);
@@ -465,7 +515,7 @@ const ProjectDetail = () => {
 
       {/* Mobile-only: show just the circle button with arrow, fixed at bottom right */}
       <button
-        className="md:hidden fixed right-4 top-1/2 -translate-y-1/2 z-[101] w-14 h-14 rounded-full bg-white/90 border border-gray-300 flex items-center justify-center shadow transition"
+        className="md:hidden fixed right-4 top-1/2 -translate-y-1/2 z-[101] w-14 h-14 rounded-full bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 flex items-center justify-center shadow transition"
         onClick={() => {
           window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
           setTimeout(() => navigate(`/projects/${nextProjectId}`), 200);
@@ -505,7 +555,7 @@ const ProjectDetail = () => {
 
         {/* Project Header */}
         <div className="max-w-4xl w-full mx-auto mt-10 sm:mt-16 mb-8 sm:mb-12 px-0 sm:px-4">
-          <h1 className="text-3xl sm:text-5xl font-bold mb-6 sm:mb-8 text-gray-900 text-left font-montserrat uppercase break-words">
+          <h1 className="text-3xl sm:text-5xl font-bold mb-6 sm:mb-8 text-gray-900 dark:text-white text-left font-montserrat uppercase break-words">
             {project.introduction.name}
           </h1>
 
@@ -516,10 +566,14 @@ const ProjectDetail = () => {
               alt={project.introduction.name}
               className="mb-8 w-full max-h-72 object-contain rounded-lg shadow"
               style={{ background: "#f8fafc" }}
+              width={640}
+              height={288}
+              loading="eager"
+              decoding="async"
             />
           )}
 
-          <p className="text-base sm:text-xl text-gray-600 mb-6 sm:mb-8 leading-relaxed text-justify break-words">
+          <p className="text-base sm:text-xl text-gray-600 dark:text-slate-300 mb-6 sm:mb-8 leading-relaxed text-justify break-words">
             {project.description}
           </p>
 
@@ -538,7 +592,7 @@ const ProjectDetail = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="text-gray-700">
+              <span className="text-gray-700 dark:text-slate-300">
                 {typeof project.duration === "number"
                   ? t("common.duration", { count: project.duration })
                   : t("common.duration", { count: 6 })}
@@ -553,7 +607,7 @@ const ProjectDetail = () => {
               >
                 <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z" />
               </svg>
-              <span className="text-gray-700">
+              <span className="text-gray-700 dark:text-slate-300">
                 {typeof project.team === "number"
                   ? t("common.team", { count: project.team })
                   : t("common.team", { count: 5 })}
@@ -572,7 +626,7 @@ const ProjectDetail = () => {
                   clipRule="evenodd"
                 />
               </svg>
-              <span className="text-gray-700">
+              <span className="text-gray-700 dark:text-slate-300">
                 {project.period
                   ? t("common.period", { period: project.period })
                   : t("common.period", {
@@ -587,7 +641,7 @@ const ProjectDetail = () => {
             {/* Main Technologies */}
             {mainTechnologies.length > 0 && (
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
-                <span className="text-gray-700 font-medium min-w-[100px] sm:min-w-[120px]">
+                <span className="text-gray-700 dark:text-slate-300 font-medium min-w-[100px] sm:min-w-[120px]">
                   {t("common.technologies")}
                 </span>
                 <div className="flex flex-wrap gap-1.5 w-full">
@@ -616,7 +670,7 @@ const ProjectDetail = () => {
             {/* Soft Skills */}
             {softSkills.length > 0 && (
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3">
-                <span className="text-gray-700 font-medium min-w-[100px] sm:min-w-[120px]">
+                <span className="text-gray-700 dark:text-slate-300 font-medium min-w-[100px] sm:min-w-[120px]">
                   {t("common.softSkills")}
                 </span>
                 <div className="flex flex-wrap gap-1.5 w-full">
@@ -646,15 +700,15 @@ const ProjectDetail = () => {
 
           {/* Technologies Used */}
           {technologies.length > 0 && (
-            <div className="mb-8 sm:mb-12 bg-gray-50 p-4 sm:p-6 rounded-lg w-full overflow-x-auto">
-              <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
+            <div className="mb-8 sm:mb-12 bg-gray-50 dark:bg-slate-800 p-4 sm:p-6 rounded-lg w-full overflow-x-auto">
+              <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white text-left">
                 Technologies & Skills
               </h2>
               <div className="flex flex-wrap gap-2 justify-start w-full">
                 {technologies.map((tech, index) => (
                   <span
                     key={index}
-                    className="px-3 py-1.5 bg-blue-100 text-blue-700 rounded-full text-sm border border-blue-500"
+                    className="px-3 py-1.5 bg-blue-100 dark:bg-slate-700 text-blue-700 dark:text-slate-200 rounded-full text-sm border border-blue-500 dark:border-slate-600"
                   >
                     {highlightTerms(tech)}
                   </span>
@@ -665,20 +719,20 @@ const ProjectDetail = () => {
 
           {/* Project Overview */}
           <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 bg-gray-50 p-4 sm:p-6 rounded-lg w-full">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 bg-gray-50 dark:bg-slate-800 p-4 sm:p-6 rounded-lg w-full">
               <div>
-                <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
+                <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white text-left">
                   {t("common.projectContext")}
                 </h2>
-                <p className="text-gray-700 leading-relaxed text-justify">
+                <p className="text-gray-700 dark:text-slate-300 leading-relaxed text-justify">
                   {project.introduction.introduction}
                 </p>
               </div>
               <div>
-                <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
+                <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white text-left">
                   {t("common.myRole")}
                 </h2>
-                <p className="text-gray-700 leading-relaxed text-justify">
+                <p className="text-gray-700 dark:text-slate-300 leading-relaxed text-justify">
                   {project.introduction.description}
                 </p>
               </div>
@@ -688,20 +742,20 @@ const ProjectDetail = () => {
           {/* Key Actions & Impact */}
           {project.tasks && project.tasks.length > 0 && (
             <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
-              <h2 className="text-xl font-semibold mb-6 text-gray-800 text-left">
+              <h2 className="text-xl font-semibold mb-6 text-gray-800 dark:text-white text-left">
                 {t("common.keyActions")}
               </h2>
               <div className="space-y-6 sm:space-y-8">
                 {project.tasks.map((taskGroup, groupIndex) => (
                   <div
                     key={groupIndex}
-                    className="relative bg-gray-50 p-4 sm:p-6 rounded-lg w-full overflow-x-auto"
+                    className="relative bg-gray-50 dark:bg-slate-800 p-4 sm:p-6 rounded-lg w-full overflow-x-auto"
                   >
-                    <h3 className="text-lg font-bold mb-4 text-gray-800 text-left">
+                    <h3 className="text-lg font-bold mb-4 text-gray-800 dark:text-white text-left">
                       {taskGroup.group.titre}
                     </h3>
                     {taskGroup.group.intro && (
-                      <p className="mb-4 text-gray-700 leading-relaxed text-justify">
+                      <p className="mb-4 text-gray-700 dark:text-slate-300 leading-relaxed text-justify">
                         {taskGroup.group.intro}
                       </p>
                     )}
@@ -711,10 +765,10 @@ const ProjectDetail = () => {
                           key={dataIndex}
                           className="relative pl-4 sm:pl-6 before:absolute before:left-0 before:top-2 before:w-1 before:h-[calc(100%-1rem)] before:bg-blue-500"
                         >
-                          <h4 className="font-semibold text-gray-800 mb-3 text-left">
+                          <h4 className="font-semibold text-gray-800 dark:text-white mb-3 text-left">
                             {taskGroup.data[taskId].title}
                           </h4>
-                          <div className="text-gray-700 space-y-2 sm:space-y-3 break-words">
+                          <div className="text-gray-700 dark:text-slate-300 space-y-2 sm:space-y-3 break-words">
                             {taskGroup.data[taskId].description.map(
                               (desc, idx) => (
                                 <p
@@ -732,6 +786,8 @@ const ProjectDetail = () => {
                               alt={taskGroup.data[taskId].title}
                               className="mt-4 max-w-full h-auto rounded-lg mx-auto"
                               style={{ maxWidth: "100%" }}
+                              loading="lazy"
+                              decoding="async"
                             />
                           )}
                         </div>
@@ -746,17 +802,17 @@ const ProjectDetail = () => {
           {/* Challenges & Solutions */}
           {(challenges.length > 0 || solutions.length > 0) && (
             <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 w-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 w-full">
                 {challenges.length > 0 && (
-                  <div className="bg-gray-50 p-4 sm:p-6 rounded-lg w-full overflow-x-auto">
-                    <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
+                  <div className="bg-gray-50 dark:bg-slate-800 p-4 sm:p-6 rounded-lg w-full overflow-x-auto">
+                    <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white text-left">
                       {t("common.keyChallenges")}
                     </h2>
                     <ul className="space-y-2 sm:space-y-3">
                       {challenges.map((challenge, index) => (
                         <li key={index} className="flex items-start gap-3">
                           <span className="text-red-500 mt-1">•</span>
-                          <span className="text-gray-700 text-justify">
+                          <span className="text-gray-700 dark:text-slate-300 text-justify">
                             {challenge}
                           </span>
                         </li>
@@ -765,15 +821,15 @@ const ProjectDetail = () => {
                   </div>
                 )}
                 {solutions.length > 0 && (
-                  <div className="bg-gray-50 p-4 sm:p-6 rounded-lg w-full overflow-x-auto">
-                    <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
+                  <div className="bg-gray-50 dark:bg-slate-800 p-4 sm:p-6 rounded-lg w-full overflow-x-auto">
+                    <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white text-left">
                       {t("common.solutionsImplemented")}
                     </h2>
                     <ul className="space-y-2 sm:space-y-3">
                       {solutions.map((solution, index) => (
                         <li key={index} className="flex items-start gap-3">
                           <span className="text-green-500 mt-1">✓</span>
-                          <span className="text-gray-700 text-justify">
+                          <span className="text-gray-700 dark:text-slate-300 text-justify">
                             {solution}
                           </span>
                         </li>
@@ -785,10 +841,60 @@ const ProjectDetail = () => {
             </div>
           )}
 
+          {/* Expert Insights / Log de Fiabilisation (Blachère) */}
+          {projectId === "bbg" && (
+            <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
+              <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white text-left">
+                {t("common.expert_insights_title")}
+              </h2>
+              <div className="space-y-4 rounded-lg bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-600 p-4 sm:p-6">
+                <div className="flex gap-3">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-cyan-100 dark:bg-cyan-900/40 flex items-center justify-center text-cyan-600 dark:text-cyan-400 text-sm font-mono">
+                    1
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-gray-800 dark:text-white text-sm uppercase tracking-wider mb-0.5">
+                      {t("common.changelog_refactor_title")}
+                    </h3>
+                    <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed">
+                      {t("common.changelog_refactor_desc")}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-cyan-100 dark:bg-cyan-900/40 flex items-center justify-center text-cyan-600 dark:text-cyan-400 text-sm font-mono">
+                    2
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-gray-800 dark:text-white text-sm uppercase tracking-wider mb-0.5">
+                      {t("common.changelog_perf_title")}
+                    </h3>
+                    <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed">
+                      {t("common.changelog_perf_desc")}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-3">
+                  <span className="flex-shrink-0 w-8 h-8 rounded-full bg-cyan-100 dark:bg-cyan-900/40 flex items-center justify-center text-cyan-600 dark:text-cyan-400 text-sm font-mono">
+                    3
+                  </span>
+                  <div>
+                    <h3 className="font-semibold text-gray-800 dark:text-white text-sm uppercase tracking-wider mb-0.5">
+                      {t("common.changelog_qa_title")}
+                    </h3>
+                    <p className="text-gray-600 dark:text-slate-300 text-sm leading-relaxed">
+                      {t("common.changelog_qa_desc")}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
+
           {/* External Links */}
           {externalLinks.length > 0 && (
             <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
-              <h2 className="text-xl font-semibold mb-4 text-gray-800 text-left">
+              <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white text-left">
                 {t("common.externalLinks")}
               </h2>
               <div className="flex flex-wrap gap-2 sm:gap-3 justify-start w-full">

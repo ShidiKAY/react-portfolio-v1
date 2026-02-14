@@ -13,4 +13,8 @@ export default [
     path: "/projects/:projectId",
     component: React.lazy(() => import("./pages/ProjectDetail/ProjectDetail")),
   },
+  {
+    path: "/labs",
+    component: React.lazy(() => import("./pages/Labs/Labs")),
+  },
 ];

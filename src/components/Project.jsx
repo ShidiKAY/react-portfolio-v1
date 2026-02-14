@@ -13,7 +13,6 @@ import {
   SiVuedotjs,
   SiJquery,
   SiApache,
-  SiCsharp,
   SiDotnet,
   SiUikit,
   SiYarn,
@@ -73,7 +72,7 @@ const Project = ({ projectId, idx }) => {
     "Vue.js": SiVuedotjs,
     jQuery: SiJquery,
     ".NET": DiDotnet,
-    "C#": SiCsharp,
+    "C#": SiDotnet,
     "ASP.NET": SiDotnet,
     Docker: SiDocker,
     GIT: FaGithub,
@@ -121,7 +120,7 @@ const Project = ({ projectId, idx }) => {
 
   return (
     <motion.div
-      className="relative group bg-white rounded-xl shadow-sm overflow-visible w-full max-w-[95vw] sm:max-w-xs flex flex-col border border-blue-100 hover:border-blue-400 transition-all duration-300 focus-within:border-blue-400 cursor-pointer box-border"
+      className="relative group bg-white dark:bg-slate-800 rounded-sm overflow-visible w-full max-w-[95vw] sm:max-w-xs min-h-[320px] flex flex-col border border-slate-200 dark:border-slate-600 hover:border-cyan-500/50 dark:hover:border-cyan-400/50 transition-all duration-200 focus-within:border-cyan-500/50 dark:focus-within:border-cyan-400/50 cursor-pointer box-border"
       tabIndex={0}
       aria-label={`View project: ${title}`}
       initial={{ opacity: 0, y: 40 }}
@@ -130,7 +129,7 @@ const Project = ({ projectId, idx }) => {
       style={{ outline: "none" }}
     >
       <Link
-        to={`/projects/${projectId}`}
+        to={`/projects/${projectId}?t=${Date.now()}`}
         className="flex flex-col h-full w-full focus:outline-none"
         tabIndex={-1}
         aria-label={t("common.seeMore") + ": " + title}
@@ -138,18 +137,21 @@ const Project = ({ projectId, idx }) => {
       >
         {/* Title always visible */}
         <h3
-          className="text-blue-900 text-lg font-bold px-4 pt-4 pb-2 leading-tight truncate"
+          className="text-blue-900 dark:text-slate-100 text-lg font-bold px-4 pt-4 pb-2 leading-tight truncate"
           title={title}
         >
           {title}
         </h3>
         {/* Image with object-cover and neutral bg */}
-        <div className="relative h-40 w-full flex items-center justify-center bg-blue-50 border-b border-blue-100 overflow-hidden z-0">
+        <div className="relative h-40 w-full flex items-center justify-center bg-blue-50 dark:bg-slate-700 border-b border-blue-100 dark:border-slate-600 overflow-hidden z-0">
           <img
             src={img}
             alt={title}
             className="object-cover w-full h-full max-h-40 transition-transform duration-300 group-hover:scale-105"
+            width="320"
+            height="160"
             loading="lazy"
+            decoding="async"
           />
         </div>
         {/* Tech badges (SkillPill) */}
@@ -168,7 +170,7 @@ const Project = ({ projectId, idx }) => {
           ))}
           {extraTech.length > 0 && (
             <span
-              className="relative inline-flex items-center justify-center gap-1 px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm border border-blue-300 cursor-pointer select-none transition min-w-[40px]"
+              className="relative inline-flex items-center justify-center gap-1 px-3 py-1 bg-blue-100 dark:bg-slate-600 text-blue-700 dark:text-slate-200 rounded-full text-sm border border-blue-300 dark:border-slate-500 cursor-pointer select-none transition min-w-[40px]"
               tabIndex={0}
               aria-label={t("common.more_skills_aria", {
                 count: extraTech.length,
@@ -182,7 +184,7 @@ const Project = ({ projectId, idx }) => {
               +{extraTech.length}
               {showExtraTooltip && (
                 <span
-                  className="absolute left-1/2 -translate-x-1/2 bottom-full mb-1 z-50 px-2 py-1.5 rounded-xl bg-white/90 border border-blue-100 text-gray-700 text-xs text-center whitespace-pre-line pointer-events-none min-w-max max-w-xs break-words"
+                  className="absolute left-1/2 -translate-x-1/2 bottom-full mb-1 z-50 px-2 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-600 text-gray-700 dark:text-slate-200 text-xs text-center whitespace-pre-line pointer-events-none min-w-max max-w-xs break-words"
                   aria-live="polite"
                 >
                   {extraTech.join(", ")}
@@ -193,11 +195,11 @@ const Project = ({ projectId, idx }) => {
         </div>
         {/* Description */}
         <div className="flex-1 flex flex-col justify-between px-4 pb-3">
-          <p className="text-gray-700 text-base mb-2 leading-snug line-clamp-4 text-justify">
+          <p className="text-gray-700 dark:text-slate-300 text-base mb-2 leading-snug line-clamp-4 text-justify">
             {description}
           </p>
           {role && (
-            <span className="inline-block bg-green-100 text-green-800 text-xs font-semibold px-2 py-1 rounded-full mt-2">
+            <span className="inline-block bg-green-100 dark:bg-green-900/40 text-green-800 dark:text-green-300 text-xs font-semibold px-2 py-1 rounded-full mt-2">
               {role}
             </span>
           )}

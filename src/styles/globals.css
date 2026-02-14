@@ -1,12 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  /* Réserve l’espace de la navbar fixe au scroll vers les ancres (h-14 → h-16) */
+  scroll-padding-top: 4.5rem; /* h-14 (3.5rem) + petit gap */
+}
+
+@media (min-width: 640px) {
+  html {
+    scroll-padding-top: 5.5rem; /* h-16 (4rem) + petit gap */
+  }
+}
+
+body {
+  overflow-x: hidden;
+  @apply bg-white text-slate-900 dark:bg-slate-900 dark:text-slate-100;
+}
+
+/* Ancres : les cibles restent visibles sous la navbar fixe */
+[id^="to"] {
+  scroll-margin-top: 4.5rem; /* mobile h-14 */
+}
+@media (min-width: 640px) {
+  [id^="to"] {
+    scroll-margin-top: 5.5rem; /* sm+ h-16 */
+  }
+}
+
 code {
-  background-color: #cbd3f5;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right: 10px;
-  padding-left: 5px;
+  @apply bg-blue-100 dark:bg-slate-700 text-slate-800 dark:text-slate-200;
+  padding: 5px 10px 5px 5px;
   border-radius: 4px;
 }
 
@@ -18,12 +44,4 @@ code {
   .skills-scrollbar::-webkit-scrollbar {
     display: none !important;
   }
-}
-
-body {
-  overflow-x: hidden;
-}
-
-html {
-  overflow-x: hidden;
 }

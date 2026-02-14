@@ -1,12 +1,21 @@
-import "./styles/globals.css"; // Importez votre fichier CSS principal (optionnel)
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { Suspense } from "react";
+import React, { Suspense, useEffect, useLayoutEffect } from "react";
+import "./styles/globals.css";
+import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import About from "./components/About";
 import routes from "./routes";
 import GoToTop from "./components/GoToTop";
-
+import QuickNav from "./components/QuickNav/QuickNav";
 import ReactModal from "react-modal";
+
+// Below-the-fold: lazy-load About (Projects + SkillsModern) for faster LCP
+const About = React.lazy(() => import("./components/About"));
+const EngineRoom = React.lazy(() => import("./components/EngineRoom/EngineRoom"));
+const ApprocheSystemique = React.lazy(() =>
+  import("./components/ApprocheSystemique/ApprocheSystemique")
+);
+const ProofOfQuality = React.lazy(() =>
+  import("./components/ProofOfQuality/ProofOfQuality")
+);
 
 // import "react-modal/dist/react-modal.min.css"; // Minified version
 
@@ -27,30 +36,51 @@ const Spinner = () => (
       justifyContent: "center",
     }}
   >
-    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 border-opacity-50 border-solid"></div>
+    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-blue-500 dark:border-blue-400 border-opacity-50 border-solid"></div>
   </div>
 );
 
 // Create a wrapper component to handle conditional rendering
 const AppContent = () => {
   const location = useLocation();
-  const isProjectDetailPage = location.pathname.startsWith("/projects/");
+  const navigate = useNavigate();
+  const isStandalonePage =
+    location.pathname.startsWith("/projects/") || location.pathname === "/labs";
+
+  // Retour page projet (Back / Escape) : positionnement direct sur la section Projets, sans effet smooth (contourne scroll-behavior: smooth du CSS)
+  const scrollToProjectsInstant = () => {
+    const html = document.documentElement;
+    const prev = html.style.scrollBehavior;
+    html.style.scrollBehavior = "auto";
+    const el = document.getElementById("toprojects");
+    if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
+    html.style.scrollBehavior = prev;
+  };
+  useLayoutEffect(() => {
+    if (location.pathname !== "/" || !location.state?.scrollToProjects) return;
+    scrollToProjectsInstant();
+  }, [location.pathname, location.state]);
+  useEffect(() => {
+    if (location.pathname !== "/" || !location.state?.scrollToProjects) return;
+    const t = setTimeout(() => {
+      scrollToProjectsInstant();
+      navigate(".", { replace: true, state: {} });
+    }, 150);
+    return () => clearTimeout(t);
+  }, [location.pathname, location.state, navigate]);
 
   return (
-    <div className="App">
-      {/* Header placeholder for future extensibility */}
-      <header>
-        {/* You can add a logo or site title here in the future */}
-      </header>
-      {/* Navigation */}
-      {!isProjectDetailPage && (
+    <div className="App min-h-screen bg-white dark:bg-slate-900">
+      <header aria-hidden="true" />
+      {/* Navigation : masquée sur page projet et page Labs */}
+      {!isStandalonePage && (
         <nav aria-label="Main navigation">
           <Navbar />
         </nav>
       )}
-      {/* Main content */}
+      {!isStandalonePage && <QuickNav />}
       <main id="main-content">
-        <div className="bg-wendyBlue">
+        <div className={isStandalonePage ? "" : "bg-wendyBlue dark:bg-slate-950"}>
           <Suspense fallback={<Spinner />}>
             <Routes>
               {routes.map((route, index) => (
@@ -63,15 +93,30 @@ const AppContent = () => {
             </Routes>
           </Suspense>
         </div>
-        {/* About section */}
-        {!isProjectDetailPage && (
-          <section aria-labelledby="about-section">
-            <About />
+        {/* Bloc Expertise : masqué sur page projet et Labs */}
+        {!isStandalonePage && (
+          <section aria-labelledby="about-section" className="bg-white dark:bg-slate-900">
+            <Suspense fallback={<div className="min-h-[50vh]" aria-hidden="true" />}>
+              <About />
+            </Suspense>
           </section>
         )}
+        {/* Bloc Méthodologie : masqué sur page projet et Labs */}
+        {!isStandalonePage && (
+          <div className="bg-slate-100 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800 py-12 sm:py-16">
+            <Suspense fallback={<div className="min-h-[30vh]" aria-hidden="true" />}>
+              <ApprocheSystemique />
+            </Suspense>
+            <Suspense fallback={<div className="min-h-[40vh]" aria-hidden="true" />}>
+              <EngineRoom />
+            </Suspense>
+            <Suspense fallback={<div className="min-h-[30vh]" aria-hidden="true" />}>
+              <ProofOfQuality />
+            </Suspense>
+          </div>
+        )}
       </main>
-      {/* Go to Top button (outside main for accessibility) */}
-      <GoToTop />
+      {!isStandalonePage && <GoToTop />}
       {/* Footer placeholder for future extensibility */}
       <footer>
         {/* You can add contact info or copyright here in the future */}

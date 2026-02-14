@@ -1,0 +1,34 @@
+{
+  "labs": [
+    {
+      "id": "auto-test-gen",
+      "title": "Agent de génération de tests E2E",
+      "category": "Automation",
+      "problem": "Réduire le temps de rédaction des suites Cypress tout en maintenant une couverture à 100% sur des workflows de factures complexes.",
+      "approach": "Analyse des User Stories et du schéma DDD pour extraire les sélecteurs et les assertions, génération dynamique de scripts Cypress et de fixtures cohérentes.",
+      "stack": ["Node.js", "OpenAI API", "Cypress"],
+      "status": "Experimental",
+      "link": "https://vercel.com"
+    },
+    {
+      "id": "codex-ai-bridge",
+      "title": "CODEX Smart Search",
+      "category": "AI Assistance",
+      "problem": "Retrouver instantanément un fragment de code spécifique parmi des milliers d'assets du Registry CODEX.",
+      "approach": "Indexation sémantique (embeddings) et recherche par similarité via Vector DB pour une recherche par intention plutôt que par mot-clé.",
+      "stack": ["Vue 3", "Embeddings", "Vector DB"],
+      "status": "Internal Tool",
+      "link": "https://vercel.com"
+    },
+    {
+      "id": "codex-vault",
+      "title": "CODEX Vault & Registry",
+      "category": "Architecture",
+      "problem": "Archiver, visualiser et rejouer des fragments d'applications critiques sans dupliquer le code.",
+      "approach": "Architecture scalable basée sur un Registry JSON : une source de vérité pour les composants et les scripts d'automatisation.",
+      "stack": ["Node.js", "JSON Registry", "CI/CD"],
+      "status": "Internal Tool",
+      "link": ""
+    }
+  ]
+}

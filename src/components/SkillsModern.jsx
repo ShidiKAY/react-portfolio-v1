@@ -30,7 +30,6 @@ import {
   SiVuedotjs,
   SiApache,
   SiJira,
-  SiCsharp,
   SiDotnet,
   SiUikit,
   SiYarn,
@@ -189,7 +188,7 @@ const skills = {
   ],
   Fullstack: [
     { name: ".NET", icon: DiDotnet },
-    { name: "C#", icon: SiCsharp },
+    { name: "C#", icon: SiDotnet },
     { name: "ASP.NET", icon: SiDotnet },
     { name: "Yarn", icon: SiYarn },
     { name: "Webpack Encore", icon: SiWebpack },
@@ -230,11 +229,11 @@ const SkillPill = ({ skill, idx, mastered, masteredTooltip, isSoft }) => {
   // Determine if soft skill
   const isSoftSkill = isSoft || SOFT_SKILLS.includes(skill.name);
   const pillClass = isSoftSkill
-    ? "relative inline-flex items-center gap-1 px-3 py-1 bg-purple-50 text-purple-700 rounded-full text-sm border border-purple-300 focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 cursor-pointer select-none transition"
-    : "relative inline-flex items-center gap-1 px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-sm border border-blue-300 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 cursor-pointer select-none transition";
+    ? "relative inline-flex items-center gap-1 px-3 py-1 bg-purple-50 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded-full text-sm border border-purple-300 dark:border-purple-700 focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 dark:focus:ring-offset-slate-900 cursor-pointer select-none transition"
+    : "relative inline-flex items-center gap-1 px-3 py-1 bg-blue-50 dark:bg-slate-700 text-blue-700 dark:text-slate-200 rounded-full text-sm border border-blue-300 dark:border-slate-600 focus:ring-2 focus:ring-blue-400 focus:ring-offset-2 dark:focus:ring-offset-slate-900 cursor-pointer select-none transition";
   const tooltipClass = isSoftSkill
-    ? "absolute left-0 bottom-full mb-1 z-50 px-2 py-1.5 rounded-xl bg-white/90 border border-purple-200 text-purple-800 text-xs text-center whitespace-pre-line pointer-events-none min-w-max max-w-xs break-words"
-    : "absolute left-0 bottom-full mb-1 z-50 px-2 py-1.5 rounded-xl bg-white/90 border border-blue-100 text-gray-700 text-xs text-center whitespace-pre-line pointer-events-none min-w-max max-w-xs break-words";
+    ? "absolute left-0 bottom-full mb-1 z-50 px-2 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-purple-200 dark:border-purple-800 text-purple-800 dark:text-purple-200 text-xs text-center whitespace-pre-line pointer-events-none min-w-max max-w-xs break-words"
+    : "absolute left-0 bottom-full mb-1 z-50 px-2 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-600 text-gray-700 dark:text-slate-200 text-xs text-center whitespace-pre-line pointer-events-none min-w-max max-w-xs break-words";
   // Tooltip: use translation if available, else fallback
   const tooltipText = t(
     `skills_desc.${skill.name}`,
@@ -334,7 +333,7 @@ const SkillsModern = () => {
       }`}
     >
       <div className="max-w-5xl mx-auto max-w-full overflow-hidden px-2 md:px-0 lg:px-0">
-        <h2 className="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-6 tracking-tight">
+        <h2 className="text-2xl md:text-3xl font-bold text-center text-blue-900 dark:text-blue-200 mb-6 tracking-tight">
           {t("common.skills")}
         </h2>
         {/* Filtres catégories + recherche */}
@@ -349,8 +348,8 @@ const SkillsModern = () => {
                 className={`px-3 py-1 rounded-full font-medium border text-sm transition-all focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-offset-2
                   ${
                     selectedCategory === cat
-                      ? "bg-blue-600 text-white border-blue-600"
-                      : "bg-white text-blue-700 border-blue-200 hover:bg-blue-100"
+                      ? "bg-blue-600 dark:bg-blue-500 text-white border-blue-600 dark:border-blue-500"
+                      : "bg-white dark:bg-slate-800 text-blue-700 dark:text-slate-200 border-blue-200 dark:border-slate-600 hover:bg-blue-100 dark:hover:bg-slate-700"
                   }
                 `}
                 onClick={() => setSelectedCategory(cat)}
@@ -383,7 +382,7 @@ const SkillsModern = () => {
             </span>
             <input
               type="text"
-              className="pl-9 pr-3 py-1.5 rounded-full border border-blue-200 bg-white text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-full min-w-0"
+              className="pl-9 pr-3 py-1.5 rounded-full border border-blue-200 dark:border-slate-600 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 text-sm focus:outline-none focus:ring-2 focus:ring-blue-400 w-full min-w-0"
               placeholder={t("common.skills_search_placeholder")}
               value={search}
               onChange={(e) => setSearch(e.target.value)}

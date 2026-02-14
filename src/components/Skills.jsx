@@ -24,7 +24,6 @@ import {
   SiVuedotjs,
   SiApache,
   SiJira,
-  SiCsharp,
   SiDotnet,
 } from "react-icons/si";
 import { useTranslation } from "react-i18next";
@@ -59,7 +58,7 @@ const Skills = () => {
     ],
     Fullstack: [
       { name: ".NET", icon: DiDotnet },
-      { name: "C#", icon: SiCsharp },
+      { name: "C#", icon: SiDotnet },
       { name: "ASP.NET", icon: SiDotnet },
     ],
     DevOps: [

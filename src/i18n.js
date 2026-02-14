@@ -1,24 +1,21 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-
-// Import your translation files (optional)
-import en from "./translations/en.json";
 import fr from "./translations/fr.json";
 
-i18n
-  .use(initReactI18next) // Initializes i18next with react-i18next
-  .init({
-    resources: {
-      en: {
-        translation: en,
-      },
-      fr: {
-        // Add other languages here
-        translation: fr,
-      },
-    },
-    lng: "fr", // Set the default language to French
-    fallbackLng: "fr", // Fallback language if translations are missing
-  });
+// Only default language in initial bundle; other(s) loaded on demand for LCP
+i18n.use(initReactI18next).init({
+  resources: { fr: { translation: fr } },
+  lng: "fr",
+  fallbackLng: "fr",
+});
+
+/** Load a language bundle on first use (reduces initial JS for LCP). */
+export async function loadLanguage(lng) {
+  if (lng === "fr" || i18n.hasResourceBundle(lng, "translation")) return;
+  if (lng === "en") {
+    const { default: en } = await import("./translations/en.json");
+    i18n.addResourceBundle("en", "translation", en);
+  }
+}
 
 export default i18n;
