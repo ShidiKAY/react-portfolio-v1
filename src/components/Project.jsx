@@ -142,12 +142,12 @@ const Project = ({ projectId, idx }) => {
         >
           {title}
         </h3>
-        {/* Image with object-cover and neutral bg */}
-        <div className="relative h-40 w-full flex items-center justify-center bg-blue-50 dark:bg-slate-700 border-b border-blue-100 dark:border-slate-600 overflow-hidden z-0">
+        {/* Image / logo : fond clair en dark pour bon contraste des logos PNG sans fond */}
+        <div className="relative h-40 w-full flex items-center justify-center bg-blue-50 dark:bg-slate-200 border-b border-blue-100 dark:border-slate-300 overflow-hidden z-0">
           <img
             src={img}
             alt={title}
-            className="object-cover w-full h-full max-h-40 transition-transform duration-300 group-hover:scale-105"
+            className="object-contain object-center w-full h-full max-h-40 transition-transform duration-300 group-hover:scale-105 dark:drop-shadow-sm"
             width="320"
             height="160"
             loading="lazy"
