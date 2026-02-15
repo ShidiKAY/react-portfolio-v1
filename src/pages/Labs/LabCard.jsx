@@ -30,7 +30,8 @@ export default function LabCard({ lab, index = 0 }) {
 
   return (
     <motion.article
-      className="group relative bg-slate-800/60 dark:bg-slate-900/80 border border-slate-600/60 dark:border-slate-700 rounded-sm overflow-hidden hover:border-cyan-500/50 dark:hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/5 transition-all duration-300 flex flex-col h-full"
+      id={lab.id}
+      className="group relative bg-slate-800/60 dark:bg-slate-900/80 border border-slate-600/60 dark:border-slate-700 rounded-sm overflow-hidden hover:border-cyan-500/50 dark:hover:border-cyan-400/50 hover:shadow-lg hover:shadow-cyan-500/5 transition-all duration-300 flex flex-col h-full scroll-mt-24"
       initial={{ opacity: 0, y: 16 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35, delay: index * 0.06 }}

@@ -12,7 +12,17 @@ const Labs = () => {
   const labs = labsData.labs ?? [];
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    const hash = window.location.hash.slice(1);
+    if (hash) {
+      const el = document.getElementById(hash);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      } else {
+        window.scrollTo(0, 0);
+      }
+    } else {
+      window.scrollTo(0, 0);
+    }
   }, []);
 
   return (

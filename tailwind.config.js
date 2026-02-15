@@ -13,6 +13,15 @@ export default {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        "2xl": "calc(42rem + 3px)",
+        "3xl": "calc(48rem + 3px)",
+        "4xl": "calc(56rem + 3px)",
+        "5xl": "calc(64rem + 3px)",
+        "6xl": "calc(72rem + 3px)",
+        "7xl": "calc(80rem + 3px)",
+        "screen-lg": "calc(1024px + 3px)",
+      },
       fontFamily: {
         montserrat: ['"Montserrat"', '"Helvetica Neue"', "Helvetica", "Arial", "sans-serif"],
       },

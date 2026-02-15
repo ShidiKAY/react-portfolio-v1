@@ -8,7 +8,10 @@
       "approach": "Analyse des User Stories et du schéma DDD pour extraire les sélecteurs et les assertions, génération dynamique de scripts Cypress et de fixtures cohérentes.",
       "stack": ["Node.js", "OpenAI API", "Cypress"],
       "status": "Experimental",
-      "link": "https://vercel.com"
+      "link": "https://vercel.com",
+      "featured": true,
+      "thumbnail": "/images/labs/auto-test-gen.jpg",
+      "vercelUrl": ""
     },
     {
       "id": "codex-ai-bridge",
@@ -18,7 +21,10 @@
       "approach": "Indexation sémantique (embeddings) et recherche par similarité via Vector DB pour une recherche par intention plutôt que par mot-clé.",
       "stack": ["Vue 3", "Embeddings", "Vector DB"],
       "status": "Internal Tool",
-      "link": "https://vercel.com"
+      "link": "https://vercel.com",
+      "featured": true,
+      "thumbnail": "/images/labs/codex-ai-bridge.jpg",
+      "vercelUrl": ""
     },
     {
       "id": "codex-vault",
@@ -28,7 +34,10 @@
       "approach": "Architecture scalable basée sur un Registry JSON : une source de vérité pour les composants et les scripts d'automatisation.",
       "stack": ["Node.js", "JSON Registry", "CI/CD"],
       "status": "Internal Tool",
-      "link": ""
+      "link": "",
+      "featured": true,
+      "thumbnail": "/images/labs/codex-vault.jpg",
+      "vercelUrl": ""
     }
   ]
 }

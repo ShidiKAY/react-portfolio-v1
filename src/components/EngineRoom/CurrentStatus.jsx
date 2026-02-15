@@ -193,7 +193,7 @@ const CurrentStatus = () => {
             <p className="text-xs font-semibold text-cyan-600 dark:text-cyan-400/90 uppercase tracking-wider mb-1">
               {t("common.status_mode_async_label")}
             </p>
-            <p className="text-slate-700 dark:text-slate-200 text-sm leading-snug">
+            <p className="text-slate-700 dark:text-slate-200 text-sm leading-snug whitespace-nowrap">
               {t("common.status_mode_async")}
             </p>
           </div>

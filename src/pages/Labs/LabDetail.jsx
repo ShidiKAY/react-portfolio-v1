@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { Helmet as Head } from "react-helmet-async";
 import labsData from "../../data/labs_exp.json";
+import LabPreview from "./LabPreview";
 
 const STATUS_KEYS = {
   Experimental: "labs_status_experimental",
@@ -91,6 +92,12 @@ const LabDetail = () => {
             </div>
           )}
         </dl>
+
+        {lab.vercelUrl && (
+          <div className="mt-8">
+            <LabPreview url={lab.vercelUrl} />
+          </div>
+        )}
 
         {lab.link && (
           <a
