@@ -8,13 +8,23 @@
     "about_rich": "Passionate about software architecture, I help businesses and technical teams stabilize their critical systems. My approach: backend rigor and transparent communication so that distance is never an issue.\n\n✅ Specialized in designing resilient systems, I work on legacy to stabilize, APIs to consolidate, or teams to level up: performance optimization (prefetch, bulk, caching), E2E testing (Cypress, BDD). Documented methodology, from design to deployment.\n💻 Architecture & Backend: Durable architectures (DDD, APIs, system integration). Targeted refactoring for maintainability and scalability.\n🔌 APIs & Integration: API design and hardening, system interconnection, data consistency.\n🔧 Technical debt & Performance: Debt reduction, query/prefetch/bulk optimization, caching strategies.\n🧪 Quality & delivery: E2E testing (Cypress), BDD scenarios, CI/CD pipelines. Critical paths covered, regressions under control.\n🌐 Infra & deployment: Docker, Kubernetes, CI/CD: controlled, reproducible environments.\n💬 Let's discuss your next project: reliability, added value, or quality uplift.",
     "contact": "Contact",
     "contactme": "Contact me",
+    "notfound_message": "This page does not exist.",
+    "notfound_back": "Back to home",
+    "recommendations_title": "External recommendations",
+    "recommendations_view_linkedin": "View LinkedIn profile",
+    "footer_copyright": "© {{year}} Kamal Ait Yous. All rights reserved.",
+    "footer_contact": "Contact me",
+    "seo_home_title": "Kamal Ait Yous · Senior Backend Expert · Portfolio",
+    "seo_home_description": "Senior Backend Expert: business app reliability, technical debt reduction, automation. Symfony, APIs, E2E testing, DDD.",
+    "seo_labs_title": "Experiments · Kamal Ait Yous",
+    "seo_labs_description": "Prototypes and experiments: E2E test agent, CODEX Smart Search, Registry. Vue, Node.js, AI.",
     "getresume": "Resume",
     "getresumefile": "EN_CV_KamalAITYOUS.pdf",
     "home": "Home",
     "language": "Language",
     "main1": "Critical systems you can rely on.",
-    "main2": "Less technical debt. More value.",
-    "projects": "Projects",
+    "main2": "Technical debt under control. More value.",
+    "projects": "Professional journey",
     "seeMore": "See more",
     "selectLanguage": "Select a language",
     "skills": "Skills",
@@ -22,7 +32,7 @@
     "skills_search_aria": "Search a skill",
     "skills_mastered_tooltip": "Mastered",
     "more_skills_aria": "Show {{count}} more skills: {{skills}}",
-    "sub1": "Senior Backend Expert: I help stabilize your business applications, reduce technical debt, and scale automation.",
+    "sub1": "Senior Backend Expert: I stabilize your business applications, reduce technical debt, and scale automation.",
     "sub2": "Smooth, autonomous collaboration to move your technical projects forward, wherever you are.",
     "technologies": "Technologies:",
     "softSkills": "Soft Skills:",
@@ -82,21 +92,30 @@
     "period": "{{period}}",
     "engine_nav": "Engine",
     "nav_expertise": "Expertise",
-    "nav_projets": "Projects",
-    "nav_engine": "Engine",
+    "nav_projets": "Professional journey",
+    "nav_engine": "Workshop",
     "nav_labs": "Labs",
+    "nav_recommendations": "Recommendations",
     "quicknav_expertise": "Expertise",
-    "quicknav_projets": "Projects",
+    "quicknav_skills": "Skills",
+    "quicknav_projets": "Professional journey",
     "quicknav_approche": "Systemic Approach",
-    "quicknav_engine": "Engine Room",
+    "quicknav_engine": "Workshop",
     "quicknav_status": "Remote Status",
     "quicknav_qualite": "Quality",
+    "quicknav_recommendations": "Recommendations",
     "engine_section_title": "Engine Room",
     "engine_codex_title": "CODEX",
     "engine_codex_description": "CODEX · Vault & Component Explorer. A scalable architecture (JSON Registry) designed to archive, visualize, and replay fragments of critical applications. My technical memory and productivity accelerator.",
     "engine_codex_badge": "Internal Tooling",
     "engine_lab_title": "AI Lab",
     "engine_lab_subtitle": "Experiments & prototypes",
+    "engine_panel_title_codex": "Registry & components",
+    "engine_panel_title_tests": "Automation & proof of quality",
+    "engine_panel_title_labs": "Experiments & prototypes",
+    "engine_panel_subtitle_codex": "Vault & component exploration.",
+    "engine_panel_subtitle_tests": "Critical paths automated, regressions under control.",
+    "engine_panel_subtitle_labs": "Experiments and prototypes.",
     "lab_label_challenge": "Challenge",
     "lab_label_exploration": "Exploration",
     "lab_label_result": "Result",
@@ -113,6 +132,7 @@
     "approche_value_desc": "The Blachère refactoring applied these DDD principles to stabilize critical flows and make the information system easier to evolve.",
     "status_nav": "Status",
     "status_title": "Where I work",
+    "status_work_mode": "Remote first · Open to hybrid",
     "status_time_label": "Local time",
     "status_paris_label": "Paris (client)",
     "status_my_time_label": "My zone",
@@ -143,9 +163,21 @@
     "proof_codex_title": "CODEX",
     "proof_codex_desc": "Registry and automation scripts to archive, replay, and reuse fragments of critical applications.",
     "proof_cypress_title": "Cypress E2E tests",
-    "proof_cypress_desc": "Automated test suites for critical business flows.",
+    "proof_cypress_desc": "Dedicated Node project with Cypress: 72 E2E tests, clean mode that rebuilds a DB between each scenario for a controlled, reproducible environment.",
+    "proof_cypress_how": "Scenarios cover for example login, modal opening, and status changes following the business workflow. Each scenario runs in a clean environment: the DB is recreated from fixtures between each test, ensuring reproducible results and no side effects.",
+    "proof_cypress_demo_content": "Demo: login, modal opening, status change following the workflow.",
+    "proof_cypress_benefits_title": "What is in place during the test:",
+    "proof_cypress_benefit_1": "Environment and mode choice (clean)",
+    "proof_cypress_benefit_2": "DB rebuilt with fixtures for a controlled environment",
+    "proof_cypress_benefit_3": "Scenarios run (login, modal, workflow)",
+    "proof_cypress_benefit_4": "Test results (pass / fail)",
+    "proof_cypress_benefit_5": "Regressions avoided",
+    "proof_cypress_benefit_6": "Higher quality delivery",
+    "proof_cypress_benefit_7": "Reduced debug time and back-and-forth",
+    "proof_cypress_benefit_8": "Solution to avoid team friction points",
     "proof_guarantee": "Systematic automation of critical paths to keep regressions under control.",
-    "proof_cypress_placeholder": "Placeholder: add an image or video (cypress-demo.gif / .mp4) to show a Cypress test demo.",
+    "proof_cypress_placeholder": "A screen capture or short video of the Cypress run will be added here.",
+    "proof_cypress_coming_soon": "Demo coming soon",
     "labs_page_title": "Experiments",
     "labs_teaser_1": "Prototypes and tools to industrialize QA and code search.",
     "labs_teaser_2": "E2E test generation agents, semantic search over the CODEX vault.",
@@ -169,6 +201,14 @@
     "labs_link_vercel": "View on Vercel",
     "engine_codex_demo_btn": "Explore the Vault (Demo)",
     "engine_codex_insight": "Node-based navigation system independent of the Backend.",
+    "tools_tab_codex": "CODEX",
+    "tools_tab_tests": "E2E Tests",
+    "tools_tab_labs": "Labs",
+    "engine_codex_snippets_title": "Live previews (CODEX)",
+    "engine_codex_snippet_1_title": "Registry fragment",
+    "engine_codex_snippet_1_code": "// From Registry – registered component\n{ \"id\": \"invoice-table\", \"version\": \"1.0\" }",
+    "engine_codex_snippet_2_title": "Replay script",
+    "engine_codex_snippet_2_code": "// Replayable automation script\nawait codex.replay('invoice-flow');",
     "expert_insights_title": "Reliability Log",
     "changelog_refactor_title": "Refactor",
     "changelog_refactor_desc": "Migration of business services to a DDD architecture (Aggregates).",
@@ -176,7 +216,7 @@
     "changelog_perf_desc": "Optimization of complex queries and caching strategies.",
     "changelog_qa_title": "QA",
     "changelog_qa_desc": "Coverage of critical flows (Billing/Stock) via Cypress.",
-    "proof_terminal_status": "Status: All tests passed [142 success, 0 failed]"
+    "proof_terminal_status": "Status: All tests passed [72 success, 0 failed]"
   },
   "portfolio": {
     "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
@@ -315,8 +355,8 @@
       "tasks": [
         {
           "group": {
-            "titre": "System Modernization",
-            "intro": "To lead the migration from a legacy PHP application to Symfony 4, focusing on performance optimization and architectural improvements."
+            "titre": "System upgrade",
+            "intro": "Led the migration from a legacy PHP application to Symfony 4, with performance gains and architectural improvements."
           },
           "data": {
             "1": {
@@ -375,8 +415,8 @@
         },
         {
           "group": {
-            "titre": "Performance Optimization",
-            "intro": "To implement dynamic data loading and AJAX updates for optimal performance."
+            "titre": "Responsiveness and loading",
+            "intro": "Dynamic data loading and AJAX updates for better responsiveness."
           },
           "data": {
             "1": {
@@ -425,7 +465,7 @@
           },
           "data": {
             "performance": {
-              "title": "Performance Analysis and Optimization",
+              "title": "Performance analysis and gains",
               "description": [
                 "Conduct a thorough analysis of the existing template system's performance bottlenecks, particularly in the FPDF-based generation process",
                 "Identify and resolve memory management issues in PDF generation, where each element is generated pixel-by-pixel",
@@ -534,8 +574,8 @@
       "tasks": [
         {
           "group": {
-            "titre": "Platform Enhancement",
-            "intro": "To enhance AlertCenter's capabilities as a central monitoring platform for IT infrastructure and incident management, focusing on real-time monitoring and efficient incident handling."
+            "titre": "Platform evolution",
+            "intro": "Strengthened AlertCenter as a central IT monitoring and incident management platform (real-time, escalation)."
           },
           "data": {
             "1": {
@@ -548,9 +588,9 @@
               ]
             },
             "2": {
-              "title": "System Modernization",
+              "title": "Codebase evolution",
               "description": [
-                "Modernize the codebase using object-oriented programming and MVC architecture",
+                "Evolve the codebase toward OOP and MVC architecture",
                 "Implement WebSocket technology for real-time data updates without polling",
                 "Enhance webservice integrations for seamless data synchronization",
                 "Develop an advanced incident escalation system with SMS and call notifications based on criticality"
@@ -692,8 +732,8 @@
         },
         {
           "group": {
-            "titre": "Performance Optimization",
-            "intro": "Implemented various optimization techniques to ensure fast loading times and smooth user experience."
+            "titre": "Responsiveness and fluidity",
+            "intro": "Optimization techniques for fast loading and a smooth experience."
           },
           "data": {
             "1": {
@@ -858,7 +898,7 @@
               ]
             },
             "3": {
-              "title": "Performance Optimization",
+              "title": "Performance gains and scalability",
               "description": [
                 "Identifying and reducing excessive prefetch (N+1, over-fetching)",
                 "Bulk updates and batch processing where relevant",
@@ -879,7 +919,7 @@
       "softSkills": ["Autonomous Work", "Communication", "Problem Solving"],
       "introduction": {
         "name": "Freelance",
-        "introduction": "As a freelance developer, I have worked on a variety of projects for clients in different industries, providing web development, consulting, and technical support.",
+        "introduction": "As a freelance developer, I have worked on a variety of projects for clients in different industries, providing web development, consulting, and technical support. Freelance period including time in Asia.",
         "description": "Presentation of some recent freelance projects."
       },
       "duration": 24,
@@ -888,7 +928,7 @@
         {
           "group": {
             "titre": "Refactoring a legacy business application",
-            "intro": "Modernize an existing business application by migrating from legacy PHP code to Symfony 4, with UI/UX redesign and advanced data visualization integration."
+            "intro": "Evolve an existing business application: migration from legacy PHP to Symfony 4, UI/UX redesign, and advanced data visualization."
           },
           "data": {
             "1": {

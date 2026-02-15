@@ -6,7 +6,7 @@ const TerminalMockup = ({ statusBarText, children }) => {
 
   return (
     <div
-      className="rounded-sm overflow-hidden border border-slate-300 dark:border-slate-600 bg-slate-900"
+      className="rounded-sm overflow-hidden border border-slate-300 dark:border-slate-600 bg-slate-900 dark:bg-slate-950"
       aria-label="Terminal mockup"
     >
       {/* Title bar - macOS / VS Code style */}
@@ -20,7 +20,7 @@ const TerminalMockup = ({ statusBarText, children }) => {
       </div>
 
       {/* Content area - video/GIF or placeholder */}
-      <div className="min-h-[200px] bg-slate-900 flex items-center justify-center p-4">
+      <div className="min-h-[200px] bg-slate-900 dark:bg-slate-950 flex items-center justify-center p-4">
         {children}
       </div>
 

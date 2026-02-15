@@ -1,8 +1,9 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-
+import { Helmet as Head } from "react-helmet-async";
 import { useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { SEO_BASE_URL, SEO_DEFAULT_IMAGE } from "../config/seo";
 
 // import Bubbles from "./Bubbles";
 
@@ -46,6 +47,21 @@ const Home = () => {
   }, []); // Empty dependency array ensures useEffect runs only once
 
   return (
+    <>
+      <Head>
+        <title>{t("common.seo_home_title")}</title>
+        <meta name="description" content={t("common.seo_home_description")} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={SEO_BASE_URL + "/"} />
+        <meta property="og:title" content={t("common.seo_home_title")} />
+        <meta property="og:description" content={t("common.seo_home_description")} />
+        <meta property="og:image" content={SEO_DEFAULT_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={SEO_BASE_URL + "/"} />
+        <meta name="twitter:title" content={t("common.seo_home_title")} />
+        <meta name="twitter:description" content={t("common.seo_home_description")} />
+        <meta name="twitter:image" content={SEO_DEFAULT_IMAGE} />
+      </Head>
     <motion.div
       ref={refHome}
       initial="hidden"
@@ -104,6 +120,7 @@ const Home = () => {
         {/* <Bubbles bubbles={bubbles} /> */}
       </div>
     </motion.div>
+    </>
   );
 };
 

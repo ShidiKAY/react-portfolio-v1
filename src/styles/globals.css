@@ -45,3 +45,12 @@ code {
     display: none !important;
   }
 }
+
+/* Hide scrollbar while keeping scroll (e.g. Engine Room panels) */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}

@@ -33,20 +33,26 @@ const About = () => {
   const aboutLines = aboutRich
     .split("\n")
     .filter((line) => line.trim() !== "" && !line.trim().startsWith("Hello"));
-  // First paragraph (experience)
-  const experienceIdx = aboutLines.findIndex((line) =>
-    line.trim().startsWith("💻")
-  );
   const supportIdx = aboutLines.findIndex((line) =>
     line.trim().startsWith("✅")
+  );
+  const experienceIdx = aboutLines.findIndex((line) =>
+    line.trim().startsWith("💻")
   );
   const contactIdx = aboutLines.findIndex((line) =>
     line.trim().startsWith("💬")
   );
-  const firstParagraph = aboutLines[experienceIdx];
-  const secondParagraph = aboutLines[supportIdx];
-  // Points (💻, 🔌, etc.) are between supportIdx+1 and contactIdx
-  const pointsLines = aboutLines.slice(supportIdx + 1, contactIdx);
+  // Intro: first line (no emoji) + ✅ paragraph
+  const introFirstLine =
+    aboutLines.length > 0 && !/^[\p{Emoji_Presentation}\p{Emoji}\uFE0F?]/u.test(aboutLines[0].trim())
+      ? aboutLines[0]
+      : null;
+  const introParagraph = supportIdx !== -1 ? aboutLines[supportIdx] : null;
+  // Points: all emoji lines from 💻 to 🌐 (no duplicate with intro)
+  const pointsLines =
+    experienceIdx !== -1 && contactIdx !== -1
+      ? aboutLines.slice(experienceIdx, contactIdx)
+      : [];
   // Parse points as icon/text
   const detailedPoints = pointsLines
     .map((line) => {
@@ -164,15 +170,15 @@ const About = () => {
                   },
                 }}
               >
-                {/* Always visible: first two paragraphs */}
-                {firstParagraph && (
+                {/* Intro: first line then ✅ */}
+                {introFirstLine && (
                   <p className="text-left font-normal mb-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
-                    {firstParagraph}
+                    {introFirstLine}
                   </p>
                 )}
-                {secondParagraph && (
+                {introParagraph && (
                   <p className="text-left font-normal mb-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
-                    {secondParagraph}
+                    {introParagraph}
                   </p>
                 )}
                 {/* Collapsible: points as indented list + contact line */}

@@ -3,14 +3,18 @@ import { useLocation } from "react-router-dom";
 import { Link } from "react-scroll";
 import { useTranslation } from "react-i18next";
 
+// Order matches DOM/scroll order on home: About → Skills → Projects → Approche → Engine (inclut Qualité dans le carousel) → Status → Recommendations
 const SECTIONS = [
   { id: "toabout", labelKey: "common.quicknav_expertise" },
+  { id: "toskills", labelKey: "common.quicknav_skills" },
   { id: "toprojects", labelKey: "common.quicknav_projets" },
   { id: "toapproche", labelKey: "common.quicknav_approche" },
   { id: "toengine", labelKey: "common.quicknav_engine" },
   { id: "tostatus", labelKey: "common.quicknav_status" },
-  { id: "toproof", labelKey: "common.quicknav_qualite" },
+  { id: "torecommendations", labelKey: "common.quicknav_recommendations" },
 ];
+
+const HASH_IDS = ["tohome", ...SECTIONS.map((s) => s.id)];
 
 const IDLE_DELAY_MS = 1800;
 
@@ -26,7 +30,8 @@ const QuickNav = () => {
 
   useEffect(() => {
     if (!isHome) return;
-    const handleScroll = () => {
+    let rafId = null;
+    const update = () => {
       setLabelsVisible(true);
       if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
       idleTimerRef.current = setTimeout(() => setLabelsVisible(false), IDLE_DELAY_MS);
@@ -34,33 +39,78 @@ const QuickNav = () => {
       const total = document.documentElement.scrollHeight - document.documentElement.clientHeight;
       if (total <= 0) {
         setScrollProgress(0);
-        return;
+      } else {
+        const progress = Math.min(1, window.scrollY / total);
+        setScrollProgress(progress);
       }
-      const progress = window.scrollY / total;
-      setScrollProgress(progress);
 
       const viewportMid = window.scrollY + window.innerHeight / 2;
-      for (let i = SECTIONS.length - 1; i >= 0; i--) {
-        const el = document.getElementById(SECTIONS[i].id);
-        if (el && el.offsetTop <= viewportMid) {
-          setActiveSection(SECTIONS[i].id);
-          break;
+      const firstEl = document.getElementById(SECTIONS[0].id);
+      let hashId = null;
+      if (firstEl && viewportMid < firstEl.offsetTop) {
+        setActiveSection(SECTIONS[0].id);
+        hashId = "tohome";
+      } else {
+        for (let i = SECTIONS.length - 1; i >= 0; i--) {
+          const el = document.getElementById(SECTIONS[i].id);
+          if (el && el.offsetTop <= viewportMid) {
+            setActiveSection(SECTIONS[i].id);
+            hashId = SECTIONS[i].id;
+            break;
+          }
+        }
+        if (hashId === null) {
+          setActiveSection(SECTIONS[0].id);
+          hashId = firstEl ? SECTIONS[0].id : "tohome";
+        }
+      }
+      if (hashId) {
+        const href = `${window.location.pathname}${window.location.search}#${hashId}`;
+        if (window.location.hash !== `#${hashId}`) {
+          window.history.replaceState(null, "", href);
         }
       }
     };
+    const handleScroll = () => {
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(update);
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
+    update();
+    const scrollToHash = (hash) => {
+      if (!hash || !HASH_IDS.includes(hash)) return;
+      if (hash === "tohome") {
+        window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        return;
+      }
+      const el = document.getElementById(hash);
+      if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
+    };
+    let rafIdInitial = null;
+    let hashRetryId = null;
+    rafIdInitial = requestAnimationFrame(() => {
+      rafIdInitial = requestAnimationFrame(() => {
+        update();
+        const hash = location.hash.slice(1);
+        scrollToHash(hash);
+        if (hash && hash !== "tohome" && !document.getElementById(hash)) {
+          hashRetryId = setTimeout(() => scrollToHash(hash), 400);
+        }
+      });
+    });
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+      if (rafIdInitial != null) cancelAnimationFrame(rafIdInitial);
+      if (hashRetryId != null) clearTimeout(hashRetryId);
       if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
     };
-  }, [isHome]);
+  }, [isHome, location.pathname, location.state]);
 
   if (!isHome) return null;
 
   return (
     <>
-      {/* Scroll progress bar - 1px, cyan/slate, smooth */}
       <div
         className="fixed top-0 left-0 right-0 h-[1px] bg-slate-200 dark:bg-slate-700 z-[25]"
         aria-hidden="true"
@@ -71,7 +121,6 @@ const QuickNav = () => {
         />
       </div>
 
-      {/* Sommaire à droite : labels disparaissent (autres puis en cours) après inactivité, réapparaissent au scroll */}
       <nav
         aria-label="Quick navigation"
         className="fixed right-4 top-1/2 -translate-y-1/2 z-[25] flex flex-col gap-4"

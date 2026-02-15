@@ -87,18 +87,25 @@ const CurrentStatus = () => {
       aria-labelledby="status-dashboard-heading"
     >
       <div className="p-6 sm:p-8">
-        <motion.h3
-          id="status-dashboard-heading"
-          className="text-lg font-semibold text-slate-700 dark:text-slate-200 mb-6 flex items-center gap-2"
+        <motion.div
+          className="mb-6"
           initial={{ opacity: 0, y: 8 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3 }}
         >
-          <span className="text-cyan-600 dark:text-cyan-400/90 font-mono text-sm uppercase tracking-wider">
-            Remote-Ready Dashboard
-          </span>
-        </motion.h3>
+          <h3
+            id="status-dashboard-heading"
+            className="text-lg font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2"
+          >
+            <span className="text-cyan-600 dark:text-cyan-400/90 font-mono text-sm uppercase tracking-wider">
+              Remote-Ready Dashboard
+            </span>
+          </h3>
+          <p className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">
+            {t("common.status_work_mode")}
+          </p>
+        </motion.div>
 
         {/* Timezone Synchronization - horloge double */}
         <motion.div

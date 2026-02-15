@@ -13,6 +13,9 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        montserrat: ['"Montserrat"', '"Helvetica Neue"', "Helvetica", "Arial", "sans-serif"],
+      },
       // Extend default Tailwind theme with custom colors
       colors: {
         mnBlue: "#3E517A",

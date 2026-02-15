@@ -7,7 +7,7 @@ export default [
   },
   {
     path: "/about",
-    component: React.lazy(() => import("./components/About")),
+    component: React.lazy(() => import("./pages/AboutRedirect/AboutRedirect")),
   },
   {
     path: "/projects/:projectId",
@@ -16,5 +16,13 @@ export default [
   {
     path: "/labs",
     component: React.lazy(() => import("./pages/Labs/Labs")),
+  },
+  {
+    path: "/labs/:labId",
+    component: React.lazy(() => import("./pages/Labs/LabDetail")),
+  },
+  {
+    path: "*",
+    component: React.lazy(() => import("./pages/NotFound/NotFound")),
   },
 ];

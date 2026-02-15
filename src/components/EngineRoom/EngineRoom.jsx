@@ -1,21 +1,27 @@
+import { useState } from "react";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import EngineCard from "./EngineCard";
+import { motion, AnimatePresence } from "framer-motion";
+import ToolsCarousel from "./ToolsCarousel";
 import CurrentStatus from "./CurrentStatus";
+
+const DEFAULT_PANEL_KEY = "tests";
 
 const EngineRoom = () => {
   const { t } = useTranslation();
+  const [activePanelKey, setActivePanelKey] = useState(DEFAULT_PANEL_KEY);
+
+  const titleKey = `common.engine_panel_title_${activePanelKey}`;
+  const subtitleKey = `common.engine_panel_subtitle_${activePanelKey}`;
 
   return (
     <section
       id="toengine"
-      className="w-full py-12 sm:py-16 px-4 sm:px-6"
+      className="w-full py-14 sm:py-20 px-4 sm:px-6 bg-slate-50/60 dark:bg-slate-900/20"
       aria-labelledby="engine-room-heading"
     >
       <div className="max-w-5xl mx-auto w-full">
         <motion.header
-          className="text-center mb-10"
+          className="text-center mb-12 sm:mb-14 min-h-[5.5rem] sm:min-h-[6rem] flex flex-col justify-center"
           initial={{ opacity: 0, y: 10 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-50px" }}
@@ -23,40 +29,44 @@ const EngineRoom = () => {
         >
           <h2
             id="engine-room-heading"
-            className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white mb-2 tracking-wide"
+            className="text-2xl sm:text-3xl font-bold text-slate-900 dark:text-white tracking-wide font-montserrat"
           >
-            {t("common.engine_section_title")}
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={activePanelKey}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.25 }}
+                className="inline-block"
+              >
+                {t(titleKey)}
+              </motion.span>
+            </AnimatePresence>
           </h2>
-          <p className="text-slate-600 dark:text-slate-300 text-base max-w-xl mx-auto">
-            {t("common.engine_lab_subtitle")}
+          <p className="text-slate-600 dark:text-slate-300 text-base sm:text-[0.9375rem] max-w-xl mx-auto leading-relaxed mt-3">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.span
+                key={activePanelKey}
+                initial={{ opacity: 0, y: 4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                transition={{ duration: 0.25 }}
+                className="inline-block"
+              >
+                {t(subtitleKey)}
+              </motion.span>
+            </AnimatePresence>
           </p>
         </motion.header>
+      </div>
 
-        <div className="space-y-10">
-          <EngineCard />
-          <CurrentStatus />
-          <motion.div
-            className="rounded-sm border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 p-6 sm:p-8"
-            initial={{ opacity: 0, y: 12 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4 }}
-          >
-            <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-3">
-              {t("common.engine_lab_title")}
-            </h3>
-            <p className="text-slate-600 dark:text-slate-300 text-sm mb-6">
-              {t("common.labs_teaser_home")}
-            </p>
-            <Link
-              to="/labs"
-              className="inline-flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-medium text-sm hover:text-cyan-700 dark:hover:text-cyan-300 transition-colors"
-            >
-              {t("common.labs_explore_btn")}
-              <span aria-hidden="true">→</span>
-            </Link>
-          </motion.div>
-        </div>
+      <div className="w-full">
+        <ToolsCarousel onActivePanelChange={setActivePanelKey} />
+      </div>
+
+      <div className="max-w-5xl mx-auto w-full mt-12 sm:mt-14">
+        <CurrentStatus />
       </div>
     </section>
   );

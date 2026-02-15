@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
-import { useParams, useNavigate } from "react-router-dom";
-import Head from "react-helmet";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { Helmet as Head } from "react-helmet-async";
+import { SEO_BASE_URL, SEO_DEFAULT_IMAGE } from "../../config/seo";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import GoToTop from "../../components/GoToTop";
 import i18n from "../../i18n";
@@ -24,6 +25,7 @@ const ProjectDetail = () => {
   const { t } = useTranslation();
   const { projectId } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
   const [scrollProgress, setScrollProgress] = useState(0);
 
   // Function to highlight technical terms and impactful words
@@ -543,14 +545,16 @@ const ProjectDetail = () => {
             {project.introduction.name} Project - Kamal Ait Yous Portfolio
           </title>
           <meta name="description" content={project.description} />
-          <meta
-            property="og:image"
-            content="https://kamal-portfolio.vercel.app/images/profile-rounded2.png"
-          />
-          <meta
-            name="twitter:image"
-            content="https://kamal-portfolio.vercel.app/images/profile-rounded2.png"
-          />
+          <meta property="og:type" content="article" />
+          <meta property="og:url" content={SEO_BASE_URL + location.pathname} />
+          <meta property="og:title" content={`${project.introduction.name} Project - Kamal Ait Yous Portfolio`} />
+          <meta property="og:description" content={project.description} />
+          <meta property="og:image" content={SEO_DEFAULT_IMAGE} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:url" content={SEO_BASE_URL + location.pathname} />
+          <meta name="twitter:title" content={`${project.introduction.name} Project - Kamal Ait Yous Portfolio`} />
+          <meta name="twitter:description" content={project.description} />
+          <meta name="twitter:image" content={SEO_DEFAULT_IMAGE} />
         </Head>
 
         {/* Project Header */}

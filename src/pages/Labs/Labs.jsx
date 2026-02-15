@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { Helmet as Head } from "react-helmet-async";
 import { motion } from "framer-motion";
 import labsData from "../../data/labs_exp.json";
+import { SEO_BASE_URL, SEO_DEFAULT_IMAGE } from "../../config/seo";
 import LabCard from "./LabCard";
 
 const Labs = () => {
@@ -15,10 +17,25 @@ const Labs = () => {
 
   return (
     <div className="min-h-screen bg-slate-900">
+      <Head>
+        <title>{t("common.seo_labs_title")}</title>
+        <meta name="description" content={t("common.seo_labs_description")} />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={SEO_BASE_URL + "/labs"} />
+        <meta property="og:title" content={t("common.seo_labs_title")} />
+        <meta property="og:description" content={t("common.seo_labs_description")} />
+        <meta property="og:image" content={SEO_DEFAULT_IMAGE} />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={SEO_BASE_URL + "/labs"} />
+        <meta name="twitter:title" content={t("common.seo_labs_title")} />
+        <meta name="twitter:description" content={t("common.seo_labs_description")} />
+        <meta name="twitter:image" content={SEO_DEFAULT_IMAGE} />
+      </Head>
       {/* Bouton Retour */}
       <div className="fixed top-4 left-4 z-[200]">
         <Link
           to="/"
+          state={{ scrollToEngine: true }}
           className="flex items-center gap-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm text-slate-800 dark:text-slate-100 px-4 py-2 rounded-sm border border-slate-200 dark:border-slate-600 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
           aria-label={t("common.labs_back_to_expertise")}
         >
@@ -68,6 +85,7 @@ const Labs = () => {
         >
           <Link
             to="/"
+            state={{ scrollToEngine: true }}
             className="inline-flex items-center gap-2 text-slate-400 hover:text-cyan-400 text-sm font-medium transition-colors"
           >
             <span>←</span> {t("common.labs_back_to_expertise")}

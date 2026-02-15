@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { AiOutlineClose, AiOutlineMenu } from "react-icons/ai";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { SiMalt } from "react-icons/si";
@@ -13,10 +14,12 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isPageReady, setIsPageReady] = useState(false);
-  const [activeLink, setActiveLink] = useState("home");
-  const sections = ["tohome", "toabout", "toprojects", "toskills", "toapproche", "toengine", "tostatus", "toproof"];
+  const [activeLink, setActiveLink] = useState("tohome");
+  const location = useLocation();
+  const sections = ["tohome", "toabout", "toprojects", "toskills", "toapproche", "toengine", "tostatus", "toproof", "torecommendations"];
   const engineZoneIds = ["toapproche", "toengine", "tostatus", "toproof"];
   const isInEngineZone = (link) => engineZoneIds.includes(link);
+  const isHome = location.pathname === "/";
 
   useEffect(() => {
     const onReady = () => requestAnimationFrame(() => setIsPageReady(true));
@@ -29,12 +32,14 @@ const Navbar = () => {
   }, []);
 
   useEffect(() => {
+    if (!isHome) return;
+
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 0);
       updateActiveLink();
     };
     const updateActiveLink = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 2; // Adjust as needed
+      const scrollPosition = window.scrollY + window.innerHeight / 2;
       sections.forEach((section) => {
         const element = document.getElementById(section);
         if (element) {
@@ -50,6 +55,11 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+    updateActiveLink();
+    let rafIdDeferred = null;
+    rafIdDeferred = requestAnimationFrame(() => {
+      rafIdDeferred = requestAnimationFrame(updateActiveLink);
+    });
 
     Events.scrollEvent.register("begin", (to) => {
       setActiveLink(to);
@@ -61,10 +71,11 @@ const Navbar = () => {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (rafIdDeferred != null) cancelAnimationFrame(rafIdDeferred);
       Events.scrollEvent.remove("begin");
       Events.scrollEvent.remove("end");
     };
-  }, []);
+  }, [isHome, location.pathname, location.state]);
 
   const handleMobileNav = () => {
     setIsOpen(!isOpen);
@@ -148,6 +159,17 @@ const Navbar = () => {
                       onSetActive={() => setActiveLink("toapproche")}
                     >
                       {t("common.nav_engine")}
+                    </ScrollLink>
+                  </h1>
+                  <h1 className={handleActiveLink("torecommendations")}>
+                    <ScrollLink
+                      to="torecommendations"
+                      smooth={true}
+                      duration={500}
+                      className="cursor-pointer text-sm font-medium tracking-wide"
+                      onSetActive={() => setActiveLink("torecommendations")}
+                    >
+                      {t("common.nav_recommendations")}
                     </ScrollLink>
                   </h1>
                   <h1>
@@ -281,6 +303,11 @@ const Navbar = () => {
                   <h1 className={handleActiveLink("toengine")}>
                     <ScrollLink to="toapproche" smooth duration={500} className="cursor-pointer" onClick={handleMobileNav} onSetActive={() => setActiveLink("toapproche")}>
                       {t("common.nav_engine")}
+                    </ScrollLink>
+                  </h1>
+                  <h1 className={handleActiveLink("torecommendations")}>
+                    <ScrollLink to="torecommendations" smooth duration={500} className="cursor-pointer" onClick={handleMobileNav} onSetActive={() => setActiveLink("torecommendations")}>
+                      {t("common.nav_recommendations")}
                     </ScrollLink>
                   </h1>
                   <h1>
