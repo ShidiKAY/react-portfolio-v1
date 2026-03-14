@@ -1,30 +1,9 @@
 import { useTranslation } from "react-i18next";
 import Project from "./Project";
 import { motion } from "framer-motion";
+import { PROJECT_ORDER } from "../constants/projects";
 
-const projects = [
-  {
-    projectId: "bbg",
-  },
-  {
-    projectId: "freelance",
-  },
-  {
-    projectId: "hml",
-  },
-  {
-    projectId: "scf",
-  },
-  {
-    projectId: "bubo",
-  },
-  {
-    projectId: "hopps",
-  },
-  {
-    projectId: "apigem",
-  },
-];
+const projects = PROJECT_ORDER.map((projectId) => ({ projectId }));
 
 const Projects = () => {
   const { t } = useTranslation();
@@ -32,14 +11,6 @@ const Projects = () => {
 
   return (
     <div className="w-full pb-16 sm:pb-20 overflow-x-hidden">
-      {/* <div className="grid grid-cols-3 grid-rows-2 gap-4 justify-items-center">
-        <div>Element 1</div>
-        <div>Element 2</div>
-        <div>Element 3</div>
-        <div>Element 4</div>
-        <div>Element 5</div>
-        <div>Element 6</div>
-      </div> */}
       <div className="mx-auto flex flex-col justify-center max-w-full overflow-hidden px-2 md:px-0 lg:px-0 min-w-0">
         <p className="font-bold text-blue-900 dark:text-blue-200 text-3xl pb-6 text-center tracking-wide">
           {t("common.projects")}

@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { Helmet as Head } from "react-helmet-async";
 
 const NotFound = () => {
   const { t } = useTranslation();
 
   return (
+    <>
+      <Head>
+        <title>{t("common.seo_404_title")}</title>
+        <meta name="robots" content="noindex, nofollow" />
+      </Head>
     <div className="min-h-[60vh] flex flex-col items-center justify-center px-4 py-16 text-center">
       <h1 className="text-6xl sm:text-8xl font-bold text-slate-200 dark:text-slate-700">
         404
@@ -19,6 +25,7 @@ const NotFound = () => {
         {t("common.notfound_back")}
       </Link>
     </div>
+    </>
   );
 };
 

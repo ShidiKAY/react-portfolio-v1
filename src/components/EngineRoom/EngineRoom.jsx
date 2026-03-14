@@ -58,6 +58,9 @@ const EngineRoom = () => {
               </motion.span>
             </AnimatePresence>
           </p>
+          <p className="text-slate-500 dark:text-slate-400 text-sm max-w-2xl mx-auto mt-2 italic">
+            {t("common.engine_process_phrase")}
+          </p>
         </motion.header>
       </div>
 

@@ -52,10 +52,10 @@ const Recommendations = () => {
             </blockquote>
             <footer className="flex items-center gap-4">
               <div className="w-14 h-14 flex-shrink-0 overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-700">
-                {recommendations[0].companyLogo ? (
+                {recommendations[0].companyLogo && !recommendations[0].companyLogo.includes("placeholder") ? (
                   <img
                     src={recommendations[0].companyLogo}
-                    alt=""
+                    alt={recommendations[0].company || recommendations[0].name}
                     className="h-full w-full object-cover"
                     width={56}
                     height={56}
@@ -111,10 +111,10 @@ const Recommendations = () => {
                 </blockquote>
                 <footer className="flex items-center gap-2 pt-2 border-t border-slate-100 dark:border-slate-700 flex-shrink-0">
                   <div className="w-8 h-8 flex-shrink-0 overflow-hidden rounded-md bg-slate-100 dark:bg-slate-700">
-                    {rec.companyLogo ? (
+                    {rec.companyLogo && !rec.companyLogo.includes("placeholder") ? (
                       <img
                         src={rec.companyLogo}
-                        alt=""
+                        alt={rec.company || rec.name}
                         className="h-full w-full object-cover"
                         width={32}
                         height={32}

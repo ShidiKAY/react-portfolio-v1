@@ -1,4 +1,4 @@
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link, Navigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
 import { Helmet as Head } from "react-helmet-async";
@@ -19,7 +19,6 @@ const CATEGORY_KEYS = {
 const LabDetail = () => {
   const { labId } = useParams();
   const { t } = useTranslation();
-  const navigate = useNavigate();
   const labs = labsData.labs ?? [];
   const lab = labs.find((l) => l.id === labId);
 
@@ -27,14 +26,11 @@ const LabDetail = () => {
     window.scrollTo(0, 0);
   }, [labId]);
 
-  useEffect(() => {
-    if (!lab && labs.length > 0) {
-      navigate("/labs", { replace: true });
-    }
-  }, [lab, labs.length, navigate]);
-
+  if (!lab && labs.length > 0) {
+    return <Navigate to="/labs" replace />;
+  }
   if (!lab) {
-    return null;
+    return <Navigate to="/404" replace />;
   }
 
   const statusLabel = t("common." + (STATUS_KEYS[lab.status] ?? "labs_status_experimental"));
@@ -79,6 +75,12 @@ const LabDetail = () => {
             <dt className="text-cyan-400 font-mono text-xs uppercase tracking-wider mb-1">{t("common.labs_label_approach")}</dt>
             <dd className="leading-relaxed">{lab.approach}</dd>
           </div>
+          {lab.result && (
+            <div>
+              <dt className="text-cyan-400 font-mono text-xs uppercase tracking-wider mb-1">{t("common.labs_insight_label")}</dt>
+              <dd className="leading-relaxed font-medium text-slate-200">{lab.result}</dd>
+            </div>
+          )}
           {(lab.stack ?? []).length > 0 && (
             <div>
               <dt className="text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">{t("common.labs_label_stack")}</dt>

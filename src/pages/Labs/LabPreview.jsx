@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const LabPreview = ({ url, className = "" }) => {
   const [loaded, setLoaded] = useState(false);
+  const { t } = useTranslation();
 
   if (!url) return null;
 
@@ -14,7 +16,7 @@ const LabPreview = ({ url, className = "" }) => {
         >
           <div className="flex flex-col items-center gap-3 text-slate-500">
             <div className="w-12 h-12 rounded-full border-2 border-slate-500 border-t-cyan-400 animate-spin" />
-            <span className="text-sm">Chargement de la démo…</span>
+            <span className="text-sm">{t("common.labs_loading_demo")}</span>
           </div>
         </div>
       )}

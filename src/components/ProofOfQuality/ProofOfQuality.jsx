@@ -90,9 +90,6 @@ const ProofOfQuality = () => {
                   <p className="mt-2 text-slate-600 dark:text-slate-300 text-sm font-medium">
                     {t("common.proof_cypress_demo_content")}
                   </p>
-                  <p className="mt-1 text-slate-500 dark:text-slate-500 text-xs max-w-sm mx-auto">
-                    {t("common.proof_cypress_placeholder")}
-                  </p>
                 </div>
               )}
             </TerminalMockup>

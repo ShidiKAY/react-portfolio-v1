@@ -1,6 +1,7 @@
 import React, { Suspense, useEffect, useLayoutEffect } from "react";
 import "./styles/globals.css";
 import { BrowserRouter, Routes, Route, useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import Navbar from "./components/Navbar";
 import routes from "./routes";
 import GoToTop from "./components/GoToTop";
@@ -18,12 +19,7 @@ const Recommendations = React.lazy(() =>
   import("./components/Recommendations/Recommendations")
 );
 
-// import "react-modal/dist/react-modal.min.css"; // Minified version
-
-// Importez les styles de modal
-// import "./node_modules/react-modal/dist/react-modal.css"; // Relative path (if needed)
-
-// Définissez l'élément racine pour react-modal
+// Root element for react-modal
 const appElement = document.getElementById("root");
 ReactModal.setAppElement(appElement);
 
@@ -43,6 +39,7 @@ const Spinner = () => (
 
 // Create a wrapper component to handle conditional rendering
 const AppContent = () => {
+  const { t, i18n } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const isStandalonePage =
@@ -50,6 +47,10 @@ const AppContent = () => {
     location.pathname === "/labs" ||
     location.pathname.startsWith("/labs/");
   const isHome = location.pathname === "/";
+
+  useEffect(() => {
+    document.documentElement.lang = i18n.language && i18n.language.startsWith("en") ? "en" : "fr";
+  }, [i18n.language]);
 
   // Retour page projet (Back / Escape) : positionnement direct sur la section Projets, sans effet smooth (contourne scroll-behavior: smooth du CSS)
   const scrollToProjectsInstant = () => {
@@ -89,7 +90,12 @@ const AppContent = () => {
 
   return (
     <div className="App min-h-screen bg-white dark:bg-slate-900">
-      <header aria-hidden="true" />
+      <a
+        href="#main-content"
+        className="sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[300] focus:px-4 focus:py-2 focus:bg-cyan-600 focus:text-white focus:rounded-lg focus:outline-none focus:w-auto focus:h-auto focus:m-0 focus:overflow-visible focus:[clip:auto]"
+      >
+        {t("common.skip_to_content")}
+      </a>
       {/* Navigation : masquée sur page projet et page Labs */}
       {!isStandalonePage && (
         <nav aria-label="Main navigation">

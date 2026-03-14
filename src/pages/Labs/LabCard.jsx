@@ -75,6 +75,16 @@ export default function LabCard({ lab, index = 0 }) {
               {lab.approach}
             </dd>
           </div>
+          {lab.result && (
+            <div>
+              <dt className="text-cyan-400/90 font-mono text-xs uppercase tracking-wider mb-0.5">
+                {t("common.labs_insight_label")}
+              </dt>
+              <dd className="text-slate-200 dark:text-slate-200 leading-relaxed text-sm font-medium">
+                {lab.result}
+              </dd>
+            </div>
+          )}
         </dl>
 
         {(lab.stack ?? []).length > 0 && (

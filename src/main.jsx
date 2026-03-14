@@ -18,5 +18,3 @@ root.render(
     </HelmetProvider>
   </React.StrictMode>
 );
-
-// Images use native loading="lazy" and decoding="async" for performance.

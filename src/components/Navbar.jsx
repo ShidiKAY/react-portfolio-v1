@@ -128,7 +128,7 @@ const Navbar = () => {
               </div>
               <div className="hidden md:block">
                 <div className="flex items-baseline space-x-8">
-                  <h1 className={handleActiveLink("toabout")}>
+                  <span className={handleActiveLink("toabout")}>
                     <ScrollLink
                       to="toabout"
                       smooth={true}
@@ -138,8 +138,8 @@ const Navbar = () => {
                     >
                       {t("common.nav_expertise")}
                     </ScrollLink>
-                  </h1>
-                  <h1 className={handleActiveLink("toprojects")}>
+                  </span>
+                  <span className={handleActiveLink("toprojects")}>
                     <ScrollLink
                       to="toprojects"
                       smooth={true}
@@ -149,8 +149,8 @@ const Navbar = () => {
                     >
                       {t("common.nav_projets")}
                     </ScrollLink>
-                  </h1>
-                  <h1 className={handleActiveLink("toengine")}>
+                  </span>
+                  <span className={handleActiveLink("toengine")}>
                     <ScrollLink
                       to="toapproche"
                       smooth={true}
@@ -160,8 +160,8 @@ const Navbar = () => {
                     >
                       {t("common.nav_engine")}
                     </ScrollLink>
-                  </h1>
-                  <h1 className={handleActiveLink("torecommendations")}>
+                  </span>
+                  <span className={handleActiveLink("torecommendations")}>
                     <ScrollLink
                       to="torecommendations"
                       smooth={true}
@@ -171,15 +171,15 @@ const Navbar = () => {
                     >
                       {t("common.nav_recommendations")}
                     </ScrollLink>
-                  </h1>
-                  <h1>
+                  </span>
+                  <span>
                     <Link
                       to="/labs"
                       className="text-slate-900 dark:text-slate-100 hover:text-blue-500 dark:hover:text-blue-400 text-sm font-medium tracking-wide transition-colors"
                     >
                       {t("common.nav_labs")}
                     </Link>
-                  </h1>
+                  </span>
                 </div>
               </div>
 
@@ -189,7 +189,7 @@ const Navbar = () => {
                     type="button"
                     onClick={toggleTheme}
                     className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    aria-label={theme === "dark" ? "Passer en mode clair" : "Passer en mode sombre"}
+                    aria-label={theme === "dark" ? t("common.theme_aria_light") : t("common.theme_aria_dark")}
                   >
                     {theme === "dark" ? (
                       <HiSun className="w-5 h-5" aria-hidden="true" />
@@ -197,27 +197,41 @@ const Navbar = () => {
                       <HiMoon className="w-5 h-5" aria-hidden="true" />
                     )}
                   </button>
-                  <div className="language-switcher mt-1.5">
+                  <div className="language-switcher mt-1.5" role="group" aria-label={t("common.selectLanguage")}>
                     <ul className="flex space-x-2">
-                      <li
-                        className="inline-flex items-center cursor-pointer"
-                        onClick={() => changeLanguage("fr")}
-                      >
-                        <span
-                          className="i-flagpack-fr w-8 mb-1 mt-1"
-                          title="French"
-                        ></span>
-                        <span className="hidden lg:block">French</span>
+                      <li>
+                        <button
+                          type="button"
+                          className="inline-flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                          onClick={() => changeLanguage("fr")}
+                          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); changeLanguage("fr"); } }}
+                          tabIndex={0}
+                          aria-label="Français"
+                        >
+                          <span
+                            className="i-flagpack-fr w-8 mb-1 mt-1"
+                            title="French"
+                            aria-hidden
+                          />
+                          <span className="hidden lg:block">French</span>
+                        </button>
                       </li>
-                      <li
-                        className="inline-flex items-center cursor-pointer"
-                        onClick={() => changeLanguage("en")}
-                      >
-                        <span
-                          className="i-flagpack-gb-ukm w-8 mt-px"
-                          title="English"
-                        ></span>{" "}
-                        <span className="hidden lg:block">English</span>
+                      <li>
+                        <button
+                          type="button"
+                          className="inline-flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                          onClick={() => changeLanguage("en")}
+                          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); changeLanguage("en"); } }}
+                          tabIndex={0}
+                          aria-label="English"
+                        >
+                          <span
+                            className="i-flagpack-gb-ukm w-8 mt-px"
+                            title="English"
+                            aria-hidden
+                          />{" "}
+                          <span className="hidden lg:block">English</span>
+                        </button>
                       </li>
                     </ul>
                   </div>
@@ -227,6 +241,7 @@ const Navbar = () => {
                       href="https://github.com/ShidiKAY"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={t("common.aria_github")}
                     >
                       <BsGithub className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" size="2rem" />
                     </a>
@@ -236,6 +251,7 @@ const Navbar = () => {
                       href="https://www.linkedin.com/in/kamal-ait-yous-90a6a3178/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={t("common.aria_linkedin")}
                     >
                       <BsLinkedin className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" size="2rem" />
                     </a>
@@ -245,6 +261,7 @@ const Navbar = () => {
                       href="https://www.malt.fr/profile/kamalaityous"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={t("common.aria_malt")}
                     >
                       <SiMalt className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" size="2rem" />
                     </a>
@@ -285,57 +302,63 @@ const Navbar = () => {
                     type="button"
                     onClick={toggleTheme}
                     className="flex items-center gap-2 p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 mb-2"
-                    aria-label={theme === "dark" ? "Passer en mode clair" : "Passer en mode sombre"}
+                    aria-label={theme === "dark" ? t("common.theme_aria_light") : t("common.theme_aria_dark")}
                   >
                     {theme === "dark" ? <HiSun className="w-5 h-5" /> : <HiMoon className="w-5 h-5" />}
                     <span>{theme === "dark" ? "Mode clair" : "Mode sombre"}</span>
                   </button>
-                  <h1 className={handleActiveLink("toabout")}>
+                  <span className={handleActiveLink("toabout")}>
                     <ScrollLink to="toabout" smooth duration={500} className="cursor-pointer" onClick={handleMobileNav} onSetActive={() => setActiveLink("toabout")}>
                       {t("common.nav_expertise")}
                     </ScrollLink>
-                  </h1>
-                  <h1 className={handleActiveLink("toprojects")}>
+                  </span>
+                  <span className={handleActiveLink("toprojects")}>
                     <ScrollLink to="toprojects" smooth duration={500} className="cursor-pointer" onClick={handleMobileNav} onSetActive={() => setActiveLink("toprojects")}>
                       {t("common.nav_projets")}
                     </ScrollLink>
-                  </h1>
-                  <h1 className={handleActiveLink("toengine")}>
+                  </span>
+                  <span className={handleActiveLink("toengine")}>
                     <ScrollLink to="toapproche" smooth duration={500} className="cursor-pointer" onClick={handleMobileNav} onSetActive={() => setActiveLink("toapproche")}>
                       {t("common.nav_engine")}
                     </ScrollLink>
-                  </h1>
-                  <h1 className={handleActiveLink("torecommendations")}>
+                  </span>
+                  <span className={handleActiveLink("torecommendations")}>
                     <ScrollLink to="torecommendations" smooth duration={500} className="cursor-pointer" onClick={handleMobileNav} onSetActive={() => setActiveLink("torecommendations")}>
                       {t("common.nav_recommendations")}
                     </ScrollLink>
-                  </h1>
-                  <h1>
+                  </span>
+                  <span>
                     <Link to="/labs" className="cursor-pointer text-slate-900 dark:text-slate-100 hover:text-blue-500 dark:hover:text-blue-400" onClick={handleMobileNav}>
                       {t("common.nav_labs")}
                     </Link>
-                  </h1>
-                  <div className="language-switcher mt-1.5">
+                  </span>
+                  <div className="language-switcher mt-1.5" role="group" aria-label={t("common.selectLanguage")}>
                     <ul className="flex space-x-2">
-                      <li
-                        className="inline-flex items-center cursor-pointer"
-                        onClick={() => changeLanguage("fr")}
-                      >
-                        <span
-                          className="i-flagpack-fr w-8 mb-1 mt-1"
-                          title="French"
-                        ></span>
-                        <span className="hidden lg:block">French</span>
+                      <li>
+                        <button
+                          type="button"
+                          className="inline-flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                          onClick={() => changeLanguage("fr")}
+                          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); changeLanguage("fr"); } }}
+                          tabIndex={0}
+                          aria-label="Français"
+                        >
+                          <span className="i-flagpack-fr w-8 mb-1 mt-1" title="French" aria-hidden />
+                          <span className="hidden lg:block">French</span>
+                        </button>
                       </li>
-                      <li
-                        className="inline-flex items-center cursor-pointer"
-                        onClick={() => changeLanguage("en")}
-                      >
-                        <span
-                          className="i-flagpack-gb-ukm w-8 mt-px"
-                          title="English"
-                        ></span>{" "}
-                        <span className="hidden lg:block">English</span>
+                      <li>
+                        <button
+                          type="button"
+                          className="inline-flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                          onClick={() => changeLanguage("en")}
+                          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); changeLanguage("en"); } }}
+                          tabIndex={0}
+                          aria-label="English"
+                        >
+                          <span className="i-flagpack-gb-ukm w-8 mt-px" title="English" aria-hidden />{" "}
+                          <span className="hidden lg:block">English</span>
+                        </button>
                       </li>
                     </ul>
                   </div>
@@ -345,6 +368,7 @@ const Navbar = () => {
                       href="https://github.com/ShidiKAY"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={t("common.aria_github")}
                     >
                       <BsGithub size="2rem" />
                     </a>
@@ -354,6 +378,7 @@ const Navbar = () => {
                       href="https://www.linkedin.com/in/kamal-ait-yous-90a6a3178/"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={t("common.aria_linkedin")}
                     >
                       <BsLinkedin size="2rem" />
                     </a>
@@ -363,6 +388,7 @@ const Navbar = () => {
                       href="https://www.malt.fr/profile/kamalaityous"
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label={t("common.aria_malt")}
                     >
                       <SiMalt size="2rem" />
                     </a>

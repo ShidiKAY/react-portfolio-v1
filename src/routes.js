@@ -22,6 +22,10 @@ export default [
     component: React.lazy(() => import("./pages/Labs/LabDetail")),
   },
   {
+    path: "/404",
+    component: React.lazy(() => import("./pages/NotFound/NotFound")),
+  },
+  {
     path: "*",
     component: React.lazy(() => import("./pages/NotFound/NotFound")),
   },

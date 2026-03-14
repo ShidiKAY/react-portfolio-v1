@@ -10,10 +10,14 @@
     "contactme": "Me contacter",
     "notfound_message": "Cette page n'existe pas.",
     "notfound_back": "Retour à l'accueil",
+    "seo_404_title": "Page non trouvée · Kamal Ait Yous",
+    "project_not_found": "Projet introuvable.",
     "recommendations_title": "Recommandations externes",
     "recommendations_view_linkedin": "Voir le profil LinkedIn",
     "footer_copyright": "{{year}} Kamal Ait Yous",
     "footer_contact": "Me contacter",
+    "back": "Retour",
+    "skip_to_content": "Aller au contenu principal",
     "seo_home_title": "Kamal Ait Yous · Expert Backend Senior · Portfolio",
     "seo_home_description": "Expert Backend Senior : fiabilisation d'applications métier, réduction de la dette technique, automatisation. Symfony, APIs, tests E2E, DDD.",
     "seo_labs_title": "Expérimentations · Kamal Ait Yous",
@@ -22,6 +26,12 @@
     "getresumefile": "FR_CV_KamalAITYOUS.pdf",
     "home": "Accueil",
     "language": "Langue",
+    "theme_aria_light": "Passer en mode clair",
+    "theme_aria_dark": "Passer en mode sombre",
+    "labs_loading_demo": "Chargement de la démo…",
+    "aria_github": "Profil GitHub",
+    "aria_linkedin": "Profil LinkedIn",
+    "aria_malt": "Profil Malt",
     "main1": "Systèmes critiques fiables.",
     "main2": "Dette technique maîtrisée, plus de valeur.",
     "projects": "Parcours pro",
@@ -116,6 +126,8 @@
     "engine_panel_subtitle_codex": "Vault & exploration des composants.",
     "engine_panel_subtitle_tests": "Parcours critiques automatisés, régressions maîtrisées.",
     "engine_panel_subtitle_labs": "Expérimentations et prototypes.",
+    "engine_process_phrase": "J'accélère les tâches chronophages pour me concentrer sur la fiabilité et la livraison.",
+    "project_impact_title": "Impact & résultat",
     "lab_label_challenge": "Défi",
     "lab_label_exploration": "Exploration",
     "lab_label_result": "Résultat",
@@ -227,6 +239,7 @@
   "projects": {
     "apigem": {
       "description": "Refondre l'application web Apigem avec un design UI/UX moderne et responsive pour améliorer l'expérience utilisateur et l'accessibilité.",
+      "impactSummary": "Modernisation de l'architecture, réduction des temps de réponse et interface responsive.",
       "img": "/images/project-images/apigem/logo.png",
       "mainTechnologies": [
         "PHP",
@@ -331,6 +344,7 @@
     },
     "bubo": {
       "description": "Moderniser une application PHP legacy vers Symfony 4, appliquer les principes du Material Design et ajouter une visualisation avancée des données avec ApexCharts.",
+      "impactSummary": "Migration vers Symfony 4, graphiques interactifs (ApexCharts, temps réel) et métriques de sécurité (OpenVas) : architecture et UX alignées sur les standards actuels.",
       "img": "/images/project-images/bubo/logo.png",
       "mainTechnologies": [
         "Symfony",
@@ -350,7 +364,7 @@
       ],
       "introduction": {
         "description": "Dirigé la modernisation complète d'une application PHP legacy, en se concentrant sur l'architecture système, l'interface utilisateur et l'amélioration de la visualisation des données",
-        "introduction": "Modernisé une application PHP legacy pour répondre aux standards web actuels et améliorer l'expérience utilisateur",
+        "introduction": "Application de cybersécurité (BUBO Cybersec) : migration d'un legacy PHP vers Symfony 4, refonte UI (Material Design, UIkit) et ajout de graphiques temps réel (ApexCharts) et de métriques de vulnérabilités (OpenVas) pour aligner le produit sur les standards actuels.",
         "name": "BUBO Cybersec",
         "title": "Objectif Cloud"
       },
@@ -436,6 +450,7 @@
     },
     "hml": {
       "description": "Optimiser et moderniser Mediabase, plateforme clé d'export et de traitement de données pour les distributeurs de livres, en mettant l'accent sur l'automatisation, la fiabilité et la performance.",
+      "impactSummary": "Gains de performance sur l'export, fiabilité renforcée et processus PDF maîtrisés.",
       "img": "/images/project-images/hml/logo.png",
       "mainTechnologies": [
         "PHP",
@@ -551,6 +566,7 @@
     },
     "hopps": {
       "description": "Développer et maintenir AlertCenter, une plateforme complète de surveillance d'infrastructure IT offrant des insights en temps réel et des capacités de gestion des incidents.",
+      "impactSummary": "Tableaux de bord temps réel (WebSocket), séparation multi-tenant pour un client, et automatisation du ticketing (Jira, LDAP) pour le centre de service.",
       "img": "/images/project-images/hopps/logo.png",
       "mainTechnologies": [
         "C#",
@@ -609,7 +625,7 @@
             "1": {
               "title": "Implémentation Multi-tenant",
               "description": [
-                "Conçevoir et implémenté une architecture multi-tenant pour des environnements clients séparés",
+                "Concevoir et implémenter une architecture multi-tenant pour des environnements clients séparés",
                 "Développer un système de filtrage des requêtes pour maintenir la connectivité des outils selon les comptes utilisateurs",
                 "Créer une solution plus efficace pour gérer les besoins de séparation client",
                 "Implémenter des mécanismes d'isolation des données pour assurer la confidentialité des données client"
@@ -644,7 +660,7 @@
             "2": {
               "title": "Gestion des Identités",
               "description": [
-                "Construir un pont entre deux Active Directories et le système de ticketing Jira",
+                "Construire un pont entre deux Active Directories et le système de ticketing Jira",
                 "Implémenter la création automatique de comptes Jira pour les nouveaux utilisateurs via l'API Jira",
                 "Développer un système de synchronisation des rôles et permissions utilisateurs",
                 "Créer des workflows automatisés de provisionnement et déprovisionnement des utilisateurs"
@@ -656,16 +672,15 @@
     },
     "scf": {
       "description": "Développer une plateforme web complète pour la communauté francophone de SC, fournissant du contenu localisé, des mises à jour en temps réel et des fonctionnalités communautaires comme alternative au site officiel en anglais.",
+      "impactSummary": "Plateforme pour la communauté francophone (6000+ users) : contenu localisé, temps réel (WebSocket, Discord), optimisations (code splitting, Redis) et gestion de contenu.",
       "img": "/images/project-images/scf/logo.png",
       "mainTechnologies": [
-        "Symfony",
-        "UIkit",
-        "API Platform",
-        "SQL",
-        "DQL",
-        "Yarn",
-        "Vue.js",
-        "Docker"
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Docker",
+        "Redis",
+        "WebSocket"
       ],
       "softSkills": [
         "Développement Fullstack",
@@ -683,7 +698,7 @@
         {
           "group": {
             "titre": "Développement de la Plateforme",
-            "intro": "Construir une plateforme web moderne utilisant React et Node.js, en se concentrant sur la performance, l'évolutivité et les fonctionnalités en temps réel pour la communauté francophone."
+            "intro": "Construire une plateforme web moderne utilisant React et Node.js, en se concentrant sur la performance, l'évolutivité et les fonctionnalités en temps réel pour la communauté francophone."
           },
           "data": {
             "1": {
@@ -718,7 +733,7 @@
                 "Créer un système automatisé de scraping de données pour les mises à jour et actualités du jeu",
                 "Implémenter un pipeline de traduction de contenu pour la localisation française",
                 "Développer un système de cache utilisant Redis pour une meilleure performance",
-                "Construir des outils de validation et modération de contenu"
+                "Construire des outils de validation et modération de contenu"
               ]
             },
             "2": {
@@ -762,6 +777,7 @@
     },
     "bbg": {
       "description": "Mission freelance pour la holding Bernard Blachère : refonte d'applications critiques (SI interne). Architecture DDD, APIs Symfony, Vue.js 3, tests E2E Cypress + BDD, optimisations perf (prefetch, bulk). Collaboration à distance optimisée.",
+      "impactSummary": "Refonte DDD, tests E2E Cypress et optimisations (prefetch, bulk) : livraisons sécurisées, régressions maîtrisées, maintenabilité renforcée.",
       "img": "/images/project-images/bbg/logo.png",
       "mainTechnologies": [
         "Symfony",
@@ -910,12 +926,21 @@
           }
         }
       ],
-      "challenges": [],
-      "solutions": [],
+      "challenges": [
+        "Applications critiques avec dette technique et frontières métier floues.",
+        "Collaboration à distance avec une équipe interne et livraisons fréquentes.",
+        "Nécessité de livrer sans régression sur des parcours métier sensibles."
+      ],
+      "solutions": [
+        "Refactorisation DDD pour clarifier le domaine et améliorer la maintenabilité.",
+        "Tests E2E Cypress et scénarios BDD pour sécuriser les releases et maîtriser les régressions.",
+        "Méthodologie documentée et optimisations ciblées (prefetch, bulk) pour des livraisons prévisibles."
+      ],
       "externalLinks": []
     },
     "freelance": {
       "description": "Travailler en tant que développeur freelance pour divers clients, réalisant des missions de développement web, de conseil et de solutions sur mesure.",
+      "impactSummary": "Migration legacy vers Symfony 4, refonte UI (Material Design, ApexCharts) et site vitrine (Bootstrap, SEO) pour des clients multi-secteurs.",
       "img": "/images/project-images/freelance/logo.png",
       "mainTechnologies": ["PHP", "JavaScript", "React", "Symfony", "Node.js"],
       "softSkills": [
@@ -924,7 +949,7 @@
         "Résolution de problèmes"
       ],
       "introduction": {
-        "name": "Freelance",
+        "name": "Missions Freelance",
         "introduction": "En tant que développeur freelance, j'ai travaillé sur une variété de projets pour des clients de différents secteurs, assurant développement web, conseil et support technique. Période en freelance, notamment en Asie.",
         "description": "Présentation de quelques missions freelance récentes."
       },

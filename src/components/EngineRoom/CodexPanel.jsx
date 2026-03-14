@@ -57,24 +57,6 @@ const CodexPanel = () => {
         {t("common.engine_codex_demo_btn")}
         <span aria-hidden="true">↗</span>
       </a>
-
-      {/* Placeholder: remplir la section pour tester le comportement */}
-      <div className="pt-4 border-t border-slate-200 dark:border-slate-600 space-y-3">
-        <p className="text-xs font-medium text-slate-500 dark:text-slate-400 uppercase tracking-wide">Placeholder</p>
-        <div className="flex gap-2 flex-wrap">
-          {[1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="h-16 w-20 rounded-lg bg-slate-200 dark:bg-slate-700 animate-pulse" />
-          ))}
-        </div>
-        <div className="h-24 rounded-lg bg-slate-100 dark:bg-slate-700/50 border border-dashed border-slate-300 dark:border-slate-600 flex items-center justify-center">
-          <span className="text-xs text-slate-500 dark:text-slate-400">Codex placeholder block</span>
-        </div>
-        <div className="grid grid-cols-3 gap-2">
-          {[1, 2, 3].map((i) => (
-            <div key={i} className="h-20 rounded bg-slate-200/80 dark:bg-slate-700/80" />
-          ))}
-        </div>
-      </div>
     </div>
   );
 };

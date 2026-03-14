@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate, useLocation, Navigate } from "react-router-dom";
 import { Helmet as Head } from "react-helmet-async";
 import { SEO_BASE_URL, SEO_DEFAULT_IMAGE } from "../../config/seo";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -10,16 +10,7 @@ import {
   SKILL_DESCRIPTIONS,
   skillIcons,
 } from "../../components/SkillsModern";
-
-const PROJECT_ORDER = [
-  "hml",
-  "scf",
-  "bubo",
-  "hopps",
-  "apigem",
-  "bbg",
-  "freelance",
-];
+import { PROJECT_ORDER, isValidProjectId } from "../../constants/projects";
 
 const ProjectDetail = () => {
   const { t } = useTranslation();
@@ -295,9 +286,14 @@ const ProjectDetail = () => {
   }, [navigate]);
 
   const project = t(`projects.${projectId}`, { returnObjects: true });
+  const projectValid =
+    isValidProjectId(projectId) &&
+    project &&
+    typeof project === "object" &&
+    project.introduction;
 
-  if (!project) {
-    return <div>Project not found.</div>;
+  if (!projectValid) {
+    return <Navigate to="/404" replace />;
   }
 
   const technologies = project.technologies || [];
@@ -327,8 +323,8 @@ const ProjectDetail = () => {
       <div className="fixed top-4 left-4 z-[200]">
         <button
           onClick={() => navigate("/", { state: { scrollToProjects: true } })}
-          className="flex items-center gap-2 bg-white/80 dark:bg-slate-800/90 backdrop-blur-sm text-gray-800 dark:text-slate-100 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
-          aria-label="Go back"
+          className="flex items-center gap-2 cursor-pointer bg-white/80 dark:bg-slate-800/90 backdrop-blur-sm text-gray-800 dark:text-slate-100 px-4 py-2 rounded-full shadow-sm hover:shadow-md transition-all duration-200"
+          aria-label={t("common.back")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -342,7 +338,7 @@ const ProjectDetail = () => {
               clipRule="evenodd"
             />
           </svg>
-          Back
+          {t("common.back")}
         </button>
       </div>
 
@@ -559,9 +555,12 @@ const ProjectDetail = () => {
 
         {/* Project Header */}
         <div className="max-w-4xl w-full mx-auto mt-10 sm:mt-16 mb-8 sm:mb-12 px-0 sm:px-4">
-          <h1 className="text-3xl sm:text-5xl font-bold mb-6 sm:mb-8 text-gray-900 dark:text-white text-left font-montserrat uppercase break-words">
+          <h1 className="text-3xl sm:text-5xl font-bold mb-3 sm:mb-4 text-gray-900 dark:text-white text-left font-montserrat uppercase break-words">
             {project.introduction.name}
           </h1>
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-slate-400 mb-6 sm:mb-8 leading-snug max-w-3xl">
+            {project.description}
+          </p>
 
           {/* Project Image */}
           {project.img && (
@@ -577,9 +576,16 @@ const ProjectDetail = () => {
             />
           )}
 
-          <p className="text-base sm:text-xl text-gray-600 dark:text-slate-300 mb-6 sm:mb-8 leading-relaxed text-justify break-words">
-            {project.description}
-          </p>
+          {project.impactSummary && (
+            <div className="mb-6 sm:mb-8 p-4 sm:p-5 rounded-lg bg-cyan-50 dark:bg-cyan-900/20 border border-cyan-200 dark:border-cyan-800">
+              <h2 className="text-sm font-semibold text-cyan-800 dark:text-cyan-300 uppercase tracking-wider mb-2">
+                {t("common.project_impact_title")}
+              </h2>
+              <p className="text-gray-700 dark:text-slate-200 leading-relaxed">
+                {project.impactSummary}
+              </p>
+            </div>
+          )}
 
           {/* Project Stats */}
           <div className="flex flex-wrap gap-4 sm:gap-6 mb-6 sm:mb-8 -ml-2 sm:-ml-4">
@@ -725,18 +731,18 @@ const ProjectDetail = () => {
           <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 bg-gray-50 dark:bg-slate-800 p-4 sm:p-6 rounded-lg w-full">
               <div>
-                <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white text-left">
+                <h2 className="text-lg font-semibold mb-3 text-gray-800 dark:text-white text-left">
                   {t("common.projectContext")}
                 </h2>
-                <p className="text-gray-700 dark:text-slate-300 leading-relaxed text-justify">
+                <p className="text-gray-700 dark:text-slate-300 leading-relaxed text-justify text-sm sm:text-base">
                   {project.introduction.introduction}
                 </p>
               </div>
               <div>
-                <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white text-left">
+                <h2 className="text-lg font-semibold mb-3 text-gray-800 dark:text-white text-left">
                   {t("common.myRole")}
                 </h2>
-                <p className="text-gray-700 dark:text-slate-300 leading-relaxed text-justify">
+                <p className="text-gray-700 dark:text-slate-300 leading-relaxed text-justify text-sm sm:text-base">
                   {project.introduction.description}
                 </p>
               </div>
@@ -746,7 +752,7 @@ const ProjectDetail = () => {
           {/* Key Actions & Impact */}
           {project.tasks && project.tasks.length > 0 && (
             <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
-              <h2 className="text-xl font-semibold mb-6 text-gray-800 dark:text-white text-left">
+              <h2 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white text-left">
                 {t("common.keyActions")}
               </h2>
               <div className="space-y-6 sm:space-y-8">
@@ -769,21 +775,18 @@ const ProjectDetail = () => {
                           key={dataIndex}
                           className="relative pl-4 sm:pl-6 before:absolute before:left-0 before:top-2 before:w-1 before:h-[calc(100%-1rem)] before:bg-blue-500"
                         >
-                          <h4 className="font-semibold text-gray-800 dark:text-white mb-3 text-left">
+                          <h4 className="font-semibold text-gray-800 dark:text-white mb-2 text-left">
                             {taskGroup.data[taskId].title}
                           </h4>
-                          <div className="text-gray-700 dark:text-slate-300 space-y-2 sm:space-y-3 break-words">
+                          <ul className="list-disc list-inside text-gray-700 dark:text-slate-300 space-y-1 sm:space-y-1.5 break-words">
                             {taskGroup.data[taskId].description.map(
                               (desc, idx) => (
-                                <p
-                                  key={idx}
-                                  className="leading-relaxed text-justify"
-                                >
+                                <li key={idx} className="leading-relaxed text-justify">
                                   {highlightTerms(desc)}
-                                </p>
+                                </li>
                               )
                             )}
-                          </div>
+                          </ul>
                           {taskGroup.data[taskId].img && (
                             <img
                               src={taskGroup.data[taskId].img}

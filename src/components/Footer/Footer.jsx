@@ -15,21 +15,38 @@ const Footer = () => {
 
   return (
     <footer className="border-t border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-900/50 py-8 px-4">
-      <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-600 dark:text-slate-400">
-        <span>{t("common.footer_copyright", { year })}</span>
-        <div className="flex items-center gap-6">
+      <div className="max-w-4xl mx-auto flex flex-col gap-6">
+        <div className="flex flex-wrap items-center justify-center gap-4 sm:gap-6">
           <a
             href="mailto:kamal.aityous@gmail.com"
-            className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg font-medium text-white bg-cyan-600 hover:bg-cyan-700 dark:bg-cyan-500 dark:hover:bg-cyan-600 transition-colors"
           >
-            {t("common.footer_contact")}
+            {t("common.contactme")}
           </a>
           <Link
-            to="/"
-            className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+            to={"/" + t("common.getresumefile")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-5 py-2.5 rounded-lg font-medium text-slate-700 dark:text-slate-200 bg-slate-200 dark:bg-slate-700 hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
           >
-            {t("common.home")}
+            {t("common.getresume")}
           </Link>
+        </div>
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-600 dark:text-slate-400">
+          <span>{t("common.footer_copyright", { year })}</span>
+          <div className="flex items-center gap-6">
+            <a
+              href="mailto:kamal.aityous@gmail.com"
+              className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+            >
+              {t("common.footer_contact")}
+            </a>
+            <Link
+              to="/"
+              className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+            >
+              {t("common.home")}
+            </Link>
           {SOCIAL_LINKS.map(({ href, Icon, label }) => (
             <a
               key={label}
@@ -42,6 +59,7 @@ const Footer = () => {
               <Icon className="w-5 h-5" />
             </a>
           ))}
+        </div>
         </div>
       </div>
     </footer>

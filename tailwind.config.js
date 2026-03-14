@@ -7,9 +7,8 @@ const {
 export default {
   darkMode: "class",
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,vue}",
-    "./components/**/*.{js,ts,jsx,tsx,vue}",
-    "./src/**/*.{js,ts,jsx,tsx,vue}",
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
     extend: {

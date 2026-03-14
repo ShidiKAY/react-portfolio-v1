@@ -235,6 +235,12 @@ const ToolsCarousel = ({ onActivePanelChange }) => {
             if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
               goPrev();
+            } else if (e.key === "ArrowLeft") {
+              e.preventDefault();
+              goPrev();
+            } else if (e.key === "ArrowRight") {
+              e.preventDefault();
+              goNext();
             }
           }}
           aria-label={t("common.project_nav_prev")}
@@ -267,6 +273,12 @@ const ToolsCarousel = ({ onActivePanelChange }) => {
                 } else if (e.key === "ArrowRight") {
                   e.preventDefault();
                   goNext();
+                } else if (e.key === "Home") {
+                  e.preventDefault();
+                  scrollToSection(0);
+                } else if (e.key === "End") {
+                  e.preventDefault();
+                  scrollToSection(TOTAL_SECTIONS - 1);
                 }
               }}
             >
@@ -284,6 +296,8 @@ const ToolsCarousel = ({ onActivePanelChange }) => {
                   return (
                     <section
                       key={id}
+                      id={`panel-${id}`}
+                      aria-hidden={!isActive}
                       className={`flex-shrink-0 overflow-visible p-6 sm:p-8 transition-shadow duration-300 bg-white dark:bg-slate-800 text-slate-900 dark:text-slate-100 flex flex-col ${isActive ? "shadow-lg" : "shadow-sm"}`}
                       style={{ width: SECTION_WIDTH_PX, minHeight: SECTION_MIN_HEIGHT_PX }}
                       aria-labelledby={`panel-heading-${id}`}
@@ -305,6 +319,12 @@ const ToolsCarousel = ({ onActivePanelChange }) => {
           onClick={goNext}
           onKeyDown={(e) => {
             if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              goNext();
+            } else if (e.key === "ArrowLeft") {
+              e.preventDefault();
+              goPrev();
+            } else if (e.key === "ArrowRight") {
               e.preventDefault();
               goNext();
             }

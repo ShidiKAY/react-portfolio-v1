@@ -10,10 +10,14 @@
     "contactme": "Contact me",
     "notfound_message": "This page does not exist.",
     "notfound_back": "Back to home",
+    "seo_404_title": "Page not found · Kamal Ait Yous",
+    "project_not_found": "Project not found.",
     "recommendations_title": "External recommendations",
     "recommendations_view_linkedin": "View LinkedIn profile",
     "footer_copyright": "{{year}} Kamal Ait Yous",
     "footer_contact": "Contact me",
+    "back": "Back",
+    "skip_to_content": "Skip to main content",
     "seo_home_title": "Kamal Ait Yous · Senior Backend Expert · Portfolio",
     "seo_home_description": "Senior Backend Expert: business app reliability, technical debt reduction, automation. Symfony, APIs, E2E testing, DDD.",
     "seo_labs_title": "Experiments · Kamal Ait Yous",
@@ -22,6 +26,12 @@
     "getresumefile": "EN_CV_KamalAITYOUS.pdf",
     "home": "Home",
     "language": "Language",
+    "theme_aria_light": "Switch to light mode",
+    "theme_aria_dark": "Switch to dark mode",
+    "labs_loading_demo": "Loading demo…",
+    "aria_github": "GitHub profile",
+    "aria_linkedin": "LinkedIn profile",
+    "aria_malt": "Malt profile",
     "main1": "Critical systems you can rely on.",
     "main2": "Technical debt under control. More value.",
     "projects": "Professional journey",
@@ -52,7 +62,6 @@
     "skills_other_agile": "Agile Methodology",
     "skills_other_webdesign": "Web Design",
     "read_more": "Read more",
-    "skills_other_webdesign": "Web Design",
     "skills_desc.Teamwork": "Ability to work effectively within a team.",
     "skills_desc.Team Collaboration": "Ability to work effectively within a team.",
     "skills_desc.Problem Solving": "Ability to analyze and resolve complex issues.",
@@ -116,6 +125,8 @@
     "engine_panel_subtitle_codex": "Vault & component exploration.",
     "engine_panel_subtitle_tests": "Critical paths automated, regressions under control.",
     "engine_panel_subtitle_labs": "Experiments and prototypes.",
+    "engine_process_phrase": "I accelerate time-consuming tasks to focus on reliability and delivery.",
+    "project_impact_title": "Impact & result",
     "lab_label_challenge": "Challenge",
     "lab_label_exploration": "Exploration",
     "lab_label_result": "Result",
@@ -220,13 +231,14 @@
     "proof_terminal_status": "Status: All tests passed [72 success, 0 failed]"
   },
   "portfolio": {
-    "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
-    "noProjects": "Aucun projet à afficher pour le moment.",
-    "title": "Mon Portfolio"
+    "description": "Welcome to my portfolio! Here you will find a showcase of my skills and experience.",
+    "noProjects": "No projects to display at the moment.",
+    "title": "My Portfolio"
   },
   "projects": {
     "apigem": {
       "description": "Redesign Apigem's web application with a modern UI/UX and responsive design to enhance user experience and accessibility.",
+      "impactSummary": "Architecture modernization, reduced response times and responsive interface.",
       "img": "/images/project-images/apigem/logo.png",
       "mainTechnologies": [
         "PHP",
@@ -331,6 +343,7 @@
     },
     "bubo": {
       "description": "Modernize a legacy PHP application to Symfony 4, implement Material Design principles, and add advanced data visualization with ApexCharts.",
+      "impactSummary": "Migration to Symfony 4, interactive charts (ApexCharts, real-time) and security metrics (OpenVas): architecture and UX aligned with current standards.",
       "img": "/images/project-images/bubo/logo.png",
       "mainTechnologies": [
         "Symfony",
@@ -349,8 +362,8 @@
       ],
       "introduction": {
         "description": "Led the complete modernization of a legacy PHP application, focusing on system architecture, user interface, and data visualization improvements",
-        "introduction": "Modernized a legacy PHP application to meet current web standards and improve user experience",
-        "name": "BUBO Cybsersec",
+        "introduction": "Cybersecurity application (BUBO Cybersec): migration from legacy PHP to Symfony 4, UI overhaul (Material Design, UIkit) and addition of real-time charts (ApexCharts) and vulnerability metrics (OpenVas) to align the product with current standards.",
+        "name": "BUBO Cybersec",
         "title": "BUBO"
       },
       "tasks": [
@@ -435,6 +448,7 @@
     },
     "hml": {
       "description": "Optimize and modernize Mediabase, a key export and data processing platform for book distributors, focusing on automation, reliability, and performance.",
+      "impactSummary": "Export performance gains, improved reliability and controlled PDF process.",
       "img": "/images/project-images/hml/logo.png",
       "mainTechnologies": [
         "PHP",
@@ -550,6 +564,7 @@
     },
     "hopps": {
       "description": "Develop and maintain AlertCenter, a comprehensive IT infrastructure monitoring platform providing real-time insights and incident management capabilities.",
+      "impactSummary": "Real-time dashboards (WebSocket), multi-tenant separation for a client, and ticketing automation (Jira, LDAP) for the service desk.",
       "img": "/images/project-images/hopps/logo.png",
       "mainTechnologies": [
         "C#",
@@ -655,16 +670,15 @@
     },
     "scf": {
       "description": "Develop a comprehensive web platform for the French-speaking SC community, providing localized content, real-time updates, and community features as an alternative to the English official website.",
+      "impactSummary": "Platform for the French-speaking community (6000+ users): localized content, real-time (WebSocket, Discord), optimizations (code splitting, Redis) and content management.",
       "img": "/images/project-images/scf/logo.png",
       "mainTechnologies": [
-        "Symfony",
-        "UIkit",
-        "API Platform",
-        "SQL",
-        "DQL",
-        "Yarn",
-        "Vue.js",
-        "Docker"
+        "React",
+        "Node.js",
+        "MongoDB",
+        "Docker",
+        "Redis",
+        "WebSocket"
       ],
       "softSkills": [
         "Fullstack Development",
@@ -761,6 +775,7 @@
     },
     "bbg": {
       "description": "Freelance engagement for Bernard Blachère holding: modernization of critical internal applications. DDD architecture, Symfony APIs, Vue.js 3, Cypress + BDD E2E tests, performance optimization (prefetch, bulk). Optimized remote collaboration.",
+      "impactSummary": "DDD refactoring, Cypress E2E tests and optimizations (prefetch, bulk): secure releases, regressions under control, improved maintainability.",
       "img": "/images/project-images/bbg/logo.png",
       "mainTechnologies": [
         "Symfony",
@@ -909,17 +924,26 @@
           }
         }
       ],
-      "challenges": [],
-      "solutions": [],
+      "challenges": [
+        "Critical applications with technical debt and unclear domain boundaries.",
+        "Remote collaboration with an internal team and frequent releases.",
+        "Need to deliver without regression on sensitive business flows."
+      ],
+      "solutions": [
+        "DDD refactoring to clarify the domain and improve maintainability.",
+        "Cypress E2E tests and BDD scenarios to secure releases and control regressions.",
+        "Documented methodology and targeted optimizations (prefetch, bulk) for predictable deliveries."
+      ],
       "externalLinks": []
     },
     "freelance": {
       "description": "Work as a freelance developer for various clients, handling web development, consulting, and custom solutions.",
+      "impactSummary": "Legacy migration to Symfony 4, UI redesign (Material Design, ApexCharts) and showcase site (Bootstrap, SEO) for multi-sector clients.",
       "img": "/images/project-images/freelance/logo.png",
       "mainTechnologies": ["PHP", "JavaScript", "React", "Symfony", "Node.js"],
       "softSkills": ["Autonomous Work", "Communication", "Problem Solving"],
       "introduction": {
-        "name": "Freelance",
+        "name": "Freelance Projects",
         "introduction": "As a freelance developer, I have worked on a variety of projects for clients in different industries, providing web development, consulting, and technical support. Freelance period including time in Asia.",
         "description": "Presentation of some recent freelance projects."
       },

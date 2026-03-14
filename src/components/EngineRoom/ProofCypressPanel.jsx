@@ -41,9 +41,6 @@ const ProofCypressPanel = () => {
             <p className="mt-1 text-slate-600 dark:text-slate-300 text-sm font-medium">
               {t("common.proof_cypress_demo_content")}
             </p>
-            <p className="mt-1 text-slate-500 dark:text-slate-400 text-xs">
-              {t("common.proof_cypress_placeholder")}
-            </p>
           </div>
         )}
       </TerminalMockup>
