@@ -776,8 +776,11 @@
       ]
     },
     "bbg": {
-      "description": "Mission freelance pour la holding Bernard Blachère : refonte d'applications critiques (SI interne). Architecture DDD, APIs Symfony, Vue.js 3, tests E2E Cypress + BDD, optimisations perf (prefetch, bulk). Collaboration à distance optimisée.",
+      "description": "Vérifact : litiges avec les fournisseurs (holding Bernard Blachère, boulangerie-pâtisserie). SI critique, DDD, Symfony, Vue.js 3, Cypress + BDD, optimisations perf.",
       "impactSummary": "Refonte DDD, tests E2E Cypress et optimisations (prefetch, bulk) : livraisons sécurisées, régressions maîtrisées, maintenabilité renforcée.",
+      "postDeliveryTitle": "Retour d'expérience post-livraison (V2)",
+      "postDeliveryBody": "Après la livraison majeure de la V2 de Vérifact, un retour structuré avec le pilotage projet et la recette a souligné, côté développement : communication régulière, respect du planning, autonomie sur le périmètre défini, documentation partagée et lisible par l'équipe, et adéquation des évolutions déployées avec le besoin métier une fois celui-ci clarifié. Les échanges ont aussi renforcé les rituels de suivi (points courts d'avancement, schématisation des flux, démonstrations en réunion). En amélioration continue : références systématiques aux tickets dans les messages de livraison pour faciliter la recette.",
+      "postDeliveryFootnote": "Bilan formalisé avec l'équipe après la V2.",
       "img": "/images/project-images/bbg/logo.png",
       "mainTechnologies": [
         "Symfony",
@@ -796,12 +799,12 @@
       ],
       "introduction": {
         "name": "Holding Bernard Blachère",
-        "introduction": "Mission freelance via ESN pour la holding Bernard Blachère, leader de la boulangerie-pâtisserie en France. Refonte et fiabilisation d'applications critiques du SI interne : architecture DDD, consolidation des APIs, tests E2E robustes (Cypress, scénarios BDD), optimisations de performances (prefetch, bulk). Livraison en collaboration à distance, avec une méthodologie documentée.",
-        "description": "En tant qu'Expert Backend Senior, j'interviens sur la fiabilisation et la modernisation d'applications critiques. J'ai conduit une refactorisation en architecture DDD pour clarifier les frontières métier et améliorer la maintenabilité, mis en place des tests E2E avec Cypress et des fixtures BDD pour sécuriser les livraisons, et optimisé les performances (réduction des prefetch inutiles, bulk updates). APIs Symfony, interfaces Vue.js 3, infrastructure Docker/Kubernetes et pipelines GitLab CI."
+        "introduction": "Développement sur Vérifact, outil de traitement des litiges avec les fournisseurs, dans le SI interne de la holding Bernard Blachère (boulangerie-pâtisserie). Refonte et fiabilisation d'applications critiques : architecture DDD, consolidation des APIs, tests E2E Cypress et scénarios BDD, optimisations (prefetch, bulk). Travail à distance, documentation structurée.",
+        "description": "Clarification du périmètre métier et de la maintenabilité (refactorisation DDD), sécurisation des livraisons (Cypress, BDD), optimisations performance. Symfony, Vue.js 3, Docker/Kubernetes, GitLab CI."
       },
-      "duration": 2,
+      "duration": 14,
       "team": 10,
-      "period": "Août 2024 - Octobre 2024",
+      "period": "Août 2025 - septembre 2026",
       "technologies": [
         "Symfony",
         "PHP",

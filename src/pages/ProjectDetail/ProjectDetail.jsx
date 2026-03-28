@@ -587,6 +587,22 @@ const ProjectDetail = () => {
             </div>
           )}
 
+          {project.postDeliveryTitle && project.postDeliveryBody && (
+            <div className="mb-6 sm:mb-8 p-4 sm:p-5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-600">
+              <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider mb-3">
+                {project.postDeliveryTitle}
+              </h2>
+              <p className="text-gray-700 dark:text-slate-300 leading-relaxed text-justify">
+                {project.postDeliveryBody}
+              </p>
+              {project.postDeliveryFootnote && (
+                <p className="mt-4 text-xs text-slate-500 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-slate-600 pt-3">
+                  {project.postDeliveryFootnote}
+                </p>
+              )}
+            </div>
+          )}
+
           {/* Project Stats */}
           <div className="flex flex-wrap gap-4 sm:gap-6 mb-6 sm:mb-8 -ml-2 sm:-ml-4">
             <div className="flex items-center gap-2 px-4 py-2 rounded-full">

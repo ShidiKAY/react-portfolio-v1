@@ -774,8 +774,11 @@
       ]
     },
     "bbg": {
-      "description": "Freelance engagement for Bernard Blachère holding: modernization of critical internal applications. DDD architecture, Symfony APIs, Vue.js 3, Cypress + BDD E2E tests, performance optimization (prefetch, bulk). Optimized remote collaboration.",
+      "description": "Vérifact: supplier disputes (Bernard Blachère holding, bakery-pastry). Critical IS, DDD, Symfony, Vue.js 3, Cypress + BDD, performance work.",
       "impactSummary": "DDD refactoring, Cypress E2E tests and optimizations (prefetch, bulk): secure releases, regressions under control, improved maintainability.",
+      "postDeliveryTitle": "Post-delivery retrospective (V2)",
+      "postDeliveryBody": "After the major V2 release of Vérifact, a structured retrospective with project management and QA highlighted, on the development side: regular communication, adherence to planning, autonomy on the agreed scope, shared documentation the whole team could use, and shipped changes aligned with business needs once requirements were clear. Follow-up also reinforced short checkpoints, flow diagrams, and live demos. Continuous improvement: systematic ticket references in delivery notes to streamline QA.",
+      "postDeliveryFootnote": "Formal retrospective with the team after the V2 release.",
       "img": "/images/project-images/bbg/logo.png",
       "mainTechnologies": [
         "Symfony",
@@ -794,12 +797,12 @@
       ],
       "introduction": {
         "name": "Bernard Blachère Holding",
-        "introduction": "Freelance mission via ESN for Bernard Blachère holding, a leading bakery-pastry group in France. Modernization and hardening of critical internal applications: DDD architecture, API consolidation, robust E2E testing (Cypress, BDD scenarios), and performance optimization (prefetch, bulk). Delivered in remote collaboration with a documented methodology.",
-        "description": "As a Senior Backend Expert, I led the reliability and modernization of critical applications. I drove a DDD-oriented refactor to clarify domain boundaries and improve maintainability, introduced Cypress E2E tests and BDD fixtures to secure releases, and optimized performance (reducing unnecessary prefetch, bulk updates). Symfony APIs, Vue.js 3 frontends, Docker/Kubernetes, and GitLab CI pipelines."
+        "introduction": "Development on Vérifact, which handles disputes with suppliers, within Bernard Blachère holding's internal IS (bakery-pastry). Refactor and hardening of critical applications: DDD architecture, API consolidation, Cypress E2E and BDD scenarios, performance work (prefetch, bulk). Remote collaboration, structured documentation.",
+        "description": "Clarifying domain boundaries and maintainability (DDD refactor), securing releases (Cypress, BDD), performance tuning. Symfony, Vue.js 3, Docker/Kubernetes, GitLab CI."
       },
-      "duration": 2,
+      "duration": 14,
       "team": 10,
-      "period": "August 2024 - October 2024",
+      "period": "Aug 2025 - Sept 2026",
       "technologies": [
         "Symfony",
         "PHP",
