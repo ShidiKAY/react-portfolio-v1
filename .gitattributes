@@ -1,2 +1,2 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Store and check out text files with LF (avoids CRLF noise on Windows / in PRs)
+* text=auto eol=lf
