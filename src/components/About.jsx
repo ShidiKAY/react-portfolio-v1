@@ -1,32 +1,71 @@
-import { motion } from "framer-motion";
-import { useEffect, useRef, useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
+import { useEffect, useMemo, useRef, useState } from "react";
 import Projects from "./Projects";
 // import Skills from "./Skills";
 import SkillsModern from "./SkillsModern";
 import { useTranslation } from "react-i18next";
+import {
+  ABOUT_DELAY_CHILDREN,
+  ABOUT_STAGGER,
+  MOTION_DURATION,
+  MOTION_EASE,
+} from "../config/motion";
 
 const About = () => {
-  // You can use useState and useEffect here to manage animation state and logic (optional)
-  const [isVisible, setIsVisible] = useState(false);
+  const [revealed, setRevealed] = useState(false);
   const refAbout = useRef(null);
   const { t } = useTranslation();
+  const reduceMotion = useReducedMotion();
 
-  // Show/Hide text section of About when it's displayed (avec cleanup pour éviter setState après unmount)
   useEffect(() => {
+    if (reduceMotion) {
+      setRevealed(true);
+      return;
+    }
     const el = refAbout.current;
     if (!el) return;
-
     const observer = new IntersectionObserver(
       (entries) => {
         const entry = entries[0];
-        if (entry?.isIntersecting) setIsVisible(true);
-        else setIsVisible(false);
+        if (entry?.isIntersecting) setRevealed(true);
       },
-      { rootMargin: "-20px 0px", threshold: 0.1 }
+      { rootMargin: "0px 0px -12% 0px", threshold: 0.08 }
     );
     observer.observe(el);
     return () => observer.disconnect();
-  }, []);
+  }, [reduceMotion]);
+
+  const containerVariants = useMemo(
+    () => ({
+      hidden: {},
+      visible: {
+        transition: reduceMotion
+          ? { duration: 0 }
+          : {
+              staggerChildren: ABOUT_STAGGER,
+              delayChildren: ABOUT_DELAY_CHILDREN,
+            },
+      },
+    }),
+    [reduceMotion]
+  );
+
+  const itemVariants = useMemo(
+    () => ({
+      hidden: {
+        opacity: reduceMotion ? 1 : 0,
+        y: reduceMotion ? 0 : 16,
+      },
+      visible: {
+        opacity: 1,
+        y: 0,
+        transition: reduceMotion
+          ? { duration: 0 }
+          : { duration: MOTION_DURATION, ease: MOTION_EASE },
+      },
+    }),
+    [reduceMotion]
+  );
 
   // Extract lines from about_rich
   const aboutRich = t("common.about_rich");
@@ -76,137 +115,71 @@ const About = () => {
     >
       <div className="flex flex-col md:mx-0 md:pt-20 pt-10 w-full min-w-0">
         <div className="flex flex-col mt-6 w-full min-w-0">
-          <div
-            className="flex flex-col items-center md:flex-row md:items-start w-full min-w-0 overflow-hidden px-2 md:px-0 lg:px-12"
+          <motion.div
             ref={refAbout}
+            className="flex flex-col items-center md:flex-row md:items-start w-full min-w-0 overflow-hidden px-2 md:px-0 lg:px-12"
+            initial="hidden"
+            animate={revealed ? "visible" : "hidden"}
+            variants={containerVariants}
           >
-            <div className="md:w-1/4 lg:w-1/4 min-w-0">
-              <motion.div
-                initial="hidden"
-                animate={isVisible ? "visible" : "hidden"}
-                variants={{
-                  hidden: {
-                    scale: 0.8,
-                    opacity: 0,
-                  },
-                  visible: {
-                    scale: 1,
-                    opacity: 1,
-                    transition: {
-                      delay: 0.8,
-                    },
-                  },
-                }}
-              >
-                <img
-                  className="radius rounded-full lg:vw-100 vh-50"
-                  src="/images/profile.png"
-                  alt="Kamal AIT YOUS"
-                  width="200"
-                  height="200"
-                  loading="lazy"
-                  decoding="async"
-                />
-              </motion.div>
-            </div>
             <motion.div
-              className="w-full md:w-3/4 max-w-full overflow-hidden min-w-0"
-              style={{ overflow: "hidden" }}
-              initial="hidden"
-              animate={isVisible ? "visible" : "hidden"}
-              variants={{
-                hidden: {
-                  scale: 0.8,
-                  opacity: 0,
-                },
-                visible: {
-                  scale: 1,
-                  opacity: 1,
-                  transition: {
-                    delay: 1.2,
-                  },
-                },
-              }}
+              className="md:w-1/4 lg:w-1/4 min-w-0"
+              variants={itemVariants}
             >
-              <motion.div
-                className="break-words overflow-hidden"
-                initial="hidden"
-                animate={isVisible ? "visible" : "hidden"}
-                variants={{
-                  hidden: {
-                    scale: 1.0,
-                    opacity: 0,
-                  },
-                  visible: {
-                    scale: 1,
-                    opacity: 1,
-                    transition: {
-                      delay: 1.2,
-                    },
-                  },
-                }}
-              >
-                <h1 className="text-3xl font-bold sm:text-4xl mb-8 break-words tracking-wide">
-                  {t("common.abouthelloim")}{" "}
-                  <span className="text-blue-500 dark:text-blue-400">Kamal</span>
-                </h1>
-              </motion.div>
-
-              <motion.div
-                className="lg:px-2 overflow-hidden"
-                initial="hidden"
-                animate={isVisible ? "visible" : "hidden"}
-                variants={{
-                  hidden: {
-                    scale: 0.8,
-                    opacity: 0,
-                  },
-                  visible: {
-                    scale: 1,
-                    opacity: 1,
-                    transition: {
-                      delay: 1,
-                    },
-                  },
-                }}
-              >
-                {/* Intro: first line then ✅ */}
-                {introFirstLine && (
-                  <p className="text-left font-normal mb-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
-                    {introFirstLine}
-                  </p>
-                )}
-                {introParagraph && (
-                  <p className="text-left font-normal mb-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
-                    {introParagraph}
-                  </p>
-                )}
-                {/* Collapsible: points as indented list + contact line */}
-                <div className="relative" style={{ minHeight: 80 }}>
-                  <div id="about-rich-details">
-                    <ul className="list-none pl-6 pr-4 space-y-3 break-words">
-                      {detailedPoints.map((point, idx) =>
-                        point.text ? (
-                          <li
-                            key={idx}
-                            className="flex items-start gap-2 text-base text-slate-700 dark:text-slate-300"
-                          >
-                            <span className="text-xl mt-1">{point.icon}</span>
-                            <span className="break-words">{point.text}</span>
-                          </li>
-                        ) : null
-                      )}
-                    </ul>
-                    {contactLine && (
-                      <p className="text-left font-normal mt-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
-                        {contactLine}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </motion.div>
+              <img
+                className="radius rounded-full lg:vw-100 vh-50"
+                src="/images/profile.png"
+                alt="Kamal AIT YOUS"
+                width="200"
+                height="200"
+                loading="lazy"
+                decoding="async"
+              />
             </motion.div>
-          </div>
+            <motion.div
+              className="w-full md:w-3/4 max-w-full overflow-hidden min-w-0 lg:px-2"
+              style={{ overflow: "hidden" }}
+              variants={itemVariants}
+            >
+              <h1 className="text-3xl font-bold sm:text-4xl mb-8 break-words tracking-wide">
+                {t("common.abouthelloim")}{" "}
+                <span className="text-blue-500 dark:text-blue-400">Kamal</span>
+              </h1>
+              {/* Intro: first line then ✅ */}
+              {introFirstLine && (
+                <p className="text-left font-normal mb-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
+                  {introFirstLine}
+                </p>
+              )}
+              {introParagraph && (
+                <p className="text-left font-normal mb-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
+                  {introParagraph}
+                </p>
+              )}
+              <div className="relative" style={{ minHeight: 80 }}>
+                <div id="about-rich-details">
+                  <ul className="list-none pl-6 pr-4 space-y-3 break-words">
+                    {detailedPoints.map((point, idx) =>
+                      point.text ? (
+                        <li
+                          key={idx}
+                          className="flex items-start gap-2 text-base text-slate-700 dark:text-slate-300"
+                        >
+                          <span className="text-xl mt-1">{point.icon}</span>
+                          <span className="break-words">{point.text}</span>
+                        </li>
+                      ) : null
+                    )}
+                  </ul>
+                  {contactLine && (
+                    <p className="text-left font-normal mt-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
+                      {contactLine}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
           {/* SkillsModern juste avant les projets */}
           <div id="toskills">
             <SkillsModern />

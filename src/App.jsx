@@ -7,7 +7,6 @@ import routes from "./routes";
 import GoToTop from "./components/GoToTop";
 import QuickNav from "./components/QuickNav/QuickNav";
 import Footer from "./components/Footer/Footer";
-import ReactModal from "react-modal";
 
 // Below-the-fold: lazy-load About (Projects + SkillsModern) for faster LCP
 const About = React.lazy(() => import("./components/About"));
@@ -18,10 +17,6 @@ const ApprocheSystemique = React.lazy(() =>
 const Recommendations = React.lazy(() =>
   import("./components/Recommendations/Recommendations")
 );
-
-// Root element for react-modal
-const appElement = document.getElementById("root");
-ReactModal.setAppElement(appElement);
 
 // Modern spinner for Suspense fallback
 const Spinner = () => (
@@ -98,7 +93,7 @@ const AppContent = () => {
       </a>
       {/* Navigation : masquée sur page projet et page Labs */}
       {!isStandalonePage && (
-        <nav aria-label="Main navigation">
+        <nav aria-label={t("common.nav_aria_main")}>
           <Navbar />
         </nav>
       )}
@@ -146,9 +141,14 @@ const AppContent = () => {
   );
 };
 
+const ROUTER_FUTURE = {
+  v7_startTransition: true,
+  v7_relativeSplatPath: true,
+};
+
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter future={ROUTER_FUTURE}>
       <AppContent />
     </BrowserRouter>
   );

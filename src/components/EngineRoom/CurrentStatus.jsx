@@ -6,9 +6,8 @@ import {
   MY_TIMEZONE,
   DEFAULT_AVAILABLE,
 } from "../../config/availability";
-import { FaSlack, FaVideo } from "react-icons/fa";
-import { SiGitlab, SiLinear } from "react-icons/si";
-import { HiOutlineClock } from "react-icons/hi";
+import { FaCodeBranch, FaVideo } from "react-icons/fa";
+import { HiOutlineClock, HiOutlineDocumentText, HiOutlineServer } from "react-icons/hi";
 
 const formatTime = (timeZone) => {
   return new Date().toLocaleTimeString(undefined, {
@@ -39,24 +38,24 @@ const getTimeWindowKey = (parisHour) => {
 
 const tools = [
   {
-    key: "loom",
+    key: "written",
+    Icon: HiOutlineDocumentText,
+    labelKey: "common.status_tool_written",
+  },
+  {
+    key: "repo",
+    Icon: FaCodeBranch,
+    labelKey: "common.status_tool_repo",
+  },
+  {
+    key: "ci",
+    Icon: HiOutlineServer,
+    labelKey: "common.status_tool_ci",
+  },
+  {
+    key: "sync",
     Icon: FaVideo,
-    labelKey: "common.status_tool_loom",
-  },
-  {
-    key: "slack",
-    Icon: FaSlack,
-    labelKey: "common.status_tool_slack",
-  },
-  {
-    key: "linear",
-    Icon: SiLinear,
-    labelKey: "common.status_tool_linear",
-  },
-  {
-    key: "gitlab",
-    Icon: SiGitlab,
-    labelKey: "common.status_tool_gitlab",
+    labelKey: "common.status_tool_sync",
   },
 ];
 
@@ -99,7 +98,7 @@ const CurrentStatus = () => {
             className="text-lg font-semibold text-slate-700 dark:text-slate-200 flex items-center gap-2"
           >
             <span className="text-cyan-600 dark:text-cyan-400/90 font-mono text-sm uppercase tracking-wider">
-              Remote-Ready Dashboard
+              {t("common.status_dashboard_heading")}
             </span>
           </h3>
           <p className="mt-2 text-sm font-medium text-slate-600 dark:text-slate-300">
@@ -158,18 +157,11 @@ const CurrentStatus = () => {
         >
           <div className="flex items-center gap-3">
             <span
-              className="relative flex h-3 w-3"
+              className="relative flex h-3 w-3 flex-shrink-0"
               aria-hidden="true"
             >
               <span
-                className={`absolute inline-flex h-full w-full rounded-full opacity-75 ${
-                  availability
-                    ? "animate-ping bg-emerald-400"
-                    : "bg-amber-400"
-                }`}
-              />
-              <span
-                className={`relative inline-flex h-3 w-3 rounded-full ${
+                className={`inline-flex h-3 w-3 rounded-full ${
                   availability ? "bg-emerald-500" : "bg-amber-500"
                 }`}
               />
@@ -193,7 +185,7 @@ const CurrentStatus = () => {
             <p className="text-xs font-semibold text-cyan-600 dark:text-cyan-400/90 uppercase tracking-wider mb-1">
               {t("common.status_mode_async_label")}
             </p>
-            <p className="text-slate-700 dark:text-slate-200 text-sm leading-snug whitespace-nowrap">
+            <p className="text-slate-700 dark:text-slate-200 text-sm leading-snug">
               {t("common.status_mode_async")}
             </p>
           </div>

@@ -30,6 +30,7 @@ const QuickNav = () => {
 
   useEffect(() => {
     if (!isHome) return;
+    const isTest = globalThis.process?.env?.NODE_ENV === "test";
     let rafId = null;
     const update = () => {
       setLabelsVisible(true);
@@ -72,11 +73,14 @@ const QuickNav = () => {
       }
     };
     const handleScroll = () => {
+      if (isTest) {
+        update();
+        return;
+      }
       if (rafId) cancelAnimationFrame(rafId);
       rafId = requestAnimationFrame(update);
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
-    update();
     const scrollToHash = (hash) => {
       if (!hash || !HASH_IDS.includes(hash)) return;
       if (hash === "tohome") {
@@ -88,16 +92,22 @@ const QuickNav = () => {
     };
     let rafIdInitial = null;
     let hashRetryId = null;
-    rafIdInitial = requestAnimationFrame(() => {
+    const runAfterLayout = () => {
+      update();
+      const hash = location.hash.slice(1);
+      scrollToHash(hash);
+      if (hash && hash !== "tohome" && !document.getElementById(hash)) {
+        hashRetryId = setTimeout(() => scrollToHash(hash), 400);
+      }
+    };
+    if (isTest) {
+      runAfterLayout();
+    } else {
+      update();
       rafIdInitial = requestAnimationFrame(() => {
-        update();
-        const hash = location.hash.slice(1);
-        scrollToHash(hash);
-        if (hash && hash !== "tohome" && !document.getElementById(hash)) {
-          hashRetryId = setTimeout(() => scrollToHash(hash), 400);
-        }
+        rafIdInitial = requestAnimationFrame(runAfterLayout);
       });
-    });
+    }
     return () => {
       window.removeEventListener("scroll", handleScroll);
       if (rafId) cancelAnimationFrame(rafId);
@@ -105,7 +115,7 @@ const QuickNav = () => {
       if (hashRetryId != null) clearTimeout(hashRetryId);
       if (idleTimerRef.current) clearTimeout(idleTimerRef.current);
     };
-  }, [isHome, location.pathname, location.state]);
+  }, [isHome, location.pathname, location.state, location.hash]);
 
   if (!isHome) return null;
 

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import React from "react";
 
 const Bubble = ({ language, color, position, direction }) => {
   // Handle potential errors and missing props:

@@ -20,7 +20,7 @@ const NotFound = () => {
       </p>
       <Link
         to="/"
-        className="mt-8 px-6 py-3 rounded-lg bg-cyan-500 dark:bg-cyan-400 text-white font-medium hover:bg-cyan-600 dark:hover:bg-cyan-500 transition-colors"
+        className="mt-8 px-6 py-3 rounded-lg bg-cyan-500 dark:bg-cyan-400 text-white font-medium hover:bg-cyan-600 dark:hover:bg-cyan-500 transition-colors cursor-pointer"
       >
         {t("common.notfound_back")}
       </Link>

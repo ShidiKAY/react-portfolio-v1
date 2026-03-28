@@ -108,12 +108,23 @@ const SKILL_DESCRIPTIONS = {
   Initiative: "Ability to assess and initiate things independently.",
   Communication: "Effectively conveying information and ideas.",
   "Force de proposition": "Ability to propose ideas and solutions.",
-  "Travail en autonomie": "Ability to work independently.",
   Réactivité: "Ability to react quickly and efficiently.",
   "Automatisation des processus":
     "Implementing solutions to automate repetitive tasks.",
   "Traitement de données": "Efficient data management and transformation.",
   Fiabilité: "Ensuring system robustness and stability.",
+};
+
+/** Internal skill names (legacy French labels) → i18n key under common.* for pill display. */
+const SOFT_SKILL_LABEL_KEY = {
+  "Leadership Technique": "softskill_leadership_technique",
+  "Architecture Système": "softskill_architecture_systeme",
+  "Optimisation des Performances": "softskill_optimisation_performances",
+  "Force de proposition": "softskill_force_de_proposition",
+  Réactivité: "softskill_reactivite",
+  "Automatisation des processus": "softskill_automatisation_processus",
+  "Traitement de données": "softskill_traitement_donnees",
+  Fiabilité: "softskill_fiabilite",
 };
 
 const MASTERED_SKILLS = [
@@ -154,7 +165,6 @@ const SOFT_SKILLS = [
   "Initiative",
   "Communication",
   "Force de proposition",
-  "Travail en autonomie",
   "Réactivité",
   "Automatisation des processus",
   "Traitement de données",
@@ -226,6 +236,8 @@ const SkillPill = ({ skill, idx, mastered, masteredTooltip, isSoft }) => {
     displayName = t("common.skills_other_agile");
   if (skill.name === "Conception Web")
     displayName = t("common.skills_other_webdesign");
+  const softLabelKey = SOFT_SKILL_LABEL_KEY[skill.name];
+  if (softLabelKey) displayName = t(`common.${softLabelKey}`);
   // Determine if soft skill
   const isSoftSkill = isSoft || SOFT_SKILLS.includes(skill.name);
   const pillClass = isSoftSkill
@@ -259,6 +271,8 @@ const SkillPill = ({ skill, idx, mastered, masteredTooltip, isSoft }) => {
         <Icon
           size={18}
           className={isSoftSkill ? "text-purple-400" : "text-blue-500"}
+          aria-hidden
+          focusable={false}
         />
       )}
       {displayName}

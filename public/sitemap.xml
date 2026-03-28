@@ -6,9 +6,29 @@
     <priority>1.0</priority>
   </url>
   <url>
+    <loc>https://www.kamalaityous.fr/privacy</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://www.kamalaityous.fr/labs</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.kamalaityous.fr/labs/auto-test-gen</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.kamalaityous.fr/labs/codex-ai-bridge</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.kamalaityous.fr/labs/codex-vault</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://www.kamalaityous.fr/projects/bbg</loc>

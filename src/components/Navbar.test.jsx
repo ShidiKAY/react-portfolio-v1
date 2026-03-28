@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Navbar from "./Navbar";

@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import { screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import About from "./About";
@@ -17,10 +16,7 @@ expect.extend(toHaveNoViolations);
 describe("About", () => {
   it("renders About section", () => {
     renderWithProviders(<About />);
-    // Check for a heading or some expected text
-    expect(
-      screen.getByText(/experience|expérience|web development/i)
-    ).toBeInTheDocument();
+    expect(screen.getByAltText(/Kamal AIT YOUS/i)).toBeInTheDocument();
   });
 
   it("has no accessibility violations", async () => {

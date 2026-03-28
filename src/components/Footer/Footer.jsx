@@ -32,6 +32,9 @@ const Footer = () => {
             {t("common.getresume")}
           </Link>
         </div>
+        <p className="text-center text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-xl mx-auto leading-relaxed px-2">
+          {t("common.contact_first_step")}
+        </p>
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-600 dark:text-slate-400">
           <span>{t("common.footer_copyright", { year })}</span>
           <div className="flex items-center gap-6">
@@ -47,18 +50,24 @@ const Footer = () => {
             >
               {t("common.home")}
             </Link>
-          {SOCIAL_LINKS.map(({ href, Icon, label }) => (
-            <a
-              key={label}
-              href={href}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/privacy"
               className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
-              aria-label={label}
             >
-              <Icon className="w-5 h-5" />
-            </a>
-          ))}
+              {t("common.footer_privacy")}
+            </Link>
+            {SOCIAL_LINKS.map(({ href, Icon, label }) => (
+              <a
+                key={label}
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors"
+                aria-label={label}
+              >
+                <Icon className="w-5 h-5" aria-hidden focusable={false} />
+              </a>
+            ))}
         </div>
         </div>
       </div>

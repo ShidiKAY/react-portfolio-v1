@@ -7,14 +7,28 @@ module.exports = {
     'plugin:react/jsx-runtime',
     'plugin:react-hooks/recommended',
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  ignorePatterns: ['dist', 'coverage', '.eslintrc.cjs'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],
   rules: {
+    'react/prop-types': 'off',
     'react-refresh/only-export-components': [
       'warn',
-      { allowConstantExport: true },
+      {
+        allowConstantExport: true,
+        allowExportNames: ['useTheme', 'SkillPill', 'skillIcons', 'SKILL_DESCRIPTIONS'],
+      },
     ],
   },
+  overrides: [
+    {
+      files: ['tailwind.config.js', '**/__mocks__/**/*.js', 'src/pages/_app.js'],
+      env: { node: true },
+    },
+    {
+      files: ['**/*.test.{js,jsx}', 'src/test-utils.js'],
+      env: { jest: true },
+    },
+  ],
 }

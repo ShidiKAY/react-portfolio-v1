@@ -10,19 +10,37 @@ import { loadLanguage } from "../i18n";
 import { useTheme } from "../context/ThemeContext";
 import { HiSun, HiMoon } from "react-icons/hi";
 
+const NAV_SECTION_IDS = [
+  "tohome",
+  "toabout",
+  "toprojects",
+  "toskills",
+  "toapproche",
+  "toengine",
+  "tostatus",
+  "toproof",
+  "torecommendations",
+];
+const ENGINE_ZONE_IDS = ["toapproche", "toengine", "tostatus", "toproof"];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isPageReady, setIsPageReady] = useState(false);
   const [activeLink, setActiveLink] = useState("tohome");
   const location = useLocation();
-  const sections = ["tohome", "toabout", "toprojects", "toskills", "toapproche", "toengine", "tostatus", "toproof", "torecommendations"];
-  const engineZoneIds = ["toapproche", "toengine", "tostatus", "toproof"];
-  const isInEngineZone = (link) => engineZoneIds.includes(link);
+  const isInEngineZone = (link) => ENGINE_ZONE_IDS.includes(link);
   const isHome = location.pathname === "/";
 
   useEffect(() => {
-    const onReady = () => requestAnimationFrame(() => setIsPageReady(true));
+    const markReady = () => setIsPageReady(true);
+    const onReady = () => {
+      if (globalThis.process?.env?.NODE_ENV === "test") {
+        markReady();
+      } else {
+        requestAnimationFrame(() => markReady());
+      }
+    };
     if (document.readyState === "complete") {
       onReady();
     } else {
@@ -40,7 +58,7 @@ const Navbar = () => {
     };
     const updateActiveLink = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 2;
-      sections.forEach((section) => {
+      NAV_SECTION_IDS.forEach((section) => {
         const element = document.getElementById(section);
         if (element) {
           const rect = element.getBoundingClientRect();
@@ -243,7 +261,12 @@ const Navbar = () => {
                       rel="noopener noreferrer"
                       aria-label={t("common.aria_github")}
                     >
-                      <BsGithub className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" size="2rem" />
+                      <BsGithub
+                        className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                        size="2rem"
+                        aria-hidden
+                        focusable={false}
+                      />
                     </a>
                   </div>
                   <div>
@@ -253,7 +276,12 @@ const Navbar = () => {
                       rel="noopener noreferrer"
                       aria-label={t("common.aria_linkedin")}
                     >
-                      <BsLinkedin className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" size="2rem" />
+                      <BsLinkedin
+                        className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                        size="2rem"
+                        aria-hidden
+                        focusable={false}
+                      />
                     </a>
                   </div>
                   <div>
@@ -263,15 +291,26 @@ const Navbar = () => {
                       rel="noopener noreferrer"
                       aria-label={t("common.aria_malt")}
                     >
-                      <SiMalt className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white" size="2rem" />
+                      <SiMalt
+                        className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                        size="2rem"
+                        aria-hidden
+                        focusable={false}
+                      />
                     </a>
                   </div>
                 </div>
               </div>
             </div>
-            <div onClick={handleMobileNav} className="mr-14 md:hidden text-slate-900 dark:text-slate-100">
-              <AiOutlineMenu size="2rem" />
-            </div>
+            <button
+              type="button"
+              onClick={handleMobileNav}
+              className="mr-14 md:hidden text-slate-900 dark:text-slate-100 p-0 border-0 bg-transparent cursor-pointer"
+              aria-label={t("common.nav_menu_open")}
+              aria-expanded={isOpen}
+            >
+              <AiOutlineMenu size="2rem" aria-hidden />
+            </button>
           </div>
         </div>
         </div>
@@ -290,12 +329,14 @@ const Navbar = () => {
             }`}
           >
             <div className="flex w-full items-center justify-between">
-              <div
+              <button
+                type="button"
                 onClick={handleMobileNav}
-                className="rounded shadow-lg shadow-gray-400 dark:shadow-slate-800 p-3 cursor-pointer text-slate-900 dark:text-slate-100"
+                className="rounded shadow-lg shadow-gray-400 dark:shadow-slate-800 p-3 cursor-pointer text-slate-900 dark:text-slate-100 border-0 bg-transparent"
+                aria-label={t("common.nav_menu_close")}
               >
-                <AiOutlineClose />
-              </div>
+                <AiOutlineClose aria-hidden />
+              </button>
             </div>
             <div className="flex flex-col space-y-4 pt-4">
                   <button
@@ -304,7 +345,11 @@ const Navbar = () => {
                     className="flex items-center gap-2 p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 mb-2"
                     aria-label={theme === "dark" ? t("common.theme_aria_light") : t("common.theme_aria_dark")}
                   >
-                    {theme === "dark" ? <HiSun className="w-5 h-5" /> : <HiMoon className="w-5 h-5" />}
+                    {theme === "dark" ? (
+                      <HiSun className="w-5 h-5" aria-hidden />
+                    ) : (
+                      <HiMoon className="w-5 h-5" aria-hidden />
+                    )}
                     <span>{theme === "dark" ? "Mode clair" : "Mode sombre"}</span>
                   </button>
                   <span className={handleActiveLink("toabout")}>
@@ -370,7 +415,7 @@ const Navbar = () => {
                       rel="noopener noreferrer"
                       aria-label={t("common.aria_github")}
                     >
-                      <BsGithub size="2rem" />
+                      <BsGithub size="2rem" aria-hidden focusable={false} />
                     </a>
                   </div>
                   <div>
@@ -380,7 +425,7 @@ const Navbar = () => {
                       rel="noopener noreferrer"
                       aria-label={t("common.aria_linkedin")}
                     >
-                      <BsLinkedin size="2rem" />
+                      <BsLinkedin size="2rem" aria-hidden focusable={false} />
                     </a>
                   </div>
                   <div>
@@ -390,7 +435,7 @@ const Navbar = () => {
                       rel="noopener noreferrer"
                       aria-label={t("common.aria_malt")}
                     >
-                      <SiMalt size="2rem" />
+                      <SiMalt size="2rem" aria-hidden focusable={false} />
                     </a>
                   </div>
                 </div>

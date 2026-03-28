@@ -129,7 +129,7 @@ const Project = ({ projectId, idx }) => {
       style={{ outline: "none" }}
     >
       <Link
-        to={`/projects/${projectId}?t=${Date.now()}`}
+        to={`/projects/${projectId}`}
         className="flex flex-col h-full w-full focus:outline-none"
         tabIndex={-1}
         aria-label={t("common.seeMore") + ": " + title}
