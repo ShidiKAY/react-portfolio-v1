@@ -45,6 +45,7 @@
     "axe-core": "^4.11.3",
     "babel-jest": "^30.3.0",
     "check-dependencies": "^2.0.0",
+    "esbuild": "^0.28.0",
     "eslint": "^9.10.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
