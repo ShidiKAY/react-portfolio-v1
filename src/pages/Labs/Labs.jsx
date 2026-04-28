@@ -33,12 +33,18 @@ const Labs = () => {
         <meta property="og:type" content="website" />
         <meta property="og:url" content={SEO_BASE_URL + "/labs"} />
         <meta property="og:title" content={t("common.seo_labs_title")} />
-        <meta property="og:description" content={t("common.seo_labs_description")} />
+        <meta
+          property="og:description"
+          content={t("common.seo_labs_description")}
+        />
         <meta property="og:image" content={SEO_DEFAULT_IMAGE} />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content={SEO_BASE_URL + "/labs"} />
         <meta name="twitter:title" content={t("common.seo_labs_title")} />
-        <meta name="twitter:description" content={t("common.seo_labs_description")} />
+        <meta
+          name="twitter:description"
+          content={t("common.seo_labs_description")}
+        />
         <meta name="twitter:image" content={SEO_DEFAULT_IMAGE} />
       </Head>
       {/* Bouton Retour */}
@@ -62,7 +68,7 @@ const Labs = () => {
               clipRule="evenodd"
             />
           </svg>
-          ← {t("common.labs_back_to_expertise")}
+          {t("common.labs_back_to_expertise")}
         </Link>
       </div>
 
