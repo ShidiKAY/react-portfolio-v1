@@ -1,12 +1,11 @@
 /** Single source of truth for project IDs and their display order (home + project detail prev/next). */
+export const FLAGSHIP_PROJECT_ORDER = ["bbg", "freelance", "hml"];
+
+export const EARLIER_PROJECT_ORDER = ["scf", "bubo", "hopps", "apigem"];
+
 export const PROJECT_ORDER = [
-  "bbg",
-  "freelance",
-  "hml",
-  "scf",
-  "bubo",
-  "hopps",
-  "apigem",
+  ...FLAGSHIP_PROJECT_ORDER,
+  ...EARLIER_PROJECT_ORDER,
 ];
 
 export function isValidProjectId(projectId) {

@@ -4,16 +4,25 @@ import { useEffect } from "react";
 import { Helmet as Head } from "react-helmet-async";
 import labsData from "../../data/labs_exp.json";
 import LabPreview from "./LabPreview";
+import { getLabContent } from "../../utils/labContent";
 
 const STATUS_KEYS = {
   Experimental: "labs_status_experimental",
   "Internal Tool": "labs_status_internal_tool",
   "Production-Ready": "labs_status_production_ready",
+  Alpha: "labs_status_alpha",
+  "Experimental Build - v0.2": "labs_status_experimental_build",
+  "Artistic PoC - Interactive Experience": "labs_status_artistic_poc",
+  "Polish in progress": "labs_status_polish_in_progress",
 };
 const CATEGORY_KEYS = {
   Automation: "labs_category_automation",
   "AI Assistance": "labs_category_ai_assistance",
   Architecture: "labs_category_architecture",
+  Simulation: "labs_category_simulation",
+  "Art & Interactive": "labs_category_art_interactive",
+  Geospatial: "labs_category_geospatial",
+  Linguistic: "labs_category_linguistic",
 };
 
 const LabDetail = () => {
@@ -35,23 +44,24 @@ const LabDetail = () => {
 
   const statusLabel = t("common." + (STATUS_KEYS[lab.status] ?? "labs_status_experimental"));
   const categoryLabel = t("common." + (CATEGORY_KEYS[lab.category] ?? "labs_category_automation"));
+  const copy = getLabContent(t, lab.id);
 
   return (
     <div className="min-h-screen bg-slate-900">
       <Head>
-        <title>{lab.title} · {t("common.labs_page_header")}</title>
-        <meta name="description" content={lab.problem} />
+        <title>{copy.title} · {t("common.labs_page_header")}</title>
+        <meta name="description" content={copy.problem} />
       </Head>
       <div className="fixed top-4 left-4 z-[200]">
         <Link
           to="/labs"
-          className="flex items-center gap-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm text-slate-800 dark:text-slate-100 px-4 py-2 rounded-sm border border-slate-200 dark:border-slate-600 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
-          aria-label={t("common.labs_back_to_expertise")}
+          className="inline-flex items-center gap-2 px-3 py-2 rounded-sm border border-slate-600/80 bg-slate-900/90 text-slate-200 text-sm font-medium backdrop-blur-sm hover:border-cyan-500/50 hover:text-cyan-300 transition-colors"
+          aria-label={t("common.labs_back_to_list")}
         >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 shrink-0" viewBox="0 0 20 20" fill="currentColor" aria-hidden>
             <path fillRule="evenodd" d="M9.707 16.707a1 1 0 01-1.414 0l-6-6a1 1 0 010-1.414l6-6a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l4.293 4.293a1 1 0 010 1.414z" clipRule="evenodd" />
           </svg>
-          ← {t("common.labs_back_to_expertise")}
+          {t("common.labs_back_to_list")}
         </Link>
       </div>
 
@@ -62,23 +72,23 @@ const LabDetail = () => {
             <span className="text-xs font-medium text-slate-400">{statusLabel}</span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-bold text-white mb-6">
-            {lab.title}
+            {copy.title}
           </h1>
         </header>
 
         <dl className="space-y-6 text-slate-300">
           <div>
             <dt className="text-cyan-400 font-mono text-xs uppercase tracking-wider mb-1">{t("common.labs_label_problem")}</dt>
-            <dd className="leading-relaxed">{lab.problem}</dd>
+            <dd className="leading-relaxed">{copy.problem}</dd>
           </div>
           <div>
             <dt className="text-cyan-400 font-mono text-xs uppercase tracking-wider mb-1">{t("common.labs_label_approach")}</dt>
-            <dd className="leading-relaxed">{lab.approach}</dd>
+            <dd className="leading-relaxed">{copy.approach}</dd>
           </div>
-          {lab.result && (
+          {copy.result && (
             <div>
               <dt className="text-cyan-400 font-mono text-xs uppercase tracking-wider mb-1">{t("common.labs_insight_label")}</dt>
-              <dd className="leading-relaxed font-medium text-slate-200">{lab.result}</dd>
+              <dd className="leading-relaxed font-medium text-slate-200">{copy.result}</dd>
             </div>
           )}
           {(lab.stack ?? []).length > 0 && (

@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 import { Link } from "react-scroll";
 import { useTranslation } from "react-i18next";
+import { HAS_RECOMMENDATIONS } from "../../config/recommendations";
 
 // Order matches DOM/scroll order on home: About → Skills → Projects → Approche → Engine (inclut Qualité dans le carousel) → Status → Recommendations
 const SECTIONS = [
@@ -11,7 +12,9 @@ const SECTIONS = [
   { id: "toapproche", labelKey: "common.quicknav_approche" },
   { id: "toengine", labelKey: "common.quicknav_engine" },
   { id: "tostatus", labelKey: "common.quicknav_status" },
-  { id: "torecommendations", labelKey: "common.quicknav_recommendations" },
+  ...(HAS_RECOMMENDATIONS
+    ? [{ id: "torecommendations", labelKey: "common.quicknav_recommendations" }]
+    : []),
 ];
 
 const HASH_IDS = ["tohome", ...SECTIONS.map((s) => s.id)];

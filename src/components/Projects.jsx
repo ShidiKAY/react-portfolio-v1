@@ -1,13 +1,15 @@
 import { useTranslation } from "react-i18next";
 import Project from "./Project";
 import { motion } from "framer-motion";
-import { PROJECT_ORDER } from "../constants/projects";
-
-const projects = PROJECT_ORDER.map((projectId) => ({ projectId }));
+import {
+  FLAGSHIP_PROJECT_ORDER,
+  EARLIER_PROJECT_ORDER,
+} from "../constants/projects";
 
 const Projects = () => {
   const { t } = useTranslation();
-  const hasProjects = projects && projects.length > 0;
+  const hasFlagship = FLAGSHIP_PROJECT_ORDER.length > 0;
+  const hasEarlier = EARLIER_PROJECT_ORDER.length > 0;
 
   return (
     <div className="w-full pb-16 sm:pb-20 overflow-x-hidden">
@@ -15,7 +17,7 @@ const Projects = () => {
         <p className="font-bold text-blue-900 dark:text-blue-200 text-3xl pb-6 text-center tracking-wide">
           {t("common.projects")}
         </p>
-        {hasProjects ? (
+        {hasFlagship ? (
           <motion.div
             className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 justify-items-stretch items-stretch w-full overflow-hidden min-w-0"
             initial="hidden"
@@ -24,8 +26,8 @@ const Projects = () => {
               visible: { transition: { staggerChildren: 0.1 } },
             }}
           >
-            {projects.map((project, idx) => (
-              <Project key={project.projectId} {...project} idx={idx} />
+            {FLAGSHIP_PROJECT_ORDER.map((projectId, idx) => (
+              <Project key={projectId} projectId={projectId} idx={idx} />
             ))}
           </motion.div>
         ) : (
@@ -39,7 +41,34 @@ const Projects = () => {
               loading="lazy"
               decoding="async"
             />
-            <p className="text-lg text-gray-500 dark:text-slate-400">{t("portfolio.noProjects")}</p>
+            <p className="text-lg text-gray-500 dark:text-slate-400">
+              {t("portfolio.noProjects")}
+            </p>
+          </div>
+        )}
+
+        {hasEarlier && (
+          <div className="mt-14 sm:mt-16">
+            <p className="text-lg font-semibold text-slate-600 dark:text-slate-400 pb-5 text-center tracking-wide">
+              {t("common.projects_earlier")}
+            </p>
+            <motion.div
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 justify-items-stretch items-stretch w-full overflow-hidden min-w-0"
+              initial="hidden"
+              animate="visible"
+              variants={{
+                visible: { transition: { staggerChildren: 0.08 } },
+              }}
+            >
+              {EARLIER_PROJECT_ORDER.map((projectId, idx) => (
+                <Project
+                  key={projectId}
+                  projectId={projectId}
+                  idx={idx}
+                  variant="earlier"
+                />
+              ))}
+            </motion.div>
           </div>
         )}
       </div>

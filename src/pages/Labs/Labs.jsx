@@ -52,12 +52,12 @@ const Labs = () => {
         <Link
           to="/"
           state={{ scrollToEngine: true }}
-          className="flex items-center gap-2 bg-white/90 dark:bg-slate-800/90 backdrop-blur-sm text-slate-800 dark:text-slate-100 px-4 py-2 rounded-sm border border-slate-200 dark:border-slate-600 shadow-sm hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors"
+          className="inline-flex items-center gap-2 px-3 py-2 rounded-sm border border-slate-600/80 bg-slate-900/90 text-slate-200 text-sm font-medium backdrop-blur-sm hover:border-cyan-500/50 hover:text-cyan-300 transition-colors"
           aria-label={t("common.labs_back_to_expertise")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            className="h-5 w-5"
+            className="h-4 w-4 shrink-0"
             viewBox="0 0 20 20"
             fill="currentColor"
             aria-hidden
@@ -102,9 +102,9 @@ const Labs = () => {
           <Link
             to="/"
             state={{ scrollToEngine: true }}
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-cyan-400 text-sm font-medium transition-colors"
+            className="inline-flex items-center gap-2 px-3 py-2 rounded-sm border border-slate-600/80 text-slate-300 hover:border-cyan-500/50 hover:text-cyan-300 text-sm font-medium transition-colors"
           >
-            <span>←</span> {t("common.labs_back_to_expertise")}
+            {t("common.labs_back_to_expertise")}
           </Link>
         </motion.div>
       </div>

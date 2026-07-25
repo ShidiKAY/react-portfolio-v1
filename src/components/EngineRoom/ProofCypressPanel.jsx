@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { FaVideo } from "react-icons/fa";
-import TerminalMockup from "../ProofOfQuality/TerminalMockup";
+import TerminalMockup from "./TerminalMockup";
 
 const hasCypressAsset = false;
 
@@ -18,7 +18,7 @@ const ProofCypressPanel = () => {
       <p className="text-slate-600 dark:text-slate-300 text-base leading-relaxed">
         {t("common.proof_cypress_how")}
       </p>
-      <TerminalMockup>
+      <TerminalMockup showStatusBar={hasCypressAsset}>
         {hasCypressAsset ? (
           <>
             <img
@@ -57,8 +57,7 @@ const ProofCypressPanel = () => {
           ))}
         </ul>
       </div>
-      <p className="text-emerald-800 dark:text-emerald-200 font-medium text-sm flex items-center gap-2">
-        <span className="text-emerald-500 dark:text-emerald-400" aria-hidden="true">🛡</span>
+      <p className="text-emerald-800 dark:text-emerald-200 font-medium text-sm">
         {t("common.proof_guarantee")}
       </p>
     </div>

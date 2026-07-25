@@ -7,8 +7,6 @@ import {
   FaGithub,
   FaChartBar,
   FaDatabase,
-  FaCloud,
-  FaSync,
   FaServer,
   FaClock,
   FaNetworkWired,
@@ -17,7 +15,7 @@ import {
   FaPuzzlePiece,
   FaKey,
   FaCogs,
-  FaLayerGroup,
+  FaNodeJs,
 } from "react-icons/fa";
 import { DiDotnet } from "react-icons/di";
 import {
@@ -25,15 +23,18 @@ import {
   SiSymfony,
   SiDocker,
   SiZend,
-  SiCakephp,
-  SiJquery,
   SiVuedotjs,
   SiApache,
   SiJira,
   SiDotnet,
   SiUikit,
   SiYarn,
-  SiWebpack,
+  SiNestjs,
+  SiTypescript,
+  SiCypress,
+  SiKubernetes,
+  SiGitlab,
+  SiReact,
 } from "react-icons/si";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState, useRef } from "react";
@@ -42,21 +43,26 @@ import PropTypes from "prop-types";
 
 const SKILL_DESCRIPTIONS = {
   Symfony: "PHP framework for scalable web apps.",
-  Cake: "Rapid development PHP framework.",
+  NestJS: "Node.js framework for scalable server-side apps.",
   Zend: "Enterprise PHP framework.",
   PHP: "Popular server-side scripting language.",
+  "Node.js": "JavaScript runtime for server-side applications.",
   MySQL: "Relational database management system.",
   SQL: "Structured Query Language for databases.",
   "REST API": "Web API using RESTful principles.",
+  DDD: "Domain-Driven Design for clear business boundaries.",
   HTML: "Markup language for web pages.",
   CSS: "Styling language for web pages.",
   JavaScript: "Dynamic scripting for web apps.",
+  TypeScript: "Typed superset of JavaScript.",
   "Vue.js": "Progressive JavaScript framework.",
-  jQuery: "JS library for DOM manipulation.",
+  React: "Library for building user interfaces.",
   ".NET": ".NET platform for apps.",
   "C#": "Modern object-oriented language.",
   "ASP.NET": ".NET web framework.",
   Docker: "Containerization platform.",
+  Kubernetes: "Container orchestration platform.",
+  "GitLab CI": "CI/CD pipelines with GitLab.",
   GIT: "Version control system.",
   Apache: "Web server software.",
   Cron: "Task scheduler for Unix systems.",
@@ -64,10 +70,9 @@ const SKILL_DESCRIPTIONS = {
   Ubuntu: "Popular Linux distribution.",
   ApexCharts: "Data visualization library.",
   Jira: "Project management tool.",
-  Webservices: "Interoperable machine-to-machine services.",
-  AJAX: "Asynchronous JS and XML.",
-  "Méthode Agile": "Agile project management.",
-  "Conception Web": "Web design best practices.",
+  Cypress: "End-to-end testing framework.",
+  BDD: "Behavior-Driven Development for shared specs.",
+  "E2E Testing": "End-to-end tests on critical user journeys.",
   Bootstrap: "Popular CSS framework for responsive web design.",
   UIkit: "Lightweight and modular front-end framework.",
   Yarn: "Fast, reliable, and secure dependency management.",
@@ -77,149 +82,112 @@ const SKILL_DESCRIPTIONS = {
     "Task automation and configuration management framework from Microsoft.",
   LDAP: "Protocol for accessing and maintaining distributed directory information services.",
   "API Platform": "Framework to build modern API-driven projects.",
-  "Material Design":
-    "Design language developed by Google for consistent UI/UX.",
-  OpenVas: "Open-source vulnerability scanner and manager.",
-  "Webpack Encore": "Symfony's wrapper for Webpack, for asset management.",
-  Teamwork: "Ability to work effectively within a team.",
-  "Team Collaboration": "Ability to work effectively within a team.",
-  "Problem Solving": "Ability to analyze and resolve complex issues.",
-  "Technical Documentation": "Writing and maintaining technical documentation.",
-  "User Experience Design":
-    "Designing user-friendly and accessible interfaces.",
-  "Data Visualization": "Presenting data in a clear and impactful way.",
-  "UI/UX Design": "Designing modern, responsive user interfaces.",
-  "Version Control": "Managing code changes and collaboration.",
-  "Leadership Technique":
-    "Leading teams and projects with technical expertise.",
-  "Architecture Système": "Designing robust and scalable system architectures.",
-  "Optimisation des Performances":
-    "Improving application speed and efficiency.",
-  "Fullstack Development":
-    "Experience with both front-end and back-end development.",
-  "API Design": "Designing robust and scalable APIs.",
-  "Community Management": "Managing and engaging with user communities.",
-  "Process Automation": "Automating repetitive tasks and processes.",
-  "Data Processing": "Handling and transforming data efficiently.",
-  Reliability: "Ensuring systems are dependable and robust.",
   "Autonomous Work": "Ability to work independently.",
-  Proactivity: "Taking initiative and acting in advance.",
-  Responsiveness: "Reacting quickly and positively.",
-  Initiative: "Ability to assess and initiate things independently.",
+  "Written Culture": "Clear written collaboration: tickets, docs, and PRs that keep teams aligned.",
+  "Business & Quality Vision":
+    "Business-aware delivery with a strong quality mindset.",
   Communication: "Effectively conveying information and ideas.",
-  "Force de proposition": "Ability to propose ideas and solutions.",
-  Réactivité: "Ability to react quickly and efficiently.",
-  "Automatisation des processus":
-    "Implementing solutions to automate repetitive tasks.",
-  "Traitement de données": "Efficient data management and transformation.",
-  Fiabilité: "Ensuring system robustness and stability.",
+  "Problem Solving": "Ability to analyze and resolve complex issues.",
+  French: "Native French.",
+  English: "Professional working English.",
+  Italian: "Italian language skills.",
+  "Chinese (basics)": "Basic Chinese.",
 };
 
-/** Internal skill names (legacy French labels) → i18n key under common.* for pill display. */
+/** Internal skill names → i18n key under common.* for pill display. */
 const SOFT_SKILL_LABEL_KEY = {
-  "Leadership Technique": "softskill_leadership_technique",
-  "Architecture Système": "softskill_architecture_systeme",
-  "Optimisation des Performances": "softskill_optimisation_performances",
-  "Force de proposition": "softskill_force_de_proposition",
-  Réactivité: "softskill_reactivite",
-  "Automatisation des processus": "softskill_automatisation_processus",
-  "Traitement de données": "softskill_traitement_donnees",
-  Fiabilité: "softskill_fiabilite",
+  "Autonomous Work": "softskill_autonomous_work",
+  "Written Culture": "softskill_written_culture",
+  "Business & Quality Vision": "softskill_business_quality",
+  Communication: "softskill_communication",
+  "Problem Solving": "softskill_problem_solving",
+};
+
+const LANGUAGE_LABEL_KEY = {
+  French: "lang_french",
+  English: "lang_english",
+  Italian: "lang_italian",
+  "Chinese (basics)": "lang_chinese_basics",
 };
 
 const MASTERED_SKILLS = [
   "Symfony",
-  "Cake",
   "PHP",
+  "Vue.js",
   "MySQL",
-  "HTML",
-  "CSS",
-  "JavaScript",
   "Docker",
   "GIT",
-  "Ubuntu",
-  "Jira",
+  "JavaScript",
+  "TypeScript",
+  "Cypress",
+  "NestJS",
 ];
 
 const SOFT_SKILLS = [
-  "Teamwork",
-  "Team Collaboration",
-  "Problem Solving",
-  "Technical Documentation",
-  "User Experience Design",
-  "Data Visualization",
-  "UI/UX Design",
-  "Version Control",
-  "Leadership Technique",
-  "Architecture Système",
-  "Optimisation des Performances",
-  "Fullstack Development",
-  "API Design",
-  "Community Management",
-  "Process Automation",
-  "Data Processing",
-  "Reliability",
   "Autonomous Work",
-  "Proactivity",
-  "Responsiveness",
-  "Initiative",
+  "Written Culture",
+  "Business & Quality Vision",
   "Communication",
-  "Force de proposition",
-  "Réactivité",
-  "Automatisation des processus",
-  "Traitement de données",
-  "Fiabilité",
+  "Problem Solving",
 ];
 
 const skills = {
   Backend: [
-    { name: "Symfony", icon: SiSymfony },
-    { name: "Cake", icon: SiCakephp },
-    { name: "Zend", icon: SiZend },
     { name: "PHP", icon: FaPhp },
-    { name: "MySQL", icon: SiMysql },
-    { name: "SQL", icon: FaDatabase },
+    { name: "Symfony", icon: SiSymfony },
+    { name: "NestJS", icon: SiNestjs },
+    { name: "Node.js", icon: FaNodeJs },
+    { name: "DDD" },
     { name: "REST API", icon: FaServer },
-    { name: "DQL", icon: FaKey },
-    { name: "Sphinx", icon: FaCube },
-    { name: "LDAP", icon: FaKey },
     { name: "API Platform", icon: FaPuzzlePiece },
-    { name: "OpenVas", icon: FaCogs },
-  ],
-  Frontend: [
-    { name: "HTML", icon: FaHtml5 },
-    { name: "CSS", icon: FaCss3Alt },
-    { name: "JavaScript", icon: FaJs },
-    { name: "Vue.js", icon: SiVuedotjs },
-    { name: "jQuery", icon: SiJquery },
-    { name: "Bootstrap", icon: FaBootstrap },
-    { name: "UIkit", icon: SiUikit },
-    { name: "Material Design", icon: FaLayerGroup },
-  ],
-  Fullstack: [
-    { name: ".NET", icon: DiDotnet },
     { name: "C#", icon: SiDotnet },
     { name: "ASP.NET", icon: SiDotnet },
-    { name: "Yarn", icon: SiYarn },
-    { name: "Webpack Encore", icon: SiWebpack },
+    { name: ".NET", icon: DiDotnet },
+    { name: "Zend", icon: SiZend },
+  ],
+  Frontend: [
+    { name: "Vue.js", icon: SiVuedotjs },
+    { name: "TypeScript", icon: SiTypescript },
+    { name: "JavaScript", icon: FaJs },
+    { name: "React", icon: SiReact },
+    { name: "HTML", icon: FaHtml5 },
+    { name: "CSS", icon: FaCss3Alt },
+    { name: "Bootstrap", icon: FaBootstrap },
+    { name: "UIkit", icon: SiUikit },
+  ],
+  Quality: [
+    { name: "Cypress", icon: SiCypress },
+    { name: "BDD" },
+    { name: "E2E Testing" },
+    { name: "GitLab CI", icon: SiGitlab },
   ],
   DevOps: [
     { name: "Docker", icon: SiDocker },
+    { name: "Kubernetes", icon: SiKubernetes },
     { name: "GIT", icon: FaGithub },
+    { name: "Ubuntu", icon: FaLinux },
     { name: "Apache", icon: SiApache },
     { name: "Cron", icon: FaClock },
     { name: "Samba", icon: FaNetworkWired },
-    { name: "Ubuntu", icon: FaLinux },
-  ],
-  Data: [
-    { name: "ApexCharts", icon: FaChartBar },
-    { name: "Jira", icon: SiJira },
-    { name: "Webservices", icon: FaCloud },
-    { name: "AJAX", icon: FaSync },
     { name: "Powershell", icon: FaCogs },
   ],
-  Other: [{ name: "Méthode Agile" }, { name: "Conception Web" }],
+  Data: [
+    { name: "MySQL", icon: SiMysql },
+    { name: "SQL", icon: FaDatabase },
+    { name: "DQL", icon: FaKey },
+    { name: "ApexCharts", icon: FaChartBar },
+    { name: "Sphinx", icon: FaCube },
+    { name: "Jira", icon: SiJira },
+    { name: "Yarn", icon: SiYarn },
+    { name: "LDAP", icon: FaKey },
+  ],
   SoftSkills: SOFT_SKILLS.map((name) => ({ name, isSoft: true })),
+  Languages: [
+    { name: "French" },
+    { name: "English" },
+    { name: "Italian" },
+    { name: "Chinese (basics)" },
+  ],
 };
 
 const categories = ["All", ...Object.keys(skills)];
@@ -230,15 +198,13 @@ const SkillPill = ({ skill, idx, mastered, masteredTooltip, isSoft }) => {
   const hasDesc = !!SKILL_DESCRIPTIONS[skill.name];
   const [showTooltip, setShowTooltip] = useState(false);
   const pillRef = useRef(null);
-  // Traduction pour les skills "Other"
+
   let displayName = skill.name;
-  if (skill.name === "Méthode Agile")
-    displayName = t("common.skills_other_agile");
-  if (skill.name === "Conception Web")
-    displayName = t("common.skills_other_webdesign");
   const softLabelKey = SOFT_SKILL_LABEL_KEY[skill.name];
   if (softLabelKey) displayName = t(`common.${softLabelKey}`);
-  // Determine if soft skill
+  const langLabelKey = LANGUAGE_LABEL_KEY[skill.name];
+  if (langLabelKey) displayName = t(`common.${langLabelKey}`);
+
   const isSoftSkill = isSoft || SOFT_SKILLS.includes(skill.name);
   const pillClass = isSoftSkill
     ? "relative inline-flex items-center gap-1 px-3 py-1 bg-purple-50 dark:bg-purple-900/40 text-purple-700 dark:text-purple-300 rounded-full text-sm border border-purple-300 dark:border-purple-700 focus:ring-2 focus:ring-purple-400 focus:ring-offset-2 dark:focus:ring-offset-slate-900 cursor-pointer select-none transition"
@@ -246,7 +212,7 @@ const SkillPill = ({ skill, idx, mastered, masteredTooltip, isSoft }) => {
   const tooltipClass = isSoftSkill
     ? "absolute left-0 bottom-full mb-1 z-50 px-2 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-purple-200 dark:border-purple-800 text-purple-800 dark:text-purple-200 text-xs text-center whitespace-pre-line pointer-events-none min-w-max max-w-xs break-words"
     : "absolute left-0 bottom-full mb-1 z-50 px-2 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-blue-100 dark:border-slate-600 text-gray-700 dark:text-slate-200 text-xs text-center whitespace-pre-line pointer-events-none min-w-max max-w-xs break-words";
-  // Tooltip: use translation if available, else fallback
+
   const tooltipText = t(
     `skills_desc.${skill.name}`,
     SKILL_DESCRIPTIONS[skill.name]
@@ -281,7 +247,6 @@ const SkillPill = ({ skill, idx, mastered, masteredTooltip, isSoft }) => {
           ⭐
         </span>
       )}
-      {/* Custom tooltip */}
       {hasDesc && showTooltip && (
         <motion.div
           initial={{ opacity: 0, y: 8 }}
@@ -319,9 +284,8 @@ const SkillsModern = () => {
     setFadeIn(true);
   }, []);
 
-  // Only include soft skills in 'SoftSkills' filter, not in 'All'
   const allSkills = Object.entries(skills)
-    .filter(([cat]) => cat !== "SoftSkills")
+    .filter(([cat]) => cat !== "SoftSkills" && cat !== "Languages")
     .flatMap(([cat, arr]) => arr.map((s) => ({ ...s, category: cat })));
   let displayedSkills;
   if (selectedCategory === "All") {
@@ -329,7 +293,11 @@ const SkillsModern = () => {
       s.name.toLowerCase().includes(search.trim().toLowerCase())
     );
   } else if (selectedCategory === "SoftSkills") {
-    displayedSkills = skills["SoftSkills"].filter((s) =>
+    displayedSkills = skills.SoftSkills.filter((s) =>
+      s.name.toLowerCase().includes(search.trim().toLowerCase())
+    );
+  } else if (selectedCategory === "Languages") {
+    displayedSkills = skills.Languages.filter((s) =>
       s.name.toLowerCase().includes(search.trim().toLowerCase())
     );
   } else {
@@ -350,7 +318,6 @@ const SkillsModern = () => {
         <h2 className="text-2xl md:text-3xl font-bold text-center text-blue-900 dark:text-blue-200 mb-6 tracking-tight">
           {t("common.skills")}
         </h2>
-        {/* Filtres catégories + recherche */}
         <div className="flex flex-col md:flex-row gap-2 mb-6 items-center w-full">
           <div
             className="skills-scrollbar flex flex-row gap-2 overflow-x-auto flex-nowrap md:overflow-x-visible md:flex-wrap w-full md:max-w-fit md:w-auto scrollbar-thin scrollbar-thumb-blue-200 scrollbar-track-transparent py-2 px-1"
@@ -378,7 +345,6 @@ const SkillsModern = () => {
           </div>
           <div className="relative flex-shrink-0 min-w-[130px] max-w-[180px] w-full ml-0 md:ml-1 mt-2 md:mt-0">
             <span className="absolute left-3 top-1/2 -translate-y-1/2 text-blue-400 pointer-events-none">
-              {/* Icône loupe SVG */}
               <svg
                 width="18"
                 height="18"
@@ -404,7 +370,6 @@ const SkillsModern = () => {
             />
           </div>
         </div>
-        {/* Pills grid */}
         <div className="flex flex-wrap gap-2 justify-center items-center w-full mx-auto py-2 px-1">
           {displayedSkills.map((skill, idx) => {
             const mastered = MASTERED_SKILLS.includes(skill.name);
@@ -428,7 +393,6 @@ const SkillsModern = () => {
 export default SkillsModern;
 export { SkillPill };
 
-// Flat map of skill name to icon for easy lookup
 export const skillIcons = {};
 Object.values(skills)
   .flat()
@@ -437,15 +401,3 @@ Object.values(skills)
   });
 
 export { SKILL_DESCRIPTIONS };
-
-/* Add this CSS to your global stylesheet (e.g., src/styles/globals.css):
-@media (min-width: 768px) {
-  .skills-scrollbar {
-    scrollbar-width: none !important;
-    -ms-overflow-style: none !important;
-  }
-  .skills-scrollbar::-webkit-scrollbar {
-    display: none !important;
-  }
-}
-*/

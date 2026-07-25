@@ -1,21 +1,22 @@
 import { useTranslation } from "react-i18next";
 import { motion } from "framer-motion";
+import { getLabContent } from "../../utils/labContent";
 
 const STATUS_STYLES = {
   Experimental:
-    "bg-amber-100 dark:bg-amber-900/40 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-700",
+    "bg-amber-500/15 text-amber-300 border-amber-500/40",
   "Internal Tool":
-    "bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-600",
+    "bg-slate-500/20 text-slate-200 border-slate-500/40",
   "Production-Ready":
-    "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700",
+    "bg-emerald-500/15 text-emerald-300 border-emerald-500/40",
   Alpha:
-    "bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-700",
+    "bg-blue-500/15 text-blue-300 border-blue-500/40",
   "Experimental Build - v0.2":
-    "bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-300 border-purple-200 dark:border-purple-700",
+    "bg-violet-500/15 text-violet-300 border-violet-500/40",
   "Artistic PoC - Interactive Experience":
-    "bg-pink-100 dark:bg-pink-900/40 text-pink-800 dark:text-pink-300 border-pink-200 dark:border-pink-700",
+    "bg-rose-500/20 text-rose-300 border-rose-400/50",
   "Polish in progress":
-    "bg-yellow-100 dark:bg-yellow-900/40 text-yellow-800 dark:text-yellow-300 border-yellow-200 dark:border-yellow-700",
+    "bg-yellow-500/15 text-yellow-300 border-yellow-500/40",
 };
 
 const CATEGORY_KEYS = {
@@ -40,6 +41,7 @@ const STATUS_KEYS = {
 
 export default function LabCard({ lab, index = 0 }) {
   const { t } = useTranslation();
+  const copy = getLabContent(t, lab.id);
   const statusStyle = STATUS_STYLES[lab.status] ?? STATUS_STYLES["Internal Tool"];
   const statusLabel = t("common." + (STATUS_KEYS[lab.status] ?? "labs_status_experimental"));
   const categoryLabel = t("common." + (CATEGORY_KEYS[lab.category] ?? "labs_category_automation"));
@@ -54,12 +56,12 @@ export default function LabCard({ lab, index = 0 }) {
       aria-labelledby={`lab-title-${lab.id}`}
     >
       {/* Blueprint-style top bar */}
-      <div className="px-4 py-2 border-b border-slate-600/60 dark:border-slate-700 bg-slate-900/40 flex items-center justify-between gap-2 flex-wrap">
-        <span className="text-xs font-mono text-cyan-400/90 uppercase tracking-wider">
+      <div className="px-4 py-2 border-b border-slate-600/60 dark:border-slate-700 bg-slate-900/40 flex items-center justify-between gap-3 min-h-[2.5rem]">
+        <span className="text-xs font-mono text-cyan-400/90 uppercase tracking-wider whitespace-nowrap shrink-0">
           {categoryLabel}
         </span>
         <span
-          className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border ${statusStyle}`}
+          className={`inline-flex items-center px-2 py-0.5 rounded text-xs font-medium border whitespace-nowrap shrink min-w-0 ${statusStyle}`}
           title={t("common.labs_label_maturity")}
         >
           {statusLabel}
@@ -71,7 +73,7 @@ export default function LabCard({ lab, index = 0 }) {
           id={`lab-title-${lab.id}`}
           className="text-lg font-bold text-slate-100 dark:text-white mb-3 font-sans"
         >
-          {lab.title}
+          {copy.title}
         </h2>
 
         <dl className="space-y-3 text-sm flex-1">
@@ -80,7 +82,7 @@ export default function LabCard({ lab, index = 0 }) {
               {t("common.labs_label_problem")}
             </dt>
             <dd className="text-slate-300 dark:text-slate-300 leading-relaxed">
-              {lab.problem}
+              {copy.problem}
             </dd>
           </div>
           <div className="group-hover:opacity-100 opacity-95 transition-opacity duration-200">
@@ -88,16 +90,16 @@ export default function LabCard({ lab, index = 0 }) {
               {t("common.labs_label_approach")}
             </dt>
             <dd className="text-slate-300 dark:text-slate-300 leading-relaxed">
-              {lab.approach}
+              {copy.approach}
             </dd>
           </div>
-          {lab.result && (
+          {copy.result && (
             <div>
               <dt className="text-cyan-400/90 font-mono text-xs uppercase tracking-wider mb-0.5">
                 {t("common.labs_insight_label")}
               </dt>
               <dd className="text-slate-200 dark:text-slate-200 leading-relaxed text-sm font-medium">
-                {lab.result}
+                {copy.result}
               </dd>
             </div>
           )}

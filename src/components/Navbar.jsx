@@ -8,6 +8,7 @@ import { Link as ScrollLink, Events } from "react-scroll";
 import { useTranslation } from "react-i18next";
 import { loadLanguage } from "../i18n";
 import { useTheme } from "../context/ThemeContext";
+import { HAS_RECOMMENDATIONS } from "../config/recommendations";
 import { HiSun, HiMoon } from "react-icons/hi";
 
 const NAV_SECTION_IDS = [
@@ -19,14 +20,18 @@ const NAV_SECTION_IDS = [
   "toengine",
   "tostatus",
   "toproof",
-  "torecommendations",
+  ...(HAS_RECOMMENDATIONS ? ["torecommendations"] : []),
 ];
 const ENGINE_ZONE_IDS = ["toapproche", "toengine", "tostatus", "toproof"];
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isPageReady, setIsPageReady] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(
+    () => typeof window !== "undefined" && window.scrollY > 0
+  );
+  const [isPageReady, setIsPageReady] = useState(
+    () => typeof document !== "undefined" && document.readyState === "complete"
+  );
   const [activeLink, setActiveLink] = useState("tohome");
   const location = useLocation();
   const isInEngineZone = (link) => ENGINE_ZONE_IDS.includes(link);
@@ -73,6 +78,7 @@ const Navbar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+    setIsScrolled(window.scrollY > 0);
     updateActiveLink();
     let rafIdDeferred = null;
     rafIdDeferred = requestAnimationFrame(() => {
@@ -179,6 +185,7 @@ const Navbar = () => {
                       {t("common.nav_engine")}
                     </ScrollLink>
                   </span>
+                  {HAS_RECOMMENDATIONS && (
                   <span className={handleActiveLink("torecommendations")}>
                     <ScrollLink
                       to="torecommendations"
@@ -190,6 +197,7 @@ const Navbar = () => {
                       {t("common.nav_recommendations")}
                     </ScrollLink>
                   </span>
+                  )}
                   <span>
                     <Link
                       to="/labs"
@@ -350,7 +358,7 @@ const Navbar = () => {
                     ) : (
                       <HiMoon className="w-5 h-5" aria-hidden />
                     )}
-                    <span>{theme === "dark" ? "Mode clair" : "Mode sombre"}</span>
+                    <span>{theme === "dark" ? t("common.theme_label_light") : t("common.theme_label_dark")}</span>
                   </button>
                   <span className={handleActiveLink("toabout")}>
                     <ScrollLink to="toabout" smooth duration={500} className="cursor-pointer" onClick={handleMobileNav} onSetActive={() => setActiveLink("toabout")}>
@@ -367,11 +375,13 @@ const Navbar = () => {
                       {t("common.nav_engine")}
                     </ScrollLink>
                   </span>
+                  {HAS_RECOMMENDATIONS && (
                   <span className={handleActiveLink("torecommendations")}>
                     <ScrollLink to="torecommendations" smooth duration={500} className="cursor-pointer" onClick={handleMobileNav} onSetActive={() => setActiveLink("torecommendations")}>
                       {t("common.nav_recommendations")}
                     </ScrollLink>
                   </span>
+                  )}
                   <span>
                     <Link to="/labs" className="cursor-pointer text-slate-900 dark:text-slate-100 hover:text-blue-500 dark:hover:text-blue-400" onClick={handleMobileNav}>
                       {t("common.nav_labs")}

@@ -16,19 +16,29 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.kamalaityous.fr/labs/auto-test-gen</loc>
+    <loc>https://www.kamalaityous.fr/labs/echoes-of-the-void</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.kamalaityous.fr/labs/codex-ai-bridge</loc>
+    <loc>https://www.kamalaityous.fr/labs/stilla</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://www.kamalaityous.fr/labs/codex-vault</loc>
+    <loc>https://www.kamalaityous.fr/labs/app-coverage</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.kamalaityous.fr/labs/geo-interface</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://www.kamalaityous.fr/labs/todaystep</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
   </url>
   <url>
     <loc>https://www.kamalaityous.fr/projects/bbg</loc>

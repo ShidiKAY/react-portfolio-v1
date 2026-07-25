@@ -2,8 +2,11 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import labsData from "../../data/labs_exp.json";
+import { getLabContent } from "../../utils/labContent";
 
 const LabCardShell = ({ lab }) => {
+  const { t } = useTranslation();
+  const copy = getLabContent(t, lab.id);
   const [imgError, setImgError] = useState(false);
   const showThumbnail = lab.thumbnail && !imgError;
 
@@ -16,20 +19,20 @@ const LabCardShell = ({ lab }) => {
         {showThumbnail ? (
           <img
             src={lab.thumbnail}
-            alt={lab.title}
+            alt={copy.title}
             className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             loading="lazy"
             onError={() => setImgError(true)}
           />
         ) : (
           <div className="absolute inset-0 flex items-center justify-center text-slate-500 dark:text-slate-400" aria-hidden="true">
-            <span className="text-3xl font-mono font-semibold">{(lab.title || "?").charAt(0)}</span>
+            <span className="text-3xl font-mono font-semibold">{(copy.title || "?").charAt(0)}</span>
           </div>
         )}
       </div>
       <div className="p-3 bg-white dark:bg-slate-800 border-t border-slate-200 dark:border-slate-600 flex-shrink-0">
-        <p className="text-sm font-semibold text-slate-900 dark:text-white truncate" title={lab.title}>
-          {lab.title}
+        <p className="text-sm font-semibold text-slate-900 dark:text-white truncate" title={copy.title}>
+          {copy.title}
         </p>
       </div>
     </Link>

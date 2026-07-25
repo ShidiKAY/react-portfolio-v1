@@ -2,10 +2,17 @@
   "common": {
     "about": "À propos",
     "abouthelloim": "Bonjour, je suis",
-    "aboutp1": "Ingénieur backend senior, systèmes métier critiques, APIs et livraisons maintenables. Collaboration distribuée et travail d'abord écrit (tickets, docs, PR).",
-    "aboutp2": "De la stabilisation de l'existant aux livraisons testées : frontières métier façon DDD, Cypress/BDD quand il le faut, CI/CD et transferts clairs pour éviter de courir après l'avancement.",
-    "aboutp3": "Pour démarrer, un email avec le contexte suffit ; je m'adapte à vos outils et à votre façon de travailler.",
-    "about_rich": "Passionné par l'architecture logicielle, j'aide les entreprises et les équipes techniques à stabiliser leurs systèmes critiques. Mode async par défaut : tickets, décisions documentées et merge requests ; synchro courte quand c'est utile. Rigueur backend et communication transparente pour que la distance et les fuseaux ne bloquent rien.\n\n✅ Spécialisé dans la conception de systèmes résilients, j'interviens sur l'existant à sécuriser, les APIs à consolider ou les équipes à faire monter en qualité. Méthodologie documentée, de la conception au déploiement.\n💻 Architecture et backend : Architectures durables (DDD, APIs, intégration SI), refactorisation ciblée pour la maintenabilité et la scalabilité.\n🔌 APIs et intégration : Conception et sécurisation d'APIs, interconnexion des systèmes, cohérence des données.\n🔧 Dette technique et performances : Réduction de la dette, optimisation des requêtes et du cache.\n🧪 Qualité et livraison : Tests E2E (Cypress), scénarios BDD, pipelines CI/CD, parcours critiques couverts, régressions maîtrisées.\n🌐 Infra et déploiement : Docker, Kubernetes, CI/CD, environnements maîtrisés et reproductibles.\n💬 Discutons de votre prochain projet : fiabilisation, valeur ajoutée ou montée en qualité.",
+    "about_intro": "Passionné par l'architecture logicielle, j'aide les entreprises et les équipes techniques à stabiliser leurs systèmes critiques. Autonomie et communication claire : tickets, décisions documentées et merge requests ; réunions courtes quand c'est utile. Rigueur backend pour des livraisons prévisibles.",
+    "about_support": "Je me spécialise dans les systèmes résilients : existant à sécuriser, APIs à consolider, ou qualité à faire monter. Méthodologie documentée de la conception au déploiement, avec travail perf et tests E2E (Cypress, BDD) quand il le faut.",
+    "about_points": [
+      "Architecture et backend : architectures durables (DDD, APIs, intégration SI) et refactorisation ciblée pour la maintenabilité.",
+      "APIs et intégration : conception et sécurisation d'APIs, interconnexion des systèmes, cohérence des données.",
+      "Dette technique et performances : réduction de la dette, optimisation des requêtes, stratégies de cache.",
+      "Qualité et livraison : tests E2E (Cypress), scénarios BDD, CI/CD. Parcours critiques couverts, régressions maîtrisées.",
+      "Infra et déploiement : Docker, Kubernetes, CI/CD pour des environnements maîtrisés et reproductibles."
+    ],
+    "about_cta": "Discutons de votre prochain projet : fiabilisation, valeur ajoutée ou montée en qualité.",
+    "aboutp1": "Ingénieur backend senior, systèmes métier critiques, APIs et livraisons maintenables. Autonome, fiable, et clair dans la collaboration avec les équipes.",
     "contact": "Contact",
     "contactme": "Me contacter",
     "notfound_message": "Cette page n'existe pas.",
@@ -25,15 +32,17 @@
     "privacy_back": "Retour à l'accueil",
     "footer_privacy": "Confidentialité",
     "seo_home_title": "Kamal Ait Yous · Expert Backend Senior · Portfolio",
-    "seo_home_description": "Expert Backend Senior : fiabilisation d'applications métier, réduction de la dette technique, automatisation. Remote, livraison async avec tests et documentation. Symfony, APIs, tests E2E, DDD.",
+    "seo_home_description": "Expert Backend Senior & freelance : fiabilisation d'applications métier, dette technique, automatisation. Symfony, APIs, tests E2E, DDD.",
     "seo_labs_title": "Expérimentations · Kamal Ait Yous",
-    "seo_labs_description": "Prototypes et expérimentations : agent de tests E2E, CODEX Smart Search, Registry. Vue, Node.js, IA.",
+    "seo_labs_description": "Prototypes et expérimentations : simulation, automatisation QA, UI géospatiale, art interactif. React, Cypress, Node.js.",
     "getresume": "CV",
-    "getresumefile": "FR_CV_KamalAITYOUS.pdf",
+    "getresumefile": "20260718FR_CV_Kamal_AITYOUS.pdf",
     "home": "Accueil",
     "language": "Langue",
     "theme_aria_light": "Passer en mode clair",
     "theme_aria_dark": "Passer en mode sombre",
+    "theme_label_light": "Mode clair",
+    "theme_label_dark": "Mode sombre",
     "labs_loading_demo": "Chargement de la démo…",
     "nav_menu_open": "Ouvrir le menu",
     "nav_menu_close": "Fermer le menu",
@@ -41,8 +50,9 @@
     "aria_linkedin": "Profil LinkedIn",
     "aria_malt": "Profil Malt",
     "main1": "Systèmes critiques fiables.",
-    "main2": "Dette technique maîtrisée, plus de valeur.",
+    "main2": "Moins de dette. Plus de valeur.",
     "projects": "Parcours pro",
+    "projects_earlier": "Parcours antérieur",
     "seeMore": "Voir plus",
     "selectLanguage": "Sélectionner une langue",
     "skills": "Compétences",
@@ -50,8 +60,8 @@
     "skills_search_aria": "Rechercher une compétence",
     "skills_mastered_tooltip": "Maîtrisé",
     "more_skills_aria": "Afficher {{count}} compétences supplémentaires : {{skills}}",
-    "sub1": "Expert Backend Senior : je fiabilise vos applications métier, réduis la dette technique et automatise.",
-    "sub2": "Collaboration fluide et autonome où que vous soyez ; async (tickets, PR, écrits), synchro courte si utile.",
+    "sub1": "Expert Backend Senior : je fiabilise vos applications métier, réduis la dette technique et renforce l'automatisation.",
+    "sub2": "Une collaboration fluide et autonome pour propulser vos projets techniques, où que vous soyez.",
     "contact_first_step": "Écrivez-moi par email pour ouvrir la discussion.",
     "technologies": "Technologies :",
     "softSkills": "Soft Skills :",
@@ -63,13 +73,40 @@
     "externalLinks": "Liens Externes",
     "skills_category_Backend": "Back-end",
     "skills_category_Frontend": "Front-end",
+    "skills_category_Quality": "Qualité",
     "skills_category_Fullstack": "Fullstack",
     "skills_category_DevOps": "DevOps",
     "skills_category_Data": "Données",
     "skills_category_Other": "Autres",
     "skills_category_SoftSkills": "Compétences relationnelles",
+    "skills_category_Languages": "Langues",
     "skills_other_agile": "Méthode Agile",
     "skills_other_webdesign": "Conception Web",
+    "softskill_autonomous_work": "Autonomie",
+    "softskill_written_culture": "Culture de l'écrit",
+    "softskill_business_quality": "Vision métier & qualité",
+    "softskill_communication": "Communication",
+    "softskill_problem_solving": "Résolution de problèmes",
+    "lang_french": "Français",
+    "lang_english": "Anglais",
+    "lang_italian": "Italien",
+    "lang_chinese_basics": "Chinois (notions)",
+    "skills_desc.Written Culture": "Collaboration écrite claire : tickets, docs et PRs qui alignent les équipes.",
+    "skills_desc.Business & Quality Vision": "Livraison orientée métier avec exigence qualité.",
+    "skills_desc.NestJS": "Framework Node.js pour applications serveur évolutives.",
+    "skills_desc.TypeScript": "Surensemble typé de JavaScript.",
+    "skills_desc.Cypress": "Framework de tests end-to-end.",
+    "skills_desc.Kubernetes": "Orchestration de conteneurs.",
+    "skills_desc.GitLab CI": "Pipelines CI/CD avec GitLab.",
+    "skills_desc.DDD": "Domain-Driven Design pour clarifier le métier.",
+    "skills_desc.BDD": "Behavior-Driven Development pour des specs partagées.",
+    "skills_desc.E2E Testing": "Tests de bout en bout sur les parcours critiques.",
+    "skills_desc.Node.js": "Runtime JavaScript côté serveur.",
+    "skills_desc.React": "Bibliothèque pour interfaces utilisateur.",
+    "skills_desc.French": "Français natif.",
+    "skills_desc.English": "Anglais professionnel.",
+    "skills_desc.Italian": "Italien.",
+    "skills_desc.Chinese (basics)": "Notions de chinois.",
     "read_more": "En savoir plus",
     "show_less": "Réduire",
     "skills_desc.Teamwork": "Capacité à travailler efficacement en équipe.",
@@ -95,7 +132,7 @@
     "skills_desc.Initiative": "Capacité à initier et mener des actions.",
     "skills_desc.Communication": "Transmission claire et efficace des informations.",
     "skills_desc.Force de proposition": "Capacité à proposer des idées et des solutions.",
-    "skills_desc.Travail en autonomie": "Capacité à travailler de façon indépendante.",
+    "skills_desc.Autonomous work": "Capacité à travailler de façon indépendante.",
     "skills_desc.Réactivité": "Réagir rapidement et efficacement.",
     "skills_desc.Automatisation des processus": "Mise en place de solutions pour automatiser les tâches.",
     "skills_desc.Traitement de données": "Gestion et transformation efficace des données.",
@@ -128,19 +165,19 @@
     "quicknav_projets": "Parcours pro",
     "quicknav_approche": "Approche systémique",
     "quicknav_engine": "Atelier",
-    "quicknav_status": "Statut à distance",
+    "quicknav_status": "Disponibilité",
     "quicknav_qualite": "Qualité",
     "quicknav_recommendations": "Recommandations",
     "engine_section_title": "Salle des machines",
     "engine_codex_title": "CODEX",
-    "engine_codex_description": "CODEX · Vault & Component Explorer. Une architecture scalable (Registry JSON) conçue pour archiver, visualiser et rejouer des fragments d'applications critiques. C'est ma mémoire technique et mon accélérateur de productivité.",
-    "engine_codex_badge": "Outil interne",
+    "engine_codex_description": "Idée exploratoire : un registre pour archiver et réutiliser des fragments d'UI. Intéressant sur le papier ; je ne m'en sers pas encore au quotidien en livraison.",
+    "engine_codex_badge": "Exploratoire",
     "engine_lab_title": "Labo IA",
     "engine_lab_subtitle": "Expérimentations et prototypes",
-    "engine_panel_title_codex": "Registry & composants",
+    "engine_panel_title_codex": "CODEX (exploratoire)",
     "engine_panel_title_tests": "Automatisation & preuve de qualité",
     "engine_panel_title_labs": "Expérimentations & prototypes",
-    "engine_panel_subtitle_codex": "Vault & exploration des composants.",
+    "engine_panel_subtitle_codex": "Idée R&D, pas un pitch production.",
     "engine_panel_subtitle_tests": "Parcours critiques automatisés, régressions maîtrisées.",
     "engine_panel_subtitle_labs": "Expérimentations et prototypes.",
     "engine_process_phrase": "J'accélère les tâches chronophages pour me concentrer sur la fiabilité et la livraison.",
@@ -159,42 +196,48 @@
     "approche_aggregates_desc": "Agrégats racine et entités cohérentes : une source de vérité par périmètre, avec des règles métier explicites.",
     "approche_value_title": "Valeur métier",
     "approche_value_desc": "La refonte chez Blachère a appliqué ces principes DDD pour fiabiliser les parcours critiques et faciliter l'évolution du SI.",
-    "status_nav": "Statut",
-    "status_title": "Où je travaille",
-    "status_dashboard_heading": "Organisation du travail à distance",
-    "status_work_mode": "Remote first · Ouvert au hybride",
+    "status_nav": "Disponibilité",
+    "status_title": "Comment je travaille",
+    "status_dashboard_heading": "Disponibilité",
+    "status_work_mode": "Freelance senior. Full remote de préférence, ouvert au hybride et au présentiel.",
     "status_time_label": "Heure locale",
-    "status_paris_label": "Paris (client)",
-    "status_my_time_label": "Ma zone",
+    "status_paris_label": "France (Europe/Paris)",
+    "status_my_time_label": "Heure locale",
     "status_availability_label": "Statut",
-    "status_availability": "Disponible",
+    "status_availability": "Ouvert aux opportunités",
     "status_availability_focus": "En focus",
-    "status_available_async": "Une méthodologie de travail flexible et documentée pour une réactivité maximale.",
-    "status_adaptive_availability": "Disponibilité adaptative",
-    "status_timezone_connected": "Fuseau UTC+7 · Connecté pour les fenêtres de synchronisation européennes.",
-    "status_window_collaboration": "Zone de collaboration active : créneaux alignés avec vos équipes.",
-    "status_window_flex": "Flexibilité sur demande : urgences, déploiements et points critiques.",
-    "status_message_force": "Je m'aligne sur vos moments critiques : synchronisation européenne, déploiements et réactivité quand cela compte.",
-    "status_mode_async_label": "Mode asynchrone",
-    "status_mode_async": "Ce n'est pas juste « je ne suis pas là », c'est « je travaille\u00A0différemment\u00A0».",
-    "status_continuite_24h_label": "Continuité 24h",
-    "status_continuite_24h": "Je deviens l'équipe de nuit qui prépare le terrain pour l'équipe de jour.",
-    "status_tools_title": "Stack de collaboration asynchrone",
-    "status_sync_title": "Synchronisation des fuseaux horaires",
-    "status_workflow_title": "Travail asynchrone",
+    "status_availability_blurb": "Disponible pour clients et ESN. Présentiel, hybride ou remote selon la mission.",
+    "status_available_async": "Une méthode de travail claire et documentée pour des livraisons fiables.",
+    "status_adaptive_availability": "Disponibilité professionnelle",
+    "status_timezone_connected": "Horaires flexibles, alignés avec votre équipe.",
+    "status_window_collaboration": "Créneaux de collaboration alignés avec vos équipes.",
+    "status_window_flex": "Flexibilité pour urgences, déploiements et points critiques.",
+    "status_message_force": "Je m'adapte à vos rituels et outils : points d'avancement clairs, transferts solides, réactivité quand cela compte.",
+    "status_mode_async_label": "Autonomie",
+    "status_mode_async": "Je porte mon périmètre de bout en bout et tiens les parties prenantes informées sans relance permanente.",
+    "status_continuite_24h_label": "Fiabilité",
+    "status_continuite_24h": "Livraisons prévisibles sur systèmes critiques : changements testés, décisions documentées, régressions maîtrisées.",
+    "status_pillar_autonomy_label": "Autonomie",
+    "status_pillar_autonomy": "Je porte mon périmètre de bout en bout et tiens les parties prenantes informées sans relance permanente.",
+    "status_pillar_clarity_label": "Clarté",
+    "status_pillar_clarity": "Tickets, docs et PRs qui rendent l'avancement visible. Réunions quand le sujet le demande.",
+    "status_tools_title": "Habitudes de collaboration",
+    "status_sync_title": "Heure locale",
+    "status_workflow_title": "Comment on collabore",
     "status_tool_written": "Tickets & suivi écrit",
     "status_tool_repo": "Git & revue de code",
     "status_tool_ci": "CI & builds",
-    "status_tool_sync": "Sync courte si besoin",
+    "status_tool_sync": "Réunions si utile",
     "proof_nav": "Qualité",
     "proof_title": "Automatisation & preuve de qualité",
     "proof_subtitle": "Parcours critiques automatisés, régressions maîtrisées.",
     "proof_codex_title": "CODEX",
-    "proof_codex_desc": "Registry et scripts d'automatisation pour archiver, rejouer et réutiliser des fragments d'applications critiques.",
-    "proof_cypress_title": "Tests E2E Cypress",
-    "proof_cypress_desc": "Projet Node dédié avec Cypress : 72 tests E2E, mode clean qui régénère une BDD entre chaque scénario pour un environnement maîtrisé et reproductible.",
-    "proof_cypress_how": "Les scénarios couvrent par exemple le login, l'ouverture de modales et le changement de statut selon le workflow métier. Chaque scénario s'exécute dans un environnement propre : la BDD est recréée à partir de fixtures entre chaque test, ce qui garantit des résultats reproductibles et évite les effets de bord.",
-    "proof_cypress_demo_content": "Démo : login, ouverture de modale, changement de statut selon le workflow.",
+    "proof_codex_desc": "Idée de registre exploratoire. Pas dans le tooling de livraison actuel.",
+    "proof_cypress_title": "App Coverage: moteur QA",
+    "proof_cypress_desc": "Moteur QA pour orchestrer des tests E2E multi-apps avec isolation de la donnée. Relié à l'outil de ticketing pour exporter les preuves et mettre à jour les tickets.",
+    "proof_cypress_how": "Workflow : Documentation → fixtures BDD → exécution → reporting HTML, avec mise à jour des tickets depuis le run.",
+    "proof_cypress_demo_content": "Clean mode entre scénarios, fixtures BDD et reporting HTML. La capture de run pourra être ajoutée ultérieurement.",
+    "proof_cypress_coming_soon": "Méthodologie en place. Capture visuelle du runner à venir.",
     "proof_cypress_benefits_title": "Ce qui est en place durant le test :",
     "proof_cypress_benefit_1": "Choix d'environnement et de mode (clean)",
     "proof_cypress_benefit_2": "BDD régénérée avec fixtures pour un environnement maîtrisé",
@@ -206,18 +249,18 @@
     "proof_cypress_benefit_8": "Solution pour éviter les points de friction des équipes",
     "proof_guarantee": "Automatisation systématique des parcours critiques pour maîtriser les régressions.",
     "proof_cypress_placeholder": "Une capture ou une courte vidéo du run Cypress sera ajoutée ici.",
-    "proof_cypress_coming_soon": "Démo à venir",
     "labs_page_title": "Expérimentations",
     "labs_teaser_1": "Prototypes et outils pour industrialiser la qualité et la recherche dans le code.",
-    "labs_teaser_2": "Agents de génération de tests E2E, recherche sémantique sur le coffre CODEX.",
+    "labs_teaser_2": "Prototypes autour de l'automatisation, des interfaces et d'expérimentations.",
     "labs_teaser_3": "Chaque fiche documente le défi, l'exploration et l'apport technique.",
     "labs_explore_btn": "Explorer mes expérimentations",
-    "labs_explore_cta": "Explorer le Lab complet (12+ prototypes)",
+    "labs_explore_cta": "Voir les expérimentations",
     "labs_insight_label": "Apport technique",
     "labs_page_header": "Expérimentations techniques",
-    "labs_manifesto": "Explorations techniques et prototypes. Cet espace regroupe mes recherches sur l'automatisation, l'architecture et l'assistance par IA, appliquées à la fiabilisation des systèmes.",
-    "labs_back_to_expertise": "Retour à l'expertise",
-    "labs_teaser_home": "Découvrez mes derniers travaux de R&D sur l'automatisation et l'IA.",
+    "labs_manifesto": "Explorations techniques et prototypes autour de l'automatisation, de l'architecture et des outils. Un espace R&D à part, distinct des livraisons client.",
+    "labs_back_to_expertise": "Retour à l'atelier",
+    "labs_back_to_list": "Retour aux labs",
+    "labs_teaser_home": "R&D parallèle sur l'automatisation et les outils.",
     "labs_label_problem": "Défi",
     "labs_label_approach": "Approche",
     "labs_label_stack": "Technos",
@@ -226,20 +269,20 @@
     "labs_status_internal_tool": "Outil interne",
     "labs_status_production_ready": "Production",
     "labs_status_alpha": "Alpha",
-    "labs_status_experimental_build": "Version Expérimentale - v0.2",
-    "labs_status_artistic_poc": "PoC Artistique - Expérience Interactive",
+    "labs_status_experimental_build": "Expérimental",
+    "labs_status_artistic_poc": "PoC artistique",
     "labs_status_polish_in_progress": "Polissage en cours",
     "labs_category_automation": "Automatisation",
     "labs_category_ai_assistance": "Assistance IA",
     "labs_category_architecture": "Architecture",
     "labs_category_simulation": "Simulation",
-    "labs_category_art_interactive": "Art & Interactif",
+    "labs_category_art_interactive": "Art",
     "labs_category_geospatial": "Géospatial",
     "labs_category_linguistic": "Linguistique",
     "labs_link_vercel": "Voir sur Vercel",
     "labs_link_internal_rnd": "R&D Interne",
-    "engine_codex_demo_btn": "Explorer le Vault (Démo)",
-    "engine_codex_insight": "Système de navigation par nœuds, indépendant du backend.",
+    "engine_codex_demo_btn": "Démo plus tard",
+    "engine_codex_insight": "Gardé ici en note pour plus tard. L'atelier se concentre aujourd'hui sur la qualité E2E et les labs.",
     "tools_tab_codex": "CODEX",
     "tools_tab_tests": "Tests E2E",
     "tools_tab_labs": "Labs",
@@ -255,7 +298,9 @@
     "changelog_perf_desc": "Optimisation des requêtes complexes et mise en place de stratégies de cache.",
     "changelog_qa_title": "Qualité",
     "changelog_qa_desc": "Couverture des parcours critiques (Facturation/Stock) via Cypress.",
-    "proof_terminal_status": "Statut : tous les tests sont passés [72 succès, 0 échec]"
+    "proof_terminal_status": "Statut : run terminé",
+    "proof_terminal_status_pending": "Workflow documenté · capture à venir",
+    "proof_terminal_aria": "Panneau de démo Cypress"
   },
   "portfolio": {
     "description": "Bienvenue sur mon portfolio ! Vous trouverez ici une vitrine de mes compétences et de mon expérience.",
@@ -264,16 +309,20 @@
   },
   "projects": {
     "apigem": {
-      "description": "Refondre l'application web Apigem avec un design UI/UX moderne et responsive pour améliorer l'expérience utilisateur et l'accessibilité.",
-      "impactSummary": "Modernisation de l'architecture, réduction des temps de réponse et interface responsive.",
+      "description": "Stage : migration d'un site web vers des standards modernes (sécurité, responsive design).",
+      "impactSummary": "Stack web modernisée, sécurité renforcée et interface responsive.",
       "img": "/images/project-images/apigem/logo.png",
+      "role": "Développeur Web (Stage)",
+      "location": "Saint-Cannat",
+      "period": "2016 – 2017",
+      "duration": 12,
+      "team": 1,
       "mainTechnologies": [
         "PHP",
-        "Bootstrap",
-        "jQuery",
-        "MySQL",
-        "AJAX",
-        "REST API"
+        "JavaScript",
+        "HTML",
+        "CSS",
+        "SQL"
       ],
       "softSkills": [
         "Résolution de problèmes",
@@ -282,86 +331,40 @@
         "Design d'expérience utilisateur"
       ],
       "introduction": {
-        "description": "En tant que développeur principal sur le projet Apigem, j'ai dirigé la modernisation de leur application web utilisée par les cliniques médicales pour la gestion des patients et du personnel. Le projet consistait à transformer un système legacy en une application web moderne et responsive tout en maintenant une intégration transparente avec leur solution desktop existante.",
-        "introduction": "Apigem Web sert d'outil essentiel pour le personnel médical, leur permettant de gérer les dossiers patients, les plannings du personnel et les rendez-vous. Mon rôle s'est concentré sur l'amélioration de l'ergonomie et de l'accessibilité de l'application tout en assurant une intégration robuste avec leurs systèmes existants.",
+        "description": "Stage chez Apigem : contribution à la modernisation d'un site web interne (PHP, JavaScript) utilisé par des cliniques : sécurité, responsive design et continuité avec l'outil desktop existant.",
+        "introduction": "Première expérience en entreprise : corrections de sécurité, refonte progressive du front et adaptation mobile, encadré par l'équipe.",
         "name": "Apigem Web",
         "title": "Apigem"
       },
       "tasks": [
         {
           "group": {
-            "titre": "Modernisation de l'Architecture Système",
-            "intro": "Dirigé la transformation du système legacy en une architecture moderne et maintenable avec des performances et une évolutivité améliorées."
+            "titre": "Sécurité et base de code",
+            "intro": "Contribution à la mise à niveau du site sous supervision : bonnes pratiques PHP et durcissement basique."
           },
           "data": {
             "1": {
-              "title": "Analyse et Planification de l'Architecture",
+              "title": "Durcissement et maintenance",
               "description": [
-                "Réaliser une analyse complète de l'architecture du système legacy existant",
-                "Identifier les goulots d'étranglement de performance dans les requêtes base de données et les appels API",
-                "Planifier l'implémentation d'une architecture MVC moderne avec des endpoints REST API",
-                "Concevoir une nouvelle structure de base de données optimisée pour les performances de l'application web"
-              ]
-            },
-            "2": {
-              "title": "Implémentation du Système Core",
-              "description": [
-                "Implémenter une architecture modulaire utilisant les namespaces PHP et l'autoloading",
-                "Développer une couche REST API pour une intégration transparente avec l'application desktop",
-                "Créer un système de cache efficace pour les données fréquemment accédées",
-                "Implémenter une gestion sécurisée de l'authentification et des sessions"
+                "Corriger des failles XSS identifiées sur le site existant",
+                "Appliquer des bonnes pratiques PHP et JavaScript sur les pages touchées",
+                "Documenter les changements pour l'équipe"
               ]
             }
           }
         },
         {
           "group": {
-            "titre": "Amélioration de l'Interface Utilisateur",
-            "intro": "Transformé l'interface utilisateur en un design moderne et responsive avec une ergonomie et une accessibilité améliorées."
+            "titre": "Interface responsive",
+            "intro": "Adaptation progressive du site pour les usages tablette et mobile."
           },
           "data": {
             "1": {
-              "title": "Implémentation du Design Responsive",
+              "title": "Mise en page adaptive",
               "description": [
-                "Implémenter le système de grille Bootstrap 4 pour des layouts responsifs sur tous les appareils",
-                "Créer des composants CSS personnalisés pour un style et une identité cohérents",
-                "Développer des patterns de design mobile-first pour une expérience utilisateur optimale",
-                "Implémenter des contrôles adaptés au tactile pour les utilisateurs tablette et mobile"
-              ]
-            },
-            "2": {
-              "title": "Développement des Fonctionnalités Interactives",
-              "description": [
-                "Développer des mises à jour en temps réel utilisant la technologie AJAX et WebSocket",
-                "Implémenter la fonctionnalité drag-and-drop pour la planification des rendez-vous",
-                "Créer une validation dynamique des formulaires avec retour instantané",
-                "Ajouter des raccourcis clavier pour les utilisateurs avancés"
-              ]
-            }
-          }
-        },
-        {
-          "group": {
-            "titre": "Optimisation des Performances",
-            "intro": "Amélioré significativement les performances de l'application grâce à diverses techniques d'optimisation."
-          },
-          "data": {
-            "1": {
-              "title": "Optimisation de la Base de Données",
-              "description": [
-                "Optimiser les requêtes base de données réduisant le temps de réponse de 60%",
-                "Implémenter le cache des requêtes pour les données fréquemment accédées",
-                "Créer des stratégies d'indexation efficaces pour les grands ensembles de données",
-                "Développer un système d'archivage des données pour les enregistrements historiques"
-              ]
-            },
-            "2": {
-              "title": "Performance Frontend",
-              "description": [
-                "Implémenter le chargement différé pour les images et le contenu",
-                "Optimiser la taille du bundle JavaScript en utilisant le code splitting",
-                "Créer des patterns efficaces de manipulation du DOM",
-                "Implémenter des stratégies de cache navigateur"
+                "Adapter les layouts avec Bootstrap pour le responsive",
+                "Ajuster CSS et composants pour la lisibilité mobile",
+                "Tester les parcours principaux sur plusieurs tailles d'écran"
               ]
             }
           }
@@ -369,18 +372,21 @@
       ]
     },
     "bubo": {
-      "description": "Moderniser une application PHP legacy vers Symfony 4, appliquer les principes du Material Design et ajouter une visualisation avancée des données avec ApexCharts.",
-      "impactSummary": "Migration vers Symfony 4, graphiques interactifs (ApexCharts, temps réel) et métriques de sécurité (OpenVas) : architecture et UX alignées sur les standards actuels.",
+      "description": "Objectif Cloud : dashboards analytiques avec indicateurs KPI, intégration de données via API REST, et visualisations dynamiques.",
+      "impactSummary": "Dashboards KPI, intégration REST/shell et graphiques interactifs (ApexCharts) pour la visibilité opérationnelle.",
       "img": "/images/project-images/bubo/logo.png",
+      "role": "Développeur Web",
+      "location": "Aix-en-Provence",
+      "period": "2019 – 2020",
+      "duration": 18,
       "mainTechnologies": [
         "Symfony",
-        "PHP",
-        "JavaScript",
         "UIkit",
-        "Material Design",
-        "ApexCharts",
-        "OpenVas",
-        "Webpack Encore"
+        "GIT",
+        "SQL",
+        "DQL",
+        "Yarn",
+        "ApexCharts"
       ],
       "softSkills": [
         "Leadership Technique",
@@ -389,9 +395,9 @@
         "Optimisation des Performances"
       ],
       "introduction": {
-        "description": "Dirigé la modernisation complète d'une application PHP legacy, en se concentrant sur l'architecture système, l'interface utilisateur et l'amélioration de la visualisation des données",
-        "introduction": "Application de cybersécurité (BUBO Cybersec) : migration d'un legacy PHP vers Symfony 4, refonte UI (Material Design, UIkit) et ajout de graphiques temps réel (ApexCharts) et de métriques de vulnérabilités (OpenVas) pour aligner le produit sur les standards actuels.",
-        "name": "BUBO Cybersec",
+        "description": "Chez Objectif Cloud, j'ai développé des dashboards analytiques avec indicateurs KPI, intégré des données via API REST et scripts shell, et livré des visualisations dynamiques (tableaux, graphiques).",
+        "introduction": "Développement web sur des outils analytiques : dashboards Symfony, flux REST et visualisations ApexCharts pour les KPI opérationnels.",
+        "name": "Objectif Cloud",
         "title": "Objectif Cloud"
       },
       "tasks": [
@@ -478,6 +484,10 @@
       "description": "Optimiser et moderniser Mediabase, plateforme clé d'export et de traitement de données pour les distributeurs de livres, en mettant l'accent sur l'automatisation, la fiabilité et la performance.",
       "impactSummary": "Gains de performance sur l'export, fiabilité renforcée et processus PDF maîtrisés.",
       "img": "/images/project-images/hml/logo.png",
+      "role": "Développeur PHP / Zend",
+      "location": "Arles",
+      "period": "2022 – 2023",
+      "duration": 18,
       "mainTechnologies": [
         "PHP",
         "Zend",
@@ -486,7 +496,6 @@
         "Apache",
         "MySQL",
         "Cron",
-        "Docker",
         "Samba"
       ],
       "softSkills": [
@@ -591,15 +600,18 @@
       ]
     },
     "hopps": {
-      "description": "Développer et maintenir AlertCenter, une plateforme complète de surveillance d'infrastructure IT offrant des insights en temps réel et des capacités de gestion des incidents.",
-      "impactSummary": "Tableaux de bord temps réel (WebSocket), séparation multi-tenant pour un client, et automatisation du ticketing (Jira, LDAP) pour le centre de service.",
+      "description": "Évolution des outils internes de gestion et supervision cloud ; webservices d'intégration (Jira/Kimoce) et interface web unifiée (API Jira + LDAP).",
+      "impactSummary": "Évolution des outils cloud, intégrations Jira/LDAP, et interface unifiée pour le centre de service.",
       "img": "/images/project-images/hopps/logo.png",
+      "role": "Développeur Cloud",
+      "location": "Aix-en-Provence",
+      "period": "2017 – 2019",
+      "duration": 24,
       "mainTechnologies": [
         "C#",
         "ASP.NET",
         "Powershell",
         "LDAP",
-        "Webservices",
         "Jira"
       ],
       "softSkills": [
@@ -700,6 +712,11 @@
       "description": "Développer une plateforme web complète pour la communauté francophone de SC, fournissant du contenu localisé, des mises à jour en temps réel et des fonctionnalités communautaires comme alternative au site officiel en anglais.",
       "impactSummary": "Plateforme pour la communauté francophone (6000+ users) : contenu localisé, temps réel (WebSocket, Discord), optimisations (code splitting, Redis) et gestion de contenu.",
       "img": "/images/project-images/scf/logo.png",
+      "role": "Développeur Fullstack",
+      "location": "France",
+      "period": "2021 – 2022",
+      "duration": 12,
+      "team": 1,
       "mainTechnologies": [
         "React",
         "Node.js",
@@ -811,37 +828,39 @@
       "mainTechnologies": [
         "Symfony",
         "Vue.js",
-        "PHP",
         "NestJS",
+        "TypeScript",
+        "Cypress",
         "Docker",
-        "Kubernetes"
+        "Kubernetes",
+        "GitLab CI"
       ],
       "softSkills": [
-        "Travail en autonomie",
+        "Autonomous Work",
         "Communication",
-        "Résolution de problèmes",
-        "Adaptabilité",
-        "Développement Full-Stack"
+        "Problem Solving",
+        "Written Culture",
+        "Business & Quality Vision"
       ],
       "introduction": {
         "name": "Holding Bernard Blachère",
-        "introduction": "Développement sur Vérifact, outil de traitement des litiges avec les fournisseurs, dans le SI interne de la holding Bernard Blachère (boulangerie-pâtisserie). Refonte et fiabilisation d'applications critiques : architecture DDD, consolidation des APIs, tests E2E Cypress et scénarios BDD, optimisations (prefetch, bulk). Travail à distance, documentation structurée.",
-        "description": "Clarification du périmètre métier et de la maintenabilité (refactorisation DDD), sécurisation des livraisons (Cypress, BDD), optimisations performance. Symfony, Vue.js 3, Docker/Kubernetes, GitLab CI."
+        "introduction": "Développement sur Vérifact, outil de traitement des litiges avec les fournisseurs, dans le SI interne de la holding Bernard Blachère (boulangerie-pâtisserie). Refonte et fiabilisation d'applications critiques : architecture DDD, consolidation des APIs, tests E2E Cypress et scénarios BDD, optimisations (prefetch, bulk). Documentation structurée et livraisons claires.",
+        "description": "Clarification du périmètre métier et de la maintenabilité (refactorisation DDD), sécurisation des livraisons (Cypress, BDD), optimisations performance. Symfony, Vue.js 3, NestJS, Docker/Kubernetes, GitLab CI."
       },
+      "role": "Développeur Fullstack",
+      "location": "Châteaurenard",
       "duration": 14,
       "team": 10,
-      "period": "Août 2025 - septembre 2026",
+      "period": "2025 – 2026",
       "technologies": [
         "Symfony",
-        "PHP",
         "Vue.js 3",
         "NestJS",
-        "Kubernetes",
+        "TypeScript",
+        "Cypress",
         "Docker",
-        "GitLab CI",
-        "PostgreSQL",
-        "JavaScript",
-        "TypeScript"
+        "Kubernetes",
+        "GitLab CI"
       ],
       "tasks": [
         {
@@ -957,7 +976,7 @@
       ],
       "challenges": [
         "Applications critiques avec dette technique et frontières métier floues.",
-        "Collaboration à distance avec une équipe interne et livraisons fréquentes.",
+        "Collaboration avec une équipe interne et livraisons fréquentes.",
         "Nécessité de livrer sans régression sur des parcours métier sensibles."
       ],
       "solutions": [
@@ -968,22 +987,31 @@
       "externalLinks": []
     },
     "freelance": {
-      "description": "Travailler en tant que développeur freelance pour divers clients, réalisant des missions de développement web, de conseil et de solutions sur mesure.",
-      "impactSummary": "Migration legacy vers Symfony 4, refonte UI (Material Design, ApexCharts) et site vitrine (Bootstrap, SEO) pour des clients multi-secteurs.",
+      "description": "Missions freelance fullstack : migration d'appli métier vers Symfony, plateforme communautaire (recherche/scraping), et site vitrine Edge Sound pour un client suisse.",
+      "impactSummary": "Migration PHP → Symfony 4, plateforme communautaire avec moteur de recherche, et site vitrine Bootstrap (Edge Sound).",
       "img": "/images/project-images/freelance/logo.png",
-      "mainTechnologies": ["PHP", "JavaScript", "React", "Symfony", "Node.js"],
+      "role": "Développeur Fullstack",
+      "location": "France",
+      "period": "2021 – 2022 · depuis 2024",
+      "team": 1,
+      "mainTechnologies": [
+        "Symfony",
+        "Vue.js",
+        "Bootstrap",
+        "API Platform",
+        "PHP",
+        "MySQL"
+      ],
       "softSkills": [
-        "Travail en autonomie",
+        "Autonomous Work",
         "Communication",
-        "Résolution de problèmes"
+        "Problem Solving"
       ],
       "introduction": {
-        "name": "Missions Freelance",
-        "introduction": "En tant que développeur freelance, j'ai travaillé sur une variété de projets pour des clients de différents secteurs, assurant développement web, conseil et support technique. Période en freelance, notamment en Asie.",
-        "description": "Présentation de quelques missions freelance récentes."
+        "name": "Freelance & projets personnels",
+        "introduction": "En tant que développeur freelance, j'ai travaillé sur une variété de projets pour des clients de différents secteurs, assurant développement web, conseil et support technique.",
+        "description": "Refonte d'appli métier, plateforme communautaire, et site vitrine Edge Sound pour un client suisse."
       },
-      "duration": 24,
-      "team": 1,
       "tasks": [
         {
           "group": {
@@ -1021,6 +1049,40 @@
           }
         }
       ]
+    }
+  },
+  "labs": {
+    "items": {
+      "echoes-of-the-void": {
+        "title": "Echoes of the Void",
+        "problem": "Simulateur tactique spatial pour explorer la gestion de systèmes complexes et de hiérarchies de données (Galaxie → Secteur → Planète → POI).",
+        "approach": "State management persistant, moteurs de décision asynchrones (mode auto), architecture de données hiérarchique.",
+        "result": "Prototype jouable de navigation stellaire et d'exploration. Anciennement « Stellar Conquest »."
+      },
+      "stilla": {
+        "title": "Stilla : Le Sanctuaire des Éclats",
+        "problem": "Exploration des frontières entre narration abstraite et physique interactive : art génératif et interfaces organiques.",
+        "approach": "Physique 2D (Matter.js), morphing (GSAP), particules et parallaxe.",
+        "result": "Expérience interactive jouable en ligne (sanctuaire, runes, méditation)."
+      },
+      "app-coverage": {
+        "title": "App Coverage : moteur QA",
+        "problem": "Orchestrer des tests E2E multi-apps avec isolation totale de la donnée et reporting automatisé.",
+        "approach": "Workflow Documentation → fixtures BDD → exécution, clean mode, reporting HTML. Branché sur les jeux d'essais métier du client.",
+        "result": "Outil interne : pas de démo live (données client). Relié au ticketing pour exporter les preuves. Preuve visuelle = capture de run (à venir)."
+      },
+      "geo-interface": {
+        "title": "Travel Memory Map",
+        "problem": "Prototype d'interface géospatiale pour cartographier voyages et souvenirs (Leaflet / React).",
+        "approach": "Intégration Leaflet, GeoJSON, prototypage rapide, UI Tailwind.",
+        "result": "Démo en ligne, encore fragile : utile comme expérimentation, pas comme produit fini."
+      },
+      "todaystep": {
+        "title": "Todaystep",
+        "problem": "PoC d'apprentissage linguistique et de traitement de flux textuels interactifs (ex-Vocab Reader).",
+        "approach": "TTS local, parsing de texte, UX minimale.",
+        "result": "Prototype utilisable mais non fini : intention claire, expérience encore brute."
+      }
     }
   }
 }

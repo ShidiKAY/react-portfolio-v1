@@ -1,7 +1,6 @@
 import { motion, useReducedMotion } from "framer-motion";
 import { useEffect, useMemo, useRef, useState } from "react";
 import Projects from "./Projects";
-// import Skills from "./Skills";
 import SkillsModern from "./SkillsModern";
 import { useTranslation } from "react-i18next";
 import {
@@ -67,45 +66,11 @@ const About = () => {
     [reduceMotion]
   );
 
-  // Extract lines from about_rich
-  const aboutRich = t("common.about_rich");
-  const aboutLines = aboutRich
-    .split("\n")
-    .filter((line) => line.trim() !== "" && !line.trim().startsWith("Hello"));
-  const supportIdx = aboutLines.findIndex((line) =>
-    line.trim().startsWith("✅")
-  );
-  const experienceIdx = aboutLines.findIndex((line) =>
-    line.trim().startsWith("💻")
-  );
-  const contactIdx = aboutLines.findIndex((line) =>
-    line.trim().startsWith("💬")
-  );
-  // Intro: first line (no emoji) + ✅ paragraph
-  const introFirstLine =
-    aboutLines.length > 0 && !/^[\p{Emoji_Presentation}\p{Emoji}\uFE0F?]/u.test(aboutLines[0].trim())
-      ? aboutLines[0]
-      : null;
-  const introParagraph = supportIdx !== -1 ? aboutLines[supportIdx] : null;
-  // Points: all emoji lines from 💻 to 🌐 (no duplicate with intro)
-  const pointsLines =
-    experienceIdx !== -1 && contactIdx !== -1
-      ? aboutLines.slice(experienceIdx, contactIdx)
-      : [];
-  // Parse points as icon/text
-  const detailedPoints = pointsLines
-    .map((line) => {
-      const match = line.match(
-        /^(\p{Emoji_Presentation}|\p{Emoji}\uFE0F?)\s*(.*)$/u
-      );
-      if (match) {
-        return { icon: match[1], text: match[2] };
-      }
-      return null;
-    })
-    .filter(Boolean);
-  // Last paragraph (contact)
-  const contactLine = contactIdx !== -1 ? aboutLines[contactIdx] : "";
+  const intro = t("common.about_intro");
+  const support = t("common.about_support");
+  const points = t("common.about_points", { returnObjects: true });
+  const cta = t("common.about_cta");
+  const detailedPoints = Array.isArray(points) ? points : [];
 
   return (
     <div
@@ -145,57 +110,47 @@ const About = () => {
                 {t("common.abouthelloim")}{" "}
                 <span className="text-blue-500 dark:text-blue-400">Kamal</span>
               </h1>
-              {/* Intro: first line then ✅ */}
-              {introFirstLine && (
+              {intro && (
                 <p className="text-left font-normal mb-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
-                  {introFirstLine}
+                  {intro}
                 </p>
               )}
-              {introParagraph && (
+              {support && (
                 <p className="text-left font-normal mb-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
-                  {introParagraph}
+                  {support}
                 </p>
               )}
               <div className="relative" style={{ minHeight: 80 }}>
                 <div id="about-rich-details">
-                  <ul className="list-none pl-6 pr-4 space-y-3 break-words">
-                    {detailedPoints.map((point, idx) =>
-                      point.text ? (
-                        <li
-                          key={idx}
-                          className="flex items-start gap-2 text-base text-slate-700 dark:text-slate-300"
-                        >
-                          <span className="text-xl mt-1">{point.icon}</span>
-                          <span className="break-words">{point.text}</span>
-                        </li>
-                      ) : null
-                    )}
-                  </ul>
-                  {contactLine && (
+                  {detailedPoints.length > 0 && (
+                    <ul className="list-disc pl-6 pr-4 space-y-3 break-words">
+                      {detailedPoints.map((text, idx) =>
+                        text ? (
+                          <li
+                            key={idx}
+                            className="text-base text-slate-700 dark:text-slate-300 break-words"
+                          >
+                            {text}
+                          </li>
+                        ) : null
+                      )}
+                    </ul>
+                  )}
+                  {cta && (
                     <p className="text-left font-normal mt-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
-                      {contactLine}
+                      {cta}
                     </p>
                   )}
                 </div>
               </div>
             </motion.div>
           </motion.div>
-          {/* SkillsModern juste avant les projets */}
           <div id="toskills">
             <SkillsModern />
           </div>
           <div id="toprojects" className="flex flex-col md:ml-px mt-16 sm:mt-20">
             <Projects />
           </div>
-          {/* Affiche SkillsModern juste après les projets, avant Skills */}
-          {/**
-          <div
-            id="toskills"
-            className="md:mx-px text-bold text-3xl mt-10 lg:px-52 md:px-1"
-          >
-            <Skills />
-          </div>
-          */}
         </div>
       </div>
     </div>
