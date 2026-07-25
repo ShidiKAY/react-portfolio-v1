@@ -8,18 +8,34 @@ const STATUS_STYLES = {
     "bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-200 border-slate-200 dark:border-slate-600",
   "Production-Ready":
     "bg-emerald-100 dark:bg-emerald-900/40 text-emerald-800 dark:text-emerald-300 border-emerald-200 dark:border-emerald-700",
+  Alpha:
+    "bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-300 border-blue-200 dark:border-blue-700",
+  "Experimental Build - v0.2":
+    "bg-purple-100 dark:bg-purple-900/40 text-purple-800 dark:text-purple-300 border-purple-200 dark:border-purple-700",
+  "Artistic PoC - Interactive Experience":
+    "bg-pink-100 dark:bg-pink-900/40 text-pink-800 dark:text-pink-300 border-pink-200 dark:border-pink-700",
+  "Polish in progress":
+    "bg-yellow-100 dark:bg-yellow-900/40 text-yellow-800 dark:text-yellow-300 border-yellow-200 dark:border-yellow-700",
 };
 
 const CATEGORY_KEYS = {
   Automation: "labs_category_automation",
   "AI Assistance": "labs_category_ai_assistance",
   Architecture: "labs_category_architecture",
+  Simulation: "labs_category_simulation",
+  "Art & Interactive": "labs_category_art_interactive",
+  Geospatial: "labs_category_geospatial",
+  Linguistic: "labs_category_linguistic",
 };
 
 const STATUS_KEYS = {
   Experimental: "labs_status_experimental",
   "Internal Tool": "labs_status_internal_tool",
   "Production-Ready": "labs_status_production_ready",
+  Alpha: "labs_status_alpha",
+  "Experimental Build - v0.2": "labs_status_experimental_build",
+  "Artistic PoC - Interactive Experience": "labs_status_artistic_poc",
+  "Polish in progress": "labs_status_polish_in_progress",
 };
 
 export default function LabCard({ lab, index = 0 }) {
@@ -105,9 +121,9 @@ export default function LabCard({ lab, index = 0 }) {
           </div>
         )}
 
-        {lab.link && (
+        {lab.vercelUrl ? (
           <a
-            href={lab.link}
+            href={lab.vercelUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-cyan-400 hover:text-cyan-300 transition-colors"
@@ -122,6 +138,10 @@ export default function LabCard({ lab, index = 0 }) {
               />
             </svg>
           </a>
+        ) : (
+          <span className="mt-4 inline-flex items-center gap-2 text-sm font-medium text-slate-400 dark:text-slate-500">
+            <span>{t("common.labs_link_internal_rnd")}</span>
+          </span>
         )}
       </div>
     </motion.article>
