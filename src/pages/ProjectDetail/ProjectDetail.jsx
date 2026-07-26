@@ -1,10 +1,16 @@
 import { useTranslation } from "react-i18next";
-import { useParams, useNavigate, useLocation, Navigate, Link } from "react-router-dom";
+import {
+  useParams,
+  useNavigate,
+  useLocation,
+  Navigate,
+  Link,
+} from "react-router-dom";
 import { Helmet as Head } from "react-helmet-async";
 import { SEO_BASE_URL, SEO_DEFAULT_IMAGE } from "../../config/seo";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import GoToTop from "../../components/GoToTop";
-import i18n from "../../i18n";
+import { switchLanguage } from "../../i18n";
 import {
   SkillPill,
   SKILL_DESCRIPTIONS,
@@ -214,16 +220,19 @@ const ProjectDetail = () => {
       // Highlight technical terms in the rest
       const techPattern = new RegExp(
         `\\b(${technicalTerms.join("|")})\\b`,
-        "gi"
+        "gi",
       );
       let parts = rest.split(techPattern).map((part, index) => {
         if (
           technicalTerms.some(
-            (term) => term.toLowerCase() === part.toLowerCase()
+            (term) => term.toLowerCase() === part.toLowerCase(),
           )
         ) {
           return (
-            <span key={`tech-${lineIdx}-${index}`} className="text-blue-700 dark:text-blue-400">
+            <span
+              key={`tech-${lineIdx}-${index}`}
+              className="text-blue-700 dark:text-blue-400"
+            >
               {part}
             </span>
           );
@@ -237,7 +246,7 @@ const ProjectDetail = () => {
           return part.split(impactPattern).map((subPart, subIndex) => {
             if (
               impactfulTerms.some(
-                (term) => term.toLowerCase() === subPart.toLowerCase()
+                (term) => term.toLowerCase() === subPart.toLowerCase(),
               )
             ) {
               return (
@@ -296,7 +305,7 @@ const ProjectDetail = () => {
     scrollToTopInstant();
     const rafs = [0, 1, 2].map(() => requestAnimationFrame(scrollToTopInstant));
     const delays = [30, 80, 150, 300, 500, 900, 1200].map((ms) =>
-      setTimeout(scrollToTopInstant, ms)
+      setTimeout(scrollToTopInstant, ms),
     );
     return () => {
       rafs.forEach((id) => cancelAnimationFrame(id));
@@ -308,12 +317,18 @@ const ProjectDetail = () => {
   useEffect(() => {
     const guardWindowMs = 1500;
     const onScroll = () => {
-      if (Date.now() - mountTimeRef.current < guardWindowMs && window.scrollY > 0) {
+      if (
+        Date.now() - mountTimeRef.current < guardWindowMs &&
+        window.scrollY > 0
+      ) {
         scrollToTopInstant();
       }
     };
     window.addEventListener("scroll", onScroll, { passive: false });
-    const t = setTimeout(() => window.removeEventListener("scroll", onScroll), guardWindowMs);
+    const t = setTimeout(
+      () => window.removeEventListener("scroll", onScroll),
+      guardWindowMs,
+    );
     return () => {
       clearTimeout(t);
       window.removeEventListener("scroll", onScroll);
@@ -413,37 +428,37 @@ const ProjectDetail = () => {
           <ul className="flex space-x-2">
             <li
               className="inline-flex items-center cursor-pointer"
-              onClick={() => i18n.changeLanguage("fr")}
+              onClick={() => switchLanguage("fr")}
               tabIndex={0}
-              aria-label="Switch to French"
+              aria-label={t("common.lang_french")}
               role="button"
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ")
-                  i18n.changeLanguage("fr");
+                  switchLanguage("fr");
               }}
             >
               <span
                 className="i-flagpack-fr w-8 mb-1 mt-1"
-                title="French"
+                title={t("common.lang_french")}
               ></span>
-              <span className="hidden lg:block">French</span>
+              <span className="hidden lg:block">{t("common.lang_french")}</span>
             </li>
             <li
               className="inline-flex items-center cursor-pointer"
-              onClick={() => i18n.changeLanguage("en")}
+              onClick={() => switchLanguage("en")}
               tabIndex={0}
-              aria-label="Switch to English"
+              aria-label={t("common.lang_english")}
               role="button"
               onKeyDown={(e) => {
                 if (e.key === "Enter" || e.key === " ")
-                  i18n.changeLanguage("en");
+                  switchLanguage("en");
               }}
             >
               <span
                 className="i-flagpack-gb-ukm w-8 mt-px"
-                title="English"
+                title={t("common.lang_english")}
               ></span>{" "}
-              <span className="hidden lg:block">English</span>
+              <span className="hidden lg:block">{t("common.lang_english")}</span>
             </li>
           </ul>
         </div>
@@ -608,12 +623,18 @@ const ProjectDetail = () => {
           <meta name="description" content={project.description} />
           <meta property="og:type" content="article" />
           <meta property="og:url" content={SEO_BASE_URL + location.pathname} />
-          <meta property="og:title" content={`${project.introduction.name} Project - Kamal Ait Yous Portfolio`} />
+          <meta
+            property="og:title"
+            content={`${project.introduction.name} Project - Kamal Ait Yous Portfolio`}
+          />
           <meta property="og:description" content={project.description} />
           <meta property="og:image" content={SEO_DEFAULT_IMAGE} />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:url" content={SEO_BASE_URL + location.pathname} />
-          <meta name="twitter:title" content={`${project.introduction.name} Project - Kamal Ait Yous Portfolio`} />
+          <meta
+            name="twitter:title"
+            content={`${project.introduction.name} Project - Kamal Ait Yous Portfolio`}
+          />
           <meta name="twitter:description" content={project.description} />
           <meta name="twitter:image" content={SEO_DEFAULT_IMAGE} />
         </Head>
@@ -768,7 +789,7 @@ const ProjectDetail = () => {
                           `skills_desc.${tech}`,
                           SKILL_DESCRIPTIONS[tech]
                             ? { defaultValue: SKILL_DESCRIPTIONS[tech] }
-                            : {}
+                            : {},
                         ),
                       }}
                       idx={index}
@@ -797,7 +818,7 @@ const ProjectDetail = () => {
                           `skills_desc.${skill}`,
                           SKILL_DESCRIPTIONS[skill]
                             ? { defaultValue: SKILL_DESCRIPTIONS[skill] }
-                            : {}
+                            : {},
                         ),
                       }}
                       idx={index}
@@ -902,10 +923,13 @@ const ProjectDetail = () => {
                           <ul className="list-disc list-inside text-gray-700 dark:text-slate-300 space-y-1 sm:space-y-1.5 break-words">
                             {taskGroup.data[taskId].description.map(
                               (desc, idx) => (
-                                <li key={idx} className="leading-relaxed text-justify">
+                                <li
+                                  key={idx}
+                                  className="leading-relaxed text-justify"
+                                >
                                   {highlightTerms(desc)}
                                 </li>
-                              )
+                              ),
                             )}
                           </ul>
                           {taskGroup.data[taskId].img && (
@@ -930,7 +954,7 @@ const ProjectDetail = () => {
           {/* Challenges & Solutions */}
           {(challenges.length > 0 || solutions.length > 0) && (
             <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 w-full">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 w-full">
                 {challenges.length > 0 && (
                   <div className="bg-gray-50 dark:bg-slate-800 p-4 sm:p-6 rounded-lg w-full overflow-x-auto">
                     <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-white text-left">

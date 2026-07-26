@@ -18,4 +18,10 @@ export async function loadLanguage(lng) {
   }
 }
 
+/** Load bundle if needed, then switch active language. */
+export async function switchLanguage(lng) {
+  await loadLanguage(lng);
+  return i18n.changeLanguage(lng);
+}
+
 export default i18n;

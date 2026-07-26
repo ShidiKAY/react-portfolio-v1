@@ -311,13 +311,7 @@
       "period": "2016 – 2017",
       "duration": 12,
       "team": 1,
-      "mainTechnologies": [
-        "PHP",
-        "JavaScript",
-        "HTML",
-        "CSS",
-        "SQL"
-      ],
+      "mainTechnologies": ["PHP", "JavaScript", "HTML", "CSS", "SQL"],
       "softSkills": [
         "Problem Solving",
         "Team Collaboration",
@@ -601,13 +595,7 @@
       "location": "Aix-en-Provence",
       "period": "2017 – 2019",
       "duration": 24,
-      "mainTechnologies": [
-        "C#",
-        "ASP.NET",
-        "Powershell",
-        "LDAP",
-        "Jira"
-      ],
+      "mainTechnologies": ["C#", "ASP.NET", "Powershell", "LDAP", "Jira"],
       "softSkills": [
         "Autonomous Work",
         "Proactivity",
@@ -996,11 +984,7 @@
         "PHP",
         "MySQL"
       ],
-      "softSkills": [
-        "Autonomous Work",
-        "Communication",
-        "Problem Solving"
-      ],
+      "softSkills": ["Autonomous Work", "Communication", "Problem Solving"],
       "introduction": {
         "name": "Freelance & personal projects",
         "introduction": "As a freelance developer, I have worked on a variety of projects for clients in different industries, providing web development, consulting, and technical support.",

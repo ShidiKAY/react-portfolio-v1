@@ -6,7 +6,7 @@ import { SiMalt } from "react-icons/si";
 import { Link } from "react-router-dom";
 import { Link as ScrollLink, Events } from "react-scroll";
 import { useTranslation } from "react-i18next";
-import { loadLanguage } from "../i18n";
+import { switchLanguage } from "../i18n";
 import { useTheme } from "../context/ThemeContext";
 import { HAS_RECOMMENDATIONS } from "../config/recommendations";
 import { HiSun, HiMoon } from "react-icons/hi";
@@ -27,10 +27,10 @@ const ENGINE_ZONE_IDS = ["toapproche", "toengine", "tostatus", "toproof"];
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(
-    () => typeof window !== "undefined" && window.scrollY > 0
+    () => typeof window !== "undefined" && window.scrollY > 0,
   );
   const [isPageReady, setIsPageReady] = useState(
-    () => typeof document !== "undefined" && document.readyState === "complete"
+    () => typeof document !== "undefined" && document.readyState === "complete",
   );
   const [activeLink, setActiveLink] = useState("tohome");
   const location = useLocation();
@@ -106,19 +106,17 @@ const Navbar = () => {
   };
 
   const handleActiveLink = (link) => {
-    const isActive = link === "toengine" ? isInEngineZone(activeLink) : activeLink === link;
+    const isActive =
+      link === "toengine" ? isInEngineZone(activeLink) : activeLink === link;
     return isActive
       ? "text-blue-500 dark:text-blue-400"
       : "cursor-pointer hover:text-blue-500 dark:hover:text-blue-400 text-slate-900 dark:text-slate-100";
   };
 
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
   const { theme, toggleTheme } = useTheme();
 
-  const changeLanguage = async (lng) => {
-    await loadLanguage(lng);
-    i18n.changeLanguage(lng);
-  };
+  const changeLanguage = (lng) => switchLanguage(lng);
 
   return (
     <div className="contents">
@@ -135,192 +133,217 @@ const Navbar = () => {
       >
         <div>
           <div className="w-full">
-          <div className="flex items-center h-14 sm:h-16 w-full">
-            <div className="flex items-center sm:mx-10 md:mx-10 justify-between w-full">
-              <div className="flex justify-center items-center flex-shrink-0 ">
-                <h1 className=" font-bold text-xl cursor-pointer">
-                  <ScrollLink
-                    to="tohome"
-                    smooth={true}
-                    duration={500}
-                    className="cursor-pointer text-2xl pl-8 sm:pl-0"
-                    onSetActive={() => setActiveLink("tohome")}
-                  >
-                    Kamal<span className="text-blue-500 dark:text-blue-400">Ait Yous</span>
-                  </ScrollLink>
-                </h1>
-              </div>
-              <div className="hidden md:block">
-                <div className="flex items-baseline space-x-8">
-                  <span className={handleActiveLink("toabout")}>
+            <div className="flex items-center h-14 sm:h-16 w-full">
+              <div className="flex items-center sm:mx-10 md:mx-10 justify-between w-full">
+                <div className="flex justify-center items-center flex-shrink-0 ">
+                  <h1 className=" font-bold text-xl cursor-pointer">
                     <ScrollLink
-                      to="toabout"
+                      to="tohome"
                       smooth={true}
                       duration={500}
-                      className="cursor-pointer text-sm font-medium tracking-wide"
-                      onSetActive={() => setActiveLink("toabout")}
+                      className="cursor-pointer text-2xl pl-8 sm:pl-0"
+                      onSetActive={() => setActiveLink("tohome")}
                     >
-                      {t("common.nav_expertise")}
+                      Kamal
+                      <span className="text-blue-500 dark:text-blue-400">
+                        Ait Yous
+                      </span>
                     </ScrollLink>
-                  </span>
-                  <span className={handleActiveLink("toprojects")}>
-                    <ScrollLink
-                      to="toprojects"
-                      smooth={true}
-                      duration={500}
-                      className="cursor-pointer text-sm font-medium tracking-wide"
-                      onSetActive={() => setActiveLink("toprojects")}
-                    >
-                      {t("common.nav_projets")}
-                    </ScrollLink>
-                  </span>
-                  <span className={handleActiveLink("toengine")}>
-                    <ScrollLink
-                      to="toapproche"
-                      smooth={true}
-                      duration={500}
-                      className="cursor-pointer text-sm font-medium tracking-wide"
-                      onSetActive={() => setActiveLink("toapproche")}
-                    >
-                      {t("common.nav_engine")}
-                    </ScrollLink>
-                  </span>
-                  {HAS_RECOMMENDATIONS && (
-                  <span className={handleActiveLink("torecommendations")}>
-                    <ScrollLink
-                      to="torecommendations"
-                      smooth={true}
-                      duration={500}
-                      className="cursor-pointer text-sm font-medium tracking-wide"
-                      onSetActive={() => setActiveLink("torecommendations")}
-                    >
-                      {t("common.nav_recommendations")}
-                    </ScrollLink>
-                  </span>
-                  )}
-                  <span>
-                    <Link
-                      to="/labs"
-                      className="text-slate-900 dark:text-slate-100 hover:text-blue-500 dark:hover:text-blue-400 text-sm font-medium tracking-wide transition-colors"
-                    >
-                      {t("common.nav_labs")}
-                    </Link>
-                  </span>
+                  </h1>
                 </div>
-              </div>
-
-              <div className="flex justify-center items-center flex-shrink-0 md:block">
-                <div className="flex items-center space-x-4">
-                  <button
-                    type="button"
-                    onClick={toggleTheme}
-                    className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                    aria-label={theme === "dark" ? t("common.theme_aria_light") : t("common.theme_aria_dark")}
-                  >
-                    {theme === "dark" ? (
-                      <HiSun className="w-5 h-5" aria-hidden="true" />
-                    ) : (
-                      <HiMoon className="w-5 h-5" aria-hidden="true" />
+                <div className="hidden md:block">
+                  <div className="flex items-baseline space-x-8">
+                    <span className={handleActiveLink("toabout")}>
+                      <ScrollLink
+                        to="toabout"
+                        smooth={true}
+                        duration={500}
+                        className="cursor-pointer text-sm font-medium tracking-wide"
+                        onSetActive={() => setActiveLink("toabout")}
+                      >
+                        {t("common.nav_expertise")}
+                      </ScrollLink>
+                    </span>
+                    <span className={handleActiveLink("toprojects")}>
+                      <ScrollLink
+                        to="toprojects"
+                        smooth={true}
+                        duration={500}
+                        className="cursor-pointer text-sm font-medium tracking-wide"
+                        onSetActive={() => setActiveLink("toprojects")}
+                      >
+                        {t("common.nav_projets")}
+                      </ScrollLink>
+                    </span>
+                    <span className={handleActiveLink("toengine")}>
+                      <ScrollLink
+                        to="toapproche"
+                        smooth={true}
+                        duration={500}
+                        className="cursor-pointer text-sm font-medium tracking-wide"
+                        onSetActive={() => setActiveLink("toapproche")}
+                      >
+                        {t("common.nav_engine")}
+                      </ScrollLink>
+                    </span>
+                    {HAS_RECOMMENDATIONS && (
+                      <span className={handleActiveLink("torecommendations")}>
+                        <ScrollLink
+                          to="torecommendations"
+                          smooth={true}
+                          duration={500}
+                          className="cursor-pointer text-sm font-medium tracking-wide"
+                          onSetActive={() => setActiveLink("torecommendations")}
+                        >
+                          {t("common.nav_recommendations")}
+                        </ScrollLink>
+                      </span>
                     )}
-                  </button>
-                  <div className="language-switcher mt-1.5" role="group" aria-label={t("common.selectLanguage")}>
-                    <ul className="flex space-x-2">
-                      <li>
-                        <button
-                          type="button"
-                          className="inline-flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-                          onClick={() => changeLanguage("fr")}
-                          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); changeLanguage("fr"); } }}
-                          tabIndex={0}
-                          aria-label="Français"
-                        >
-                          <span
-                            className="i-flagpack-fr w-8 mb-1 mt-1"
-                            title="French"
-                            aria-hidden
-                          />
-                          <span className="hidden lg:block">French</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          type="button"
-                          className="inline-flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-                          onClick={() => changeLanguage("en")}
-                          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); changeLanguage("en"); } }}
-                          tabIndex={0}
-                          aria-label="English"
-                        >
-                          <span
-                            className="i-flagpack-gb-ukm w-8 mt-px"
-                            title="English"
-                            aria-hidden
-                          />{" "}
-                          <span className="hidden lg:block">English</span>
-                        </button>
-                      </li>
-                    </ul>
+                    <span>
+                      <Link
+                        to="/labs"
+                        className="text-slate-900 dark:text-slate-100 hover:text-blue-500 dark:hover:text-blue-400 text-sm font-medium tracking-wide transition-colors"
+                      >
+                        {t("common.nav_labs")}
+                      </Link>
+                    </span>
                   </div>
+                </div>
 
-                  <div>
-                    <a
-                      href="https://github.com/ShidiKAY"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={t("common.aria_github")}
+                <div className="flex justify-center items-center flex-shrink-0 md:block">
+                  <div className="flex items-center space-x-4">
+                    <button
+                      type="button"
+                      onClick={toggleTheme}
+                      className="p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      aria-label={
+                        theme === "dark"
+                          ? t("common.theme_aria_light")
+                          : t("common.theme_aria_dark")
+                      }
                     >
-                      <BsGithub
-                        className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
-                        size="2rem"
-                        aria-hidden
-                        focusable={false}
-                      />
-                    </a>
-                  </div>
-                  <div>
-                    <a
-                      href="https://www.linkedin.com/in/kamal-ait-yous-90a6a3178/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={t("common.aria_linkedin")}
+                      {theme === "dark" ? (
+                        <HiSun className="w-5 h-5" aria-hidden="true" />
+                      ) : (
+                        <HiMoon className="w-5 h-5" aria-hidden="true" />
+                      )}
+                    </button>
+                    <div
+                      className="language-switcher mt-1.5"
+                      role="group"
+                      aria-label={t("common.selectLanguage")}
                     >
-                      <BsLinkedin
-                        className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
-                        size="2rem"
-                        aria-hidden
-                        focusable={false}
-                      />
-                    </a>
-                  </div>
-                  <div>
-                    <a
-                      href="https://www.malt.fr/profile/kamalaityous"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={t("common.aria_malt")}
-                    >
-                      <SiMalt
-                        className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
-                        size="2rem"
-                        aria-hidden
-                        focusable={false}
-                      />
-                    </a>
+                      <ul className="flex space-x-2">
+                        <li>
+                          <button
+                            type="button"
+                            className="inline-flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                            onClick={() => changeLanguage("fr")}
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter" || e.key === " ") {
+                                e.preventDefault();
+                                changeLanguage("fr");
+                              }
+                            }}
+                            tabIndex={0}
+                            aria-label={t("common.lang_french")}
+                          >
+                            <span
+                              className="i-flagpack-fr w-8 mb-1 mt-1"
+                              title={t("common.lang_french")}
+                              aria-hidden
+                            />
+                            <span className="hidden lg:block">
+                              {t("common.lang_french")}
+                            </span>
+                          </button>
+                        </li>
+                        <li>
+                          <button
+                            type="button"
+                            className="inline-flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                            onClick={() => changeLanguage("en")}
+                            onKeyDown={(e) => {
+                              if (e.key === "Enter" || e.key === " ") {
+                                e.preventDefault();
+                                changeLanguage("en");
+                              }
+                            }}
+                            tabIndex={0}
+                            aria-label={t("common.lang_english")}
+                          >
+                            <span
+                              className="i-flagpack-gb-ukm w-8 mt-px"
+                              title={t("common.lang_english")}
+                              aria-hidden
+                            />{" "}
+                            <span className="hidden lg:block">
+                              {t("common.lang_english")}
+                            </span>
+                          </button>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div>
+                      <a
+                        href="https://github.com/ShidiKAY"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={t("common.aria_github")}
+                      >
+                        <BsGithub
+                          className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                          size="2rem"
+                          aria-hidden
+                          focusable={false}
+                        />
+                      </a>
+                    </div>
+                    <div>
+                      <a
+                        href="https://www.linkedin.com/in/kamal-ait-yous-90a6a3178/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={t("common.aria_linkedin")}
+                      >
+                        <BsLinkedin
+                          className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                          size="2rem"
+                          aria-hidden
+                          focusable={false}
+                        />
+                      </a>
+                    </div>
+                    <div>
+                      <a
+                        href="https://www.malt.fr/profile/kamalaityous"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={t("common.aria_malt")}
+                      >
+                        <SiMalt
+                          className="hidden md:block size-8 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white"
+                          size="2rem"
+                          aria-hidden
+                          focusable={false}
+                        />
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
+              <button
+                type="button"
+                onClick={handleMobileNav}
+                className="mr-14 md:hidden text-slate-900 dark:text-slate-100 p-0 border-0 bg-transparent cursor-pointer"
+                aria-label={t("common.nav_menu_open")}
+                aria-expanded={isOpen}
+              >
+                <AiOutlineMenu size="2rem" aria-hidden />
+              </button>
             </div>
-            <button
-              type="button"
-              onClick={handleMobileNav}
-              className="mr-14 md:hidden text-slate-900 dark:text-slate-100 p-0 border-0 bg-transparent cursor-pointer"
-              aria-label={t("common.nav_menu_open")}
-              aria-expanded={isOpen}
-            >
-              <AiOutlineMenu size="2rem" aria-hidden />
-            </button>
           </div>
-        </div>
         </div>
         <div className="md:hidden" aria-hidden={!isOpen}>
           <div
@@ -347,115 +370,180 @@ const Navbar = () => {
               </button>
             </div>
             <div className="flex flex-col space-y-4 pt-4">
-                  <button
-                    type="button"
-                    onClick={toggleTheme}
-                    className="flex items-center gap-2 p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 mb-2"
-                    aria-label={theme === "dark" ? t("common.theme_aria_light") : t("common.theme_aria_dark")}
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="flex items-center gap-2 p-2 rounded-lg text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 mb-2"
+                aria-label={
+                  theme === "dark"
+                    ? t("common.theme_aria_light")
+                    : t("common.theme_aria_dark")
+                }
+              >
+                {theme === "dark" ? (
+                  <HiSun className="w-5 h-5" aria-hidden />
+                ) : (
+                  <HiMoon className="w-5 h-5" aria-hidden />
+                )}
+                <span>
+                  {theme === "dark"
+                    ? t("common.theme_label_light")
+                    : t("common.theme_label_dark")}
+                </span>
+              </button>
+              <span className={handleActiveLink("toabout")}>
+                <ScrollLink
+                  to="toabout"
+                  smooth
+                  duration={500}
+                  className="cursor-pointer"
+                  onClick={handleMobileNav}
+                  onSetActive={() => setActiveLink("toabout")}
+                >
+                  {t("common.nav_expertise")}
+                </ScrollLink>
+              </span>
+              <span className={handleActiveLink("toprojects")}>
+                <ScrollLink
+                  to="toprojects"
+                  smooth
+                  duration={500}
+                  className="cursor-pointer"
+                  onClick={handleMobileNav}
+                  onSetActive={() => setActiveLink("toprojects")}
+                >
+                  {t("common.nav_projets")}
+                </ScrollLink>
+              </span>
+              <span className={handleActiveLink("toengine")}>
+                <ScrollLink
+                  to="toapproche"
+                  smooth
+                  duration={500}
+                  className="cursor-pointer"
+                  onClick={handleMobileNav}
+                  onSetActive={() => setActiveLink("toapproche")}
+                >
+                  {t("common.nav_engine")}
+                </ScrollLink>
+              </span>
+              {HAS_RECOMMENDATIONS && (
+                <span className={handleActiveLink("torecommendations")}>
+                  <ScrollLink
+                    to="torecommendations"
+                    smooth
+                    duration={500}
+                    className="cursor-pointer"
+                    onClick={handleMobileNav}
+                    onSetActive={() => setActiveLink("torecommendations")}
                   >
-                    {theme === "dark" ? (
-                      <HiSun className="w-5 h-5" aria-hidden />
-                    ) : (
-                      <HiMoon className="w-5 h-5" aria-hidden />
-                    )}
-                    <span>{theme === "dark" ? t("common.theme_label_light") : t("common.theme_label_dark")}</span>
-                  </button>
-                  <span className={handleActiveLink("toabout")}>
-                    <ScrollLink to="toabout" smooth duration={500} className="cursor-pointer" onClick={handleMobileNav} onSetActive={() => setActiveLink("toabout")}>
-                      {t("common.nav_expertise")}
-                    </ScrollLink>
-                  </span>
-                  <span className={handleActiveLink("toprojects")}>
-                    <ScrollLink to="toprojects" smooth duration={500} className="cursor-pointer" onClick={handleMobileNav} onSetActive={() => setActiveLink("toprojects")}>
-                      {t("common.nav_projets")}
-                    </ScrollLink>
-                  </span>
-                  <span className={handleActiveLink("toengine")}>
-                    <ScrollLink to="toapproche" smooth duration={500} className="cursor-pointer" onClick={handleMobileNav} onSetActive={() => setActiveLink("toapproche")}>
-                      {t("common.nav_engine")}
-                    </ScrollLink>
-                  </span>
-                  {HAS_RECOMMENDATIONS && (
-                  <span className={handleActiveLink("torecommendations")}>
-                    <ScrollLink to="torecommendations" smooth duration={500} className="cursor-pointer" onClick={handleMobileNav} onSetActive={() => setActiveLink("torecommendations")}>
-                      {t("common.nav_recommendations")}
-                    </ScrollLink>
-                  </span>
-                  )}
-                  <span>
-                    <Link to="/labs" className="cursor-pointer text-slate-900 dark:text-slate-100 hover:text-blue-500 dark:hover:text-blue-400" onClick={handleMobileNav}>
-                      {t("common.nav_labs")}
-                    </Link>
-                  </span>
-                  <div className="language-switcher mt-1.5" role="group" aria-label={t("common.selectLanguage")}>
-                    <ul className="flex space-x-2">
-                      <li>
-                        <button
-                          type="button"
-                          className="inline-flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-                          onClick={() => changeLanguage("fr")}
-                          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); changeLanguage("fr"); } }}
-                          tabIndex={0}
-                          aria-label="Français"
-                        >
-                          <span className="i-flagpack-fr w-8 mb-1 mt-1" title="French" aria-hidden />
-                          <span className="hidden lg:block">French</span>
-                        </button>
-                      </li>
-                      <li>
-                        <button
-                          type="button"
-                          className="inline-flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-                          onClick={() => changeLanguage("en")}
-                          onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); changeLanguage("en"); } }}
-                          tabIndex={0}
-                          aria-label="English"
-                        >
-                          <span className="i-flagpack-gb-ukm w-8 mt-px" title="English" aria-hidden />{" "}
-                          <span className="hidden lg:block">English</span>
-                        </button>
-                      </li>
-                    </ul>
-                  </div>
-                <div className="flex space-x-4 pt-20">
-                  <div>
-                    <a
-                      href="https://github.com/ShidiKAY"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={t("common.aria_github")}
+                    {t("common.nav_recommendations")}
+                  </ScrollLink>
+                </span>
+              )}
+              <span>
+                <Link
+                  to="/labs"
+                  className="cursor-pointer text-slate-900 dark:text-slate-100 hover:text-blue-500 dark:hover:text-blue-400"
+                  onClick={handleMobileNav}
+                >
+                  {t("common.nav_labs")}
+                </Link>
+              </span>
+              <div
+                className="language-switcher mt-1.5"
+                role="group"
+                aria-label={t("common.selectLanguage")}
+              >
+                <ul className="flex space-x-2">
+                  <li>
+                    <button
+                      type="button"
+                      className="inline-flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                      onClick={() => changeLanguage("fr")}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          changeLanguage("fr");
+                        }
+                      }}
+                      tabIndex={0}
+                      aria-label={t("common.lang_french")}
                     >
-                      <BsGithub size="2rem" aria-hidden focusable={false} />
-                    </a>
-                  </div>
-                  <div>
-                    <a
-                      href="https://www.linkedin.com/in/kamal-ait-yous-90a6a3178/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={t("common.aria_linkedin")}
+                      <span
+                        className="i-flagpack-fr w-8 mb-1 mt-1"
+                        title={t("common.lang_french")}
+                        aria-hidden
+                      />
+                      <span className="hidden lg:block">
+                        {t("common.lang_french")}
+                      </span>
+                    </button>
+                  </li>
+                  <li>
+                    <button
+                      type="button"
+                      className="inline-flex items-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+                      onClick={() => changeLanguage("en")}
+                      onKeyDown={(e) => {
+                        if (e.key === "Enter" || e.key === " ") {
+                          e.preventDefault();
+                          changeLanguage("en");
+                        }
+                      }}
+                      tabIndex={0}
+                      aria-label={t("common.lang_english")}
                     >
-                      <BsLinkedin size="2rem" aria-hidden focusable={false} />
-                    </a>
-                  </div>
-                  <div>
-                    <a
-                      href="https://www.malt.fr/profile/kamalaityous"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label={t("common.aria_malt")}
-                    >
-                      <SiMalt size="2rem" aria-hidden focusable={false} />
-                    </a>
-                  </div>
+                      <span
+                        className="i-flagpack-gb-ukm w-8 mt-px"
+                        title={t("common.lang_english")}
+                        aria-hidden
+                      />{" "}
+                      <span className="hidden lg:block">
+                        {t("common.lang_english")}
+                      </span>
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div className="flex space-x-4 pt-20">
+                <div>
+                  <a
+                    href="https://github.com/ShidiKAY"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t("common.aria_github")}
+                  >
+                    <BsGithub size="2rem" aria-hidden focusable={false} />
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://www.linkedin.com/in/kamal-ait-yous-90a6a3178/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t("common.aria_linkedin")}
+                  >
+                    <BsLinkedin size="2rem" aria-hidden focusable={false} />
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://www.malt.fr/profile/kamalaityous"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t("common.aria_malt")}
+                  >
+                    <SiMalt size="2rem" aria-hidden focusable={false} />
+                  </a>
                 </div>
               </div>
             </div>
           </div>
+        </div>
       </nav>
     </div>
   );
 };
-
 
 export default Navbar;
