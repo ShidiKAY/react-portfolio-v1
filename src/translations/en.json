@@ -2,16 +2,7 @@
   "common": {
     "about": "About",
     "abouthelloim": "Hello, I'm",
-    "about_intro": "Passionate about software architecture, I help businesses and technical teams stabilize their critical systems. Autonomy with clear communication: tickets, documented decisions, and pull requests; short meetings when it matters. Backend rigor so delivery stays predictable.",
-    "about_support": "I specialize in resilient systems: legacy to stabilize, APIs to consolidate, or quality to raise. Documented methodology from design to deployment, with performance work and E2E testing (Cypress, BDD) where it counts.",
-    "about_points": [
-      "Architecture & Backend: durable architectures (DDD, APIs, system integration) and targeted refactoring for maintainability.",
-      "APIs & Integration: API design and hardening, system interconnection, data consistency.",
-      "Technical debt & Performance: debt reduction, query optimization, caching strategies.",
-      "Quality & delivery: E2E testing (Cypress), BDD scenarios, CI/CD. Critical paths covered, regressions under control.",
-      "Infra & deployment: Docker, Kubernetes, CI/CD for controlled, reproducible environments."
-    ],
-    "about_cta": "Let's discuss your next project: reliability, added value, or quality uplift.",
+    "about_rich": "Passionate about software architecture, I help businesses and technical teams stabilize their critical systems. Autonomy with clear communication: tickets, documented decisions, and pull requests; short meetings when it matters. Backend rigor so delivery stays predictable.\n\n✅ I specialize in resilient systems: legacy to stabilize, APIs to consolidate, or quality to raise. Documented methodology from design to deployment, with performance work and E2E testing (Cypress, BDD) where it counts.\n💻 Architecture & Backend: durable architectures (DDD, APIs, system integration) and targeted refactoring for maintainability.\n🔌 APIs & Integration: API design and hardening, system interconnection, data consistency.\n🔧 Technical debt & Performance: debt reduction, query optimization, caching strategies.\n🧪 Quality & delivery: E2E testing (Cypress), BDD scenarios, CI/CD. Critical paths covered, regressions under control.\n🌐 Infra & deployment: Docker, Kubernetes, CI/CD for controlled, reproducible environments.\n💬 Let's discuss your next project: reliability, added value, or quality uplift.",
     "aboutp1": "Senior backend engineer focused on business-critical systems, APIs, and maintainable delivery. Autonomous, reliable, and clear in how I work with teams.",
     "contact": "Contact",
     "contactme": "Contact me",
@@ -183,6 +174,8 @@
     "engine_panel_subtitle_labs": "Experiments and prototypes.",
     "engine_process_phrase": "I accelerate time-consuming tasks to focus on reliability and delivery.",
     "project_impact_title": "Impact & result",
+    "project_missions_title": "Missions",
+    "project_anchor_case_study": "View full case study",
     "lab_label_challenge": "Challenge",
     "lab_label_exploration": "Exploration",
     "lab_label_result": "Result",
@@ -988,8 +981,8 @@
       "externalLinks": []
     },
     "freelance": {
-      "description": "Freelance fullstack work: business-app migration to Symfony, community platform (search/scraping), and Edge Sound showcase site for a Swiss client.",
-      "impactSummary": "Legacy PHP → Symfony 4 migration, community search platform, and investor-facing Bootstrap showcase (Edge Sound).",
+      "description": "Freelance missions: business-app redesign, Edge Sound showcase, and Vérifact for Groupe Bernard Blachère.",
+      "impactSummary": "Legacy PHP → Symfony 4 migration, Edge Sound showcase site, and Vérifact mission (DDD, Cypress, Symfony / Vue.js).",
       "img": "/images/project-images/freelance/logo.png",
       "role": "Fullstack Developer",
       "location": "France",
@@ -1011,13 +1004,34 @@
       "introduction": {
         "name": "Freelance & personal projects",
         "introduction": "As a freelance developer, I have worked on a variety of projects for clients in different industries, providing web development, consulting, and technical support.",
-        "description": "Business-app redesign, community platform, and Edge Sound showcase for a Swiss client."
+        "description": "Business-app redesign, Edge Sound showcase, and Vérifact mission (Groupe Bernard Blachère)."
       },
+      "missionAnchors": [
+        {
+          "anchorId": "freelance-mission-legacy",
+          "title": "Business app redesign",
+          "summary": "Legacy PHP → Symfony 4 migration, UI/UX redesign, and ApexCharts visualizations.",
+          "img": "/images/project-images/bubo/logo.png"
+        },
+        {
+          "anchorId": "freelance-mission-edge",
+          "title": "Edge Sound",
+          "summary": "Bootstrap showcase site for a Swiss client, investor-facing.",
+          "img": "/images/project-images/freelance/logo.png"
+        },
+        {
+          "title": "Groupe Bernard Blachère",
+          "summary": "Vérifact: DDD, Cypress BDD tests, Symfony, Vue.js 3, and NestJS.",
+          "img": "/images/project-images/bbg/logo.png",
+          "anchorId": "freelance-mission-blachere"
+        }
+      ],
       "tasks": [
         {
           "group": {
             "titre": "Refactoring a legacy business application",
-            "intro": "Evolve an existing business application: migration from legacy PHP to Symfony 4, UI/UX redesign, and advanced data visualization."
+            "intro": "Evolve an existing business application: migration from legacy PHP to Symfony 4, UI/UX redesign, and advanced data visualization.",
+            "anchorId": "freelance-mission-legacy"
           },
           "data": {
             "1": {
@@ -1035,7 +1049,8 @@
         {
           "group": {
             "titre": "Edge Sound showcase site (Swiss client)",
-            "intro": "Develop a Bootstrap showcase site to present innovative headphones for fighter pilots, aimed at investors."
+            "intro": "Develop a Bootstrap showcase site to present innovative headphones for fighter pilots, aimed at investors.",
+            "anchorId": "freelance-mission-edge"
           },
           "data": {
             "1": {
@@ -1048,6 +1063,30 @@
               ]
             }
           }
+        },
+        {
+          "group": {
+            "titre": "Groupe Bernard Blachère · Vérifact (freelance mission)",
+            "intro": "Freelance mission on Vérifact, the group's internal supplier dispute tool. DDD refactor, API consolidation, and delivery hardening (Cypress, BDD).",
+            "anchorId": "freelance-mission-blachere"
+          },
+          "data": {
+            "1": {
+              "title": "Reliability and architecture",
+              "description": [
+                "DDD refactor to clarify business boundaries and maintainability",
+                "Symfony APIs, Vue.js 3 / TypeScript interfaces, and NestJS flows",
+                "Cypress E2E tests and BDD scenarios integrated in GitLab CI",
+                "Targeted optimizations (prefetch, bulk) on critical journeys"
+              ]
+            }
+          }
+        }
+      ],
+      "externalLinks": [
+        {
+          "name": "Full case study · Vérifact (BBG)",
+          "url": "/projects/bbg"
         }
       ]
     }

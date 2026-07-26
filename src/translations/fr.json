@@ -2,16 +2,7 @@
   "common": {
     "about": "À propos",
     "abouthelloim": "Bonjour, je suis",
-    "about_intro": "Passionné par l'architecture logicielle, j'aide les entreprises et les équipes techniques à stabiliser leurs systèmes critiques. Autonomie et communication claire : tickets, décisions documentées et merge requests ; réunions courtes quand c'est utile. Rigueur backend pour des livraisons prévisibles.",
-    "about_support": "Je me spécialise dans les systèmes résilients : existant à sécuriser, APIs à consolider, ou qualité à faire monter. Méthodologie documentée de la conception au déploiement, avec travail perf et tests E2E (Cypress, BDD) quand il le faut.",
-    "about_points": [
-      "Architecture et backend : architectures durables (DDD, APIs, intégration SI) et refactorisation ciblée pour la maintenabilité.",
-      "APIs et intégration : conception et sécurisation d'APIs, interconnexion des systèmes, cohérence des données.",
-      "Dette technique et performances : réduction de la dette, optimisation des requêtes, stratégies de cache.",
-      "Qualité et livraison : tests E2E (Cypress), scénarios BDD, CI/CD. Parcours critiques couverts, régressions maîtrisées.",
-      "Infra et déploiement : Docker, Kubernetes, CI/CD pour des environnements maîtrisés et reproductibles."
-    ],
-    "about_cta": "Discutons de votre prochain projet : fiabilisation, valeur ajoutée ou montée en qualité.",
+    "about_rich": "Passionné par l'architecture logicielle, j'aide les entreprises et les équipes techniques à stabiliser leurs systèmes critiques. Autonomie et communication claire : tickets, décisions documentées et merge requests ; réunions courtes quand c'est utile. Rigueur backend pour des livraisons prévisibles.\n\n✅ Je me spécialise dans les systèmes résilients : existant à sécuriser, APIs à consolider, ou qualité à faire monter. Méthodologie documentée de la conception au déploiement, avec travail perf et tests E2E (Cypress, BDD) quand il le faut.\n💻 Architecture et backend : architectures durables (DDD, APIs, intégration SI) et refactorisation ciblée pour la maintenabilité.\n🔌 APIs et intégration : conception et sécurisation d'APIs, interconnexion des systèmes, cohérence des données.\n🔧 Dette technique et performances : réduction de la dette, optimisation des requêtes, stratégies de cache.\n🧪 Qualité et livraison : tests E2E (Cypress), scénarios BDD, CI/CD. Parcours critiques couverts, régressions maîtrisées.\n🌐 Infra et déploiement : Docker, Kubernetes, CI/CD pour des environnements maîtrisés et reproductibles.\n💬 Discutons de votre prochain projet : fiabilisation, valeur ajoutée ou montée en qualité.",
     "aboutp1": "Ingénieur backend senior, systèmes métier critiques, APIs et livraisons maintenables. Autonome, fiable, et clair dans la collaboration avec les équipes.",
     "contact": "Contact",
     "contactme": "Me contacter",
@@ -182,6 +173,8 @@
     "engine_panel_subtitle_labs": "Expérimentations et prototypes.",
     "engine_process_phrase": "J'accélère les tâches chronophages pour me concentrer sur la fiabilité et la livraison.",
     "project_impact_title": "Impact & résultat",
+    "project_missions_title": "Missions",
+    "project_anchor_case_study": "Voir la case study",
     "lab_label_challenge": "Défi",
     "lab_label_exploration": "Exploration",
     "lab_label_result": "Résultat",
@@ -987,8 +980,8 @@
       "externalLinks": []
     },
     "freelance": {
-      "description": "Missions freelance fullstack : migration d'appli métier vers Symfony, plateforme communautaire (recherche/scraping), et site vitrine Edge Sound pour un client suisse.",
-      "impactSummary": "Migration PHP → Symfony 4, plateforme communautaire avec moteur de recherche, et site vitrine Bootstrap (Edge Sound).",
+      "description": "Missions freelance : refonte appli métier, site Edge Sound, et Vérifact pour le Groupe Bernard Blachère.",
+      "impactSummary": "Migration PHP → Symfony 4, site vitrine Edge Sound, et mission Vérifact (DDD, Cypress, Symfony / Vue.js).",
       "img": "/images/project-images/freelance/logo.png",
       "role": "Développeur Fullstack",
       "location": "France",
@@ -1010,13 +1003,34 @@
       "introduction": {
         "name": "Freelance & projets personnels",
         "introduction": "En tant que développeur freelance, j'ai travaillé sur une variété de projets pour des clients de différents secteurs, assurant développement web, conseil et support technique.",
-        "description": "Refonte d'appli métier, plateforme communautaire, et site vitrine Edge Sound pour un client suisse."
+        "description": "Refonte d'appli métier, site vitrine Edge Sound, et mission Vérifact (Groupe Bernard Blachère)."
       },
+      "missionAnchors": [
+        {
+          "anchorId": "freelance-mission-legacy",
+          "title": "Refonte appli métier",
+          "summary": "Migration PHP legacy → Symfony 4, refonte UI/UX et visualisations ApexCharts.",
+          "img": "/images/project-images/bubo/logo.png"
+        },
+        {
+          "anchorId": "freelance-mission-edge",
+          "title": "Edge Sound",
+          "summary": "Site vitrine Bootstrap pour client suisse, orienté investisseurs.",
+          "img": "/images/project-images/freelance/logo.png"
+        },
+        {
+          "title": "Groupe Bernard Blachère",
+          "summary": "Vérifact : DDD, tests Cypress BDD, Symfony, Vue.js 3 et NestJS.",
+          "img": "/images/project-images/bbg/logo.png",
+          "anchorId": "freelance-mission-blachere"
+        }
+      ],
       "tasks": [
         {
           "group": {
             "titre": "Refactorisation d'une application métier legacy",
-            "intro": "Faire évoluer une application métier existante : migration PHP legacy vers Symfony 4, refonte UI/UX et visualisations avancées."
+            "intro": "Faire évoluer une application métier existante : migration PHP legacy vers Symfony 4, refonte UI/UX et visualisations avancées.",
+            "anchorId": "freelance-mission-legacy"
           },
           "data": {
             "1": {
@@ -1034,7 +1048,8 @@
         {
           "group": {
             "titre": "Site vitrine Edge Sound (client suisse)",
-            "intro": "Développer un site vitrine en Bootstrap pour présenter des écouteurs innovants destinés aux pilotes d'avions de chasse, à destination d'investisseurs."
+            "intro": "Développer un site vitrine en Bootstrap pour présenter des écouteurs innovants destinés aux pilotes d'avions de chasse, à destination d'investisseurs.",
+            "anchorId": "freelance-mission-edge"
           },
           "data": {
             "1": {
@@ -1047,6 +1062,30 @@
               ]
             }
           }
+        },
+        {
+          "group": {
+            "titre": "Groupe Bernard Blachère · Vérifact (mission freelance)",
+            "intro": "Mission freelance sur Vérifact, outil de litiges fournisseurs du SI interne du groupe. Refonte DDD, consolidation des APIs et sécurisation des livraisons (Cypress, BDD).",
+            "anchorId": "freelance-mission-blachere"
+          },
+          "data": {
+            "1": {
+              "title": "Fiabilisation et architecture",
+              "description": [
+                "Refactorisation DDD pour clarifier le périmètre métier et la maintenabilité",
+                "APIs Symfony, interfaces Vue.js 3 / TypeScript et flux NestJS",
+                "Tests E2E Cypress et scénarios BDD intégrés à la CI GitLab",
+                "Optimisations ciblées (prefetch, bulk) sur les parcours critiques"
+              ]
+            }
+          }
+        }
+      ],
+      "externalLinks": [
+        {
+          "name": "Case study complète · Vérifact (BBG)",
+          "url": "/projects/bbg"
         }
       ]
     }

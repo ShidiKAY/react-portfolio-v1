@@ -1,5 +1,5 @@
 import { useTranslation } from "react-i18next";
-import { useParams, useNavigate, useLocation, Navigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation, Navigate, Link } from "react-router-dom";
 import { Helmet as Head } from "react-helmet-async";
 import { SEO_BASE_URL, SEO_DEFAULT_IMAGE } from "../../config/seo";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
@@ -11,6 +11,68 @@ import {
   skillIcons,
 } from "../../components/SkillsModern";
 import { PROJECT_ORDER, isValidProjectId } from "../../constants/projects";
+
+const scrollToMissionAnchor = (anchorId) => {
+  const el = document.getElementById(anchorId);
+  if (el) {
+    el.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
+const MissionAnchorCard = ({ anchor, caseStudyLabel }) => {
+  const inner = (
+    <>
+      {anchor.img && (
+        <div className="h-24 sm:h-28 flex items-center justify-center bg-white dark:bg-slate-900/60 border-b border-slate-200 dark:border-slate-600 p-3">
+          <img
+            src={anchor.img}
+            alt=""
+            className="max-h-full max-w-full object-contain"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      )}
+      <div className="p-4 flex flex-col flex-1">
+        <h3 className="font-semibold text-gray-900 dark:text-white text-sm sm:text-base mb-1.5">
+          {anchor.title}
+        </h3>
+        <p className="text-gray-600 dark:text-slate-400 text-sm leading-snug flex-1">
+          {anchor.summary}
+        </p>
+        {anchor.href && (
+          <span className="mt-3 text-cyan-600 dark:text-cyan-400 text-xs font-medium">
+            {caseStudyLabel} →
+          </span>
+        )}
+      </div>
+    </>
+  );
+
+  const className =
+    "flex flex-col h-full min-h-[220px] rounded-lg border border-slate-200 dark:border-slate-600 bg-gray-50 dark:bg-slate-800 overflow-hidden transition-colors hover:border-cyan-500/60 dark:hover:border-cyan-400/60 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500";
+
+  if (anchor.href) {
+    return (
+      <Link to={anchor.href} className={className}>
+        {inner}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={`#${anchor.anchorId}`}
+      className={className}
+      onClick={(e) => {
+        e.preventDefault();
+        scrollToMissionAnchor(anchor.anchorId);
+      }}
+    >
+      {inner}
+    </a>
+  );
+};
 
 const ProjectDetail = () => {
   const { t } = useTranslation();
@@ -286,6 +348,9 @@ const ProjectDetail = () => {
   }, [navigate]);
 
   const project = t(`projects.${projectId}`, { returnObjects: true });
+  const missionAnchors = Array.isArray(project?.missionAnchors)
+    ? project.missionAnchors
+    : [];
   const projectValid =
     isValidProjectId(projectId) &&
     project &&
@@ -787,6 +852,23 @@ const ProjectDetail = () => {
             </div>
           </div>
 
+          {missionAnchors.length > 0 && (
+            <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
+              <h2 className="text-lg font-semibold mb-4 text-gray-800 dark:text-white text-left">
+                {t("common.project_missions_title")}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {missionAnchors.map((anchor) => (
+                  <MissionAnchorCard
+                    key={anchor.anchorId || anchor.href || anchor.title}
+                    anchor={anchor}
+                    caseStudyLabel={t("common.project_anchor_case_study")}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Key Actions & Impact */}
           {project.tasks && project.tasks.length > 0 && (
             <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
@@ -797,7 +879,8 @@ const ProjectDetail = () => {
                 {project.tasks.map((taskGroup, groupIndex) => (
                   <div
                     key={groupIndex}
-                    className="relative bg-gray-50 dark:bg-slate-800 p-4 sm:p-6 rounded-lg w-full overflow-x-auto"
+                    id={taskGroup.group.anchorId || undefined}
+                    className="relative bg-gray-50 dark:bg-slate-800 p-4 sm:p-6 rounded-lg w-full overflow-x-auto scroll-mt-28"
                   >
                     <h3 className="text-lg font-bold mb-4 text-gray-800 dark:text-white text-left">
                       {taskGroup.group.titre}
@@ -943,19 +1026,16 @@ const ProjectDetail = () => {
                 {t("common.externalLinks")}
               </h2>
               <div className="flex flex-wrap gap-2 sm:gap-3 justify-start w-full">
-                {externalLinks.map((link, index) => (
-                  <a
-                    key={index}
-                    href={link.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center px-4 py-2 bg-blue-50 text-blue-700 rounded-full hover:bg-blue-100 transition-colors duration-200"
-                  >
+                {externalLinks.map((link, index) => {
+                  const linkClass =
+                    "inline-flex items-center px-4 py-2 bg-blue-50 dark:bg-slate-800 text-blue-700 dark:text-blue-300 rounded-full hover:bg-blue-100 dark:hover:bg-slate-700 transition-colors duration-200";
+                  const icon = (
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className="h-5 w-5 mr-2"
                       viewBox="0 0 20 20"
                       fill="currentColor"
+                      aria-hidden="true"
                     >
                       <path
                         fillRule="evenodd"
@@ -963,9 +1043,28 @@ const ProjectDetail = () => {
                         clipRule="evenodd"
                       />
                     </svg>
-                    {link.name}
-                  </a>
-                ))}
+                  );
+                  if (link.url?.startsWith("/")) {
+                    return (
+                      <Link key={index} to={link.url} className={linkClass}>
+                        {icon}
+                        {link.name}
+                      </Link>
+                    );
+                  }
+                  return (
+                    <a
+                      key={index}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={linkClass}
+                    >
+                      {icon}
+                      {link.name}
+                    </a>
+                  );
+                })}
               </div>
             </div>
           )}

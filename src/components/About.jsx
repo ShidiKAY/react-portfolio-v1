@@ -10,6 +10,8 @@ import {
   MOTION_EASE,
 } from "../config/motion";
 
+const EMOJI_PREFIX = /^(\p{Emoji_Presentation}|\p{Emoji}\uFE0F?)\s*(.*)$/u;
+
 const About = () => {
   const [revealed, setRevealed] = useState(false);
   const refAbout = useRef(null);
@@ -66,11 +68,44 @@ const About = () => {
     [reduceMotion]
   );
 
-  const intro = t("common.about_intro");
-  const support = t("common.about_support");
-  const points = t("common.about_points", { returnObjects: true });
-  const cta = t("common.about_cta");
-  const detailedPoints = Array.isArray(points) ? points : [];
+  const aboutRich = t("common.about_rich");
+  const aboutLines = aboutRich
+    .split("\n")
+    .filter((line) => line.trim() !== "" && !line.trim().startsWith("Hello"));
+
+  const supportIdx = aboutLines.findIndex((line) =>
+    line.trim().startsWith("✅")
+  );
+  const experienceIdx = aboutLines.findIndex((line) =>
+    line.trim().startsWith("💻")
+  );
+  const contactIdx = aboutLines.findIndex((line) =>
+    line.trim().startsWith("💬")
+  );
+
+  const introFirstLine =
+    aboutLines.length > 0 &&
+    !/^[\p{Emoji_Presentation}\p{Emoji}\uFE0F?]/u.test(aboutLines[0].trim())
+      ? aboutLines[0]
+      : null;
+  const introParagraph = supportIdx !== -1 ? aboutLines[supportIdx] : null;
+
+  const pointsLines =
+    experienceIdx !== -1 && contactIdx !== -1
+      ? aboutLines.slice(experienceIdx, contactIdx)
+      : [];
+
+  const detailedPoints = pointsLines
+    .map((line) => {
+      const match = line.match(EMOJI_PREFIX);
+      if (match) {
+        return { icon: match[1], text: match[2] };
+      }
+      return null;
+    })
+    .filter(Boolean);
+
+  const contactLine = contactIdx !== -1 ? aboutLines[contactIdx] : "";
 
   return (
     <div
@@ -110,35 +145,36 @@ const About = () => {
                 {t("common.abouthelloim")}{" "}
                 <span className="text-blue-500 dark:text-blue-400">Kamal</span>
               </h1>
-              {intro && (
+              {introFirstLine && (
                 <p className="text-left font-normal mb-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
-                  {intro}
+                  {introFirstLine}
                 </p>
               )}
-              {support && (
+              {introParagraph && (
                 <p className="text-left font-normal mb-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
-                  {support}
+                  {introParagraph}
                 </p>
               )}
               <div className="relative" style={{ minHeight: 80 }}>
                 <div id="about-rich-details">
-                  {detailedPoints.length > 0 && (
-                    <ul className="list-disc pl-6 pr-4 space-y-3 break-words">
-                      {detailedPoints.map((text, idx) =>
-                        text ? (
-                          <li
-                            key={idx}
-                            className="text-base text-slate-700 dark:text-slate-300 break-words"
-                          >
-                            {text}
-                          </li>
-                        ) : null
-                      )}
-                    </ul>
-                  )}
-                  {cta && (
+                  <ul className="list-none pl-6 pr-4 space-y-3 break-words">
+                    {detailedPoints.map((point, idx) =>
+                      point.text ? (
+                        <li
+                          key={idx}
+                          className="flex items-start gap-2 text-base text-slate-700 dark:text-slate-300"
+                        >
+                          <span className="text-xl mt-1" aria-hidden="true">
+                            {point.icon}
+                          </span>
+                          <span className="break-words">{point.text}</span>
+                        </li>
+                      ) : null
+                    )}
+                  </ul>
+                  {contactLine && (
                     <p className="text-left font-normal mt-4 flex-wrap break-words text-slate-700 dark:text-slate-300">
-                      {cta}
+                      {contactLine}
                     </p>
                   )}
                 </div>
