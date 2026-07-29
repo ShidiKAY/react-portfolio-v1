@@ -78,6 +78,7 @@
     "softskill_business_quality": "Vision métier & qualité",
     "softskill_communication": "Communication",
     "softskill_problem_solving": "Résolution de problèmes",
+    "softskill_attention_to_detail": "Rigueur",
     "lang_french": "Français",
     "lang_english": "Anglais",
     "lang_italian": "Italien",
@@ -98,6 +99,8 @@
     "skills_desc.English": "Anglais professionnel.",
     "skills_desc.Italian": "Italien.",
     "skills_desc.Chinese (basics)": "Notions de chinois.",
+    "skills_desc.PostgreSQL": "Système de gestion de base de données relationnelle open source avancé.",
+    "skills_desc.Attention to Detail": "Rigueur sur les données sensibles (écritures comptables, règles de TVA).",
     "read_more": "En savoir plus",
     "show_less": "Réduire",
     "skills_desc.Teamwork": "Capacité à travailler efficacement en équipe.",
@@ -811,6 +814,7 @@
         "Vue.js",
         "NestJS",
         "TypeScript",
+        "PostgreSQL",
         "Cypress",
         "Docker",
         "Kubernetes",
@@ -821,7 +825,8 @@
         "Communication",
         "Problem Solving",
         "Written Culture",
-        "Business & Quality Vision"
+        "Business & Quality Vision",
+        "Attention to Detail"
       ],
       "introduction": {
         "name": "Holding Bernard Blachère",
@@ -838,6 +843,7 @@
         "Vue.js 3",
         "NestJS",
         "TypeScript",
+        "PostgreSQL",
         "Cypress",
         "Docker",
         "Kubernetes",

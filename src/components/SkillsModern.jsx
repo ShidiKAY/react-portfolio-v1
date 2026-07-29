@@ -35,6 +35,7 @@ import {
   SiKubernetes,
   SiGitlab,
   SiReact,
+  SiPostgresql,
 } from "react-icons/si";
 import { useTranslation } from "react-i18next";
 import { useEffect, useState, useRef } from "react";
@@ -48,6 +49,7 @@ const SKILL_DESCRIPTIONS = {
   PHP: "Popular server-side scripting language.",
   "Node.js": "JavaScript runtime for server-side applications.",
   MySQL: "Relational database management system.",
+  PostgreSQL: "Advanced open-source relational database system.",
   SQL: "Structured Query Language for databases.",
   "REST API": "Web API using RESTful principles.",
   DDD: "Domain-Driven Design for clear business boundaries.",
@@ -88,6 +90,8 @@ const SKILL_DESCRIPTIONS = {
     "Business-aware delivery with a strong quality mindset.",
   Communication: "Effectively conveying information and ideas.",
   "Problem Solving": "Ability to analyze and resolve complex issues.",
+  "Attention to Detail":
+    "Careful, precise handling of sensitive data (accounting entries, VAT rules).",
   French: "Native French.",
   English: "Professional working English.",
   Italian: "Italian language skills.",
@@ -101,6 +105,7 @@ const SOFT_SKILL_LABEL_KEY = {
   "Business & Quality Vision": "softskill_business_quality",
   Communication: "softskill_communication",
   "Problem Solving": "softskill_problem_solving",
+  "Attention to Detail": "softskill_attention_to_detail",
 };
 
 const LANGUAGE_LABEL_KEY = {
@@ -115,6 +120,7 @@ const MASTERED_SKILLS = [
   "PHP",
   "Vue.js",
   "MySQL",
+  "PostgreSQL",
   "Docker",
   "GIT",
   "JavaScript",
@@ -129,6 +135,7 @@ const SOFT_SKILLS = [
   "Business & Quality Vision",
   "Communication",
   "Problem Solving",
+  "Attention to Detail",
 ];
 
 const skills = {
@@ -173,6 +180,7 @@ const skills = {
   ],
   Data: [
     { name: "MySQL", icon: SiMysql },
+    { name: "PostgreSQL", icon: SiPostgresql },
     { name: "SQL", icon: FaDatabase },
     { name: "DQL", icon: FaKey },
     { name: "ApexCharts", icon: FaChartBar },

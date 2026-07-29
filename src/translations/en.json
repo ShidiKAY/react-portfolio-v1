@@ -77,6 +77,7 @@
     "softskill_written_culture": "Written culture",
     "softskill_business_quality": "Business & quality vision",
     "softskill_communication": "Communication",
+    "softskill_attention_to_detail": "Attention to Detail",
     "softskill_problem_solving": "Problem solving",
     "lang_french": "French",
     "lang_english": "English",
@@ -98,6 +99,8 @@
     "skills_desc.English": "Professional working English.",
     "skills_desc.Italian": "Italian language skills.",
     "skills_desc.Chinese (basics)": "Basic Chinese.",
+    "skills_desc.PostgreSQL": "Advanced open-source relational database system.",
+    "skills_desc.Attention to Detail": "Careful, precise handling of sensitive data (accounting entries, VAT rules).",
     "read_more": "Read more",
     "show_less": "Show less",
     "skills_desc.Autonomous work": "Ability to work independently with clear written updates.",
@@ -812,6 +815,7 @@
         "Vue.js",
         "NestJS",
         "TypeScript",
+        "PostgreSQL",
         "Cypress",
         "Docker",
         "Kubernetes",
@@ -822,7 +826,8 @@
         "Communication",
         "Problem Solving",
         "Written Culture",
-        "Business & Quality Vision"
+        "Business & Quality Vision",
+        "Attention to Detail"
       ],
       "introduction": {
         "name": "Bernard Blachère Holding",
@@ -839,6 +844,7 @@
         "Vue.js 3",
         "NestJS",
         "TypeScript",
+        "PostgreSQL",
         "Cypress",
         "Docker",
         "Kubernetes",
