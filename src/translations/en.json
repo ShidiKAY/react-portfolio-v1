@@ -230,7 +230,7 @@
     "proof_cypress_title": "App Coverage: QA Engine",
     "proof_cypress_desc": "QA engine to orchestrate E2E tests across apps with data isolation. Linked to the ticketing tool to export proofs and update tickets from test results.",
     "proof_cypress_how": "Workflow: Documentation → BDD fixtures → execution → HTML reporting, with ticket updates from the run.",
-    "proof_cypress_demo_content": "Clean mode between scenarios, BDD fixtures, and HTML reporting. A run capture can be added later.",
+    "proof_cypress_demo_content": "Excerpt from a real run: DB reset + anonymized fixtures, business scenarios played against the app, HTML reporting.",
     "proof_cypress_coming_soon": "Methodology in place. Visual runner capture coming soon.",
     "proof_cypress_benefits_title": "What is in place during the test:",
     "proof_cypress_benefit_1": "Environment and mode choice (clean)",

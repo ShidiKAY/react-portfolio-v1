@@ -229,7 +229,7 @@
     "proof_cypress_title": "App Coverage: moteur QA",
     "proof_cypress_desc": "Moteur QA pour orchestrer des tests E2E multi-apps avec isolation de la donnée. Relié à l'outil de ticketing pour exporter les preuves et mettre à jour les tickets.",
     "proof_cypress_how": "Workflow : Documentation → fixtures BDD → exécution → reporting HTML, avec mise à jour des tickets depuis le run.",
-    "proof_cypress_demo_content": "Clean mode entre scénarios, fixtures BDD et reporting HTML. La capture de run pourra être ajoutée ultérieurement.",
+    "proof_cypress_demo_content": "Extrait d'un run réel : reset BDD + fixtures anonymisées, scénarios métier joués sur l'app, reporting HTML.",
     "proof_cypress_coming_soon": "Méthodologie en place. Capture visuelle du runner à venir.",
     "proof_cypress_benefits_title": "Ce qui est en place durant le test :",
     "proof_cypress_benefit_1": "Choix d'environnement et de mode (clean)",

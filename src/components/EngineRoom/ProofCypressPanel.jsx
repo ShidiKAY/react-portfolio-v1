@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { FaVideo } from "react-icons/fa";
 import TerminalMockup from "./TerminalMockup";
 
-const hasCypressAsset = false;
+const hasCypressAsset = true;
 
 const ProofCypressPanel = () => {
   const { t } = useTranslation();
@@ -21,12 +21,16 @@ const ProofCypressPanel = () => {
       <TerminalMockup showStatusBar={hasCypressAsset}>
         {hasCypressAsset ? (
           <>
-            <img
-              src="/images/cypress-demo.gif"
-              alt="Cypress E2E test suite in action"
+            <video
+              src="/videos/cypress-demo.mp4"
+              aria-label="Cypress E2E test suite in action"
               className="max-w-full h-auto rounded"
-              loading="lazy"
-              decoding="async"
+              controls
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
             />
             <p className="mt-3 text-slate-500 dark:text-slate-400 text-sm">
               {t("common.proof_cypress_demo_content")}
