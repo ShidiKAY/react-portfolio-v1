@@ -800,8 +800,8 @@
       ]
     },
     "bbg": {
-      "description": "Vérifact : litiges avec les fournisseurs (holding Bernard Blachère, boulangerie-pâtisserie). SI critique, DDD, Symfony, Vue.js 3, Cypress + BDD, optimisations perf.",
-      "impactSummary": "Refonte DDD, tests E2E Cypress et optimisations (prefetch, bulk) : livraisons sécurisées, régressions maîtrisées, maintenabilité renforcée.",
+      "description": "Vérifact : litiges avec les fournisseurs (holding Bernard Blachère, boulangerie-pâtisserie). Application complète (9 pages), SI critique, DDD, intégration Yooz (rapprochement facture, écritures comptables), Symfony, Vue.js 3, Cypress + BDD.",
+      "impactSummary": "Refonte DDD (30 règles de gestion), intégration Yooz (rapprochement facture, génération d'écritures comptables, référentiel dédié), tests E2E Cypress (48 specs, 185 scénarios) sur 4 versions majeures : livraisons sécurisées, régressions maîtrisées, maintenabilité renforcée.",
       "postDeliveryTitle": "Retour d'expérience post-livraison (V2)",
       "postDeliveryBody": "Après la livraison majeure de la V2 de Vérifact, un retour structuré avec le pilotage projet et la recette a souligné, côté développement : communication régulière, respect du planning, autonomie sur le périmètre défini, documentation partagée et lisible par l'équipe, et adéquation des évolutions déployées avec le besoin métier une fois celui-ci clarifié. Les échanges ont aussi renforcé les rituels de suivi (points courts d'avancement, schématisation des flux, démonstrations en réunion). En amélioration continue : références systématiques aux tickets dans les messages de livraison pour faciliter la recette.",
       "postDeliveryFootnote": "Bilan formalisé avec l'équipe après la V2.",
@@ -825,8 +825,8 @@
       ],
       "introduction": {
         "name": "Holding Bernard Blachère",
-        "introduction": "Développement sur Vérifact, outil de traitement des litiges avec les fournisseurs, dans le SI interne de la holding Bernard Blachère (boulangerie-pâtisserie). Refonte et fiabilisation d'applications critiques : architecture DDD, consolidation des APIs, tests E2E Cypress et scénarios BDD, optimisations (prefetch, bulk). Documentation structurée et livraisons claires.",
-        "description": "Clarification du périmètre métier et de la maintenabilité (refactorisation DDD), sécurisation des livraisons (Cypress, BDD), optimisations performance. Symfony, Vue.js 3, NestJS, Docker/Kubernetes, GitLab CI."
+        "introduction": "Développement sur Vérifact, application de pilotage des litiges avec les fournisseurs (9 pages : Dashboard, Statistiques, Factures, Lignes bloquées, Produits en erreur, Historiques, Logs, Flux Yooz, Référentiel Yooz), dans le SI interne de la holding Bernard Blachère (boulangerie-pâtisserie). Refonte et fiabilisation d'applications critiques : architecture DDD, intégration de Yooz (plateforme de gestion des factures du groupe) : rapprochement facture, génération d'écritures comptables et référentiel comptable dédié, consolidation des APIs, tests E2E Cypress et scénarios BDD, optimisations (prefetch, bulk). Documentation structurée et livraisons claires, 4 versions majeures livrées.",
+        "description": "Clarification du périmètre métier et de la maintenabilité (refactorisation DDD), intégration Yooz (rapprochement facture, écritures comptables, référentiel), sécurisation des livraisons (Cypress, BDD), optimisations performance. Symfony, Vue.js 3, NestJS, Docker/Kubernetes, GitLab CI."
       },
       "role": "Développeur Fullstack",
       "location": "Châteaurenard",
@@ -879,9 +879,9 @@
             "1": {
               "title": "Interfaces utilisateurs modernes",
               "description": [
-                "Développement d'interfaces utilisateurs modernes et réactives avec Vue.js 3",
+                "Application de 9 pages (Dashboard, Statistiques, Factures, Lignes bloquées, Produits en erreur, Historiques, Logs, Flux Yooz, Référentiel Yooz)",
+                "Tableaux de bord et graphiques KPI, permissions par rôle (SUPER_ADMIN / ADMIN / GUEST)",
                 "Création de composants réutilisables et maintenables",
-                "Implémentation de fonctionnalités interactives et dynamiques",
                 "Optimisation des performances frontend et de l'expérience utilisateur"
               ]
             },
@@ -892,6 +892,38 @@
                 "Gestion de l'état de l'application et de la synchronisation des données",
                 "Implémentation de la gestion d'erreurs et de la validation côté client",
                 "Assurance d'une expérience utilisateur fluide et réactive"
+              ]
+            }
+          }
+        },
+        {
+          "group": {
+            "titre": "Intégration Yooz : rapprochement facture et écritures comptables",
+            "intro": "Connexion bidirectionnelle de Vérifact à Yooz, la plateforme de gestion des factures du groupe : réception des factures, génération des écritures comptables et retour de validation, via 4 flux dédiés."
+          },
+          "data": {
+            "1": {
+              "title": "Réception et rapprochement des factures",
+              "description": [
+                "Réception des factures via SFTP, parsing CSV / EDI / Factur-X et rapprochement avec le référentiel interne",
+                "Résolution fournisseur, magasin et compte de charge avec stratégies de repli",
+                "Réutilisation du moteur d'analyse et de contrôle du workflow de litiges"
+              ]
+            },
+            "2": {
+              "title": "Génération d'écritures comptables et validation",
+              "description": [
+                "Génération et envoi des écritures comptables (lignes facture, TVA) dès le rapprochement réussi, indépendamment de la clôture du litige",
+                "Calcul de la TVA et réconciliation des profils comptables selon des règles de gestion dédiées",
+                "Envoi du statut de validation à la clôture du litige, conditionné au retour des commentaires Yooz"
+              ]
+            },
+            "3": {
+              "title": "Référentiel comptable et alertes",
+              "description": [
+                "Page Référentiel Yooz dédiée : contrôle des GLN et comptes de charge fournisseurs / produits",
+                "Alerte automatique par email en cas de comptes de charge manquants avant intégration",
+                "Journalisation exhaustive de chaque échange pour la traçabilité métier"
               ]
             }
           }
@@ -932,14 +964,14 @@
               "title": "Refactorisation DDD et maintenabilité",
               "description": [
                 "Refactorisation du domaine métier en architecture DDD (frontières, agrégats, services métier)",
-                "Réduction de la dette technique et clarification des responsabilités",
-                "Amélioration de la testabilité et de l'évolutivité du backend"
+                "Centralisation de 30 règles de gestion métier dans les services, couvertes par 67 tests backend",
+                "Réduction de la dette technique et clarification des responsabilités"
               ]
             },
             "2": {
               "title": "Tests E2E Cypress et scénarios BDD",
               "description": [
-                "Mise en place de tests E2E avec Cypress pour sécuriser les parcours critiques",
+                "Suite de tests E2E Cypress : 48 specs, 185 scénarios sur les parcours critiques",
                 "Fixtures et scénarios BDD pour des livraisons sans régression",
                 "Intégration des tests dans la CI pour une qualité prévisible"
               ]
@@ -957,11 +989,13 @@
       ],
       "challenges": [
         "Applications critiques avec dette technique et frontières métier floues.",
+        "Génération d'écritures comptables fiables malgré des règles de TVA et de comptes de charge complexes.",
         "Collaboration avec une équipe interne et livraisons fréquentes.",
         "Nécessité de livrer sans régression sur des parcours métier sensibles."
       ],
       "solutions": [
         "Refactorisation DDD pour clarifier le domaine et améliorer la maintenabilité.",
+        "Moteur de réconciliation Yooz dédié (référentiel comptable, alertes automatiques) et règles de gestion documentées pour fiabiliser les écritures envoyées.",
         "Tests E2E Cypress et scénarios BDD pour sécuriser les releases et maîtriser les régressions.",
         "Méthodologie documentée et optimisations ciblées (prefetch, bulk) pour des livraisons prévisibles."
       ],
@@ -1004,7 +1038,7 @@
         },
         {
           "title": "Groupe Bernard Blachère",
-          "summary": "Vérifact : DDD, tests Cypress BDD, Symfony, Vue.js 3 et NestJS.",
+          "summary": "Vérifact : DDD, intégration Yooz (rapprochement facture, écritures comptables), tests Cypress BDD, Symfony, Vue.js 3 et NestJS.",
           "img": "/images/project-images/bbg/logo.png",
           "anchorId": "freelance-mission-blachere"
         }
@@ -1050,7 +1084,7 @@
         {
           "group": {
             "titre": "Groupe Bernard Blachère · Vérifact (mission freelance)",
-            "intro": "Mission freelance sur Vérifact, outil de litiges fournisseurs du SI interne du groupe. Refonte DDD, consolidation des APIs et sécurisation des livraisons (Cypress, BDD).",
+            "intro": "Mission freelance sur Vérifact, application de pilotage des litiges fournisseurs du SI interne du groupe. Refonte DDD, intégration Yooz (rapprochement facture, écritures comptables), consolidation des APIs et sécurisation des livraisons (Cypress, BDD).",
             "anchorId": "freelance-mission-blachere"
           },
           "data": {
@@ -1058,9 +1092,9 @@
               "title": "Fiabilisation et architecture",
               "description": [
                 "Refactorisation DDD pour clarifier le périmètre métier et la maintenabilité",
+                "Intégration Yooz : rapprochement facture et génération d'écritures comptables (TVA, comptes de charge)",
                 "APIs Symfony, interfaces Vue.js 3 / TypeScript et flux NestJS",
-                "Tests E2E Cypress et scénarios BDD intégrés à la CI GitLab",
-                "Optimisations ciblées (prefetch, bulk) sur les parcours critiques"
+                "Tests E2E Cypress et scénarios BDD intégrés à la CI GitLab"
               ]
             }
           }
