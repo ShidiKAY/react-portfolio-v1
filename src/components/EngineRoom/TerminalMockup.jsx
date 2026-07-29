@@ -18,7 +18,7 @@ const TerminalMockup = ({ statusBarText, showStatusBar = true, children }) => {
         </span>
       </div>
 
-      <div className="min-h-[200px] bg-slate-900 dark:bg-slate-950 flex items-center justify-center p-4">
+      <div className="min-h-[200px] bg-slate-900 dark:bg-slate-950 flex flex-col items-stretch justify-center p-4 gap-3">
         {children}
       </div>
 

@@ -24,7 +24,7 @@ const ProofCypressPanel = () => {
             <video
               src="/videos/cypress-demo.mp4"
               aria-label="Cypress E2E test suite in action"
-              className="max-w-full h-auto rounded"
+              className="w-full h-auto rounded block"
               controls
               autoPlay
               muted
@@ -32,7 +32,7 @@ const ProofCypressPanel = () => {
               playsInline
               preload="metadata"
             />
-            <p className="mt-3 text-slate-500 dark:text-slate-400 text-sm">
+            <p className="text-slate-400 dark:text-slate-400 text-sm leading-relaxed">
               {t("common.proof_cypress_demo_content")}
             </p>
           </>

@@ -453,15 +453,17 @@ const ProjectDetail = () => {
         <div
           className="hidden md:block fixed top-0 left-0 h-full w-32 z-[100] group cursor-pointer transition flex items-center justify-start"
           onClick={() => {
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-            setTimeout(() => navigate(`/projects/${prevProjectId}`), 200);
+            scrollToTopInstant();
+            navigate(`/projects/${prevProjectId}`);
           }}
           aria-label="Previous project"
           tabIndex={0}
-          onKeyDown={(e) =>
-            (e.key === "Enter" || e.key === " ") &&
-            navigate(`/projects/${prevProjectId}`)
-          }
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              scrollToTopInstant();
+              navigate(`/projects/${prevProjectId}`);
+            }
+          }}
           role="button"
         >
           {/* Overlay on hover */}
@@ -492,15 +494,17 @@ const ProjectDetail = () => {
         <div
           className="hidden md:block fixed top-0 right-0 h-full w-32 z-[100] group cursor-pointer transition flex items-center justify-end"
           onClick={() => {
-            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-            setTimeout(() => navigate(`/projects/${nextProjectId}`), 200);
+            scrollToTopInstant();
+            navigate(`/projects/${nextProjectId}`);
           }}
           aria-label="Next project"
           tabIndex={0}
-          onKeyDown={(e) =>
-            (e.key === "Enter" || e.key === " ") &&
-            navigate(`/projects/${nextProjectId}`)
-          }
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              scrollToTopInstant();
+              navigate(`/projects/${nextProjectId}`);
+            }
+          }}
           role="button"
         >
           {/* Overlay on hover */}
@@ -533,8 +537,8 @@ const ProjectDetail = () => {
       <button
         className="md:hidden fixed left-4 top-1/2 -translate-y-1/2 z-[101] w-14 h-14 rounded-full bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 flex items-center justify-center shadow transition"
         onClick={() => {
-          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-          setTimeout(() => navigate(`/projects/${prevProjectId}`), 200);
+          scrollToTopInstant();
+          navigate(`/projects/${prevProjectId}`);
         }}
         aria-label="Previous project"
       >
@@ -557,8 +561,8 @@ const ProjectDetail = () => {
       <button
         className="md:hidden fixed right-4 top-1/2 -translate-y-1/2 z-[101] w-14 h-14 rounded-full bg-white dark:bg-slate-800 border border-gray-300 dark:border-slate-600 flex items-center justify-center shadow transition"
         onClick={() => {
-          window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
-          setTimeout(() => navigate(`/projects/${nextProjectId}`), 200);
+          scrollToTopInstant();
+          navigate(`/projects/${nextProjectId}`);
         }}
         aria-label="Next project"
       >
