@@ -7,6 +7,7 @@ import routes from "./routes";
 import GoToTop from "./components/GoToTop";
 import QuickNav from "./components/QuickNav/QuickNav";
 import Footer from "./components/Footer/Footer";
+import { scrollElementToTopInstant } from "./utils/scroll";
 
 // Below-the-fold: lazy-load About (Projects + SkillsModern) for faster LCP
 const About = React.lazy(() => import("./components/About"));
@@ -48,23 +49,11 @@ const AppContent = () => {
   }, [i18n.language]);
 
   // Retour page projet (Back / Escape) : positionnement direct sur la section Projets, sans effet smooth (contourne scroll-behavior: smooth du CSS)
-  const scrollToProjectsInstant = () => {
-    const html = document.documentElement;
-    const prev = html.style.scrollBehavior;
-    html.style.scrollBehavior = "auto";
-    const el = document.getElementById("toprojects");
-    if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
-    html.style.scrollBehavior = prev;
-  };
+  const scrollToProjectsInstant = () =>
+    scrollElementToTopInstant(document.getElementById("toprojects"));
   // Retour page labs / lab detail : positionnement direct sur la section Atelier (toengine), sans transition
-  const scrollToEngineInstant = () => {
-    const html = document.documentElement;
-    const prev = html.style.scrollBehavior;
-    html.style.scrollBehavior = "auto";
-    const el = document.getElementById("toengine");
-    if (el) el.scrollIntoView({ behavior: "auto", block: "start" });
-    html.style.scrollBehavior = prev;
-  };
+  const scrollToEngineInstant = () =>
+    scrollElementToTopInstant(document.getElementById("toengine"));
   useLayoutEffect(() => {
     if (location.pathname !== "/") return;
     if (location.state?.scrollToProjects) scrollToProjectsInstant();

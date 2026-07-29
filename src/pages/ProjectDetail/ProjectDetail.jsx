@@ -8,7 +8,7 @@ import {
 } from "react-router-dom";
 import { Helmet as Head } from "react-helmet-async";
 import { SEO_BASE_URL, SEO_DEFAULT_IMAGE } from "../../config/seo";
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import GoToTop from "../../components/GoToTop";
 import { switchLanguage } from "../../i18n";
 import {
@@ -17,6 +17,7 @@ import {
   skillIcons,
 } from "../../components/SkillsModern";
 import { PROJECT_ORDER, isValidProjectId } from "../../constants/projects";
+import { scrollToTopInstant } from "../../utils/scroll";
 
 const scrollToMissionAnchor = (anchorId) => {
   const el = document.getElementById(anchorId);
@@ -274,24 +275,20 @@ const ProjectDetail = () => {
     });
   };
 
-  // Toujours ouvrir en haut : désactiver le smooth du CSS le temps du scroll pour placement instantané
-  const scrollToTopInstant = () => {
-    const html = document.documentElement;
-    const prevBehavior = html.style.scrollBehavior;
-    html.style.scrollBehavior = "auto";
-    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    html.style.scrollBehavior = prevBehavior;
-  };
-  const mountTimeRef = useRef(Date.now());
-
+  // Toujours ouvrir en haut, y compris en changeant de projet (prev/next) sans démontage.
+  // `scrollToTopInstant` assigne `scrollTop` directement : contrairement à `window.scrollTo()`,
+  // ce n'est pas affecté par `scroll-behavior: smooth` (globals.css), donc jamais d'animation visible.
   useLayoutEffect(() => {
-    mountTimeRef.current = Date.now();
     window.history.scrollRestoration = "manual";
     scrollToTopInstant();
-    for (let i = 0; i < 3; i++) {
-      requestAnimationFrame(scrollToTopInstant);
-    }
-  }, []);
+  }, [projectId]);
+
+  // Filet de sécurité : la mise en page peut encore bouger juste après le premier paint
+  // (chargement du logo, police, etc.), on reconfirme le haut sur quelques frames.
+  useEffect(() => {
+    const rafs = [0, 1, 2].map(() => requestAnimationFrame(scrollToTopInstant));
+    return () => rafs.forEach((id) => cancelAnimationFrame(id));
+  }, [projectId]);
 
   // Nettoyer l'URL (retirer ?t=...) après montage pour garder une barre d'adresse propre
   useEffect(() => {
@@ -299,41 +296,6 @@ const ProjectDetail = () => {
       navigate(`/projects/${projectId}`, { replace: true });
     }
   }, [navigate, projectId]);
-
-  // Rappels pour contrer une restauration de scroll très tardive (réouverture d'un projet déjà visité)
-  useEffect(() => {
-    scrollToTopInstant();
-    const rafs = [0, 1, 2].map(() => requestAnimationFrame(scrollToTopInstant));
-    const delays = [30, 80, 150, 300, 500, 900, 1200].map((ms) =>
-      setTimeout(scrollToTopInstant, ms),
-    );
-    return () => {
-      rafs.forEach((id) => cancelAnimationFrame(id));
-      delays.forEach((id) => clearTimeout(id));
-    };
-  }, []);
-
-  // Tant que le navigateur restaure le scroll, on force le haut (pendant ~1,5 s après ouverture)
-  useEffect(() => {
-    const guardWindowMs = 1500;
-    const onScroll = () => {
-      if (
-        Date.now() - mountTimeRef.current < guardWindowMs &&
-        window.scrollY > 0
-      ) {
-        scrollToTopInstant();
-      }
-    };
-    window.addEventListener("scroll", onScroll, { passive: false });
-    const t = setTimeout(
-      () => window.removeEventListener("scroll", onScroll),
-      guardWindowMs,
-    );
-    return () => {
-      clearTimeout(t);
-      window.removeEventListener("scroll", onScroll);
-    };
-  }, []);
 
   // Handle scroll progress
   useEffect(() => {

@@ -5,6 +5,7 @@ import { Helmet as Head } from "react-helmet-async";
 import labsData from "../../data/labs_exp.json";
 import LabPreview from "./LabPreview";
 import { getLabContent } from "../../utils/labContent";
+import { scrollToTopInstant } from "../../utils/scroll";
 
 const STATUS_KEYS = {
   Experimental: "labs_status_experimental",
@@ -32,7 +33,7 @@ const LabDetail = () => {
   const lab = labs.find((l) => l.id === labId);
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    scrollToTopInstant();
   }, [labId]);
 
   if (!lab && labs.length > 0) {

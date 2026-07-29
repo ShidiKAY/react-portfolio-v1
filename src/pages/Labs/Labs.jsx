@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import labsData from "../../data/labs_exp.json";
 import { SEO_BASE_URL, SEO_DEFAULT_IMAGE } from "../../config/seo";
 import LabCard from "./LabCard";
+import { scrollToTopInstant } from "../../utils/scroll";
 
 const Labs = () => {
   const { t } = useTranslation();
@@ -18,10 +19,10 @@ const Labs = () => {
       if (el) {
         el.scrollIntoView({ behavior: "smooth", block: "start" });
       } else {
-        window.scrollTo(0, 0);
+        scrollToTopInstant();
       }
     } else {
-      window.scrollTo(0, 0);
+      scrollToTopInstant();
     }
   }, []);
 
