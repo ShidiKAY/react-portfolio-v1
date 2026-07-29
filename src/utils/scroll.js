@@ -1,20 +1,37 @@
 /**
  * Instant scroll helpers that bypass the global `scroll-behavior: smooth` CSS rule
- * (see src/styles/globals.css). `window.scrollTo()` / `Element.scrollIntoView()` honor
- * that CSS property even when `behavior: "auto"` is passed and briefly toggling the
- * inline style back and forth around the call is unreliable (the browser can coalesce
- * the style changes and animate anyway). Directly assigning `scrollTop` is not a
- * "scrolling operation" under the CSSOM View spec, so it always jumps instantly.
+ * (see src/styles/globals.css).
+ *
+ * `behavior: "auto"` passed to `scrollTo()` / `scrollIntoView()` does NOT force an
+ * instant jump: per the CSSOM View spec, "auto" means "defer to the element's
+ * `scroll-behavior` CSS property", so it still scrolls smoothly whenever that CSS rule
+ * is "smooth" (same for direct `scrollTop`/`scrollLeft` assignment). The only reliable
+ * way to force an instant scroll is to temporarily override `scroll-behavior` to
+ * "auto" via inline style *before* scrolling, then restore it right after.
  */
+const withInstantScrollBehavior = (fn) => {
+  const html = document.documentElement;
+  const { body } = document;
+  const prevHtml = html.style.scrollBehavior;
+  const prevBody = body.style.scrollBehavior;
+  html.style.scrollBehavior = "auto";
+  body.style.scrollBehavior = "auto";
+  fn();
+  html.style.scrollBehavior = prevHtml;
+  body.style.scrollBehavior = prevBody;
+};
 
 export const scrollToTopInstant = () => {
-  document.documentElement.scrollTop = 0;
-  document.body.scrollTop = 0; // some browsers scroll the body instead of <html>
+  withInstantScrollBehavior(() => {
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    window.scrollTo(0, 0);
+  });
 };
 
 export const scrollElementToTopInstant = (el) => {
   if (!el) return;
-  const top = el.getBoundingClientRect().top + window.scrollY;
-  document.documentElement.scrollTop = top;
-  document.body.scrollTop = top;
+  withInstantScrollBehavior(() => {
+    el.scrollIntoView({ behavior: "auto", block: "start" });
+  });
 };

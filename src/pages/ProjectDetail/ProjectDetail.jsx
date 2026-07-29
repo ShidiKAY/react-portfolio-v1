@@ -276,8 +276,8 @@ const ProjectDetail = () => {
   };
 
   // Toujours ouvrir en haut, y compris en changeant de projet (prev/next) sans démontage.
-  // `scrollToTopInstant` assigne `scrollTop` directement : contrairement à `window.scrollTo()`,
-  // ce n'est pas affecté par `scroll-behavior: smooth` (globals.css), donc jamais d'animation visible.
+  // `scrollToTopInstant` désactive temporairement `scroll-behavior: smooth` (globals.css)
+  // avant de scroller, sinon le saut en haut de page serait animé.
   useLayoutEffect(() => {
     window.history.scrollRestoration = "manual";
     scrollToTopInstant();
