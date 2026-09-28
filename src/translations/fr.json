@@ -289,11 +289,11 @@
     "engine_codex_snippet_2_code": "// Script d'automatisation rejouable\nawait codex.replay('invoice-flow');",
     "expert_insights_title": "Log de Fiabilisation",
     "changelog_refactor_title": "Refactorisation",
-    "changelog_refactor_desc": "Migration des services métier vers une architecture DDD (agrégats).",
-    "changelog_perf_title": "Performances",
-    "changelog_perf_desc": "Optimisation des requêtes complexes et mise en place de stratégies de cache.",
+    "changelog_refactor_desc": "Architecture DDD : agrégats, services métier, centralisation de 30 règles de gestion.",
+    "changelog_perf_title": "Intégration Yooz",
+    "changelog_perf_desc": "Quatre flux SFTP (1b → 2b → 8 → 3b) : réception factures, écritures comptables, commentaires, validation.",
     "changelog_qa_title": "Qualité",
-    "changelog_qa_desc": "Couverture des parcours critiques (Facturation/Stock) via Cypress.",
+    "changelog_qa_desc": "Suite Cypress E2E (48 specs, 185 scénarios) sur les parcours litiges et Flux Yooz.",
     "proof_terminal_status": "Statut : run terminé",
     "proof_terminal_status_pending": "Workflow documenté · capture à venir",
     "proof_terminal_aria": "Panneau de démo Cypress"
@@ -803,8 +803,8 @@
       ]
     },
     "bbg": {
-      "description": "Vérifact : litiges avec les fournisseurs (holding Bernard Blachère, boulangerie-pâtisserie). Application complète (9 pages), SI critique, DDD, intégration Yooz (rapprochement facture, écritures comptables), Symfony, Vue.js 3, Cypress + BDD.",
-      "impactSummary": "Refonte DDD (30 règles de gestion), intégration Yooz (rapprochement facture, génération d'écritures comptables, référentiel dédié), tests E2E Cypress (48 specs, 185 scénarios) sur 4 versions majeures : livraisons sécurisées, régressions maîtrisées, maintenabilité renforcée.",
+      "description": "Vérifact : litiges avec les fournisseurs (holding Bernard Blachère, boulangerie-pâtisserie). Application complète (9 pages), SI critique, DDD, intégration Yooz (flux 1b → 2b → 8 → 3b), Symfony, Vue.js 3, Cypress + BDD.",
+      "impactSummary": "Refonte DDD (30 règles de gestion), intégration Yooz en 4 flux (réception SFTP, écritures comptables, commentaires, validation), tests E2E Cypress (48 specs, 185 scénarios) sur 4 versions majeures : livraisons sécurisées, régressions maîtrisées, maintenabilité renforcée.",
       "postDeliveryTitle": "Retour d'expérience post-livraison (V2)",
       "postDeliveryBody": "Après la livraison majeure de la V2 de Vérifact, un retour structuré avec le pilotage projet et la recette a souligné, côté développement : communication régulière, respect du planning, autonomie sur le périmètre défini, documentation partagée et lisible par l'équipe, et adéquation des évolutions déployées avec le besoin métier une fois celui-ci clarifié. Les échanges ont aussi renforcé les rituels de suivi (points courts d'avancement, schématisation des flux, démonstrations en réunion). En amélioration continue : références systématiques aux tickets dans les messages de livraison pour faciliter la recette.",
       "postDeliveryFootnote": "Bilan formalisé avec l'équipe après la V2.",
@@ -812,7 +812,6 @@
       "mainTechnologies": [
         "Symfony",
         "Vue.js",
-        "NestJS",
         "TypeScript",
         "PostgreSQL",
         "Cypress",
@@ -830,8 +829,8 @@
       ],
       "introduction": {
         "name": "Holding Bernard Blachère",
-        "introduction": "Développement sur Vérifact, application de pilotage des litiges avec les fournisseurs (9 pages : Dashboard, Statistiques, Factures, Lignes bloquées, Produits en erreur, Historiques, Logs, Flux Yooz, Référentiel Yooz), dans le SI interne de la holding Bernard Blachère (boulangerie-pâtisserie). Refonte et fiabilisation d'applications critiques : architecture DDD, intégration de Yooz (plateforme de gestion des factures du groupe) : rapprochement facture, génération d'écritures comptables et référentiel comptable dédié, consolidation des APIs, tests E2E Cypress et scénarios BDD, optimisations (prefetch, bulk). Documentation structurée et livraisons claires, 4 versions majeures livrées.",
-        "description": "Clarification du périmètre métier et de la maintenabilité (refactorisation DDD), intégration Yooz (rapprochement facture, écritures comptables, référentiel), sécurisation des livraisons (Cypress, BDD), optimisations performance. Symfony, Vue.js 3, NestJS, Docker/Kubernetes, GitLab CI."
+        "introduction": "Développement sur Vérifact, application de pilotage des litiges avec les fournisseurs (9 pages : Dashboard, Statistiques, Factures, Lignes bloquées, Produits en erreur, Historiques, Logs, Flux Yooz, Référentiel Yooz), dans le SI interne de la holding Bernard Blachère (boulangerie-pâtisserie). Refonte et fiabilisation d'applications critiques : architecture DDD, intégration Yooz en 4 flux (1b → 2b → 8 → 3b) : réception SFTP, écritures comptables, commentaires, validation, plus référentiel comptable dédié, consolidation des APIs, tests E2E Cypress et scénarios BDD, optimisations (prefetch, bulk). Documentation structurée et livraisons claires, 4 versions majeures livrées.",
+        "description": "Clarification du périmètre métier et de la maintenabilité (refactorisation DDD), intégration Yooz (1b → 2b → 8 → 3b), sécurisation des livraisons (Cypress, BDD), optimisations performance. Symfony, Vue.js 3, Docker/Kubernetes, GitLab CI."
       },
       "role": "Développeur Fullstack",
       "location": "Châteaurenard",
@@ -841,7 +840,6 @@
       "technologies": [
         "Symfony",
         "Vue.js 3",
-        "NestJS",
         "TypeScript",
         "PostgreSQL",
         "Cypress",
@@ -904,32 +902,39 @@
         },
         {
           "group": {
-            "titre": "Intégration Yooz : rapprochement facture et écritures comptables",
-            "intro": "Connexion bidirectionnelle de Vérifact à Yooz, la plateforme de gestion des factures du groupe : réception des factures, génération des écritures comptables et retour de validation, via 4 flux dédiés."
+            "titre": "Intégration Yooz : quatre flux (1b → 2b → 8 → 3b)",
+            "intro": "Connexion bidirectionnelle Vérifact ↔ Yooz via SFTP. Ordre nominal de synchro : réception (1b), écritures comptables (2b), commentaires (8), validation (3b)."
           },
           "data": {
             "1": {
-              "title": "Réception et rapprochement des factures",
+              "title": "Flux 1b : réception et rapprochement",
               "description": [
-                "Réception des factures via SFTP, parsing CSV / EDI / Factur-X et rapprochement avec le référentiel interne",
-                "Résolution fournisseur, magasin et compte de charge avec stratégies de repli",
-                "Réutilisation du moteur d'analyse et de contrôle du workflow de litiges"
+                "ZIP Yooz sur SFTP (CSV + facture originale), parsing CSV / EDI / Factur-X / PDF texte",
+                "Résolution fournisseur (tiers Yooz), magasin, matérialisation facture et pose du numéro Yooz",
+                "Même moteur d'analyse litiges que le reste de l'application (entrée nominale des factures)"
               ]
             },
             "2": {
-              "title": "Génération d'écritures comptables et validation",
+              "title": "Flux 2b : écritures comptables",
               "description": [
-                "Génération et envoi des écritures comptables (lignes facture, TVA) dès le rapprochement réussi, indépendamment de la clôture du litige",
-                "Calcul de la TVA et réconciliation des profils comptables selon des règles de gestion dédiées",
-                "Envoi du statut de validation à la clôture du litige, conditionné au retour des commentaires Yooz"
+                "Envoi JSON des lignes (montants, TVA, comptes de charge) dès le rapprochement 1b, sans attendre la clôture du litige",
+                "Règles de gestion TVA / profils comptables ; lignes sans compte omises du payload (suivi référentiel + alertes)",
+                "Traçabilité d'envoi (un passage réussi, garde-fou si rejet immédiat côté Yooz)"
               ]
             },
             "3": {
-              "title": "Référentiel comptable et alertes",
+              "title": "Flux 8 : commentaires (déclencheur)",
               "description": [
-                "Page Référentiel Yooz dédiée : contrôle des GLN et comptes de charge fournisseurs / produits",
-                "Alerte automatique par email en cas de comptes de charge manquants avant intégration",
-                "Journalisation exhaustive de chaque échange pour la traçabilité métier"
+                "Import CSV commentaires depuis Yooz : prérequis de la validation, sans modifier les statuts de lignes",
+                "Journalisation et archivage SFTP (done / errors après rejeux)"
+              ]
+            },
+            "4": {
+              "title": "Flux 3b : validation + référentiel",
+              "description": [
+                "Envoi du statut de validation quand le flux 8 est reçu et que toutes les lignes sont au statut final",
+                "Page Référentiel Yooz : GLN et comptes de charge ; alerte mail si comptes manquants",
+                "Page Flux Yooz : journal des 4 flux (dépôt, retour SFTP) pour suivre sans ouvrir Yooz"
               ]
             }
           }
@@ -1001,7 +1006,7 @@
       ],
       "solutions": [
         "Refactorisation DDD pour clarifier le domaine et améliorer la maintenabilité.",
-        "Moteur de réconciliation Yooz dédié (référentiel comptable, alertes automatiques) et règles de gestion documentées pour fiabiliser les écritures envoyées.",
+        "Moteur Yooz en 4 flux (1b → 2b → 8 → 3b), référentiel comptable, alertes comptes manquants et règles documentées pour fiabiliser les écritures.",
         "Tests E2E Cypress et scénarios BDD pour sécuriser les releases et maîtriser les régressions.",
         "Méthodologie documentée et optimisations ciblées (prefetch, bulk) pour des livraisons prévisibles."
       ],
@@ -1044,7 +1049,7 @@
         },
         {
           "title": "Groupe Bernard Blachère",
-          "summary": "Vérifact : DDD, intégration Yooz (rapprochement facture, écritures comptables), tests Cypress BDD, Symfony, Vue.js 3 et NestJS.",
+          "summary": "Vérifact : DDD, Yooz (1b → 2b → 8 → 3b), Cypress BDD, Symfony et Vue.js 3.",
           "img": "/images/project-images/bbg/logo.png",
           "anchorId": "freelance-mission-blachere"
         }
@@ -1090,7 +1095,7 @@
         {
           "group": {
             "titre": "Groupe Bernard Blachère · Vérifact (mission freelance)",
-            "intro": "Mission freelance sur Vérifact, application de pilotage des litiges fournisseurs du SI interne du groupe. Refonte DDD, intégration Yooz (rapprochement facture, écritures comptables), consolidation des APIs et sécurisation des livraisons (Cypress, BDD).",
+            "intro": "Mission freelance sur Vérifact, application de pilotage des litiges fournisseurs du SI interne du groupe. Refonte DDD, intégration Yooz (1b → 2b → 8 → 3b), consolidation des APIs et sécurisation des livraisons (Cypress, BDD).",
             "anchorId": "freelance-mission-blachere"
           },
           "data": {
@@ -1098,8 +1103,8 @@
               "title": "Fiabilisation et architecture",
               "description": [
                 "Refactorisation DDD pour clarifier le périmètre métier et la maintenabilité",
-                "Intégration Yooz : rapprochement facture et génération d'écritures comptables (TVA, comptes de charge)",
-                "APIs Symfony, interfaces Vue.js 3 / TypeScript et flux NestJS",
+                "Intégration Yooz en 4 flux (1b → 2b → 8 → 3b) : réception SFTP, écritures comptables, commentaires, validation",
+                "APIs Symfony, interfaces Vue.js 3 / TypeScript",
                 "Tests E2E Cypress et scénarios BDD intégrés à la CI GitLab"
               ]
             }

@@ -290,11 +290,11 @@
     "engine_codex_snippet_2_code": "// Replayable automation script\nawait codex.replay('invoice-flow');",
     "expert_insights_title": "Reliability Log",
     "changelog_refactor_title": "Refactor",
-    "changelog_refactor_desc": "Migration of business services to a DDD architecture (Aggregates).",
-    "changelog_perf_title": "Performance",
-    "changelog_perf_desc": "Optimization of complex queries and caching strategies.",
+    "changelog_refactor_desc": "DDD architecture: aggregates, domain services, 30 centralized business rules.",
+    "changelog_perf_title": "Yooz integration",
+    "changelog_perf_desc": "Four SFTP flows (1b → 2b → 8 → 3b): invoice intake, accounting entries, comments, validation.",
     "changelog_qa_title": "QA",
-    "changelog_qa_desc": "Coverage of critical flows (Billing/Stock) via Cypress.",
+    "changelog_qa_desc": "Cypress E2E suite (48 specs, 185 scenarios) on dispute journeys and Yooz Flows.",
     "proof_terminal_status": "Status: run complete",
     "proof_terminal_status_pending": "Documented workflow · capture coming soon",
     "proof_terminal_aria": "Cypress demo panel"
@@ -804,8 +804,8 @@
       ]
     },
     "bbg": {
-      "description": "Vérifact: supplier disputes (Bernard Blachère holding, bakery-pastry). Full application (9 pages), critical IS, DDD, Yooz integration (invoice reconciliation, accounting entries), Symfony, Vue.js 3, Cypress + BDD.",
-      "impactSummary": "DDD refactor (30 business rules), Yooz integration (invoice reconciliation, accounting entry generation, dedicated referential), Cypress E2E tests (48 specs, 185 scenarios) across 4 major releases: secure releases, regressions under control, improved maintainability.",
+      "description": "Vérifact: supplier disputes (Bernard Blachère holding, bakery-pastry). Full application (9 pages), critical IS, DDD, Yooz integration (flows 1b → 2b → 8 → 3b), Symfony, Vue.js 3, Cypress + BDD.",
+      "impactSummary": "DDD refactor (30 business rules), Yooz integration across 4 flows (SFTP intake, accounting entries, comments, validation), Cypress E2E tests (48 specs, 185 scenarios) across 4 major releases: secure releases, regressions under control, improved maintainability.",
       "postDeliveryTitle": "Post-delivery retrospective (V2)",
       "postDeliveryBody": "After the major V2 release of Vérifact, a structured retrospective with project management and QA highlighted, on the development side: regular communication, adherence to planning, autonomy on the agreed scope, shared documentation the whole team could use, and shipped changes aligned with business needs once requirements were clear. Follow-up also reinforced short checkpoints, flow diagrams, and live demos. Continuous improvement: systematic ticket references in delivery notes to streamline QA.",
       "postDeliveryFootnote": "Formal retrospective with the team after the V2 release.",
@@ -813,7 +813,6 @@
       "mainTechnologies": [
         "Symfony",
         "Vue.js",
-        "NestJS",
         "TypeScript",
         "PostgreSQL",
         "Cypress",
@@ -831,8 +830,8 @@
       ],
       "introduction": {
         "name": "Bernard Blachère Holding",
-        "introduction": "Development on Vérifact, a supplier dispute management application (9 pages: Dashboard, Statistics, Invoices, Blocked Lines, Product Errors, History, Logs, Yooz Flows, Yooz Referential), within Bernard Blachère holding's internal IS (bakery-pastry). Refactor and hardening of critical applications: DDD architecture, integration with Yooz (the group's invoice management platform): invoice reconciliation, accounting entry generation, and a dedicated accounting referential, API consolidation, Cypress E2E and BDD scenarios, performance work (prefetch, bulk). Structured documentation and clear delivery, 4 major releases shipped.",
-        "description": "Clarifying domain boundaries and maintainability (DDD refactor), Yooz integration (invoice reconciliation, accounting entries, referential), securing releases (Cypress, BDD), performance tuning. Symfony, Vue.js 3, NestJS, Docker/Kubernetes, GitLab CI."
+        "introduction": "Development on Vérifact, a supplier dispute management application (9 pages: Dashboard, Statistics, Invoices, Blocked Lines, Product Errors, History, Logs, Yooz Flows, Yooz Referential), within Bernard Blachère holding's internal IS (bakery-pastry). Refactor and hardening of critical applications: DDD architecture, Yooz integration across 4 flows (1b → 2b → 8 → 3b): SFTP intake, accounting entries, comments, validation, plus a dedicated accounting referential, API consolidation, Cypress E2E and BDD scenarios, performance work (prefetch, bulk). Structured documentation and clear delivery, 4 major releases shipped.",
+        "description": "Clarifying domain boundaries and maintainability (DDD refactor), Yooz integration (1b → 2b → 8 → 3b), securing releases (Cypress, BDD), performance tuning. Symfony, Vue.js 3, Docker/Kubernetes, GitLab CI."
       },
       "role": "Fullstack Developer",
       "location": "Châteaurenard",
@@ -842,7 +841,6 @@
       "technologies": [
         "Symfony",
         "Vue.js 3",
-        "NestJS",
         "TypeScript",
         "PostgreSQL",
         "Cypress",
@@ -905,32 +903,39 @@
         },
         {
           "group": {
-            "titre": "Yooz integration: invoice reconciliation and accounting entries",
-            "intro": "Bidirectional connection between Vérifact and Yooz, the group's invoice management platform: receiving invoices, generating accounting entries, and returning validation status, across 4 dedicated flows."
+            "titre": "Yooz integration: four flows (1b → 2b → 8 → 3b)",
+            "intro": "Bidirectional Vérifact ↔ Yooz link over SFTP. Nominal sync order: intake (1b), accounting entries (2b), comments (8), validation (3b)."
           },
           "data": {
             "1": {
-              "title": "Invoice reception and reconciliation",
+              "title": "Flow 1b: intake and reconciliation",
               "description": [
-                "Receiving invoices via SFTP, parsing CSV / EDI / Factur-X and reconciling against the internal catalog",
-                "Supplier, store, and expense-account resolution with fallback strategies",
-                "Reusing the same analysis and control engine as the dispute workflow"
+                "Yooz ZIP on SFTP (CSV + original invoice), parsing CSV / EDI / Factur-X / text PDF",
+                "Supplier resolution (Yooz tiers), store, invoice materialization, and Yooz number assignment",
+                "Same dispute analysis engine as the rest of the app (nominal invoice entry point)"
               ]
             },
             "2": {
-              "title": "Accounting entry generation and validation",
+              "title": "Flow 2b: accounting entries",
               "description": [
-                "Generating and sending accounting entries (invoice lines, VAT) as soon as reconciliation succeeds, independent of dispute closure",
-                "VAT computation and accounting profile reconciliation per dedicated business rules",
-                "Sending validation status on dispute closure, conditioned on Yooz's comment feedback"
+                "JSON send of lines (amounts, VAT, expense accounts) as soon as 1b reconciliation succeeds, without waiting for dispute closure",
+                "VAT / accounting-profile business rules; lines without an account omitted from the payload (referential tracking + alerts)",
+                "Send traceability (one successful pass, guard when Yooz rejects immediately)"
               ]
             },
             "3": {
-              "title": "Accounting referential and alerts",
+              "title": "Flow 8: comments (trigger)",
               "description": [
-                "Dedicated Yooz Referential page: controlling GLN codes and expense accounts for suppliers / products",
-                "Automatic email alert when expense accounts are missing before integration",
-                "Exhaustive logging of every exchange for business traceability"
+                "Import of Yooz comment CSVs: prerequisite for validation, without changing line statuses",
+                "Logging and SFTP archival (done / errors after retries)"
+              ]
+            },
+            "4": {
+              "title": "Flow 3b: validation + referential",
+              "description": [
+                "Validation status sent when flow 8 is received and all lines are in a final status",
+                "Yooz Referential page: GLN codes and expense accounts; email alert when accounts are missing",
+                "Yooz Flows page: journal of all 4 flows (deposit, SFTP return) to monitor without opening Yooz"
               ]
             }
           }
@@ -1002,7 +1007,7 @@
       ],
       "solutions": [
         "DDD refactoring to clarify the domain and improve maintainability.",
-        "Dedicated Yooz reconciliation engine (accounting referential, automatic alerts) and documented business rules to keep sent entries reliable.",
+        "Yooz engine across 4 flows (1b → 2b → 8 → 3b), accounting referential, missing-account alerts, and documented rules to keep sent entries reliable.",
         "Cypress E2E tests and BDD scenarios to secure releases and control regressions.",
         "Documented methodology and targeted optimizations (prefetch, bulk) for predictable deliveries."
       ],
@@ -1045,7 +1050,7 @@
         },
         {
           "title": "Groupe Bernard Blachère",
-          "summary": "Vérifact: DDD, Yooz integration (invoice reconciliation, accounting entries), Cypress BDD tests, Symfony, Vue.js 3, and NestJS.",
+          "summary": "Vérifact: DDD, Yooz (1b → 2b → 8 → 3b), Cypress BDD, Symfony, and Vue.js 3.",
           "img": "/images/project-images/bbg/logo.png",
           "anchorId": "freelance-mission-blachere"
         }
@@ -1091,7 +1096,7 @@
         {
           "group": {
             "titre": "Groupe Bernard Blachère · Vérifact (freelance mission)",
-            "intro": "Freelance mission on Vérifact, the group's internal supplier dispute management application. DDD refactor, Yooz integration (invoice reconciliation, accounting entries), API consolidation, and delivery hardening (Cypress, BDD).",
+            "intro": "Freelance mission on Vérifact, the group's internal supplier dispute management application. DDD refactor, Yooz integration (1b → 2b → 8 → 3b), API consolidation, and delivery hardening (Cypress, BDD).",
             "anchorId": "freelance-mission-blachere"
           },
           "data": {
@@ -1099,8 +1104,8 @@
               "title": "Reliability and architecture",
               "description": [
                 "DDD refactor to clarify business boundaries and maintainability",
-                "Yooz integration: invoice reconciliation and accounting entry generation (VAT, expense accounts)",
-                "Symfony APIs, Vue.js 3 / TypeScript interfaces, and NestJS flows",
+                "Yooz integration across 4 flows (1b → 2b → 8 → 3b): SFTP intake, accounting entries, comments, validation",
+                "Symfony APIs, Vue.js 3 / TypeScript interfaces",
                 "Cypress E2E tests and BDD scenarios integrated in GitLab CI"
               ]
             }
