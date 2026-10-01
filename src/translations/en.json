@@ -824,8 +824,8 @@
           "caption": "Yooz Flows: monitoring 1b / 2b / 3b / 8 runs"
         },
         {
-          "img": "/images/project-images/bbg/gallery/02-flux-yooz-kpi.png",
-          "caption": "Yooz Flow KPIs: success, errors, missing accounts"
+          "img": "/images/project-images/bbg/gallery/02-lignes-bloquees.png",
+          "caption": "Blocked lines: filters, selection and status bulk update"
         },
         {
           "img": "/images/project-images/bbg/gallery/03-factures.png",
@@ -841,7 +841,8 @@
         },
         {
           "img": "/images/project-images/bbg/gallery/06-referentiel-modal.png",
-          "caption": "Expense account + VAT mapping (referential)"
+          "caption": "Expense account + VAT mapping (referential)",
+          "fit": "contain"
         }
       ],
       "postDeliveryTitle": "Post-delivery retrospective (V2)",

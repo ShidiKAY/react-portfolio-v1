@@ -823,8 +823,8 @@
           "caption": "Flux Yooz : suivi des exécutions 1b / 2b / 3b / 8"
         },
         {
-          "img": "/images/project-images/bbg/gallery/02-flux-yooz-kpi.png",
-          "caption": "KPI Flux Yooz : succès, erreurs, comptes manquants"
+          "img": "/images/project-images/bbg/gallery/02-lignes-bloquees.png",
+          "caption": "Lignes bloquées : filtres, sélection et mise à jour de statut"
         },
         {
           "img": "/images/project-images/bbg/gallery/03-factures.png",
@@ -840,7 +840,8 @@
         },
         {
           "img": "/images/project-images/bbg/gallery/06-referentiel-modal.png",
-          "caption": "Association compte de charge + TVA (référentiel)"
+          "caption": "Association compte de charge + TVA (référentiel)",
+          "fit": "contain"
         }
       ],
       "postDeliveryTitle": "Retour d'expérience post-livraison (V2)",

@@ -633,15 +633,19 @@ const ProjectDetail = () => {
             {project.description}
           </p>
 
-          {/* Project Image */}
+          {/* Project Image — plus compact sur BBG (la galerie porte le visuel produit) */}
           {project.img && (
             <img
               src={project.img}
               alt={project.introduction.name}
-              className="mb-8 w-full max-h-72 object-contain rounded-lg shadow"
-              style={{ background: "#f8fafc" }}
-              width={640}
-              height={288}
+              className={
+                projectId === "bbg"
+                  ? "mb-6 max-h-28 sm:max-h-36 w-auto max-w-[200px] object-contain rounded-lg"
+                  : "mb-8 w-full max-h-72 object-contain rounded-lg shadow"
+              }
+              style={projectId === "bbg" ? undefined : { background: "#f8fafc" }}
+              width={projectId === "bbg" ? 200 : 640}
+              height={projectId === "bbg" ? 144 : 288}
               loading="eager"
               decoding="async"
             />
@@ -687,49 +691,40 @@ const ProjectDetail = () => {
                 {t("common.project_gallery_title")}
               </h2>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                {galleryItems.map((item, index) => (
-                  <button
-                    key={item.img}
-                    type="button"
-                    onClick={() => setGalleryIndex(index)}
-                    className="group text-left rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
-                  >
-                    <div className="aspect-[16/10] bg-slate-100 dark:bg-slate-900/50 overflow-hidden">
-                      <img
-                        src={item.img}
-                        alt={item.caption || ""}
-                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
-                        loading="lazy"
-                        decoding="async"
-                      />
-                    </div>
-                    {item.caption && (
-                      <p className="px-3 py-2 text-xs sm:text-sm text-gray-600 dark:text-slate-400 leading-snug">
-                        {item.caption}
-                      </p>
-                    )}
-                  </button>
-                ))}
+                {galleryItems.map((item, index) => {
+                  const fitContain = item.fit === "contain";
+                  return (
+                    <button
+                      key={item.img}
+                      type="button"
+                      onClick={() => setGalleryIndex(index)}
+                      className="group text-left rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
+                    >
+                      <div className="aspect-[16/10] bg-slate-100 dark:bg-slate-900/50 overflow-hidden flex items-center justify-center">
+                        <img
+                          src={item.img}
+                          alt={item.caption || ""}
+                          className={
+                            fitContain
+                              ? "max-w-full max-h-full object-contain p-3 transition-transform duration-300 group-hover:scale-[1.02]"
+                              : "w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+                          }
+                          loading="lazy"
+                          decoding="async"
+                        />
+                      </div>
+                      {item.caption && (
+                        <p className="px-3 py-2 text-xs sm:text-sm text-gray-600 dark:text-slate-400 leading-snug">
+                          {item.caption}
+                        </p>
+                      )}
+                    </button>
+                  );
+                })}
               </div>
               <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
                 {t("common.project_gallery_footnote")}
               </p>
-            </div>
-          )}
-
-          {project.postDeliveryTitle && project.postDeliveryBody && (
-            <div className="mb-6 sm:mb-8 p-4 sm:p-5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-600">
-              <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider mb-3">
-                {project.postDeliveryTitle}
-              </h2>
-              <p className="text-gray-700 dark:text-slate-300 leading-relaxed text-justify">
-                {project.postDeliveryBody}
-              </p>
-              {project.postDeliveryFootnote && (
-                <p className="mt-4 text-xs text-slate-500 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-slate-600 pt-3">
-                  {project.postDeliveryFootnote}
-                </p>
-              )}
             </div>
           )}
 
@@ -1083,6 +1078,25 @@ const ProjectDetail = () => {
                     </p>
                   </div>
                 </div>
+              </div>
+            </div>
+          )}
+
+          {/* REX post-livraison : après le récit métier (moins de densité en tête de page) */}
+          {project.postDeliveryTitle && project.postDeliveryBody && (
+            <div className="max-w-4xl w-full mx-auto mb-8 sm:mb-12 px-0 sm:px-4">
+              <div className="p-4 sm:p-5 rounded-lg bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-600">
+                <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider mb-3">
+                  {project.postDeliveryTitle}
+                </h2>
+                <p className="text-gray-700 dark:text-slate-300 leading-relaxed text-justify">
+                  {project.postDeliveryBody}
+                </p>
+                {project.postDeliveryFootnote && (
+                  <p className="mt-4 text-xs text-slate-500 dark:text-slate-400 leading-relaxed border-t border-slate-200 dark:border-slate-600 pt-3">
+                    {project.postDeliveryFootnote}
+                  </p>
+                )}
               </div>
             </div>
           )}
