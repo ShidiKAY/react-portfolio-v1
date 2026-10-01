@@ -294,6 +294,10 @@
     "changelog_perf_desc": "Quatre flux SFTP (1b → 2b → 8 → 3b) : réception factures, écritures comptables, commentaires, validation.",
     "changelog_qa_title": "Qualité",
     "changelog_qa_desc": "Suite Cypress E2E (48 specs, 185 scénarios) sur les parcours litiges et Flux Yooz.",
+    "project_metrics_title": "Chiffres clés",
+    "project_gallery_title": "Aperçu produit",
+    "project_gallery_close": "Fermer",
+    "project_gallery_footnote": "Captures locales sur fixtures E2E anonymisées (préfixe E2E-).",
     "proof_terminal_status": "Statut : run terminé",
     "proof_terminal_status_pending": "Workflow documenté · capture à venir",
     "proof_terminal_aria": "Panneau de démo Cypress"
@@ -805,6 +809,40 @@
     "bbg": {
       "description": "Vérifact : litiges avec les fournisseurs (holding Bernard Blachère, boulangerie-pâtisserie). Application complète (9 pages), SI critique, DDD, intégration Yooz (flux 1b → 2b → 8 → 3b), Symfony, Vue.js 3, Cypress + BDD.",
       "impactSummary": "Refonte DDD (30 règles de gestion), intégration Yooz en 4 flux (réception SFTP, écritures comptables, commentaires, validation), tests E2E Cypress (48 specs, 185 scénarios) sur 4 versions majeures : livraisons sécurisées, régressions maîtrisées, maintenabilité renforcée.",
+      "metrics": [
+        { "value": "30", "label": "Règles de gestion" },
+        { "value": "9", "label": "Pages UI" },
+        { "value": "4", "label": "Flux Yooz" },
+        { "value": "48", "label": "Specs Cypress" },
+        { "value": "185", "label": "Scénarios E2E" },
+        { "value": "79", "label": "Fiches wiki" }
+      ],
+      "gallery": [
+        {
+          "img": "/images/project-images/bbg/gallery/01-flux-yooz.png",
+          "caption": "Flux Yooz : suivi des exécutions 1b / 2b / 3b / 8"
+        },
+        {
+          "img": "/images/project-images/bbg/gallery/02-flux-yooz-kpi.png",
+          "caption": "KPI Flux Yooz : succès, erreurs, comptes manquants"
+        },
+        {
+          "img": "/images/project-images/bbg/gallery/03-factures.png",
+          "caption": "Factures : recherche, filtres, n° Yooz, statuts"
+        },
+        {
+          "img": "/images/project-images/bbg/gallery/04-detail-facture.png",
+          "caption": "Modale détail facture : métadonnées, produits, alertes"
+        },
+        {
+          "img": "/images/project-images/bbg/gallery/05-referentiel.png",
+          "caption": "Référentiel Yooz : correspondances fournisseurs / produits"
+        },
+        {
+          "img": "/images/project-images/bbg/gallery/06-referentiel-modal.png",
+          "caption": "Association compte de charge + TVA (référentiel)"
+        }
+      ],
       "postDeliveryTitle": "Retour d'expérience post-livraison (V2)",
       "postDeliveryBody": "Après la livraison majeure de la V2 de Vérifact, un retour structuré avec le pilotage projet et la recette a souligné, côté développement : communication régulière, respect du planning, autonomie sur le périmètre défini, documentation partagée et lisible par l'équipe, et adéquation des évolutions déployées avec le besoin métier une fois celui-ci clarifié. Les échanges ont aussi renforcé les rituels de suivi (points courts d'avancement, schématisation des flux, démonstrations en réunion). En amélioration continue : références systématiques aux tickets dans les messages de livraison pour faciliter la recette.",
       "postDeliveryFootnote": "Bilan formalisé avec l'équipe après la V2.",

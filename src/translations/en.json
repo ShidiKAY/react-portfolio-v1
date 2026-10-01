@@ -295,6 +295,10 @@
     "changelog_perf_desc": "Four SFTP flows (1b → 2b → 8 → 3b): invoice intake, accounting entries, comments, validation.",
     "changelog_qa_title": "QA",
     "changelog_qa_desc": "Cypress E2E suite (48 specs, 185 scenarios) on dispute journeys and Yooz Flows.",
+    "project_metrics_title": "Key figures",
+    "project_gallery_title": "Product gallery",
+    "project_gallery_close": "Close",
+    "project_gallery_footnote": "Local captures on anonymized E2E fixtures (E2E- prefix).",
     "proof_terminal_status": "Status: run complete",
     "proof_terminal_status_pending": "Documented workflow · capture coming soon",
     "proof_terminal_aria": "Cypress demo panel"
@@ -806,6 +810,40 @@
     "bbg": {
       "description": "Vérifact: supplier disputes (Bernard Blachère holding, bakery-pastry). Full application (9 pages), critical IS, DDD, Yooz integration (flows 1b → 2b → 8 → 3b), Symfony, Vue.js 3, Cypress + BDD.",
       "impactSummary": "DDD refactor (30 business rules), Yooz integration across 4 flows (SFTP intake, accounting entries, comments, validation), Cypress E2E tests (48 specs, 185 scenarios) across 4 major releases: secure releases, regressions under control, improved maintainability.",
+      "metrics": [
+        { "value": "30", "label": "Business rules" },
+        { "value": "9", "label": "UI pages" },
+        { "value": "4", "label": "Yooz flows" },
+        { "value": "48", "label": "Cypress specs" },
+        { "value": "185", "label": "E2E scenarios" },
+        { "value": "79", "label": "Wiki pages" }
+      ],
+      "gallery": [
+        {
+          "img": "/images/project-images/bbg/gallery/01-flux-yooz.png",
+          "caption": "Yooz Flows: monitoring 1b / 2b / 3b / 8 runs"
+        },
+        {
+          "img": "/images/project-images/bbg/gallery/02-flux-yooz-kpi.png",
+          "caption": "Yooz Flow KPIs: success, errors, missing accounts"
+        },
+        {
+          "img": "/images/project-images/bbg/gallery/03-factures.png",
+          "caption": "Invoices: search, filters, Yooz number, statuses"
+        },
+        {
+          "img": "/images/project-images/bbg/gallery/04-detail-facture.png",
+          "caption": "Invoice detail modal: metadata, products, alerts"
+        },
+        {
+          "img": "/images/project-images/bbg/gallery/05-referentiel.png",
+          "caption": "Yooz referential: supplier / product mappings"
+        },
+        {
+          "img": "/images/project-images/bbg/gallery/06-referentiel-modal.png",
+          "caption": "Expense account + VAT mapping (referential)"
+        }
+      ],
       "postDeliveryTitle": "Post-delivery retrospective (V2)",
       "postDeliveryBody": "After the major V2 release of Vérifact, a structured retrospective with project management and QA highlighted, on the development side: regular communication, adherence to planning, autonomy on the agreed scope, shared documentation the whole team could use, and shipped changes aligned with business needs once requirements were clear. Follow-up also reinforced short checkpoints, flow diagrams, and live demos. Continuous improvement: systematic ticket references in delivery notes to streamline QA.",
       "postDeliveryFootnote": "Formal retrospective with the team after the V2 release.",

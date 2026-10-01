@@ -87,6 +87,7 @@ const ProjectDetail = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [galleryIndex, setGalleryIndex] = useState(null);
 
   // Function to highlight technical terms and impactful words
   const highlightTerms = (text) => {
@@ -281,6 +282,7 @@ const ProjectDetail = () => {
   useLayoutEffect(() => {
     window.history.scrollRestoration = "manual";
     scrollToTopInstant();
+    setGalleryIndex(null);
   }, [projectId]);
 
   // Filet de sécurité : la mise en page peut encore bouger juste après le premier paint
@@ -312,18 +314,6 @@ const ProjectDetail = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Handle Escape key press: retour à l'accueil scrollé sur la section Projets
-  useEffect(() => {
-    const handleEscape = (event) => {
-      if (event.key === "Escape") {
-        navigate("/", { state: { scrollToProjects: true } });
-      }
-    };
-
-    window.addEventListener("keydown", handleEscape);
-    return () => window.removeEventListener("keydown", handleEscape);
-  }, [navigate]);
-
   const project = t(`projects.${projectId}`, { returnObjects: true });
   const missionAnchors = Array.isArray(project?.missionAnchors)
     ? project.missionAnchors
@@ -333,6 +323,33 @@ const ProjectDetail = () => {
     project &&
     typeof project === "object" &&
     project.introduction;
+
+  const galleryItems = Array.isArray(project?.gallery) ? project.gallery : [];
+  const metricsItems = Array.isArray(project?.metrics) ? project.metrics : [];
+
+  // Escape : ferme la lightbox galerie, sinon retour à l'accueil (section Projets)
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key !== "Escape") return;
+      if (galleryIndex !== null) {
+        setGalleryIndex(null);
+        return;
+      }
+      navigate("/", { state: { scrollToProjects: true } });
+    };
+
+    window.addEventListener("keydown", handleEscape);
+    return () => window.removeEventListener("keydown", handleEscape);
+  }, [navigate, galleryIndex]);
+
+  useEffect(() => {
+    if (galleryIndex === null) return undefined;
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [galleryIndex]);
 
   if (!projectValid) {
     return <Navigate to="/404" replace />;
@@ -344,6 +361,8 @@ const ProjectDetail = () => {
   const solutions = project.solutions || [];
   const mainTechnologies = project.mainTechnologies || [];
   const softSkills = project.softSkills || [];
+  const activeGalleryItem =
+    galleryIndex !== null ? galleryItems[galleryIndex] : null;
 
   // Find next/previous project IDs
   const currentIdx = PROJECT_ORDER.indexOf(projectId);
@@ -635,6 +654,65 @@ const ProjectDetail = () => {
               </h2>
               <p className="text-gray-700 dark:text-slate-200 leading-relaxed">
                 {project.impactSummary}
+              </p>
+            </div>
+          )}
+
+          {metricsItems.length > 0 && (
+            <div className="mb-6 sm:mb-8">
+              <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider mb-3">
+                {t("common.project_metrics_title")}
+              </h2>
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+                {metricsItems.map((metric, index) => (
+                  <div
+                    key={`${metric.label}-${index}`}
+                    className="rounded-lg border border-slate-200 dark:border-slate-600 bg-slate-50 dark:bg-slate-800/70 px-3 py-3 text-center"
+                  >
+                    <div className="text-2xl sm:text-3xl font-bold text-cyan-700 dark:text-cyan-300 tabular-nums">
+                      {metric.value}
+                    </div>
+                    <div className="mt-1 text-xs sm:text-sm text-gray-600 dark:text-slate-400 leading-snug">
+                      {metric.label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {galleryItems.length > 0 && (
+            <div className="mb-6 sm:mb-8">
+              <h2 className="text-sm font-semibold text-slate-800 dark:text-slate-200 uppercase tracking-wider mb-3">
+                {t("common.project_gallery_title")}
+              </h2>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
+                {galleryItems.map((item, index) => (
+                  <button
+                    key={item.img}
+                    type="button"
+                    onClick={() => setGalleryIndex(index)}
+                    className="group text-left rounded-lg border border-slate-200 dark:border-slate-600 bg-white dark:bg-slate-800 overflow-hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-500"
+                  >
+                    <div className="aspect-[16/10] bg-slate-100 dark:bg-slate-900/50 overflow-hidden">
+                      <img
+                        src={item.img}
+                        alt={item.caption || ""}
+                        className="w-full h-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    {item.caption && (
+                      <p className="px-3 py-2 text-xs sm:text-sm text-gray-600 dark:text-slate-400 leading-snug">
+                        {item.caption}
+                      </p>
+                    )}
+                  </button>
+                ))}
+              </div>
+              <p className="mt-2 text-xs text-slate-500 dark:text-slate-400">
+                {t("common.project_gallery_footnote")}
               </p>
             </div>
           )}
@@ -1063,6 +1141,39 @@ const ProjectDetail = () => {
 
       {/* Go to Top button */}
       <GoToTop />
+
+      {activeGalleryItem && (
+        <div
+          className="fixed inset-0 z-[300] bg-black/80 flex items-center justify-center p-4"
+          role="dialog"
+          aria-modal="true"
+          aria-label={activeGalleryItem.caption || t("common.project_gallery_title")}
+          onClick={() => setGalleryIndex(null)}
+        >
+          <div
+            className="relative max-w-5xl w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="absolute -top-10 right-0 text-white/90 text-sm hover:text-white"
+              onClick={() => setGalleryIndex(null)}
+            >
+              {t("common.project_gallery_close")}
+            </button>
+            <img
+              src={activeGalleryItem.img}
+              alt={activeGalleryItem.caption || ""}
+              className="w-full max-h-[80vh] object-contain rounded-lg bg-slate-900"
+            />
+            {activeGalleryItem.caption && (
+              <p className="mt-3 text-center text-sm text-white/90">
+                {activeGalleryItem.caption}
+              </p>
+            )}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
